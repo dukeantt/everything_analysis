@@ -86,27 +86,28 @@ def extract_info_from_conversation(conversation_detail, info: dict):
     return info
 
 
-def main():
-    all_conv_detail = get_all_conv_detail()
+def get_success_conv(all_conv_detail, level:int):
     necessary_info = {"sender_id": [], "begin": [], "end": [], "thank": [], "handover": [], "message": []}
-
     for conversation in all_conv_detail.itertuples():
         events = literal_eval(conversation.events)
         begin_time = datetime.datetime.utcfromtimestamp(int(events[0]["timestamp"]))
         end_time = datetime.datetime.utcfromtimestamp(int(events[-1]["timestamp"]))
         user_messages_in_conversation = [x for x in events if x["event"] == "user"]
-        if len(user_messages_in_conversation) > 0:
-            user_intent = user_messages_in_conversation[-1]["parse_data"]['intent']["name"]
+        # if len(user_messages_in_conversation) > 0:
+        if len(user_messages_in_conversation) > (level - 1):
+            user_intent = None
+            if "name" in user_messages_in_conversation[-level]["parse_data"]['intent']:
+                user_intent = user_messages_in_conversation[-level]["parse_data"]['intent']["name"]
             if user_intent == "thank" and len(user_messages_in_conversation) > 1:
                 necessary_info["thank"].append(1)
-                necessary_info["message"].append(user_messages_in_conversation[-1]["parse_data"]["text"])
+                necessary_info["message"].append(user_messages_in_conversation[-level]["parse_data"]["text"])
             else:
                 necessary_info["thank"].append(0)
 
 
             if user_intent == "handover_to_inbox" and len(user_messages_in_conversation) > 1:
                 necessary_info["handover"].append(1)
-                necessary_info["message"].append(user_messages_in_conversation[-1]["parse_data"]["text"])
+                necessary_info["message"].append(user_messages_in_conversation[-level]["parse_data"]["text"])
             else:
                 necessary_info["handover"].append(0)
 
@@ -119,11 +120,10 @@ def main():
 
     necessary_info_df = pd.DataFrame.from_dict(necessary_info)
     success_conv = necessary_info_df[necessary_info_df["thank"] == 1]
-    key_word = ["ship", "gửi", "lấy", "địa chỉ", "giao hàng","đ/c", "sẵn hàng", "hàng sẵn", "thanh toán", "tổng"]
+    key_word = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản"]
     all_handover_df = necessary_info_df[necessary_info_df["handover"] == 1]
     all_handover_df_sub = all_handover_df.copy()
     for index, item in all_handover_df.iterrows():
-        a = 0
         for word_index, word in enumerate(key_word):
             if word in item["message"].lower():
                 break
@@ -131,15 +131,27 @@ def main():
                 if word_index == len(key_word) - 1:
                     try:
                         all_handover_df_sub = all_handover_df_sub.drop(index)
-                    except:
-                        a = 0
+                    except Exception as ex:
+                        logger.error(ex)
+    filter_word = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
+    for word in filter_word:
+        all_handover_df_sub = all_handover_df_sub[~all_handover_df_sub["message"].str.lower().str.contains(word)]
+    combine_df = pd.concat([all_handover_df_sub, success_conv])
+    return combine_df
 
+def main():
+    all_conv_detail = get_all_conv_detail()
+    result_df1 = get_success_conv(all_conv_detail, level=1)
+    result_df2 = get_success_conv(all_conv_detail, level=2)
+    result_df3 = get_success_conv(all_conv_detail, level=3)
+    result_df = pd.concat([result_df3, result_df2, result_df1])
+    result_df = result_df.sort_values(by="begin", ascending=False).drop_duplicates(subset=["sender_id"], keep="first")
     a = 0
-
 
 # export_conversations()
 # export_conversation_detail()
 main()
 
 # chatlog from 18/12/2019 to 19/6/2020
-# ["ship", "gửi", "lấy", "địa chỉ", "giao hàng","đ/c", "sẵn hàng", "hàng sẵn", "thanh toán", "tổng"]
+# ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng","đ/c", "thanh toán", "tổng", "ck", "chuyển khoản"]
+# ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
