@@ -96,7 +96,7 @@ def get_success_conv(all_conv_detail, level: int):
     """
     necessary_info = {"sender_id": [], "begin": [], "end": [], "message_timestamp_month": [],
                       "message_timestamp_date": [], "thank": [], "handover": [],
-                      "message": [], "level": []}
+                      "message": [],"obj_type":[], "level": []}
     conversation_id_to_remove = []
     for conversation in all_conv_detail.itertuples():
         events = literal_eval(conversation.events)
@@ -133,7 +133,10 @@ def get_success_conv(all_conv_detail, level: int):
 
             if user_intent not in ["handover_to_inbox", "thank"] or len(user_messages_in_conversation) <= 1:
                 necessary_info["message"].append("")
-
+            obj_type = ""
+            if "object_type" in literal_eval(conversation.slots):
+                obj_type = literal_eval(conversation.slots)["object_type"]
+            necessary_info["obj_type"].append(obj_type)
             message_timestamp_month = datetime.datetime.utcfromtimestamp(int(user_messages_in_conversation[-level]["timestamp"])).strftime('%Y-%m')
             message_timestamp_date = datetime.datetime.utcfromtimestamp(int(user_messages_in_conversation[-level]["timestamp"])).strftime('%m-%d')
             necessary_info["message_timestamp_month"].append(message_timestamp_month)
@@ -180,7 +183,8 @@ def main():
         if item in result_sender_id_list:
             conversation_id_to_remove.remove(item)
     all_conv_detail_without_trash = all_conv_detail[~all_conv_detail["sender_id"].isin(conversation_id_to_remove)]
-
+    all_conv_detail_without_trash = all_conv_detail_without_trash[
+        ~all_conv_detail_without_trash["sender_id"].isin(["default", "me", "abcdef", "123456"])]
     all_conv_detail_without_trash.to_csv("analyze_data/all_conversations_without_trash.csv", index=False)
     result_df.to_csv("analyze_data/success_conversations.csv", index=False)
 

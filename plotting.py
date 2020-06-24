@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from ast import literal_eval
 import datetime
 from collections import Counter
+from collections import OrderedDict
 
 all_convo = pd.read_csv("analyze_data/all_conversations_without_trash.csv")
 success_convo = pd.read_csv("analyze_data/success_conversations.csv")
@@ -15,7 +16,7 @@ success_convo = pd.read_csv("analyze_data/success_conversations.csv")
 #     print("Successful Conversations: " + str(len(success_convo)))
 #     print("Success rate: " + '{0:.2f}'.format(success_rate) + "%")
 #
-#     labels = ["Successfull Conversations", "All Conversations"]
+#     labels = ["Successful Conversations", "All Conversations"]
 #     values = [len(success_convo), len(all_convo)]
 #     fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
 #     fig.update_traces(hoverinfo='label', textinfo='value')
@@ -29,7 +30,7 @@ def line_bar_plot():
     no_sender_id_each_month = list(count_success_by_month["sender_id"])
 
     fig = go.Figure(data=go.Scatter(x=month_list, y=no_sender_id_each_month, mode='lines+markers'))
-    fig.update_layout(title='Successfull conversations by month',
+    fig.update_layout(title='Successful conversations by month',
                       xaxis_title='Month',
                       yaxis_title='Number of successful conversations')
     fig.show()
@@ -98,7 +99,7 @@ def line_bar_plot():
                )
     )
     fig.update_layout(
-        title='Successfull conversations by date on total',
+        title='Successful conversations by date on total',
         xaxis_title='Date',
         yaxis_title='Number of conversations',
         xaxis=dict(
@@ -114,10 +115,12 @@ def line_bar_plot():
 
 def sun_burst():
     success_rate = (len(success_convo) / len(all_convo)) * 100
-
+    max_turn, min_turn, mean_turn, top_10_turn_happen_most, top_10_highest_no_turn, comback_customer = count_turn()
     print("All Conversations: " + str(len(all_convo)))
     print("Successful Conversations: " + str(len(success_convo)))
     print("Success rate: " + '{0:.2f}'.format(success_rate) + "%")
+    print("Average number of turn: " + str(mean_turn))
+    print("Comeback customers: " + str(comback_customer))
 
     no_thank = len(success_convo[success_convo["thank"] == 1])
     no_handover = len(success_convo[success_convo["handover"] == 1])
@@ -154,4 +157,27 @@ def count_total_convo_on_date():
 
     return date_counter
 
-# line_bar_plot()
+
+def count_turn():
+    comeback_customer = 0
+    events_list = list(all_convo["events"])
+    all_turn = []
+    for index, item in enumerate(events_list):
+        event = literal_eval(item)
+        all_user_turn = [x for x in event if x["event"] == "user"]
+        all_turn_in_conv = [datetime.datetime.utcfromtimestamp(int(x["timestamp"])).strftime('%m-%d') for x in
+                            all_user_turn]
+        all_turn += list(Counter(all_turn_in_conv).values())
+        if len(list(Counter(all_turn_in_conv).values())) > 1:
+            comeback_customer += 1
+    all_turn.remove(157)
+    max_turn = max(all_turn)
+    min_turn = min(all_turn)
+    mean_turn = int(sum(all_turn) / len(all_turn))
+    sorted_counter_turn_by_value = {k: v for k, v in
+                                    sorted(dict(Counter(all_turn)).items(), key=lambda item: item[1], reverse=True)}
+    sorted_counter_turn_by_key = OrderedDict(sorted_counter_turn_by_value)
+    top_10_turn_happen_most = list(sorted_counter_turn_by_value.items())[:10]
+    top_10_highest_no_turn = list(sorted_counter_turn_by_key.items())[:10]
+
+    return max_turn, min_turn, mean_turn, top_10_turn_happen_most, top_10_highest_no_turn, comeback_customer
