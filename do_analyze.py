@@ -94,7 +94,9 @@ def get_success_conv(all_conv_detail, level: int):
     :return: dataframe of success conversation by each level
 
     """
-    necessary_info = {"sender_id": [], "begin": [], "end": [], "thank": [], "handover": [], "message": [], "level": []}
+    necessary_info = {"sender_id": [], "begin": [], "end": [], "message_timestamp_month": [],
+                      "message_timestamp_date": [], "thank": [], "handover": [],
+                      "message": [], "level": []}
     conversation_id_to_remove = []
     for conversation in all_conv_detail.itertuples():
         events = literal_eval(conversation.events)
@@ -132,6 +134,10 @@ def get_success_conv(all_conv_detail, level: int):
             if user_intent not in ["handover_to_inbox", "thank"] or len(user_messages_in_conversation) <= 1:
                 necessary_info["message"].append("")
 
+            message_timestamp_month = datetime.datetime.utcfromtimestamp(int(user_messages_in_conversation[-level]["timestamp"])).strftime('%Y-%m')
+            message_timestamp_date = datetime.datetime.utcfromtimestamp(int(user_messages_in_conversation[-level]["timestamp"])).strftime('%m-%d')
+            necessary_info["message_timestamp_month"].append(message_timestamp_month)
+            necessary_info["message_timestamp_date"].append(message_timestamp_date)
             necessary_info["sender_id"].append(conversation.sender_id)
             necessary_info["begin"].append(begin_time)
             necessary_info["end"].append(end_time)
