@@ -7,6 +7,7 @@ import pickle
 from csv import DictWriter
 from ast import literal_eval
 import logging
+from heuristic_correction import *
 
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
@@ -94,9 +95,9 @@ def get_success_conv(all_conv_detail, level: int):
     :return: dataframe of success conversation by each level
 
     """
-    necessary_info = {"sender_id": [], "begin": [], "end": [], "message_timestamp_month": [],
+    necessary_info = {"sender_id": [], "begin": [], "end": [], "message_timestamp": [], "message_timestamp_month": [],
                       "message_timestamp_date": [], "thank": [], "handover": [],
-                      "message": [],"obj_type":[], "level": []}
+                      "message": [], "obj_type": [], "level": []}
     conversation_id_to_remove = []
     for conversation in all_conv_detail.itertuples():
         events = literal_eval(conversation.events)
@@ -137,10 +138,15 @@ def get_success_conv(all_conv_detail, level: int):
             if "object_type" in literal_eval(conversation.slots):
                 obj_type = literal_eval(conversation.slots)["object_type"]
             necessary_info["obj_type"].append(obj_type)
-            message_timestamp_month = datetime.datetime.utcfromtimestamp(int(user_messages_in_conversation[-level]["timestamp"])).strftime('%Y-%m')
-            message_timestamp_date = datetime.datetime.utcfromtimestamp(int(user_messages_in_conversation[-level]["timestamp"])).strftime('%m-%d')
+            message_timestamp_month = datetime.datetime.utcfromtimestamp(
+                int(user_messages_in_conversation[-level]["timestamp"])).strftime('%Y-%m')
+            message_timestamp_date = datetime.datetime.utcfromtimestamp(
+                int(user_messages_in_conversation[-level]["timestamp"])).strftime('%m-%d')
+            message_timestamp = datetime.datetime.utcfromtimestamp(
+                int(user_messages_in_conversation[-level]["timestamp"])).strftime('%Y-%m-%d')
             necessary_info["message_timestamp_month"].append(message_timestamp_month)
             necessary_info["message_timestamp_date"].append(message_timestamp_date)
+            necessary_info["message_timestamp"].append(message_timestamp)
             necessary_info["sender_id"].append(conversation.sender_id)
             necessary_info["begin"].append(begin_time)
             necessary_info["end"].append(end_time)
@@ -152,8 +158,11 @@ def get_success_conv(all_conv_detail, level: int):
     all_handover_df = necessary_info_df[necessary_info_df["handover"] == 1]
     all_handover_df_sub = all_handover_df.copy()
     for index, item in all_handover_df.iterrows():
+        message = item["message"].lower()
+        message = message.replace("\n", ". ")
+        message = do_correction(message)
         for word_index, word in enumerate(key_word):
-            if word in item["message"].lower():
+            if word in message:
                 break
             else:
                 if word_index == len(key_word) - 1:
@@ -189,11 +198,10 @@ def main():
     result_df.to_csv("analyze_data/success_conversations.csv", index=False)
 
 
-
 # export_conversations()
 # export_conversation_detail()
 main()
-
+# get_all_conv()
 # chatlog from 18/12/2019 to 19/6/2020
 # ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng","đ/c", "thanh toán", "tổng", "ck", "chuyển khoản"]
 # ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
