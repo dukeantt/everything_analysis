@@ -108,14 +108,17 @@ def get_success_conv(all_conv_detail):
                 user_intent = None
                 if "name" in user_message["parse_data"]['intent']:
                     user_intent = user_message["parse_data"]['intent']["name"]
+                # Count number of messages on the day
                 message_count_on_day = count_message_on_day(user_message, user_messages_in_conversation)
 
+                # We only care about the conversation that have 2 messages on day
                 if user_intent == "thank" and len(user_messages_in_conversation) > 1:
                     if message_count_on_day < 2:
                         necessary_info["thank"].append(0)
                         necessary_info["message"].append(user_message["parse_data"]["text"])
                         conversation_id_to_remove.append(conversation.sender_id)
                     else:
+                        # Get all intent: thank messages
                         necessary_info["thank"].append(1)
                         necessary_info["message"].append(user_message["parse_data"]["text"])
                 else:
@@ -127,6 +130,7 @@ def get_success_conv(all_conv_detail):
                         necessary_info["message"].append(user_message["parse_data"]["text"])
                         conversation_id_to_remove.append(conversation.sender_id)
                     else:
+                        # Get all intent: handover messages
                         necessary_info["handover"].append(1)
                         necessary_info["message"].append(user_message["parse_data"]["text"])
                 else:
@@ -135,24 +139,28 @@ def get_success_conv(all_conv_detail):
                 if user_intent not in ["handover_to_inbox", "thank"] or len(user_messages_in_conversation) <= 1:
                     necessary_info["message"].append("")
                 obj_type = ""
+
                 if "object_type" in literal_eval(conversation.slots):
                     obj_type = literal_eval(conversation.slots)["object_type"]
                 necessary_info["obj_type"].append(obj_type)
-                message_timestamp_month = datetime.datetime.utcfromtimestamp(
-                    int(user_message["timestamp"])).strftime('%Y-%m')
-                message_timestamp_date = datetime.datetime.utcfromtimestamp(
-                    int(user_message["timestamp"])).strftime('%m-%d')
-                message_timestamp = datetime.datetime.utcfromtimestamp(
-                    int(user_message["timestamp"])).strftime('%Y-%m-%d')
+
+                # 3 columns month, date, full timestamp -> easier to analyze later
+                message_timestamp_month = datetime.datetime.utcfromtimestamp(int(user_message["timestamp"])).strftime('%Y-%m')
+                message_timestamp_date = datetime.datetime.utcfromtimestamp(int(user_message["timestamp"])).strftime('%m-%d')
+                message_timestamp = datetime.datetime.utcfromtimestamp(int(user_message["timestamp"])).strftime('%Y-%m-%d')
+
                 necessary_info["message_timestamp_month"].append(message_timestamp_month)
                 necessary_info["message_timestamp_date"].append(message_timestamp_date)
                 necessary_info["message_timestamp"].append(message_timestamp)
+
                 necessary_info["sender_id"].append(conversation.sender_id)
                 necessary_info["begin"].append(begin_time)
                 necessary_info["end"].append(end_time)
 
     necessary_info_df = pd.DataFrame.from_dict(necessary_info)
+    # All conversation that have intent:thank is considered successful
     success_conv = necessary_info_df[necessary_info_df["thank"] == 1]
+
     key_word = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản"]
     all_handover_df = necessary_info_df[necessary_info_df["handover"] == 1]
     all_handover_df_sub = all_handover_df.copy()
@@ -197,10 +205,8 @@ def main():
     result_df.to_csv("analyze_data/success_conversations.csv", index=False)
 
 
-# export_conversations()
-# export_conversation_detail()
 main()
-# get_all_conv()
+
 # chatlog from 18/12/2019 to 19/6/2020
 # ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng","đ/c", "thanh toán", "tổng", "ck", "chuyển khoản"]
 # ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]

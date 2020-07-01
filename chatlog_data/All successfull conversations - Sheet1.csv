@@ -1,0 +1,354 @@
+STT,version,timestamp,conv_id,input_text,image,intent,entities,action_1,policy_1,bot_text,bot_data,cv_outputs,Sub intent,Analyzed by sentence,,Overall rating,Category,Dev's Review,QA's Check,Quick note,PIC Comment
+,,,,,,,,,,,,,,QA's Review,Expect Reply,,,,,,
+1,v2.0.22,2020-06-17 10:49:32,"2518758118198501
+Hoàng Bầu",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Hoàng Bầu, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+1,v2.0.22,2020-06-17 10:53:27,"2518758118198501
+Hoàng Bầu","Shop ơi bên mình còn xe chòi chân nt hình ảnh ko?
+https://scontent.xx.fbcdn.net/v/t1.15752-9/104199784_185615922885463_2292578923557911617_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=lOWAeSgR-YYAX9ozXkf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=4c418edb689dedc7877d265e855477e6&oe=5F0F9D9A",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/104199784_185615922885463_2292578923557911617_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=lOWAeSgR-YYAX9ozXkf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=4c418edb689dedc7877d265e855477e6&oe=5F0F9D9A - https://scontent.xx.fbcdn.net/v/t1.15752-9/104199784_185615922885463_2292578923557911617_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=lOWAeSgR-YYAX9ozXkf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=4c418edb689dedc7877d265e855477e6&oe=5F0F9D9A - tmp_link
+- xe chòi chân - xe_choi_chan - object_type
+- hình ảnh - image - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Bạn vui lòng bấm vào sản phẩm để xem ảnh và thông tin chi tiết nhé!
+",- Xem chi tiết: Xe chòi chân có bàn đạp cao cấp Motion,"[1, 'xe_choi_chan', [2249]]",,Succeeded,,As expected,,,,,
+1,v2.0.22,2020-06-17 10:53:27,"2518758118198501
+Hoàng Bầu",Chiều nay mình qua đ/c bên bạn ở Âu cơ để lấy 1 xe chòi chân như thế này màu đỏ nhé :),,handover_to_inbox,"- xe chòi chân - xe_choi_chan - object_type
+- màu đỏ - màu đỏ - color",action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+2,v2.0.22,2020-06-16 17:15:19,"3177399478982999
+Gloria Truong",Có bạn quây ko ban,,query_knowledge_base,- quây - quay - object_type,action_query_babe_kb,policy_0_MemoizationPolicy,"Sản phẩm  Quây   có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!
+","- Xem chi tiết: Quây Holla Vương Miện
+- Xem chi tiết: COMBO HOLLA FULL PHIÊN BẢN 2020 MẪU VƯƠNG MIỆN
+- Xem chi tiết: Quây góc vuông cánh nhỏ hình ngôi nhà",,,Succeeded,,As expected,,,,,
+2,v2.0.22,2020-06-16 17:18:54,"3177399478982999
+Gloria Truong",Hollla 1tr750 bnhiu m vay e,,query_knowledge_base,"- Hollla - hollla - brand
+- 1tr750 - 1tr750 - price
+- bnhiu - price - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm Quây Holla Vương Miện hãng sản xuất Holla, giá 1tr750 hiện shop đang có mức giá: *1,750,000 VND (giá gốc 3,000,000 VND)*.
+
+",- Xem chi tiết: Quây Holla Vương Miện,,,Succeeded,,As expected,,,,,
+2,v2.0.22,2020-06-16 17:18:55,"3177399478982999
+Gloria Truong","Phi giao hàng ntn e
+C o đồng nai",,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+3,v2.0.22,2020-06-16 12:11:01,"2819758998135770
+Liên Thach Thi",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Liên Thach Thi, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,Succeeded,,,,,
+3,v2.0.22,2020-06-16 12:12:13,"2819758998135770
+Liên Thach Thi","Xe giá nhiêu vậy shop
+https://scontent.xx.fbcdn.net/v/t1.15752-9/104207567_1200486363624775_8447128499919432156_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_ohc=3CjRRXPXIa0AX_SG4pM&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9dec41da59dc4cb8aeca8970bcb2ac71&oe=5F0D5154",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/104207567_1200486363624775_8447128499919432156_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_ohc=3CjRRXPXIa0AX_SG4pM&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9dec41da59dc4cb8aeca8970bcb2ac71&oe=5F0D5154 - https://scontent.xx.fbcdn.net/v/t1.15752-9/104207567_1200486363624775_8447128499919432156_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_ohc=3CjRRXPXIa0AX_SG4pM&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9dec41da59dc4cb8aeca8970bcb2ac71&oe=5F0D5154 - tmp_link
+- giá nhiêu - price - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm XE LẮC CAO CẤP HOLLA -XANH  hiện shop đang có mức giá: *510,000 VND (giá gốc 700,000 VND)*.
+
+",- Xem chi tiết: XE LẮC CAO CẤP HOLLA -XANH,"[1, 'xe_day', [2574]]",,Succeeded,,Succeeded,,,,,
+3,v2.0.22,2020-06-16 12:12:14,"2819758998135770
+Liên Thach Thi",Gửi về tỉnh Sóc Trăng có tính ship ko shop,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,Succeeded,,,,,
+4,v2.0.22,2020-06-15 14:27:55,"2965298680190747
+Xu Xu",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Xu Xu, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,Out of scope,,,,,
+4,v2.0.22,2020-06-15 14:31:16,"2965298680190747
+Xu Xu",cho e hoi minh co thanh chắn giường 1m6x2m k ạ,,query_knowledge_base,"- thanh chắn giường - thanh_chan_giuong - object_type
+- 1m6x2m - 1m6x2m - size","action_query_babe_kb
+action_ask_confirm_attribute_value","policy_3_EmbeddingPolicy
+None","Dạ, sản phẩm Thanh Chắn Giường kích thước 1M6X2M hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!
+","Hiện tại sản phẩm Thanh Chắn Giường   shop đang có những *kích thước* sau ạ:
+- 1.8M
+- 1.5M
+- 2M
+- 2.2M
+- 1.6M
+- Sao cũng được!",,,Out of scope,,Out of scope,Action,,,Tối ưu search thông tin về sản phẩm,
+4,v2.0.22,2020-06-15 14:31:16,"2965298680190747
+Xu Xu",dạ e cảm on ạ,,thank,,utter_thank,policy_3_EmbeddingPolicy,"Dạ, cảm ơn bạn!
+",,,,Succeeded,,Out of scope,,,,,
+5,v2.0.22,2020-06-08 17:07:13,"2329180160437545
+Xuan Swan",Cho e xin mẫu xe cân bằng bé 2t đi đc nhé,,query_knowledge_base,"- xe cân - xe cân - object_type
+- 2t - 2t - age_of_use","action_query_babe_kb
+action_ask_confirm_object_type","policy_0_MemoizationPolicy
+None",,"Sản phẩm bạn đang tìm có phải là?
+- Xe Cân Bằng
+- Chăn
+- Ghế Ăn
+- Không đúng!",,,Succeeded,,As expected,,,,,
+5,v2.0.22,2020-06-08 17:07:40,"2329180160437545
+Xuan Swan","/confirm_object_type{""object_type"": ""xe_can_bang""}",,confirm_object_type,"- {""object_type"": ""xe_can_bang""} - xe_can_bang - object_type",action_query_babe_kb,policy_3_EmbeddingPolicy,"Dạ, sản phẩm Xe Cân Bằng độ tuổi sử dụng 2T hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!
+",,,,Succeeded,,As expected,,,,,
+5,v2.0.22,2020-06-08 17:07:40,"2329180160437545
+Xuan Swan",Thanks shop,,thank,,utter_thank,policy_3_EmbeddingPolicy,"Cảm ơn bạn!
+",,,,Succeeded,,As expected,,,,,
+6,v2.0.22,2020-06-10 11:46:00,"1817724428325324
+Bun Dang",https://scontent.xx.fbcdn.net/v/t1.15752-9/102333411_683428905781158_5641958259381239808_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=-6ke0DZ3hB8AX-tud5H&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d98070b8dabc57454a6c9094a72b2196&oe=5F07C745,,send_link,- https://scontent.xx.fbcdn.net/v/t1.15752-9/102333411_683428905781158_5641958259381239808_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=-6ke0DZ3hB8AX-tud5H&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d98070b8dabc57454a6c9094a72b2196&oe=5F07C745 - https://scontent.xx.fbcdn.net/v/t1.15752-9/102333411_683428905781158_5641958259381239808_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=-6ke0DZ3hB8AX-tud5H&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d98070b8dabc57454a6c9094a72b2196&oe=5F07C745 - tmp_link,"action_handle_send_link_only
+action_query_babe_kb","policy_1_MappingPolicy
+None","Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+
+",- Xem chi tiết: Bộ bảng gỗ chữ,"[1, 'bo_do_choi', [2580]]",,Succeeded,,Succeeded,,,,,
+6,v2.0.22,2020-06-10 11:48:16,"1817724428325324
+Bun Dang",T lấy 1 bộ này nhé,,query_knowledge_base,- bộ này - bộ này - mention,action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+
+",- Xem chi tiết: Bộ bảng gỗ chữ,,,Succeeded,,Succeeded,,,,,
+6,v2.0.22,2020-06-10 11:48:17,"1817724428325324
+Bun Dang",Ship t đc này nhé khu xí nghiệp ép dầu xã tam hợp huyện bình xuyên tỉnh Vĩnh phúc 0985341344,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,Succeeded,,,,,
+7,v2.0.22,2020-06-04 10:31:24,"3117181191668133
+Vuong Loan",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Vuong Loan, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+7,v2.0.22,2020-06-04 10:31:35,"3117181191668133
+Vuong Loan","/query_knowledge_base{""object_type"": ""ghe_an"",""brand"": ""mastela""}",,query_knowledge_base,"- {""object_type"": ""ghe_an"",""brand"": ""mastela""} - ghe_an - object_type
+- {""object_type"": ""ghe_an"",""brand"": ""mastela""} - mastela - brand","action_query_babe_kb
+action_ask_confirm_attribute_value","policy_0_MemoizationPolicy
+None",,"Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *màu* sau ạ:
+- Hồng
+- Ghi
+- Be Vàng
+- Đen
+- Xanh
+- Be Sáng
+- Sao cũng được!",,,Succeeded,,As expected,,,,,
+7,v2.0.22,2020-06-04 10:32:30,"3117181191668133
+Vuong Loan","/confirm_attribute_value{""color"": ""Ghi""}",,confirm_attribute_value,"- {""color"": ""Ghi""} - Ghi - color","action_query_babe_kb
+action_ask_confirm_attribute_value","policy_1_MappingPolicy
+None",,"Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela,  Ghi  shop đang có những *giá* sau ạ:
+- 100K - 500K
+- 500K - 1M
+- Sao cũng được!",,,Succeeded,,As expected,,,,,
+7,v2.0.22,2020-06-04 10:33:06,"3117181191668133
+Vuong Loan","Mình muốn lấy ghế mastela 1015, thấy shop rep là còn mỗi mẫu ghi T9",,query_knowledge_base,"- ghế - ghe - object_type
+- mastela - mastela - brand","action_query_babe_kb
+action_ask_confirm_attribute_value","policy_3_EmbeddingPolicy
+None",,"Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *giá* sau ạ:
+- 100K - 500K
+- 500K - 1M
+- 2M - 5M
+- Sao cũng được!",,,Out of scope,,As expected,,,,,
+7,v2.0.22,2020-06-04 10:33:07,"3117181191668133
+Vuong Loan",shop ship giúp mình về vinhome 54 nguyễn chí thanh thì phí ship bao nhiêu ah,,handover_to_inbox,"- vinhome - vinhome - brand
+- bao nhiêu - price - attribute",action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Out of scope,,As expected,,,,,
+8,v2.0.22,03/06/2020 9:21:00,"2790005444439423
+Hà Hương Phạm",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Hà Hương Phạm, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+8,v2.0.22,03/06/2020 9:22:51,"2790005444439423
+Hà Hương Phạm",C bán máy giặt mini hả,,query_knowledge_base,- máy giặt mini - may_giat - object_type,action_query_babe_kb,policy_0_MemoizationPolicy,"Sản phẩm Máy giặt tự động mini DOUX  hiện shop đang có mức giá: *2,990,000 VND (giá gốc 4,000,000 VND)*.
+
+",- Xem chi tiết: Máy giặt tự động mini DOUX,,,Succeeded,,As expected,,,,,
+8,v2.0.22,03/06/2020 9:24:42,"2790005444439423
+Hà Hương Phạm",Máy đó giặt đồ người lớn được ko,,query_knowledge_base,"- Máy - may - object_type
+- đó - đó - mention",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm Máy giặt tự động mini DOUX  hiện shop đang có mức giá: *2,990,000 VND (giá gốc 4,000,000 VND)*.
+
+",- Xem chi tiết: Máy giặt tự động mini DOUX,,,Out of scope,,As expected,,,,,
+8,v2.0.22,03/06/2020 9:24:42,"2790005444439423
+Hà Hương Phạm",E ở bà rịa Vũng tàu phí giao hàng thế nào shop,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+9,v2.0.21,2020-05-28 15:40:43,"2933878246677426
+Thu Hà",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Thu Hà, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+9,v2.0.21,2020-05-28 15:40:54,"2933878246677426
+Thu Hà",Em muốn mua ghế mastela 1015 chấm bi,,query_knowledge_base,"- ghế - ghe - object_type
+- mastela - mastela - brand","action_query_babe_kb
+action_ask_confirm_object_type","policy_0_MemoizationPolicy
+None",,"Sản phẩm bạn đang tìm có phải là?
+- Bộ Bàn Ghế
+- Ghế Đa Năng
+- Ghế Ô Tô
+- Ghế Ăn
+- Không đúng!",,,Succeeded,,As expected,,,,"Ghế mastela có nhiều loại ghế nên bot hỏi lại như vậy cũng hợp lý, nhưng chỉ nên đưa ra những object type có brand là Mastela (Ở đây Bộ bàn ghế & Ghế ô tô ko có brand Mastela)",
+9,v2.0.21,2020-05-28 15:40:55,"2933878246677426
+Thu Hà",Có ship hồ chí minh k ạ,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+10,v2.0.21,2020-05-28 11:04:51,"1731078646920484
+Huong Ly Pham","Shop có đủ bộ như ntn k shop ơi?
+https://scontent.xx.fbcdn.net/v/t1.15752-9/99431255_1094842624249055_1029142316662652928_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=s__ppRiq4ecAX9zzMHF&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=40e90f5f5cc23fe34e2968a0d08f629d&oe=5EF39324",,query_knowledge_base,- https://scontent.xx.fbcdn.net/v/t1.15752-9/99431255_1094842624249055_1029142316662652928_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=s__ppRiq4ecAX9zzMHF&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=40e90f5f5cc23fe34e2968a0d08f629d&oe=5EF39324 - https://scontent.xx.fbcdn.net/v/t1.15752-9/99431255_1094842624249055_1029142316662652928_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=s__ppRiq4ecAX9zzMHF&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=40e90f5f5cc23fe34e2968a0d08f629d&oe=5EF39324 - url,"action_query_babe_kb
+utter_ask_rephrase_obj_type","policy_3_EmbeddingPolicy
+policy_3_EmbeddingPolicy","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!
+",,None,,Succeeded,,Out of scope,,,,,
+10,v2.0.21,2020-05-28 11:05:32,"1731078646920484
+Huong Ly Pham",Phụ kiện của máy hút sữa medela pump ấy,,query_knowledge_base,"- máy hút sữa - may_hut_sua - object_type
+- medela pump - medela pump - brand","action_query_babe_kb
+action_ask_confirm_attribute_value","policy_3_EmbeddingPolicy
+None","Dạ, sản phẩm Máy Hút Sữa hãng sản xuất Medela Pump hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!
+","Hiện tại sản phẩm Máy Hút Sữa  shop đang có những *hãng sản xuất* sau ạ:
+- Avent
+- Sao cũng được!",,,Out of scope,,Out of scope,,,,,
+10,v2.0.21,2020-05-28 11:05:32,"1731078646920484
+Huong Ly Pham",Vậy cám ơn b nhé,,thank,,utter_thank,policy_3_EmbeddingPolicy,"Dạ, cảm ơn ạ!
+",,,,Succeeded,,Out of scope,,,,,
+11,v2.0.21,2020-05-27 15:54:47,"2102598353122831
+Bạch Tiên Trần",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Bạch Tiên Trần, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+11,v2.0.21,2020-05-27 15:55:00,"2102598353122831
+Bạch Tiên Trần","https://scontent.xx.fbcdn.net/v/t1.15752-9/100961730_855085051656627_2338730484332232704_n.png?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=e9cGh7XDk8YAX-l2u5k&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=a8abb1dc28aae21cbb096b3bf9d96c46&oe=5EF21424
+Này giá bn shop",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/100961730_855085051656627_2338730484332232704_n.png?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=e9cGh7XDk8YAX-l2u5k&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=a8abb1dc28aae21cbb096b3bf9d96c46&oe=5EF21424 - https://scontent.xx.fbcdn.net/v/t1.15752-9/100961730_855085051656627_2338730484332232704_n.png?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=e9cGh7XDk8YAX-l2u5k&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=a8abb1dc28aae21cbb096b3bf9d96c46&oe=5EF21424 - url
+- Này - này - mention
+- giá bn - price - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  GHẾ NHẢY JUMPEROO KONIG KIDS CHÍNH HÃNG  hiện shop đang có giá: *1,950,000 VND, 1,190,000 VND (giá gốc 1,950,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết: GHẾ NHẢY JUMPEROO KONIG KIDS CHÍNH HÃNG,"[True, None, [2022, 2023, 2024, 2025]]",,Succeeded,,As expected,,,,,
+11,v2.0.21,2020-05-27 15:55:00,"2102598353122831
+Bạch Tiên Trần",Có ship về bến tre k shop,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:40:20,"2993150844139283
+Phạm Hồng Duy",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Phạm Hồng Duy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:40:39,"2993150844139283
+Phạm Hồng Duy","Alo shop
+https://scontent.xx.fbcdn.net/v/t1.15752-9/99422528_243340950226642_4638309592982355968_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQmeyMdCf9OZ-jX27lOflnof7uNfjFbRg6Ykqid5I7BbrMUF1L2FzsKNwZ949A-seyLQlzZdW0q1t1Z9ykBXSGPe&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=0e54b05eab3fa66e183e3a9615174d73&oe=5EF194AB
+Mình muốn mua xe này",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/99422528_243340950226642_4638309592982355968_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQmeyMdCf9OZ-jX27lOflnof7uNfjFbRg6Ykqid5I7BbrMUF1L2FzsKNwZ949A-seyLQlzZdW0q1t1Z9ykBXSGPe&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=0e54b05eab3fa66e183e3a9615174d73&oe=5EF194AB - https://scontent.xx.fbcdn.net/v/t1.15752-9/99422528_243340950226642_4638309592982355968_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQmeyMdCf9OZ-jX27lOflnof7uNfjFbRg6Ykqid5I7BbrMUF1L2FzsKNwZ949A-seyLQlzZdW0q1t1Z9ykBXSGPe&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=0e54b05eab3fa66e183e3a9615174d73&oe=5EF194AB - url
+- xe - xe - object_type
+- này - này - mention",action_query_babe_kb,policy_3_EmbeddingPolicy,"Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!
+",- Xem chi tiết: Xe chòi chân có bàn đạp cao cấp Motion,"[True, 'xe_choi_chan', [2232]]",,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:42:00,"2993150844139283
+Phạm Hồng Duy",Bé nhà mình 2 tuổi,,query_knowledge_base,- 2 tuổi - 2 tuổi - age_of_use,action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  Xe Chòi Chân độ tuổi sử dụng 2 Tuổi hiện shop đang có giá: *576,000 VND (giá gốc 800,000 VND), 375,000 VND (giá gốc 590,000 VND), 499,000 VND (giá gốc 800,000 VND), 580,000 VND (giá gốc 800,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+","- Xem chi tiết: Xe chòi chân cao cấp Luddy CHÍNH HÃNG
+- Xem chi tiết: Xe chòi chân có bàn đạp cao cấp Motion",,,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:42:13,"2993150844139283
+Phạm Hồng Duy","https://scontent.xx.fbcdn.net/v/t1.15752-9/99112691_3409442169085699_594511438991589376_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_oc=AQlAiQhgWG4EoprKs2j1wIE9330HkiHm1G3s7XrHcqXsj6ugVpgLhBhSOlIWDD58FXb4jbA91QaejhaaNNHDmYa2&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=b68559bbff4594e22b68f22c28200366&oe=5EF14B65
+Loại này",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/99112691_3409442169085699_594511438991589376_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_oc=AQlAiQhgWG4EoprKs2j1wIE9330HkiHm1G3s7XrHcqXsj6ugVpgLhBhSOlIWDD58FXb4jbA91QaejhaaNNHDmYa2&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=b68559bbff4594e22b68f22c28200366&oe=5EF14B65 - https://scontent.xx.fbcdn.net/v/t1.15752-9/99112691_3409442169085699_594511438991589376_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_oc=AQlAiQhgWG4EoprKs2j1wIE9330HkiHm1G3s7XrHcqXsj6ugVpgLhBhSOlIWDD58FXb4jbA91QaejhaaNNHDmYa2&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=b68559bbff4594e22b68f22c28200366&oe=5EF14B65 - url
+- Loại này - loại này - mention",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  Xe chòi chân có bàn đạp cao cấp Motion  hiện shop đang có giá: *375,000 VND (giá gốc 590,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết: Xe chòi chân có bàn đạp cao cấp Motion,"[True, 'xe_choi_chan', [2232]]",,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:45:41,"2993150844139283
+Phạm Hồng Duy",Màu xanh,,query_knowledge_base,- Màu xanh - màu xanh - color,action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm   Xe chòi chân kiêm xe lắc cao cấp có nhạc Holla  Màu Xanh hiện shop đang có giá: *790,000 VND (giá gốc 1,200,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết:  Xe chòi chân kiêm xe lắc cao cấp có nhạc Holla,,,Out of scope,,As expected,,,,Do xe motion hết màu xanh nên bot trả về xe khác màu xanh,
+12,v2.0.21,2020-05-25 16:45:51,"2993150844139283
+Phạm Hồng Duy",Tham khảo gì nữa mình thích cái này màu xanh,,query_knowledge_base,"- Tham - tham - object_type
+- màu xanh - màu xanh - color",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  Thảm  Màu Xanh hiện shop đang có giá: *530,000 VND (giá gốc 800,000 VND), 279,000 VND (giá gốc 349,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+","- Xem chi tiết: Thảm xốp ghép 28 tấm INFANTINO (Mỹ)
+- Xem chi tiết: Thảm chơi cao cấp đa năng Konig Kids CHÍNH HÃNG",,,Out of scope,,As expected,Ner,Fixed,Ok,NER đang bắt là thảm và màu xanh,
+12,v2.0.21,2020-05-25 16:46:23,"2993150844139283
+Phạm Hồng Duy",https://scontent.xx.fbcdn.net/v/t1.15752-9/99344048_535956657082431_7179934379622268928_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQn-B7e-0xyyeogYjbsjOFQtOSzEadMggZkEybyRuKRlrWKIu7hWgmdvSG4_QIG5AJQUVb2XLdpXpVyzhIaGMP82&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=0e24d561e4925c7d92a8b6ff4245e559&oe=5EEFC369,,send_link,- https://scontent.xx.fbcdn.net/v/t1.15752-9/99344048_535956657082431_7179934379622268928_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQn-B7e-0xyyeogYjbsjOFQtOSzEadMggZkEybyRuKRlrWKIu7hWgmdvSG4_QIG5AJQUVb2XLdpXpVyzhIaGMP82&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=0e24d561e4925c7d92a8b6ff4245e559&oe=5EEFC369 - https://scontent.xx.fbcdn.net/v/t1.15752-9/99344048_535956657082431_7179934379622268928_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQn-B7e-0xyyeogYjbsjOFQtOSzEadMggZkEybyRuKRlrWKIu7hWgmdvSG4_QIG5AJQUVb2XLdpXpVyzhIaGMP82&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=0e24d561e4925c7d92a8b6ff4245e559&oe=5EEFC369 - url,"action_handle_send_link_only
+action_query_babe_kb","policy_1_MappingPolicy
+None","Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!
+",- Xem chi tiết: Xe chòi chân có bàn đạp cao cấp Motion,"[True, 'xe_choi_chan', [2232]]",,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:47:19,"2993150844139283
+Phạm Hồng Duy","Hic
+Đang hỏi xe lại quảng cáo thảm",,query_knowledge_base,,"action_query_babe_kb
+action_ask_confirm_attribute_value","policy_3_EmbeddingPolicy
+None",,"Hiện tại sản phẩm Xe Chòi Chân  shop đang có những *giá* sau ạ:
+- 100k - 500k
+- 500k - 1M
+- Sao cũng được!",,,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:48:33,"2993150844139283
+Phạm Hồng Duy","https://scontent.xx.fbcdn.net/v/t1.15752-9/100818919_173355597435819_533321091465084928_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_oc=AQm2H2s1lEY8Nsb-0r3NXJJybjXeo3tsi3YA81oszW9oE2o1Jqf56iO3zylA-AEGxC59UNfkSC1_RTZ14-goj5D_&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=ecfa348eaba1f0a3abf3af1536556c6e&oe=5EEF3B1B
+Cái này gia bao tiền
+Shop có ship ko bạn",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/100818919_173355597435819_533321091465084928_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_oc=AQm2H2s1lEY8Nsb-0r3NXJJybjXeo3tsi3YA81oszW9oE2o1Jqf56iO3zylA-AEGxC59UNfkSC1_RTZ14-goj5D_&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=ecfa348eaba1f0a3abf3af1536556c6e&oe=5EEF3B1B - https://scontent.xx.fbcdn.net/v/t1.15752-9/100818919_173355597435819_533321091465084928_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_oc=AQm2H2s1lEY8Nsb-0r3NXJJybjXeo3tsi3YA81oszW9oE2o1Jqf56iO3zylA-AEGxC59UNfkSC1_RTZ14-goj5D_&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=ecfa348eaba1f0a3abf3af1536556c6e&oe=5EEF3B1B - url
+- Cái này - cái này - mention
+- gia bao tiền - price - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  Xe chòi chân có bàn đạp cao cấp Motion  hiện shop đang có giá: *375,000 VND (giá gốc 590,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết: Xe chòi chân có bàn đạp cao cấp Motion,"[True, 'xe_choi_chan', [2232]]",,Succeeded,,As expected,,,,,
+12,v2.0.21,2020-05-25 16:48:34,"2993150844139283
+Phạm Hồng Duy",Ok Mình chốt - Shop có ship không bạn mình ở Ngã 4 Sở - Hà Nội . Xe này điều chỉnh dc yên cao thấp đúng ko ?,,handover_to_inbox,"- Xe - xe - object_type
+- này - này - mention",action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+13,v2.0.21,2020-05-25 13:15:21,"1522408901159722
+Kelly Leung","bộ chữ số nhiue tiền vậy
+shop",,query_knowledge_base,- nhiue tiền - price - attribute,"action_query_babe_kb
+utter_ask_rephrase_obj_type","policy_3_EmbeddingPolicy
+policy_3_EmbeddingPolicy","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!
+",,,,Succeeded,,As expected,,,,,
+13,v2.0.21,2020-05-25 13:19:23,"1522408901159722
+Kelly Leung",https://scontent.xx.fbcdn.net/v/t1.15752-9/98291294_2304747203166799_8431726443699896320_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=wDcgidGMHXIAX9cXIHq&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=509d2b9849e919f882733e071f00218c&oe=5EF120D3,,send_link,- https://scontent.xx.fbcdn.net/v/t1.15752-9/98291294_2304747203166799_8431726443699896320_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=wDcgidGMHXIAX9cXIHq&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=509d2b9849e919f882733e071f00218c&oe=5EF120D3 - https://scontent.xx.fbcdn.net/v/t1.15752-9/98291294_2304747203166799_8431726443699896320_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=wDcgidGMHXIAX9cXIHq&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=509d2b9849e919f882733e071f00218c&oe=5EF120D3 - url,"action_handle_send_link_only
+action_query_babe_kb","policy_1_MappingPolicy
+None","Sản phẩm  Bộ bảng gỗ chữ  hiện shop đang có giá: *140,000 VND (giá gốc 210,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết: Bộ bảng gỗ chữ,"[True, 'bo_do_choi', [2580]]",,Succeeded,,As expected,,,,,
+13,v2.0.21,2020-05-25 13:19:24,"1522408901159722
+Kelly Leung",ah giao qua q11 có freeship ko shop,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+14,v2.0.21,19/05/2020 11:50:11,"1554941577928504
+Tho Nguyen",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Tho Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,As expected,,,,,
+14,v2.0.21,19/05/2020 11:51:09,"1554941577928504
+Tho Nguyen","https://scontent.xx.fbcdn.net/v/t1.15752-9/97994706_239865733964621_3284533693669965824_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=VHXe4YfeLvYAX9eXeaT&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=f462ff55364023347febebf32fbef75b&oe=5EE722B2
+Bộ này bn b?",,query_knowledge_base,"- https://scontent.xx.fbcdn.net/v/t1.15752-9/97994706_239865733964621_3284533693669965824_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=VHXe4YfeLvYAX9eXeaT&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=f462ff55364023347febebf32fbef75b&oe=5EE722B2 - https://scontent.xx.fbcdn.net/v/t1.15752-9/97994706_239865733964621_3284533693669965824_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=VHXe4YfeLvYAX9eXeaT&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=f462ff55364023347febebf32fbef75b&oe=5EE722B2 - url
+- Bộ này - bộ này - mention
+- bn - price - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  Bộ bảng gỗ chữ  hiện shop đang có giá: *140,000 VND (giá gốc 210,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết: Bộ bảng gỗ chữ,"[True, 'bo_do_choi', [2580]]",,Succeeded,,As expected,,,,,
+14,v2.0.21,19/05/2020 11:51:21,"1554941577928504
+Tho Nguyen",Để mình coi có mua gì thêm ko rồi báo b ship nha,,handover_to_inbox,,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,As expected,,,,,
+14,v2.0.21,19/05/2020 11:51:21,"1554941577928504
+Tho Nguyen",B có shoppee ko?,,query_knowledge_base,- shoppee - link - attribute,"action_query_babe_kb
+utter_ask_rephrase_obj_type","policy_3_EmbeddingPolicy
+policy_3_EmbeddingPolicy","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!
+",,,,Out of scope,,As expected,,,,,
+15,v2.0.20,2020-05-14 09:07:36,"3449112791789679
+Quỳnh Chan",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Quỳnh Chan, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,Succeeded,,,,,
+15,v2.0.20,2020-05-14 09:08:57,"3449112791789679
+Quỳnh Chan","https://scontent.xx.fbcdn.net/v/t1.15752-9/97106137_976169842801150_5473544096259768320_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=Bh2IePFwq7AAX_3S4fm&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=3f061da8a5163f4e7134eca833400519&oe=5EE371F8
+set này bn tiền ạ",,query_knowledge_base,"-  - ['https://scontent.xx.fbcdn.net/v/t1.15752-9/97106137_976169842801150_5473544096259768320_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=Bh2IePFwq7AAX_3S4fm&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=3f061da8a5163f4e7134eca833400519&oe=5EE371F8'] - url
+- bn tiền - price - attribute",action_query_babe_kb,policy_3_EmbeddingPolicy,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)
+","- Xem chi tiết: Cầu trượt xích đu Hola hải cẩu 2020
+- Xem chi tiết: CẦU TRƯỢT BẬP BÊNH HOLLA 3IN1
+- Xem chi tiết: Cầu trượt gấp gọn Toys House
+...
+- Không có cái nào!",None,,Succeeded,,Succeeded,,,,,
+15,v2.0.20,2020-05-14 09:08:57,"3449112791789679
+Quỳnh Chan","ok thanks shop, mình sẽ nghiên cứu thêm",,thank,,utter_thank,policy_3_EmbeddingPolicy,"Cảm ơn bạn!
+",,,,Succeeded,,Succeeded,,,,,
+16,v2.0.20,2020-05-13 08:40:51,"4051722688178645
+Thu Thảo",/start_conversation,,start_conversation,,,,,,,,Succeeded,,Succeeded,,,,,
+16,v2.0.20,2020-05-13 08:40:59,"4051722688178645
+Thu Thảo",Get started,,,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Thu Thảo, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!
+",,,,Succeeded,,Succeeded,,,,,
+16,v2.0.20,2020-05-13 08:41:34,"4051722688178645
+Thu Thảo",C ơi,,greet,,utter_greet,policy_3_EmbeddingPolicy,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?
+",,,,Succeeded,,Succeeded,,,,,
+16,v2.0.20,2020-05-13 08:43:13,"4051722688178645
+Thu Thảo","Nhà mình có sẵn nôi điện này ko ạ
+https://scontent.xx.fbcdn.net/v/t1.15752-9/97090845_3340474982632418_3198623249554472960_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=w0BKOYvQtTUAX_WEaKF&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=beafca419b4a79df520881ef423c3906&oe=5EE0AF50
+Như hình ah",,query_knowledge_base,"-  - ['https://scontent.xx.fbcdn.net/v/t1.15752-9/97090845_3340474982632418_3198623249554472960_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=w0BKOYvQtTUAX_WEaKF&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=beafca419b4a79df520881ef423c3906&oe=5EE0AF50'] - url
+- nôi - noi - object_type",action_query_babe_kb,policy_3_EmbeddingPolicy,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)
+","- Xem chi tiết: Nôi đưa cao cấp Mastela SG239
+- Xem chi tiết: Nôi đưa cao cấp Mastela SG237
+- Xem chi tiết: Nôi rung đa năng cao cấp Cozy Rocket Sleeper
+...
+- Không có cái nào!",None,,Succeeded,,Succeeded,,,,,
+16,v2.0.20,2020-05-13 08:44:00,"4051722688178645
+Thu Thảo","/query_knowledge_base{""url"": ""https://shopee.vn/product/36371562/1203811242"", ""product_id"": ""https://shopee.vn/product/36371562/1203811242""}",,query_knowledge_base,"- {""url"": ""https://shopee.vn/product/36371562/1203811242"", ""product_id"": ""https://shopee.vn/product/36371562/1203811242""} - https://shopee.vn/product/36371562/1203811242 - url
+- {""url"": ""https://shopee.vn/product/36371562/1203811242"", ""product_id"": ""https://shopee.vn/product/36371562/1203811242""} - https://shopee.vn/product/36371562/1203811242 - product_id",action_query_babe_kb,policy_3_EmbeddingPolicy,"Sản phẩm  Nôi đưa cao cấp Mastela SG239  hiện shop đang có giá: *1,899,000 VND (giá gốc 2,399,000 VND), 1,799,250 VND (giá gốc 2,399,000 VND), 1,799,000 VND (giá gốc 2,399,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:
+",- Xem chi tiết: Nôi đưa cao cấp Mastela SG239,,,Succeeded,,Succeeded,,,,,
+16,v2.0.20,2020-05-13 08:44:00,"4051722688178645
+Thu Thảo","Dạ
+Ship cod e nôi này nhé",,handover_to_inbox,"- nôi - noi - object_type
+- này - này - mention",action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:00:27,"2915418268579302
+ Hải Yến VP",/start_conversation,,start_conversation,,action_start_conversation,policy_0_MemoizationPolicy,"Chào Hải Yến VP, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+ Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:00:40,"2915418268579302
+ Hải Yến VP",b ơi,,greet,,utter_greet,policy_3_EmbeddingPolicy,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:01:54,"2915418268579302
+ Hải Yến VP",m muốn mua xe đẩy,,query_knowledge_base,- xe đẩy - xe_day - object_type,"action_query_babe_kb
+ action_ask_confirm_attribute_value","policy_3_EmbeddingPolicy
+ None",,"Hiện tại sản phẩm Xe Đẩy shop đang có những *giá* sau ạ:
+ - 500k - 1M
+ - 1M - 2M
+ - 2M - 5M
+ - 5M - 10M
+ - 10M - 20M
+ - Sao cũng được!",,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:02:09,"2915418268579302
+ Hải Yến VP","/confirm_attribute_value{""price"": ""500k - 1M""}",,confirm_attribute_value,"- {""price"": ""500k - 1M""} - 500k - 1M - price","action_query_babe_kb
+ action_ask_confirm_attribute_value","policy_1_MappingPolicy
+ None",,"Hiện tại sản phẩm Xe Đẩy giá 500k - 1m shop đang có những *hãng sản xuất* sau ạ:
+ - Umoo
+ - Zaracos
+ - Holla
+ - Sao cũng được!",,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:02:15,"2915418268579302
+ Hải Yến VP","/confirm_attribute_value{""brand"": ""NULL""}",,confirm_attribute_value,"- {""brand"": ""NULL""} - NULL - brand","action_query_babe_kb
+ action_ask_confirm_attribute_value","policy_1_MappingPolicy
+ None",,"Hiện tại sản phẩm Xe Đẩy giá 500k - 1m shop đang có những *màu* sau ạ:
+ - Xanh
+ - Ghi
+ - Hồng
+ - Xám
+ - Sao cũng được!",,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:03:20,"2915418268579302
+ Hải Yến VP","/confirm_attribute_value{""color"": ""Ghi""}",,confirm_attribute_value,"- {""color"": ""Ghi""} - Ghi - color",action_query_babe_kb,policy_1_MappingPolicy,"Sản phẩm Xe đẩy siêu nhẹ Umoo Ghi, giá 500k - 1m hiện shop đang có giá: *749,000 VND (giá gốc 1,200,000 VND)*.
+ Bạn tham khảo các sản phẩm sau nhé ạ:",- Xem chi tiết: Xe đẩy siêu nhẹ Umoo,,,Succeeded,,Succeeded,,,,,
+17,v2.0.19,12/05/2020 3:03:20,"2915418268579302
+ Hải Yến VP",phí ship về vĩnh yên bao nhiêu ạ,,handover_to_inbox,- bao nhiêu - price - attribute,action_handover_to_inbox,policy_3_EmbeddingPolicy,,,,,Out of scope,,Succeeded,,,,,

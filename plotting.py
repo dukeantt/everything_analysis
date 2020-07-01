@@ -13,11 +13,11 @@ success_convo.insert(6, 'week', week_list)
 
 
 def bar_plot_month():
+    # ---------------------------------------------------------------------------------------------------
     count_success_by_month = success_convo.groupby(["message_timestamp_month"]).count().reset_index()
     month_list = list(count_success_by_month["message_timestamp_month"])
     no_sender_id_each_month = list(count_success_by_month["sender_id"])
     month_count = count_total_convo_on_month()
-    total_conv_on_month = [month_count[x] for x in [x.split("-")[1] for x in month_list]]
 
     fig = go.Figure(data=go.Bar(x=month_list, y=no_sender_id_each_month, text=no_sender_id_each_month))
     fig.update_traces(textposition='outside')
@@ -27,6 +27,10 @@ def bar_plot_month():
                       yaxis_title='Number of successful conversations')
     fig.show()
 
+    # ---------------------------------------------------------------------------------------------------
+    month_list.insert(2, '2020-02')
+    no_sender_id_each_month.insert(2, 0)
+    total_conv_on_month = [month_count[x] for x in [x.split("-")[1] for x in month_list]]
 
     fig = go.Figure(data=[
         go.Bar(name="Successful conversations",x=month_list, y=no_sender_id_each_month, text=no_sender_id_each_month),
@@ -38,6 +42,22 @@ def bar_plot_month():
                       xaxis_title='Month',
                       yaxis_title='Number of conversations',
                       barmode='group',
+                      )
+    fig.show()
+
+    # ---------------------------------------------------------------------------------------------------
+    success_rate = [(a / b) * 100 for a, b in zip(no_sender_id_each_month, total_conv_on_month)]
+    success_rate_text = [str('{0:.2f}'.format(a)) + "%" for a in success_rate]
+    fig = go.Figure(data=[
+        go.Bar(name="Successful conversations", x=month_list, y=success_rate, text=success_rate_text),
+    ])
+    fig.update_traces(textposition='outside')
+    fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
+                      marker_line_width=1.5, opacity=1)
+    fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide')
+    fig.update_layout(title='Success rate of conversations by month',
+                      xaxis_title='Month',
+                      yaxis_title='Conversation success rate',
                       )
     fig.show()
 
@@ -214,4 +234,4 @@ def count_turn():
     top_10_highest_no_turn = list(sorted_counter_turn_by_key.items())[:10]
     return max_turn, min_turn, mean_turn, top_10_turn_happen_most, top_10_highest_no_turn, comeback_customer
 
-count_total_convo_on_week()
+#10/2/2020, 24/02/2020
