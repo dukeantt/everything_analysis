@@ -475,6 +475,10 @@ def correct_sentence_with_word_dict(output_text, abb_dict, ignore, step1_fixed):
 
     # -------------------------- Fix first word --------------------------
     # Todo fix first word
+    try:
+        a = output_text_list[0]
+    except:
+        b = 0
     if output_text_list[0] not in ignore and len(output_text_list) > 1:
         output_text_list = fix_first_word(output_text, output_text_list, step1_fixed)
 
@@ -631,7 +635,8 @@ def do_correction(input_sentence):
     abb_dict, telex_dict, ignore = dict_generate(abbreviation_file, telex_file)
 
     correct_sentence, step1_fixed = correction(input_sentence, abb_dict, telex_dict, ignore)
-    correct_sentence = correction_with_dict(correct_sentence, abb_dict, telex_dict, ignore, step1_fixed)
+    if correct_sentence != "":
+        correct_sentence = correction_with_dict(correct_sentence, abb_dict, telex_dict, ignore, step1_fixed)
     return correct_sentence
 
 
