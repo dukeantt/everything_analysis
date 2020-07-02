@@ -1,6 +1,7 @@
 from utils.helper import *
 from ast import literal_eval
 import pandas as pd
+from datetime import datetime
 
 trash_sender_id = ["default", "me", "abcdef", "123456"]
 
@@ -65,9 +66,67 @@ def count_conversations(all_conv_detail):
     return all_conversations_df_group
 
 
+def get_avg_respond_time(all_conv_detail):
+    turn_take_much_time = []
+    turns_counter = 0
+    total_response_time = 0
+    all_response_time = []
+    format = '%H:%M:%S'
+
+    for sender_info in all_conv_detail.itertuples():
+        sender_id = sender_info.sender_id
+        events = literal_eval(sender_info.events)
+        user_and_bot_events = [x for x in events if x["event"] in ["user", "bot"]]
+        time_date = []
+        for i in range(0, len(user_and_bot_events)):
+            current_event = user_and_bot_events[i]
+            current_event_type = current_event["event"]
+            if current_event_type == "user":
+                if i+1 < len(user_and_bot_events) and user_and_bot_events[i+1]["text"] is not None:
+                    next_event = user_and_bot_events[i+1]
+                    next_event_type = next_event["event"]
+                    if next_event_type == "bot":
+                        timestamp_user = get_timestamp(int(current_event["timestamp"]), format)
+                        timestamp_bot = get_timestamp(int(next_event["timestamp"]), format)
+
+                        tdelta = datetime.strptime(timestamp_bot, format) - datetime.strptime(timestamp_user, format)
+                        tdelta_seconds = tdelta.total_seconds()
+                        total_response_time += tdelta_seconds
+                        if tdelta_seconds >= 10.0:
+                            turn_take_much_time.append((sender_id, current_event["text"], next_event["text"], tdelta_seconds))
+                        all_response_time.append(tdelta_seconds)
+                        turns_counter += 1
+                    else:
+                        continue
+                elif i+2 <len(user_and_bot_events) and user_and_bot_events[i+2]["text"] is not None:
+                    next_event = user_and_bot_events[i+2]
+                    next_event_type = next_event["event"]
+                    if next_event_type == "bot":
+                        timestamp_user = get_timestamp(int(current_event["timestamp"]), format)
+                        timestamp_bot = get_timestamp(int(next_event["timestamp"]), format)
+
+                        tdelta = datetime.strptime(timestamp_bot, format) - datetime.strptime(timestamp_user, format)
+
+                        tdelta_seconds = tdelta.total_seconds()
+                        total_response_time += tdelta_seconds
+                        all_response_time.append(tdelta_seconds)
+                        if tdelta_seconds >= 10.0:
+                            turn_take_much_time.append((sender_id, current_event["text"], next_event["text"], tdelta_seconds))
+                        turns_counter += 1
+                    else:
+                        continue
+            else:
+                continue
+    turn_take_much_time_df = pd.DataFrame(turn_take_much_time, columns=["sender_id", "user_text", "bot_text", "response_time"])
+    turn_take_much_time_df.to_csv("analyze_data/turns_take_much_time.csv", index=False)
+    return 0
+
+
 def main():
     all_conv_detail = get_all_conv_detail()
     all_conv_detail = all_conv_detail[~all_conv_detail["sender_id"].isin(trash_sender_id)]
+
+    get_avg_respond_time(all_conv_detail)
 
     count_conversations_df = count_conversations(all_conv_detail)
     no_conversations = len(count_conversations_df) - 1  # boi vi conversation '1454523434857990' co van de
