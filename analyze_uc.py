@@ -7,7 +7,6 @@ from utils.helper import *
 
 
 def get_sender_id_image_case(all_conv_detail):
-
     """
     Loop all coversation of customer
     Get only conversation in specific month
@@ -23,7 +22,8 @@ def get_sender_id_image_case(all_conv_detail):
         events = literal_eval(conversation.events)
         user_messages = [x for x in events if x["event"] == "user"]
         # Only care about conversation in specific month
-        # user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") == "06"]
+        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["06"]]
+
         conversation_date = []
         for user_message in user_messages:
             timestamp = int(user_message["timestamp"])
@@ -68,15 +68,15 @@ def get_uc2_case(all_conv_about_image, sender_id_image):
                 necessary_info["sender_id"].append(sender_id)
                 necessary_info["message"].append(message_text)
             elif "có" in message_text or "còn" in message_text:
-            # But if found có and còn before giá -> UC1
+                # But if found có and còn before giá -> UC1
                 break
 
     necessary_info_df = pd.DataFrame.from_dict(necessary_info)
     return necessary_info_df
 
 
-def export_all_uc2_to_csv(all_uc2_conversation, dict_info):
-    necessary_info = {"timestamp": [], "sender_id": [], "message": [], "bot_message": []}
+def processing_uc2_conversations(all_uc2_conversation, dict_info):
+    necessary_info = {"timestamp": [], "sender_id": [], "message": [], "bot_message": [], "user_intent": []}
     # Loop all conversations
     for conversation in all_uc2_conversation.itertuples():
         # Already have the sender_id and timestamp of UC2 conversations
@@ -84,27 +84,72 @@ def export_all_uc2_to_csv(all_uc2_conversation, dict_info):
         sender_id = conversation.sender_id
         set_date = dict_info[sender_id]
         events = literal_eval(conversation.events)
-        user_messages = [x for x in events if x["event"] == "user"]
-        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%Y-%m-%d") == set_date]
-        bot_messages = [x for x in events if x["event"] == "bot"]
-        bot_messages = [x for x in bot_messages if get_timestamp(int(x["timestamp"]), "%Y-%m-%d") == set_date]
+        user_bot_messages = [x for x in events if x["event"] in ["user", "bot"]]
+        user_bot_messages = [x for x in user_bot_messages if get_timestamp(int(x["timestamp"]), "%Y-%m-%d") == set_date]
 
-        for i in range(0, len(user_messages)):
-            try:
-                message_text = user_messages[i]["parse_data"]["text"]
-            except Exception as e:
-                message_text = "user text"
-            try:
-                bot_message_text = bot_messages[i]["text"]
-            except Exception as e:
-                bot_message_text = "bot text"
+        for i in range(0, len(user_bot_messages)):
+            current_event = user_bot_messages[i]["event"]
+            if current_event == "user":
 
-            necessary_info["timestamp"].append(set_date)
-            necessary_info["sender_id"].append(sender_id)
-            necessary_info["message"].append(message_text)
-            necessary_info["bot_message"].append(bot_message_text)
+                try:
+                    user_message = user_bot_messages[i]["text"]
+                except:
+                    user_message = "Customer say nothing"
+
+                try:
+                    intent = user_bot_messages[i]['parse_data']["intent"]["name"]
+                except:
+                    intent = "no intent"
+
+                bot_index = i + 1
+                if bot_index < len(user_bot_messages) and user_bot_messages[bot_index]["event"] != "bot":
+                    bot_index = i + 2
+
+                if bot_index < len(user_bot_messages) and user_bot_messages[bot_index]["event"] == "bot":
+                    bot_event = user_bot_messages[bot_index]
+
+                    try:
+                        bot_message_text = bot_event["text"]
+                    except Exception as e:
+                        bot_message_text = "No bot text"
+                    if bot_message_text is None:
+                        bot_message_text = "Bot doing sth"
+
+                    necessary_info["timestamp"].append(set_date)
+                    necessary_info["sender_id"].append(sender_id)
+                    necessary_info["message"].append(user_message)
+                    necessary_info["bot_message"].append(bot_message_text)
+                    necessary_info["user_intent"].append(intent)
+                elif i == len(user_bot_messages) - 1:
+                    necessary_info["timestamp"].append(set_date)
+                    necessary_info["sender_id"].append(sender_id)
+                    necessary_info["message"].append(user_message)
+                    necessary_info["bot_message"].append("bot handover_to_inbox")
+                    necessary_info["user_intent"].append(intent)
+
+                else:
+                    continue
+            else:
+                continue
 
     necessary_info_df = pd.DataFrame.from_dict(necessary_info)
+    conversation_number = []
+    last_conversation = 0
+    for i in range(0, len(necessary_info_df)):
+        if i == 0:
+            conversation_number.append(1)
+            last_conversation = 1
+        else:
+            last_sender_id = necessary_info_df.iloc[i-1]["sender_id"]
+            current_sender_id = necessary_info_df.iloc[i]["sender_id"]
+            if current_sender_id == last_sender_id:
+                conversation_number.append(last_conversation)
+            else:
+                conversation_number.append(last_conversation+1)
+                last_conversation += 1
+
+    necessary_info_df.insert(0, 'id', conversation_number)
+    necessary_info_df.insert(5, 'status', [""] * len(necessary_info_df))
     necessary_info_df.to_csv("analyze_data/uc2_conversation.csv", index=False)
     return necessary_info_df
 
@@ -123,9 +168,9 @@ def main():
     timestamp_info = list(df["timestamp"])
     dict_info = dict(zip(sender_id_info, timestamp_info))
 
-    # Export all uc2 to csv
+    # Processing all uc2
     all_uc2_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info)]
-    export_all_uc2_to_csv(all_uc2_conversation, dict_info)
+    processing_uc2_conversations(all_uc2_conversation, dict_info)
     a = 0
 
 

@@ -2,6 +2,7 @@ from utils.helper import *
 from ast import literal_eval
 import pandas as pd
 from datetime import datetime
+from heuristic_correction import *
 
 trash_sender_id = ["default", "me", "abcdef", "123456"]
 
@@ -42,27 +43,17 @@ def count_conversations(all_conv_detail):
         events = literal_eval(sender_info.events)
         user_events = [x for x in events if x["event"] == "user"]
         bot_events = [x for x in events if x["event"] == "bot"]
-        time_date = []
-        for i in range(0,len(bot_events)):
-            try:
-                bot_text = bot_events[i]["text"]
-            except:
+        for user_event in user_events:
+            user_message = user_event["text"]
+            timestamp_month = get_timestamp(user_event["timestamp"], "%m")
+            if timestamp_month not in ["03", "04", "05", "06"]:
                 continue
-            if bot_text is None:
-                continue
-            timestamp = get_timestamp(bot_events[i]["timestamp"], "%Y-%m-%d")
-            timestamp_time = get_timestamp(bot_events[i]["timestamp"], "%H:%M:%S")
-            if i in user_events:
-                user_message = user_events[i]["parse_data"]["text"]
-            else:
-                user_message = "no message"
+            timestamp = get_timestamp(user_event["timestamp"], "%Y-%m-%d")
+            timestamp_time = get_timestamp(user_event["timestamp"], "%H:%M:%S")
             all_conversations.append((sender_id, timestamp, user_message, timestamp_time))
 
-            # if timestamp not in time_date:
-            #     time_date.append(timestamp)
-        a = 0
-    all_conversations_df = pd.DataFrame(all_conversations,columns=["sender_id", "timestamp", "user_message", "timestamp_date"])
-    all_conversations_df_group = all_conversations_df.groupby(["sender_id","timestamp"]).size().to_frame("turns").reset_index()
+    all_conversations_df = pd.DataFrame(all_conversations, columns=["sender_id", "timestamp", "user_message", "timestamp_time"])
+    all_conversations_df_group = all_conversations_df.groupby(["sender_id", "timestamp"]).size().to_frame("turns").reset_index()
     return all_conversations_df_group
 
 
@@ -73,6 +64,8 @@ def get_avg_respond_time(all_conv_detail):
     all_response_time = []
     format = '%H:%M:%S'
 
+    success_events = []
+
     for sender_info in all_conv_detail.itertuples():
         sender_id = sender_info.sender_id
         events = literal_eval(sender_info.events)
@@ -81,7 +74,22 @@ def get_avg_respond_time(all_conv_detail):
         for i in range(0, len(user_and_bot_events)):
             current_event = user_and_bot_events[i]
             current_event_type = current_event["event"]
-            if current_event_type == "user":
+            if current_event_type == "user" and current_event["text"] is not None:
+                timestamp_month = get_timestamp(current_event["timestamp"], "%m")
+                if timestamp_month not in ["03", "04", "05", "06"]:
+                    continue
+                message = current_event["text"].lower()
+                message = message.replace("\n", ". ")
+                message = do_correction(message)
+                key_word = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk",
+                            "số tài khoản"]
+                # for word in key_word:
+                #     if word in message:
+                #         timestamp = get_timestamp(int(current_event["timestamp"]), "%Y-%m-%d")
+                #         timestamp_time = get_timestamp(int(current_event["timestamp"]), "%H:%M:%S")
+                #         success_events.append((sender_id, timestamp, timestamp_time, message))
+                #         break
+
                 if i+1 < len(user_and_bot_events) and user_and_bot_events[i+1]["text"] is not None:
                     next_event = user_and_bot_events[i+1]
                     next_event_type = next_event["event"]
@@ -117,25 +125,31 @@ def get_avg_respond_time(all_conv_detail):
                         continue
             else:
                 continue
+    success_events_df = pd.DataFrame(success_events, columns=["sender_id", "timestamp","timestamp_time", "message"])
+    filter_word = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
+    for word in filter_word:
+        success_events_df = success_events_df[~success_events_df["message"].str.lower().str.contains(word)]
+    success_events_df = success_events_df.drop_duplicates(subset=["sender_id", "message"])
+    success_events_df = success_events_df.drop_duplicates(subset=["sender_id", "timestamp"])
     turn_take_much_time_df = pd.DataFrame(turn_take_much_time, columns=["sender_id", "user_text", "bot_text", "response_time"])
     turn_take_much_time_df.to_csv("analyze_data/turns_take_much_time.csv", index=False)
     return 0
 
 
 def main():
-    all_conv_detail = get_all_conv_detail()
+    # all_conv_detail = get_all_conv_detail()
+    all_conv_detail = pd.read_csv("analyze_data/all_conversations_without_trash.csv")
     all_conv_detail = all_conv_detail[~all_conv_detail["sender_id"].isin(trash_sender_id)]
 
     get_avg_respond_time(all_conv_detail)
 
     count_conversations_df = count_conversations(all_conv_detail)
-    no_conversations = len(count_conversations_df) - 1  # boi vi conversation '1454523434857990' co van de
+    no_conversations = len(count_conversations_df)
     all_turns = list(count_conversations_df["turns"])
     average_turn = sum(all_turns) / len(all_turns)
 
     sender_ids = list(set(list(all_conv_detail["sender_id"])))
     total_customer = len(sender_ids)
-
     all_bot_message_df = get_all_line_chat(all_conv_detail)
     all_bot_message_df = all_bot_message_df[~all_bot_message_df["bot_text"].isnull()]
     total_line_serve = len(all_bot_message_df)
