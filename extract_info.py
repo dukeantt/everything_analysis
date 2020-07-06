@@ -46,15 +46,94 @@ def count_conversations(all_conv_detail):
         for user_event in user_events:
             user_message = user_event["text"]
             timestamp_month = get_timestamp(user_event["timestamp"], "%m")
-            if timestamp_month not in ["03", "04", "05", "06"]:
+            # if timestamp_month not in ["03", "04", "05", "06"]:
+            if timestamp_month not in ["04", "05", "06"]:
                 continue
             timestamp = get_timestamp(user_event["timestamp"], "%Y-%m-%d")
             timestamp_time = get_timestamp(user_event["timestamp"], "%H:%M:%S")
-            all_conversations.append((sender_id, timestamp, user_message, timestamp_time))
+            try:
+                user_intent = user_event["parse_data"]["intent"]["name"]
+            except:
+                user_intent = " "
 
-    all_conversations_df = pd.DataFrame(all_conversations, columns=["sender_id", "timestamp", "user_message", "timestamp_time"])
+            all_conversations.append((sender_id, timestamp, user_message, user_intent, timestamp_time))
+
+    all_conversations_df = pd.DataFrame(all_conversations, columns=["sender_id", "timestamp", "user_message", "user_intent", "timestamp_time"])
+    count_start_conversation(all_conversations_df)
+
     all_conversations_df_group = all_conversations_df.groupby(["sender_id", "timestamp"]).size().to_frame("turns").reset_index()
+    conversations_division = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, ">=10": 0}
+    sender_ids = list(set(all_conversations_df["sender_id"]))
+    for sender_id in sender_ids:
+        no_conversation = len(all_conversations_df_group[all_conversations_df_group["sender_id"] == sender_id])
+        if no_conversation >=10:
+            conversations_division[">=10"] += 1
+        else:
+            conversations_division[str(no_conversation)] += 1
+
+
     return all_conversations_df_group
+
+
+def count_start_conversation(all_conversations_df):
+    no_get_started = all_conversations_df[all_conversations_df["user_message"] == '/start_conversation']
+    no_greet = all_conversations_df[all_conversations_df["user_intent"] == "greet"]
+
+    no_get_started_group = no_get_started.groupby(["sender_id", "timestamp"]).size().to_frame("times").reset_index()
+    no_greet_group = no_greet.groupby(["sender_id", "timestamp"]).size().to_frame("times").reset_index()
+
+    no_get_started_more_than_one = no_get_started_group[no_get_started_group["times"] > 1]
+    no_greet_more_than_one = no_greet_group[no_greet_group["times"] > 1]
+
+    no_get_started_more_than_one_sender_id = list(set(no_get_started_more_than_one["sender_id"]))
+    no_greet_more_than_one_sender_id = list(set(no_greet_more_than_one["sender_id"]))
+
+    special_case_sender_id = no_get_started_more_than_one_sender_id + no_greet_more_than_one_sender_id
+    sender_id_dict = {}
+    for sender_id in special_case_sender_id:
+        row_df = all_conversations_df[all_conversations_df["sender_id"] == sender_id]
+        row_start = row_df[row_df["user_message"] == '/start_conversation'].reset_index()
+        row_greet = row_df[row_df["user_intent"] == "greet"].reset_index()
+        if len(row_start) > 1:
+            counter = 0
+            set_df = row_start
+            for index, item in set_df.iterrows():
+                current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
+                fmt = '%Y-%m-%d %H:%M:%S'
+                try:
+                    next_timestamp = set_df.iloc[index + 1]["timestamp"] + " " + set_df.iloc[index + 1][
+                        "timestamp_time"]
+                    current_timestamp = datetime.strptime(current_timestamp, fmt)
+                    next_timestamp = datetime.strptime(next_timestamp, fmt)
+                    time_diff = (next_timestamp - current_timestamp).total_seconds()
+                    if time_diff >= 900:
+                        counter += 1
+                except:
+                    break
+            counter += 1
+            no_get_started_group.loc[no_get_started_group["sender_id"] == sender_id, "times"] = counter
+
+
+        if len(row_greet) > 1:
+            counter = 0
+            set_df = row_greet
+            for index, item in set_df.iterrows():
+                current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
+                fmt = '%Y-%m-%d %H:%M:%S'
+                try:
+                    next_timestamp = set_df.iloc[index + 1]["timestamp"] + " " + set_df.iloc[index + 1][
+                        "timestamp_time"]
+                    current_timestamp = datetime.strptime(current_timestamp, fmt)
+                    next_timestamp = datetime.strptime(next_timestamp, fmt)
+                    time_diff = (next_timestamp - current_timestamp).total_seconds()
+                    if time_diff >= 900:
+                        counter += 1
+                except:
+                    break
+            counter += 1
+            no_greet_group.loc[no_greet_group["sender_id"] == sender_id, "times"] = counter
+
+    a = 0
 
 
 def get_avg_respond_time(all_conv_detail):
@@ -141,10 +220,13 @@ def main():
     all_conv_detail = pd.read_csv("analyze_data/all_conversations_without_trash.csv")
     all_conv_detail = all_conv_detail[~all_conv_detail["sender_id"].isin(trash_sender_id)]
 
-    get_avg_respond_time(all_conv_detail)
+    # get_avg_respond_time(all_conv_detail)
 
     count_conversations_df = count_conversations(all_conv_detail)
     no_conversations = len(count_conversations_df)
+
+
+
     all_turns = list(count_conversations_df["turns"])
     average_turn = sum(all_turns) / len(all_turns)
 
