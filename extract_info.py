@@ -85,56 +85,46 @@ def count_start_conversation(all_conversations_df):
     no_get_started_more_than_one = no_get_started_group[no_get_started_group["times"] > 1]
     no_greet_more_than_one = no_greet_group[no_greet_group["times"] > 1]
 
-    no_get_started_more_than_one_sender_id = list(set(no_get_started_more_than_one["sender_id"]))
-    no_greet_more_than_one_sender_id = list(set(no_greet_more_than_one["sender_id"]))
+    no_get_started_more_than_one_sender_id = list(set(no_get_started_group[no_get_started_group["times"] > 1]["sender_id"]))
+    no_greet_more_than_one_sender_id = list(set(no_greet_group[no_greet_group["times"] > 1]["sender_id"]))
 
-    special_case_sender_id = no_get_started_more_than_one_sender_id + no_greet_more_than_one_sender_id
-    sender_id_dict = {}
-    for sender_id in special_case_sender_id:
-        row_df = all_conversations_df[all_conversations_df["sender_id"] == sender_id]
-        row_start = row_df[row_df["user_message"] == '/start_conversation'].reset_index()
-        row_greet = row_df[row_df["user_intent"] == "greet"].reset_index()
-        if len(row_start) > 1:
-            counter = 0
-            set_df = row_start
-            for index, item in set_df.iterrows():
-                current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
-                fmt = '%Y-%m-%d %H:%M:%S'
-                try:
-                    next_timestamp = set_df.iloc[index + 1]["timestamp"] + " " + set_df.iloc[index + 1][
-                        "timestamp_time"]
-                    current_timestamp = datetime.strptime(current_timestamp, fmt)
-                    next_timestamp = datetime.strptime(next_timestamp, fmt)
-                    time_diff = (next_timestamp - current_timestamp).total_seconds()
-                    if time_diff >= 900:
-                        counter += 1
-                except:
-                    break
-            counter += 1
-            no_get_started_group.loc[no_get_started_group["sender_id"] == sender_id, "times"] = counter
-
-
-        if len(row_greet) > 1:
-            counter = 0
-            set_df = row_greet
-            for index, item in set_df.iterrows():
-                current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
-                fmt = '%Y-%m-%d %H:%M:%S'
-                try:
-                    next_timestamp = set_df.iloc[index + 1]["timestamp"] + " " + set_df.iloc[index + 1][
-                        "timestamp_time"]
-                    current_timestamp = datetime.strptime(current_timestamp, fmt)
-                    next_timestamp = datetime.strptime(next_timestamp, fmt)
-                    time_diff = (next_timestamp - current_timestamp).total_seconds()
-                    if time_diff >= 900:
-                        counter += 1
-                except:
-                    break
-            counter += 1
-            no_greet_group.loc[no_greet_group["sender_id"] == sender_id, "times"] = counter
-
+    no_get_started_group = re_process_count_greet_and_start(no_get_started_more_than_one_sender_id, no_get_started_group, all_conversations_df, code="get_started")
+    no_greet_group = re_process_count_greet_and_start(no_greet_more_than_one_sender_id, no_greet_group, all_conversations_df, code="greet")
     a = 0
 
+def re_process_count_greet_and_start(list_sender_id, df, all_conversations_df, code):
+    for sender_id in list_sender_id:
+        checked_date = []
+        row_df = all_conversations_df[all_conversations_df["sender_id"] == sender_id]
+        if code == "get_started":
+            get_started_row_df = row_df[row_df["user_message"] == "/start_conversation"].reset_index()
+        else:
+            get_started_row_df = row_df[row_df["user_intent"] == "greet"].reset_index()
+
+        counter = 0
+        for index, item in get_started_row_df.iterrows():
+            checked_date.append(item["timestamp"])
+            current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
+            fmt = '%Y-%m-%d %H:%M:%S'
+            try:
+                if get_started_row_df.iloc[index + 1]["timestamp"] not in checked_date:
+                    counter += 1
+                    df.loc[(df["sender_id"] == sender_id) & (df["timestamp"] == item["timestamp"]), "times"] = counter
+                    counter = 0
+                    continue
+
+                next_timestamp = get_started_row_df.iloc[index + 1]["timestamp"] + " " + get_started_row_df.iloc[index + 1]["timestamp_time"]
+                current_timestamp = datetime.strptime(current_timestamp, fmt)
+                next_timestamp = datetime.strptime(next_timestamp, fmt)
+                time_diff = (next_timestamp - current_timestamp).total_seconds()
+                if time_diff >= 900:
+                    counter += 1
+            except:
+                counter += 1
+                df.loc[(df["sender_id"] == sender_id) & (df["timestamp"] == item["timestamp"]), "times"] = counter
+                counter = 0
+                break
+    return df
 
 def get_avg_respond_time(all_conv_detail):
     turn_take_much_time = []

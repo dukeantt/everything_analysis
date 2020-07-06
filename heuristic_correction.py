@@ -11,7 +11,7 @@ import unidecode
 import operator
 import string
 import pickle
-from tqdm import tqdm
+# from tqdm import tqdm
 from collections import deque
 
 vnmese_alphabet_dict = json.load(open("data/vnmese_alphabet_json.json", encoding='utf-8-sig'))
