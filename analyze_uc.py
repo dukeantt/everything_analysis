@@ -150,7 +150,7 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
 
     necessary_info_df.insert(0, 'id', conversation_number)
     necessary_info_df.insert(5, 'outcome', [" "] * len(necessary_info_df))
-    necessary_info_df.insert(6, 'silence', [0] * len(necessary_info_df))
+    necessary_info_df.insert(6, 'silent', [0] * len(necessary_info_df))
     necessary_info_df.to_csv("analyze_data/uc2_conversation.csv", index=False)
     return necessary_info_df
 
@@ -180,7 +180,7 @@ def add_outcome():
 
         elif bot_message == "Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!" or user_intent == "disagree":
             uc2_conversations_df.at[last_turn_row_index, "outcome"] = "cv_fail"
-            uc2_conversations_df.at[last_turn_row_index, "silence"] = 1
+            uc2_conversations_df.at[last_turn_row_index, "silent"] = 1
 
         else:
             uc2_conversations_df.at[last_turn_row_index, "outcome"] = "other"
