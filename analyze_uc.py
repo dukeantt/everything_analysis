@@ -4,6 +4,7 @@ import datetime
 from ast import literal_eval
 from heuristic_correction import *
 from utils.helper import *
+from datetime import datetime
 
 
 def get_sender_id_image_case(all_conv_detail):
@@ -23,6 +24,7 @@ def get_sender_id_image_case(all_conv_detail):
         user_messages = [x for x in events if x["event"] == "user"]
         # Only care about conversation in specific month
         user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["06"]]
+        # user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["03","04","05","06"]]
 
         conversation_date = []
         for user_message in user_messages:
@@ -70,13 +72,24 @@ def get_uc2_case(all_conv_about_image, sender_id_image):
             elif "có" in message_text or "còn" in message_text:
                 # But if found có and còn before giá -> UC1
                 break
+            #
+            # necessary_info["timestamp"].append(set_date)
+            # necessary_info["sender_id"].append(sender_id)
+            # necessary_info["message"].append(message_text)
 
     necessary_info_df = pd.DataFrame.from_dict(necessary_info)
     return necessary_info_df
 
 
 def processing_uc2_conversations(all_uc2_conversation, dict_info):
-    necessary_info = {"timestamp": [], "sender_id": [], "message": [], "bot_message": [], "user_intent": []}
+    necessary_info = {"timestamp": [],
+                      "sender_id": [],
+                      "message": [],
+                      "bot_message": [],
+                      "user_intent": [],
+                      "user_timestamp_detail": [],
+                      "bot_timestamp_detail": [],
+                      "wait_time": []}
     # Loop all conversations
     for conversation in all_uc2_conversation.itertuples():
         # Already have the sender_id and timestamp of UC2 conversations
@@ -90,7 +103,6 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
         for i in range(0, len(user_bot_messages)):
             current_event = user_bot_messages[i]["event"]
             if current_event == "user":
-
                 try:
                     user_message = user_bot_messages[i]["text"]
                 except:
@@ -110,8 +122,17 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
 
                     try:
                         bot_message_text = bot_event["text"]
+                        bot_timestamp = get_timestamp(int(bot_event["timestamp"]), "%Y-%m-%d %H:%M:%S")
+
+                        fmt = '%Y-%m-%d %H:%M:%S'
+                        user_time = datetime.strptime(get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"), fmt)
+                        bot_time = datetime.strptime(bot_timestamp, fmt)
+                        wait_time = (bot_time - user_time).total_seconds()
                     except Exception as e:
                         bot_message_text = "No bot text"
+                        bot_timestamp = " "
+                        wait_time = " "
+
                     if bot_message_text is None:
                         bot_message_text = "Bot doing sth"
 
@@ -120,12 +141,18 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
                     necessary_info["message"].append(user_message)
                     necessary_info["bot_message"].append(bot_message_text)
                     necessary_info["user_intent"].append(intent)
+                    necessary_info["user_timestamp_detail"].append(get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"))
+                    necessary_info["bot_timestamp_detail"].append(bot_timestamp)
+                    necessary_info["wait_time"].append(wait_time)
                 elif i == len(user_bot_messages) - 1:
                     necessary_info["timestamp"].append(set_date)
                     necessary_info["sender_id"].append(sender_id)
                     necessary_info["message"].append(user_message)
                     necessary_info["bot_message"].append("bot handover_to_inbox")
                     necessary_info["user_intent"].append(intent)
+                    necessary_info["user_timestamp_detail"].append(get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"))
+                    necessary_info["bot_timestamp_detail"].append("no_timestamp")
+                    necessary_info["wait_time"].append("no_wait_time")
 
                 else:
                     continue

@@ -41,13 +41,16 @@ def count_conversations(all_conv_detail):
     for sender_info in all_conv_detail.itertuples():
         sender_id = sender_info.sender_id
         events = literal_eval(sender_info.events)
+        # lấy tất cả event khi mà user gửi message của sender_id này
         user_events = [x for x in events if x["event"] == "user"]
         bot_events = [x for x in events if x["event"] == "bot"]
+        # loop qua từng event
         for user_event in user_events:
             user_message = user_event["text"]
+            # mỗi event sẽ có timestamp riêng
             timestamp_month = get_timestamp(user_event["timestamp"], "%m")
             # if timestamp_month not in ["03", "04", "05", "06"]:
-            if timestamp_month not in ["04", "05", "06"]:
+            if timestamp_month not in ["05", "06"]:
                 continue
             timestamp = get_timestamp(user_event["timestamp"], "%Y-%m-%d")
             timestamp_time = get_timestamp(user_event["timestamp"], "%H:%M:%S")
@@ -55,33 +58,58 @@ def count_conversations(all_conv_detail):
                 user_intent = user_event["parse_data"]["intent"]["name"]
             except:
                 user_intent = " "
-
+            # append message và intent của khách hàng nếu timestamp thỏa mãn đkiẹn
             all_conversations.append((sender_id, timestamp, user_message, user_intent, timestamp_time))
 
     all_conversations_df = pd.DataFrame(all_conversations, columns=["sender_id", "timestamp", "user_message", "user_intent", "timestamp_time"])
-    count_start_conversation(all_conversations_df)
+    # count_start_conversation(all_conversations_df)
+    #--------------------------------------------
+    sender_ids = list(set(all_conversations_df["sender_id"]))
+
+    counter = 0
+    for sender_id in sender_ids:
+        checked_date = []
+        sub_conversation_df = all_conversations_df[all_conversations_df["sender_id"] == sender_id].reset_index()
+        b = 0
+        for index, item in sub_conversation_df.iterrows():
+            checked_date.append(item["timestamp"])
+            current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
+            fmt = '%Y-%m-%d %H:%M:%S'
+            try:
+                if sub_conversation_df.iloc[index + 1]["timestamp"] not in checked_date:
+                    counter += 1
+                    continue
+
+                next_timestamp = sub_conversation_df.iloc[index + 1]["timestamp"] + " " + sub_conversation_df.iloc[index + 1]["timestamp_time"]
+                current_timestamp = datetime.strptime(current_timestamp, fmt)
+                next_timestamp = datetime.strptime(next_timestamp, fmt)
+                time_diff = (next_timestamp - current_timestamp).total_seconds()
+                if time_diff >= 900:
+                    counter += 1
+            except:
+                counter += 1
+                break
+
+    #--------------------------------------------
 
     all_conversations_df_group = all_conversations_df.groupby(["sender_id", "timestamp"]).size().to_frame("turns").reset_index()
-    conversations_division = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, ">=10": 0}
-    sender_ids = list(set(all_conversations_df["sender_id"]))
-    for sender_id in sender_ids:
-        no_conversation = len(all_conversations_df_group[all_conversations_df_group["sender_id"] == sender_id])
-        if no_conversation >=10:
-            conversations_division[">=10"] += 1
-        else:
-            conversations_division[str(no_conversation)] += 1
+
 
 
     return all_conversations_df_group
 
 
 def count_start_conversation(all_conversations_df):
+    # lấy tất cả line message của khách khi mà message là /start_conversation hoặc user_intent là greet
     no_get_started = all_conversations_df[all_conversations_df["user_message"] == '/start_conversation']
     no_greet = all_conversations_df[all_conversations_df["user_intent"] == "greet"]
 
+    # group theo sender_id và ngày gửi message
     no_get_started_group = no_get_started.groupby(["sender_id", "timestamp"]).size().to_frame("times").reset_index()
     no_greet_group = no_greet.groupby(["sender_id", "timestamp"]).size().to_frame("times").reset_index()
 
+    # trong một ngày có thế có nhiều lần khách greet hoặc start_conversation, nhiều trường hơp là spam,
+    # loop qua tất cả các message start_conversation hay greet trong 1 ngày của từng sender_id nếu message cách nhau 15p trở lên mới tính là 1 lần
     no_get_started_more_than_one = no_get_started_group[no_get_started_group["times"] > 1]
     no_greet_more_than_one = no_greet_group[no_greet_group["times"] > 1]
 
@@ -90,12 +118,13 @@ def count_start_conversation(all_conversations_df):
 
     no_get_started_group = re_process_count_greet_and_start(no_get_started_more_than_one_sender_id, no_get_started_group, all_conversations_df, code="get_started")
     no_greet_group = re_process_count_greet_and_start(no_greet_more_than_one_sender_id, no_greet_group, all_conversations_df, code="greet")
-    a = 0
 
 def re_process_count_greet_and_start(list_sender_id, df, all_conversations_df, code):
+    # loop qua từng sender id có số start_conversation hay greet trong 1 ngày nhiều hơn 1 lần
     for sender_id in list_sender_id:
         checked_date = []
         row_df = all_conversations_df[all_conversations_df["sender_id"] == sender_id]
+        # lấy các row có số start_conversation hay greet trong 1 ngày nhiều hơn 1
         if code == "get_started":
             get_started_row_df = row_df[row_df["user_message"] == "/start_conversation"].reset_index()
         else:
@@ -103,16 +132,22 @@ def re_process_count_greet_and_start(list_sender_id, df, all_conversations_df, c
 
         counter = 0
         for index, item in get_started_row_df.iterrows():
+            # apppend ngày đang set vào checked_date
             checked_date.append(item["timestamp"])
             current_timestamp = item["timestamp"] + " " + item["timestamp_time"]
             fmt = '%Y-%m-%d %H:%M:%S'
             try:
+                # check nếu ngày của row tiếp theo có trong checked_date không
                 if get_started_row_df.iloc[index + 1]["timestamp"] not in checked_date:
+                    # nếu không có nghĩa là row message tiếp theo thuộc 1 ngày khác
+                    # sửa lại số lần start_conversation của ngày đang set cho chuẩn
                     counter += 1
                     df.loc[(df["sender_id"] == sender_id) & (df["timestamp"] == item["timestamp"]), "times"] = counter
                     counter = 0
                     continue
-
+                # nếu ngày của row tiếp theo có trong checked date
+                # lấy timestamp của row tiếp trừ đi cho row hiện tại nếu < 15p thì vẫn chỉ tính là 1 lần
+                # nếu  > 15p thì là 2 lần cách nhau
                 next_timestamp = get_started_row_df.iloc[index + 1]["timestamp"] + " " + get_started_row_df.iloc[index + 1]["timestamp_time"]
                 current_timestamp = datetime.strptime(current_timestamp, fmt)
                 next_timestamp = datetime.strptime(next_timestamp, fmt)
