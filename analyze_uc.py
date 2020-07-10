@@ -46,8 +46,9 @@ def get_sender_id_image_case(all_conv_detail):
     return sender_id_image
 
 
-def get_uc2_case(all_conv_about_image, sender_id_image):
-    necessary_info = {"timestamp": [], "sender_id": [], "message": []}
+def get_uc2_price_case(all_conv_about_image, sender_id_image):
+    necessary_info_uc2 = {"timestamp": [], "sender_id": [], "message": []}
+    necessary_info_uc1 = {"timestamp": [], "sender_id": [], "message": []}
     # Loop all conversations
     for conversation in all_conv_about_image.itertuples():
         # Already have the list of all dates that customer send image in conversations
@@ -66,22 +67,29 @@ def get_uc2_case(all_conv_about_image, sender_id_image):
             message_text = do_correction(message_text)
             # If customer mention bao giá and bao nhiêu ->UC2:User sends product image and asks for the product's price
             if "giá" in message_text or "bao nhiêu" in message_text:
-                necessary_info["timestamp"].append(set_date)
-                necessary_info["sender_id"].append(sender_id)
-                necessary_info["message"].append(message_text)
-            elif "có" in message_text or "còn" in message_text:
-                # But if found có and còn before giá -> UC1
-                break
-            #
-            # necessary_info["timestamp"].append(set_date)
-            # necessary_info["sender_id"].append(sender_id)
-            # necessary_info["message"].append(message_text)
+                necessary_info_uc2["timestamp"].append(set_date)
+                necessary_info_uc2["sender_id"].append(sender_id)
+                necessary_info_uc2["message"].append(message_text)
+            # elif "có" in message_text or "còn" in message_text:
+            #     # But if found có and còn before giá -> UC1
+            #     break
+            else:
+                # all other cases is uc1
+                if sender_id not in necessary_info_uc2["sender_id"]:
+                    necessary_info_uc1["timestamp"].append(set_date)
+                    necessary_info_uc1["sender_id"].append(sender_id)
+                    necessary_info_uc1["message"].append(message_text)
 
-    necessary_info_df = pd.DataFrame.from_dict(necessary_info)
-    return necessary_info_df
+    necessary_info_uc2_df = pd.DataFrame.from_dict(necessary_info_uc2)
+    necessary_info_uc1_df = pd.DataFrame.from_dict(necessary_info_uc1)
+    for index, item in necessary_info_uc1_df.iterrows():
+        if item["sender_id"] in necessary_info_uc2["sender_id"]:
+            necessary_info_uc1_df = necessary_info_uc1_df.drop([index])
+
+    return necessary_info_uc1_df, necessary_info_uc2_df
 
 
-def processing_uc2_conversations(all_uc2_conversation, dict_info):
+def processing_uc_conversations(all_uc2_conversation, dict_info):
     necessary_info = {"timestamp": [],
                       "sender_id": [],
                       "message": [],
@@ -102,6 +110,7 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
 
         for i in range(0, len(user_bot_messages)):
             current_event = user_bot_messages[i]["event"]
+            # Get user message and intent
             if current_event == "user":
                 try:
                     user_message = user_bot_messages[i]["text"]
@@ -113,6 +122,7 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
                 except:
                     intent = "no intent"
 
+                # Check if next event is bot event
                 bot_index = i + 1
                 if bot_index < len(user_bot_messages) and user_bot_messages[bot_index]["event"] != "bot":
                     bot_index = i + 2
@@ -121,11 +131,13 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
                     bot_event = user_bot_messages[bot_index]
 
                     try:
+                        # calculate customer wait time and get bot message
                         bot_message_text = bot_event["text"]
                         bot_timestamp = get_timestamp(int(bot_event["timestamp"]), "%Y-%m-%d %H:%M:%S")
 
                         fmt = '%Y-%m-%d %H:%M:%S'
-                        user_time = datetime.strptime(get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"), fmt)
+                        user_time = datetime.strptime(
+                            get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"), fmt)
                         bot_time = datetime.strptime(bot_timestamp, fmt)
                         wait_time = (bot_time - user_time).total_seconds()
                     except Exception as e:
@@ -141,7 +153,8 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
                     necessary_info["message"].append(user_message)
                     necessary_info["bot_message"].append(bot_message_text)
                     necessary_info["user_intent"].append(intent)
-                    necessary_info["user_timestamp_detail"].append(get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"))
+                    necessary_info["user_timestamp_detail"].append(
+                        get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"))
                     necessary_info["bot_timestamp_detail"].append(bot_timestamp)
                     necessary_info["wait_time"].append(wait_time)
                 elif i == len(user_bot_messages) - 1:
@@ -150,7 +163,8 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
                     necessary_info["message"].append(user_message)
                     necessary_info["bot_message"].append("bot handover_to_inbox")
                     necessary_info["user_intent"].append(intent)
-                    necessary_info["user_timestamp_detail"].append(get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"))
+                    necessary_info["user_timestamp_detail"].append(
+                        get_timestamp(int(user_bot_messages[i]["timestamp"]), "%Y-%m-%d %H:%M:%S"))
                     necessary_info["bot_timestamp_detail"].append("no_timestamp")
                     necessary_info["wait_time"].append("no_wait_time")
 
@@ -178,12 +192,12 @@ def processing_uc2_conversations(all_uc2_conversation, dict_info):
     necessary_info_df.insert(0, 'id', conversation_number)
     necessary_info_df.insert(5, 'outcome', [" "] * len(necessary_info_df))
     necessary_info_df.insert(6, 'silent', [0] * len(necessary_info_df))
-    necessary_info_df.to_csv("analyze_data/uc2_conversation.csv", index=False)
     return necessary_info_df
 
 
-def add_outcome():
-    uc2_conversations_df = pd.read_csv("analyze_data/uc2_conversation.csv")
+def add_outcome(uc_conversation_df, uc):
+    # uc2_conversations_df = pd.read_csv("analyze_data/uc2_conversation.csv")
+    uc2_conversations_df = uc_conversation_df
     conversation_ids_list = list(set(uc2_conversations_df["id"]))
     key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản"]
     filter_words = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
@@ -199,7 +213,8 @@ def add_outcome():
         if user_intent == "thank":
             uc2_conversations_df.at[last_turn_row_index, "outcome"] = "thanks"
 
-        elif any(key_word in user_message for key_word in key_words) and any(filter_word not in user_message for filter_word in filter_words):
+        elif any(key_word in user_message for key_word in key_words) and any(
+                filter_word not in user_message for filter_word in filter_words):
             uc2_conversations_df.at[last_turn_row_index, "outcome"] = "shipping_order"
 
         elif user_intent == "handover_to_inbox" or "handover_to_inbox" in bot_message:
@@ -212,7 +227,41 @@ def add_outcome():
         else:
             uc2_conversations_df.at[last_turn_row_index, "outcome"] = "other"
             uc2_conversations_df.at[last_turn_row_index, "silent"] = 1
-    uc2_conversations_df.to_csv("analyze_data/uc2_conversation_with_outcome.csv", index=False)
+    uc2_conversations_df.to_csv("analyze_data/" + uc + "_conversation_with_outcome.csv", index=False)
+
+
+def handle_cases_in_uc1(uc1_conversation_df):
+    user_message_keywords = ["không còn"]
+    bot_message_keywords = ["mô tả rõ hơn", "chưa xác định", "hết hàng"]
+    uc1_conversation_df.insert(5, 'uc', [None] * len(uc1_conversation_df))
+    conversation_ids = list(set(uc1_conversation_df["id"]))
+    for conversation_id in conversation_ids:
+        checked_id = []
+        sub_uc1_conversation_df = uc1_conversation_df[uc1_conversation_df["id"] == conversation_id]
+        found_image = False
+        for index, item in sub_uc1_conversation_df.iterrows():
+            user_intent = item["user_intent"]
+            user_message = item["message"]
+            bot_message = item["bot_message"]
+            if "scontent.xx.fbcdn.net" in user_message:
+                found_image = True
+            if found_image:
+                if user_intent == "disagree" or \
+                        any(key_word in bot_message for key_word in bot_message_keywords) or \
+                        any(key_word in user_message for key_word in user_message_keywords):
+                    uc1_conversation_df.at[index, "uc"] = "1.2"
+                    checked_id.append(conversation_id)
+
+    uc_1_2_conversation_ids = list(set(uc1_conversation_df[uc1_conversation_df["uc"] == "1.2"]["id"]))
+    uc_1_1_conversation_ids = [id for id in conversation_ids if id not in uc_1_2_conversation_ids]
+    for conversation_id in uc_1_1_conversation_ids:
+        sub_uc_1_1_conversation_df = uc1_conversation_df[uc1_conversation_df["id"] == conversation_id]
+        for item in sub_uc_1_1_conversation_df.itertuples():
+            index = item.Index
+            uc1_conversation_df.at[index, "uc"] = "1.1"
+            break
+
+    return uc1_conversation_df
 
 
 def main():
@@ -223,19 +272,31 @@ def main():
     all_conv_about_image = all_conv_detail[all_conv_detail["sender_id"].isin(list(sender_id_image.keys()))]
 
     # Get all usecase 2: User sends product image and asks for the product's price
-    df = get_uc2_case(all_conv_about_image, sender_id_image)
-    df = df.drop_duplicates(subset=["timestamp", "sender_id"], keep="first")
-    sender_id_info = list(df["sender_id"])
-    timestamp_info = list(df["timestamp"])
-    dict_info = dict(zip(sender_id_info, timestamp_info))
+    df_uc1, df_uc2 = get_uc2_price_case(all_conv_about_image, sender_id_image)
 
+    df_uc1 = df_uc1.drop_duplicates(subset=["timestamp", "sender_id"], keep="first")
+    sender_id_info_uc1 = list(df_uc1["sender_id"])
+    timestamp_info_uc1 = list(df_uc1["timestamp"])
+    senderid_timestamp_pair_uc1 = dict(zip(sender_id_info_uc1, timestamp_info_uc1))
+
+    df_uc2 = df_uc2.drop_duplicates(subset=["timestamp", "sender_id"], keep="first")
+    sender_id_info_uc2 = list(df_uc2["sender_id"])
+    timestamp_info_uc2 = list(df_uc2["timestamp"])
+    senderid_timestamp_pair_uc2 = dict(zip(sender_id_info_uc2, timestamp_info_uc2))
+
+    # Processing all uc1
+    all_uc1_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info_uc1)]
+    uc1_conversation_df = processing_uc_conversations(all_uc1_conversation, senderid_timestamp_pair_uc1)
+    uc1_conversation_df = handle_cases_in_uc1(uc1_conversation_df)
+    uc1_conversation_df.to_csv("analyze_data/uc1_conversation.csv", index=False)
     # Processing all uc2
-    all_uc2_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info)]
-    processing_uc2_conversations(all_uc2_conversation, dict_info)
+    all_uc2_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info_uc2)]
+    uc2_conversation_df = processing_uc_conversations(all_uc2_conversation, senderid_timestamp_pair_uc2)
+    # uc2_conversation_df.to_csv("analyze_data/uc2_conversation.csv", index=False)
 
     # Add outcome for conversation
-    add_outcome()
-    a = 0
+    add_outcome(uc2_conversation_df, "uc2")
+    add_outcome(uc1_conversation_df, "uc1")
 
 
 main()

@@ -1,0 +1,337 @@
+id,timestamp,sender_id,message,bot_message,uc,outcome,silent,user_intent,user_timestamp_detail,bot_timestamp_detail,wait_time
+1,2020-06-19,3997487680293412,/start_conversation,"Chào Nguyễn Hải Yến, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-19 05:45:51,2020-06-19 05:45:51,0.0
+1,2020-06-19,3997487680293412,Shop ới,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",, ,0,greet,2020-06-19 05:46:04,2020-06-19 05:46:04,0.0
+1,2020-06-19,3997487680293412,https://scontent.xx.fbcdn.net/v/t1.15752-9/103569049_1378771055657575_5331851704586927922_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=BrnD9gjo5vYAX-mMxTd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=14edbeb9645d5f687a8dfe02171fc09b&oe=5F11E635,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-19 05:46:16,2020-06-19 05:46:16,0.0
+1,2020-06-19,3997487680293412,Shop còn bộ đồ chơi tắm k,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-19 05:47:05,2020-06-19 05:47:08,3.0
+1,2020-06-19,3997487680293412,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-19 05:49:58,2020-06-19 05:49:58,0.0
+1,2020-06-19,3997487680293412,/connect_employee,bot handover_to_inbox,,handover_to_inbox,0,connect_employee,2020-06-19 05:50:15,no_timestamp,no_wait_time
+2,2020-06-19,3751272288231725,/start_conversation,"Chào Bi Nguyễn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-19 05:43:52,2020-06-19 05:43:52,0.0
+2,2020-06-19,3751272288231725,https://scontent.xx.fbcdn.net/v/t1.15752-9/103792005_773731693386041_2808221037539971567_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=Ir_soN89cUUAX_Ddsh1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9eced67cdc2358a010f8d1c5d42bbcf9&oe=5F1235CD,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-19 05:44:01,2020-06-19 05:44:01,0.0
+2,2020-06-19,3751272288231725,https://scontent.xx.fbcdn.net/v/t1.15752-9/104193471_203248717523463_6430324323880332199_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=LWKReZqBHKAAX9Yfdq5&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=566cffe20f05bea9b9b4f97096c82b4a&oe=5F11DB32,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-19 05:44:13,2020-06-19 05:44:13,0.0
+2,2020-06-19,3751272288231725,Cái phần kê chân này kéo lên cao cho bé kê đc k sh,Bot doing sth,, ,0,handover_to_inbox,2020-06-19 05:44:32,2020-06-19 05:44:43,11.0
+2,2020-06-19,3751272288231725,Xe 1 hay 2 chiều ạ,Bot doing sth,,other,1,query_knowledge_base,2020-06-19 05:44:42,2020-06-19 05:44:43,1.0
+3,2020-06-19,2482724818405016,https://scontent.xx.fbcdn.net/v/t1.15752-9/104483792_610666886233855_3446332793212466115_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=7zrMos1GRKkAX_tKej9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=3b8f945d266b3a1c322eb36ec7003f05&oe=5F10F706,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-19 05:00:43,2020-06-19 05:00:43,0.0
+3,2020-06-19,2482724818405016,Xe này có mái che k ạ,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-19 05:01:01,2020-06-19 05:01:06,5.0
+3,2020-06-19,2482724818405016,K ạ mẫu như em gửi ạ,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-19 05:01:44,2020-06-19 05:01:44,0.0
+3,2020-06-19,2482724818405016,https://scontent.xx.fbcdn.net/v/t1.15752-9/104432864_192151178804734_480203705101497005_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=lO__dRfUnFgAX_5WURF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9960592ca3abeed7a14bf4106c8e8c1b&oe=5F1023A9,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-19 05:02:38,2020-06-19 05:02:38,0.0
+3,2020-06-19,2482724818405016,Có đầy đủ nệm và mái che vầy k ạ,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-19 05:02:56,2020-06-19 05:02:58,2.0
+3,2020-06-19,2482724818405016,"https://scontent.xx.fbcdn.net/v/t1.15752-9/105485452_279973986530996_7967239892975379789_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=sw4B3KCEmNoAX9cfhAJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=2054ae60f585c4996910f0acb5356058&oe=5F10F405
+Em muốn hỏi mẫu này","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-19 05:05:39,2020-06-19 05:05:42,3.0
+3,2020-06-19,2482724818405016,Có nệm mái che đầy đủ k ạ,Bot doing sth,, ,0,query_knowledge_base,2020-06-19 05:06:00,2020-06-19 05:06:00,0.0
+3,2020-06-19,2482724818405016,Là xe Tomorrow ấy,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-19 05:07:18,no_timestamp,no_wait_time
+4,2020-06-19,1122100297891353,https://scontent.xx.fbcdn.net/v/t1.15752-9/104296785_185757926200026_3093367675451649479_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_oc=AQn1XT6visBnkpuPoh_bd2vfdY1EAS2XrrJbzBG3lC1597GRubD4FHxtV5IXkGb1oswOF_pdBQJZo2ckkHETJK8V&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=fc6e58dd8f00a2130034f1e53620a310&oe=5F139DC0,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-19 02:54:43,2020-06-19 02:54:44,1.0
+4,2020-06-19,1122100297891353,Shop ơi tớ muốn mua mấy đồ này ở shop mình,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,query_knowledge_base,2020-06-19 02:54:58,2020-06-19 02:55:00,2.0
+4,2020-06-19,1122100297891353,Mà tiền vận chuyển shopee cao quá 136k,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-19 02:55:13,no_timestamp,no_wait_time
+5,2020-06-19,1726398194085573,"https://scontent.xx.fbcdn.net/v/t1.15752-9/105478051_3037553849655855_636203905397754623_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=QMUn3di__BkAX-e2uVM&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=23c02070b1424c1d64bc6d8d1f4a024b&oe=5F13337B
+Này shop còn ko ạ","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",1.1, ,0,query_knowledge_base,2020-06-19 02:21:05,2020-06-19 02:21:08,3.0
+5,2020-06-19,1726398194085573,"/query_knowledge_base{""url"": ""https://shopee.vn/product/36371562/729942651"", ""product_id"": ""https://shopee.vn/product/36371562/729942651""}","Sản phẩm Thanh chặn cửa/ chặn cầu thang an toàn cho bé  hiện shop đang có mức giá: *580,000 VND (giá gốc 800,000 VND)*.
+",, ,0,query_knowledge_base,2020-06-19 02:21:49,2020-06-19 02:21:49,0.0
+5,2020-06-19,1726398194085573,Chiều cao sao ạ,bot handover_to_inbox,,handover_to_inbox,0,query_knowledge_base,2020-06-19 02:22:15,no_timestamp,no_wait_time
+6,2020-06-18,3019189361451408,https://scontent.xx.fbcdn.net/v/t1.15752-9/104851697_279086183501781_1896431652132346920_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=hFWhIHGe-CwAX8X-wWy&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=32cdce7dd9c0e39f226ac8986ed1e236&oe=5F0EAB23,Bạn đang tìm kiếm thông tin gì ạ?,1.1, ,0,send_link,2020-06-18 07:03:39,2020-06-18 07:03:39,0.0
+6,2020-06-18,3019189361451408,SHOP còn quaay ko,Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,, ,0,query_knowledge_base,2020-06-18 07:04:12,2020-06-18 07:04:15,3.0
+6,2020-06-18,3019189361451408,Còn xanh ko ah,Bot doing sth,, ,0,query_knowledge_base,2020-06-18 07:05:54,2020-06-18 07:05:54,0.0
+6,2020-06-18,3019189361451408,"/confirm_object_type{""object_type"": ""quay""}","Sản phẩm  Quây  Xanh  có giá bán thấp nhất từ: *1,750,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",, ,0,confirm_object_type,2020-06-18 07:06:19,2020-06-18 07:06:20,1.0
+6,2020-06-18,3019189361451408,https://scontent.xx.fbcdn.net/v/t1.15752-9/104497485_260410185231809_6882386411055725550_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=iaVQjKKle1UAX8NLqzd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=a5e54de890d3bebb27a145e82c4de172&oe=5F10D7F6,Bạn đang tìm kiếm thông tin gì ạ?,,other,1,send_link,2020-06-18 07:07:26,2020-06-18 07:07:26,0.0
+7,2020-06-18,2653299131407620,"https://scontent.xx.fbcdn.net/v/t1.15752-9/104411303_3941361009267239_1790248105507071587_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=mEjySRabKzUAX8gKafw&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=29276d8af9818bcc25bb4e60f09988b8&oe=5F122625
+Gỗ dk e",Vâng ạ!,, ,0,agree,2020-06-18 05:26:46,2020-06-18 05:26:46,0.0
+7,2020-06-18,2653299131407620,"Ấp tân tiến.xã tân phú.huyện tân châu.tay ninh
+Chữ cái ban rieng","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,handover_to_inbox,2020-06-18 05:27:30,2020-06-18 05:27:42,12.0
+7,2020-06-18,2653299131407620,Số ban rieng ha e,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2,cv_fail,1,query_knowledge_base,2020-06-18 05:27:42,2020-06-18 05:27:42,0.0
+8,2020-06-18,2832518226767530,/start_conversation,"Chào Trâm Anh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-18 04:40:22,2020-06-18 04:40:22,0.0
+8,2020-06-18,2832518226767530,https://scontent.xx.fbcdn.net/v/t1.15752-9/104446272_802072607202738_7679698079378294856_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=Ykwcu6X5j1wAX--Bbfl&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=40071fc3154f0c0e0a6810738b48e313&oe=5F109D2C,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-18 04:40:37,2020-06-18 04:40:37,0.0
+8,2020-06-18,2832518226767530,Mình tìm xe đẩy cho bé,Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,,other,1,query_knowledge_base,2020-06-18 04:41:08,2020-06-18 04:41:11,3.0
+9,2020-06-18,3281079132006958,/start_conversation,"Chào Giang Lê, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-18 02:57:13,2020-06-18 02:57:14,1.0
+9,2020-06-18,3281079132006958,https://scontent.xx.fbcdn.net/v/t1.15752-9/104433496_701622013985125_3591659129658352331_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=J98LwZkmJR0AX9Kok_p&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=93a0879ef6767f3358c1fcaa6e01d734&oe=5F10ABFD,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-18 02:57:23,2020-06-18 02:57:23,0.0
+9,2020-06-18,3281079132006958,Loại này trẻ 4 tháng ngồi được ko b,Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,, ,0,query_knowledge_base,2020-06-18 02:57:42,2020-06-18 02:57:45,3.0
+9,2020-06-18,3281079132006958,"À bên b có loại xách lên máy bay đuọc ko
+Loại này hơi to","Sản phẩm Ghế ô tô Zaracos Aroma (Mỹ) độ tuổi sử dụng Trẻ 4 Tháng hiện shop đang có độ tuổi sử dụng: *0-36 tháng*.
+Bạn tham khảo các sản phẩm sau nhé ạ:",, ,0,query_knowledge_base,2020-06-18 03:01:52,2020-06-18 03:01:52,0.0
+9,2020-06-18,3281079132006958,Bên b có cho nguòi qua lắp lun ko b,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-18 03:16:19,no_timestamp,no_wait_time
+10,2020-06-18,2535538143187015,"https://scontent.xx.fbcdn.net/v/t1.15752-9/96095043_3466177293395251_8256491128006071430_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=882LgS7A6WAAX-InAke&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=92873c629ed465c221ee03a5d2f5d077&oe=5F0F382B
+Mẫu này còn màu vang ko ạ",Bot doing sth,, ,0,query_knowledge_base,2020-06-18 02:42:18,2020-06-18 02:42:21,3.0
+10,2020-06-18,2535538143187015,"/confirm_object_type{""object_type"": ""ke""}","Dạ, sản phẩm Kệ  Màu Vang hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",1.2, ,0,confirm_object_type,2020-06-18 02:42:35,2020-06-18 02:42:35,0.0
+10,2020-06-18,2535538143187015,Vâng ạ,Dạ vâng ạ!,,other,1,agree,2020-06-18 02:43:02,2020-06-18 02:43:02,0.0
+11,2020-06-17,4186580641382880,"https://scontent.xx.fbcdn.net/v/t1.15752-9/104398364_272413863811910_5810294025135578564_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=9bB6xIuYsOMAX_wOa0H&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5f2043b3f7ce62b6478c0b7e46331cc2&oe=5F0D9A56
+Này mìn hàng có san k. Ạ",bot handover_to_inbox,1.1,handover_to_inbox,0,handover_to_inbox,2020-06-17 08:04:04,no_timestamp,no_wait_time
+12,2020-06-17,2518758118198501,/start_conversation,"Chào Hoàng Bầu, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-17 03:48:39,2020-06-17 03:48:39,0.0
+12,2020-06-17,2518758118198501,"Shop ơi bên mình còn xe chòi chân nt hình ảnh ko?
+https://scontent.xx.fbcdn.net/v/t1.15752-9/104199784_185615922885463_2292578923557911617_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=lOWAeSgR-YYAX9ozXkf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=4c418edb689dedc7877d265e855477e6&oe=5F0F9D9A",Bạn vui lòng bấm vào sản phẩm để xem ảnh và thông tin chi tiết nhé!,, ,0,query_knowledge_base,2020-06-17 03:49:31,2020-06-17 03:49:47,16.0
+12,2020-06-17,2518758118198501,Chiều nay mình qua đ/c bên bạn ở Âu cơ để lấy 1 xe chòi chân như thế này màu đỏ nhé :),bot handover_to_inbox,,shipping_order,0,handover_to_inbox,2020-06-17 03:53:26,no_timestamp,no_wait_time
+13,2020-06-17,3055966911144089,https://scontent.xx.fbcdn.net/v/t1.15752-9/103380924_635680330366096_6836035351382362458_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_ohc=KwzHio8Lj1AAX-08zv6&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0049b9cdd01de559d0c1651921e606fb&oe=5F0F44C7,Bạn đang tìm kiếm thông tin gì ạ?,1.1, ,0,send_link,2020-06-17 02:16:02,2020-06-17 02:16:02,0.0
+13,2020-06-17,3055966911144089,Có ảnh thật địu này ko shop,Bạn vui lòng bấm vào sản phẩm để xem ảnh và thông tin chi tiết nhé!,, ,0,query_knowledge_base,2020-06-17 02:16:32,2020-06-17 02:16:35,3.0
+13,2020-06-17,3055966911144089,Giad là 690 hay 750 vậy sjop,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-17 02:17:32,no_timestamp,no_wait_time
+14,2020-06-16,3334911066520578,/start_conversation,"Chào Ngọc Trâm, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-16 09:08:31,2020-06-16 09:08:31,0.0
+14,2020-06-16,3334911066520578,"/query_knowledge_base{""object_type"": ""ghe_an"",""brand"": ""mastela""}",Bot doing sth,, ,0,query_knowledge_base,2020-06-16 09:08:42,2020-06-16 09:08:42,0.0
+14,2020-06-16,3334911066520578,https://scontent.xx.fbcdn.net/v/t1.15752-9/103805015_197480218141742_5023028906878834284_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=fkYZqdgqyCgAX8F20ah&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=b83128e0df154965ffe1e60e43119003&oe=5F0F34CD,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-16 09:08:49,2020-06-16 09:08:52,3.0
+14,2020-06-16,3334911066520578,"Bồn tắm ạ
+E lỡ bấm nhầm
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103805015_197480218141742_5023028906878834284_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=fkYZqdgqyCgAX8F20ah&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=b83128e0df154965ffe1e60e43119003&oe=5F0F34CD","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-16 09:09:20,2020-06-16 09:09:22,2.0
+14,2020-06-16,3334911066520578,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-16 09:11:34,2020-06-16 09:11:34,0.0
+14,2020-06-16,3334911066520578,Dạ e tìm mua bồn tắm gấp gọn ạ,Bot doing sth,, ,0,query_knowledge_base,2020-06-16 09:12:04,2020-06-16 09:12:04,0.0
+14,2020-06-16,3334911066520578,"/confirm_object_type{""object_type"": ""tham""}",Bot doing sth,, ,0,confirm_object_type,2020-06-16 09:13:33,2020-06-16 09:13:33,0.0
+14,2020-06-16,3334911066520578,"/confirm_attribute_value{""price"": ""100k - 500k""}",Bot doing sth,, ,0,confirm_attribute_value,2020-06-16 09:13:42,2020-06-16 09:13:43,1.0
+14,2020-06-16,3334911066520578,"/confirm_attribute_value{""size"": ""NULL_1""}",Bot doing sth,, ,0,confirm_attribute_value,2020-06-16 09:13:54,2020-06-16 09:13:54,0.0
+14,2020-06-16,3334911066520578,"/confirm_attribute_value{""material"": ""Xốp""}","Sản phẩm  Thảm chất liệu Xốp, giá 100k - 500k  có giá bán thấp nhất từ: *179,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",,other,1,confirm_attribute_value,2020-06-16 09:14:06,2020-06-16 09:14:07,1.0
+15,2020-06-16,2892220344222201,/start_conversation,"Chào Tô Thủy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-16 08:24:50,2020-06-16 08:24:50,0.0
+15,2020-06-16,2892220344222201,"https://scontent.xx.fbcdn.net/v/t1.15752-9/104346606_294855248544339_5191888784108411315_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_oc=AQmliwSmD89nspzn1otRbey0zW_Nr8y-rCXj0lj1s5mqs9EHzAli4cerB741AtIVwB7UZ87IKrYTuoZ0jJmzKi5r&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5790ace44660880fb072255ff198cb50&oe=5F0C72A7
+https://scontent.xx.fbcdn.net/v/t1.15752-9/104100220_583587012344604_7085574660646570284_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_oc=AQm3XOLpsLUOF_cGGezqu6MPwPZ1MpEdKf302M7Nwo5AIEj4QHEFlaQstlhphVAkWSFjdZWYV9APB2Qo_xJ2WNJO&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d00c09af185bf19fad130bf5cc7fd8e5&oe=5F0E692D
+Shop còn xe này ko ạ","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-16 08:25:20,2020-06-16 08:25:22,2.0
+15,2020-06-16,2892220344222201,Shop ko còn loại xe t gửi à,Bot doing sth,,other,1,query_knowledge_base,2020-06-16 08:26:22,2020-06-16 08:26:22,0.0
+16,2020-06-16,3841846022552871,/start_conversation,"Chào Nguyen Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-16 04:09:49,2020-06-16 04:09:50,1.0
+16,2020-06-16,3841846022552871,"https://scontent.xx.fbcdn.net/v/t1.15752-9/104430666_253285392430773_8835130479592796783_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=Xa_9j8tunxEAX9BgUyA&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=e4be3e4acca4047c0093015c3389889c&oe=5F0E29A0
+Cho mình hỏi sp còn ko s","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-16 04:10:10,2020-06-16 04:10:13,3.0
+16,2020-06-16,3841846022552871,"/query_knowledge_base{""url"": ""https://shopee.vn/product/36371562/5316521835"", ""product_id"": ""https://shopee.vn/product/36371562/5316521835""}","Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",1.2,other,1,query_knowledge_base,2020-06-16 04:10:56,2020-06-16 04:10:56,0.0
+17,2020-06-15,2167018926673666,"Alo shop
+Mình muốn mua gối
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103048607_182732363167567_1399769078657535463_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=NWZ0tPGr3WQAX9Hf1af&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9e9d68bec69fca69e91d738037be6945&oe=5F0C4718","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,query_knowledge_base,2020-06-15 05:55:28,2020-06-15 05:55:31,3.0
+17,2020-06-15,2167018926673666,https://scontent.xx.fbcdn.net/v/t1.15752-9/103048607_182732363167567_1399769078657535463_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=NWZ0tPGr3WQAX9Hf1af&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9e9d68bec69fca69e91d738037be6945&oe=5F0C4718,bot handover_to_inbox,,handover_to_inbox,0,send_link,2020-06-15 05:55:57,no_timestamp,no_wait_time
+18,2020-06-12,3101974299887194,/start_conversation,"Chào Nguyễn Lan Phương, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-12 07:44:19,2020-06-12 07:44:19,0.0
+18,2020-06-12,3101974299887194,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103683244_631701624363395_8726568310186197573_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_oc=AQnXkclhPLkJkEkXESyb83Tya4CcqBbOHnV8KQVM3wa0PC_wZFPR6j_ZBen8Uy2DvyQo7EbuQ7xLnPeQKoIcvj_j&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=f4d4a0e316187ae69888f035a8e8d77d&oe=5F089754
+Tư vấn cho m với",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-12 07:44:35,no_timestamp,no_wait_time
+19,2020-06-12,2009981559045341,"Shop ơi vừa r mình có mua ghế ô tô kiêm nôi xách joie gemm chromium
+Xem clip hdsd thì thấy có cái này
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103487018_1454888834715280_6362253793957486196_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_oc=AQkJegbhBbTYdjQn52-BGqJOyWDjYzMdmC9V8jeD4gUgNT64BUV6-T3qe4LpxociHgQGAIKO0wi3z-t_TjVYSVMG&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=fef8fd7f04f254de7538b02481b87b72&oe=5F06E889
+Mà mình nhận thì ko thấy
+Này phải mua riêng hay sao ạ",bot handover_to_inbox,1.1,handover_to_inbox,0,handover_to_inbox,2020-06-12 05:37:01,no_timestamp,no_wait_time
+20,2020-06-12,3074264695983432,/start_conversation,"Chào Phùng Quang Trung, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-12 03:41:48,2020-06-12 03:41:48,0.0
+20,2020-06-12,3074264695983432,"bàn
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103419930_967631296989360_2790039973084017804_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_oc=AQmZW7q9Jdo1Tqg84VrP07yNgLmE1vgjoISPVxA0BfdA-dRAyI11fYIFDVRkr5SM72nCPqov2aQEiEMuCW0VEahl&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=1dfc598e837c7ebea947b4149723b483&oe=5F09CDEE","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-12 03:44:45,2020-06-12 03:44:50,5.0
+20,2020-06-12,3074264695983432,không phải,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-12 03:46:17,2020-06-12 03:46:17,0.0
+20,2020-06-12,3074264695983432,bàn học trẻ em,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,query_knowledge_base,2020-06-12 03:47:09,2020-06-12 03:47:09,0.0
+20,2020-06-12,3074264695983432,bàn học dành cho trẻ em,bot handover_to_inbox,,handover_to_inbox,0,query_knowledge_base,2020-06-12 03:47:36,no_timestamp,no_wait_time
+21,2020-06-11,1685355428166685,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103270763_998354170584436_6008782271931150004_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_ohc=fGRNfc4F4HkAX974UNS&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=a2602719d88fcc6482cd218a337f6c6c&oe=5F08FE60
+Shop oi con xe day nay ko?",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,1.1, ,0,query_knowledge_base,2020-06-11 05:50:52,2020-06-11 05:50:56,4.0
+21,2020-06-11,1685355428166685,Minh muon lay 1 xe,Bot doing sth,, ,0,query_knowledge_base,2020-06-11 05:51:29,2020-06-11 05:51:29,0.0
+21,2020-06-11,1685355428166685,Minh o dalat,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-11 05:51:39,no_timestamp,no_wait_time
+22,2020-06-10,2685732168120455,"https://scontent.xx.fbcdn.net/v/t1.15752-9/102958979_337007463949832_4486169407731307767_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=hcbdz1mLnyEAX-HG5eb&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=2439ce0d3a42e28633ce059204b1b98f&oe=5F05A32E
+phí ship thế nào ạ
+mình ở nha trang",bot handover_to_inbox,1.1,shipping_order,0,handover_to_inbox,2020-06-10 08:52:19,no_timestamp,no_wait_time
+23,2020-06-10,2745523448793940,"Shop ơi còn 2sp này ko ạ
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103114211_284607959570803_1792558361945641202_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=LV8SHjrSWbQAX-QFPum&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d5cfe03f18f84e851e27b16206647051&oe=5F05FB03
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103089442_276679890198365_1879072397328721306_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_ohc=lntDZWPFzNgAX-l2g0R&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=48f5b2332d4d41356f851fc1610ae118&oe=5F07B0FE
+https://scontent.xx.fbcdn.net/v/t1.15752-9/99246329_981615658953468_953620779960893440_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=MGs_RtZPMMMAX8UC61H&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=aef775016afde2a4cad155cd107953d6&oe=5F06721C
+https://scontent.xx.fbcdn.net/v/t1.15752-9/97499495_713087996118235_4056289843032883200_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=1HmhP32dmoAAX8-QLlC&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=ecb22a3f23a558d2cbb9024f5d6b5ec5&oe=5F060516",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,1.1, ,0,query_knowledge_base,2020-06-10 06:04:09,2020-06-10 06:04:14,5.0
+23,2020-06-10,2745523448793940,"Ship giúp m 1 thỏ ú oà vs bộ số và chữ cái này đến vincom Nguyễn Chí Thanh trước 4h được ko ah
+0916795217 ạ",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-10 06:06:38,no_timestamp,no_wait_time
+24,2020-06-10,1817724428325324,https://scontent.xx.fbcdn.net/v/t1.15752-9/102333411_683428905781158_5641958259381239808_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=-6ke0DZ3hB8AX-tud5H&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d98070b8dabc57454a6c9094a72b2196&oe=5F07C745,"Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+",1.1, ,0,send_link,2020-06-10 04:45:18,2020-06-10 04:45:21,3.0
+24,2020-06-10,1817724428325324,T lấy 1 bộ này nhé,"Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+",, ,0,query_knowledge_base,2020-06-10 04:46:00,2020-06-10 04:46:00,0.0
+24,2020-06-10,1817724428325324,Ship t đc này nhé khu xí nghiệp ép dầu xã tam hợp huyện bình xuyên tỉnh Vĩnh phúc 0985341344,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-10 04:48:15,no_timestamp,no_wait_time
+25,2020-06-10,2217553041627018,Bạnoi,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",, ,0,greet,2020-06-10 04:33:15,2020-06-10 04:33:15,0.0
+25,2020-06-10,2217553041627018,Bạn oi cho minh hoi bên bạn bán câu tuột,Bot doing sth,, ,0,query_knowledge_base,2020-06-10 04:33:55,2020-06-10 04:33:56,1.0
+25,2020-06-10,2217553041627018,"Có mẩu cho minh coi voi
+https://scontent.xx.fbcdn.net/v/t1.15752-9/102658718_661047928083866_2390465159736030857_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_oc=AQmGYR5QtSG1Gme-3IWsHJeGFHwgayZVfmyg71eq7G6fGyzNhbtzMbuBFoQnCjAVNoF4Qy3n3_hxh6HvHX2e1doJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=3f7bf82bf8d8d687a6cb80709abe4cd8&oe=5F064005","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-10 04:34:26,2020-06-10 04:34:28,2.0
+25,2020-06-10,2217553041627018,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-10 04:36:11,2020-06-10 04:36:11,0.0
+25,2020-06-10,2217553041627018,/connect_employee,bot handover_to_inbox,,handover_to_inbox,0,connect_employee,2020-06-10 04:36:22,no_timestamp,no_wait_time
+26,2020-06-10,2930165970343785,"https://scontent.xx.fbcdn.net/v/t1.15752-9/102840894_2762173374055815_7281310371041995085_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=s_K33Rvk3T4AX_MBKMJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=6816e996d38d0fd90a869f338890d5df&oe=5F077F44
+Shop ơi bên m có sẵn ghế joie stages này k ah",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,1.1, ,0,query_knowledge_base,2020-06-10 03:46:47,2020-06-10 03:46:51,4.0
+26,2020-06-10,2930165970343785,Màu mình gửi còn k b ơi,"Sản phẩm 𝐆𝐡𝐞̂́ 𝐨̂ 𝐭𝐨̂ cao cấp 𝐄𝐯𝐞𝐫𝐲 𝐒𝐭𝐚𝐠𝐞 𝐅𝐗 𝐒𝐢𝐠𝐧𝐚𝐭𝐮𝐫𝐞 (NOIR) hãng sản xuất Joie hiện shop đang có mức giá: *7,990,000 VND*.
+",,other,1,query_knowledge_base,2020-06-10 03:49:18,2020-06-10 03:49:18,0.0
+27,2020-06-10,2891958157587464,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103278080_735338127204381_4161603760796603519_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=arFOcmEaabQAX-rRrrs&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=b6299a2d72cea757fe1c0719f4dff225&oe=5F06EB83
+Mình muốn mua ghế này","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",1.1, ,0,query_knowledge_base,2020-06-10 02:48:05,2020-06-10 02:48:07,2.0
+27,2020-06-10,2891958157587464,Mình gửi nhà xe vào,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-10 02:48:49,no_timestamp,no_wait_time
+28,2020-06-09,3958024954269387,/start_conversation,"Chào Thư Lê, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-09 09:40:57,2020-06-09 09:40:57,0.0
+28,2020-06-09,3958024954269387,kệ chữ A của winfun còn kg,"Sản phẩm Kệ chữ A phát nhạc 5 trong 1 Winfun 0846 hãng sản xuất Winfun hiện shop đang có hãng sản xuất: *Winfun*.
+Bạn tham khảo các sản phẩm sau nhé ạ:",, ,0,query_knowledge_base,2020-06-09 09:41:34,2020-06-09 09:41:34,0.0
+28,2020-06-09,3958024954269387,https://scontent.xx.fbcdn.net/v/t1.15752-9/103265930_601503007174042_2492472536574937193_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=4_ZeJ39PmkwAX8g0GzZ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=74bfaf73354b3c8c7f3757b444365df9&oe=5F05CCBF,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-09 10:20:27,2020-06-09 10:20:32,5.0
+28,2020-06-09,3958024954269387,mình thấy trên Tiki còn sp này fai kg shop,Bạn vui lòng bấm vào sản phẩm để xem ảnh và thông tin chi tiết nhé!,,other,1,query_knowledge_base,2020-06-09 10:20:41,2020-06-09 10:20:41,0.0
+29,2020-06-09,2820624228046991,/start_conversation,"Chào Nguyễn Hải, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-09 10:00:37,2020-06-09 10:00:37,0.0
+29,2020-06-09,2820624228046991,Hi shop,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",, ,0,greet,2020-06-09 10:00:51,2020-06-09 10:00:51,0.0
+29,2020-06-09,2820624228046991,Bên mình còn gấu bông iwava ô,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",, ,0,query_knowledge_base,2020-06-09 10:01:13,2020-06-09 10:01:14,1.0
+29,2020-06-09,2820624228046991,https://scontent.xx.fbcdn.net/v/t1.15752-9/101784704_2153006441511637_4173048845534648478_n.png?_nc_cat=100&_nc_sid=b96e70&_nc_oc=AQl9HZVedAgy5KltXFVvLrPfrX_qlfbAfG17iFX0jzF5t3J7uIzNeuY98_ZqhhXS5PnGk1F8saKmNXatAeCPtQ-I&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=8fde8cc48c31c1eb0af9a154323471f5&oe=5F041EFC,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-09 10:01:42,2020-06-09 10:02:05,23.0
+29,2020-06-09,2820624228046991,Kiểu chó xài pin đó shop,"Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",1.2, ,0,handover_to_inbox,2020-06-09 10:02:07,2020-06-09 10:14:49,762.0
+29,2020-06-09,2820624228046991,"/query_knowledge_base{""url"": ""https://shopee.vn/product/36371562/7408016900"", ""product_id"": ""https://shopee.vn/product/36371562/7408016900""}","Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",1.2,other,1,query_knowledge_base,2020-06-09 10:14:49,2020-06-09 10:14:49,0.0
+30,2020-06-09,3357701047583052,/start_conversation,"Chào Vũ Hường, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-09 07:27:09,2020-06-09 07:27:10,1.0
+30,2020-06-09,3357701047583052,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101987866_262217024859877_6698727800606639491_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=h0m9vuGDuO0AX9aKbe8&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0600cefcc232dd0211877472d27ee836&oe=5F0424DA
+Xem giúp e mẫu này còn ko ạ?","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-09 07:27:40,2020-06-09 07:27:44,4.0
+30,2020-06-09,3357701047583052,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101987866_262217024859877_6698727800606639491_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=h0m9vuGDuO0AX9aKbe8&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0600cefcc232dd0211877472d27ee836&oe=5F0424DA
+Mình hỏi mua mẫu này","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-09 07:28:49,2020-06-09 07:28:51,2.0
+30,2020-06-09,3357701047583052,Chú khỉ xúc xắc infantino,Bot doing sth,,other,1,query_knowledge_base,2020-06-09 07:29:13,2020-06-09 07:29:13,0.0
+31,2020-06-09,3196563313740027,/start_conversation,"Chào Thu Gam, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-09 06:41:00,2020-06-09 06:41:01,1.0
+31,2020-06-09,3196563313740027,Alo,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",, ,0,greet,2020-06-09 06:41:10,2020-06-09 06:41:10,0.0
+31,2020-06-09,3196563313740027,"https://scontent.xx.fbcdn.net/v/t1.15752-9/102921529_878878555855378_1971949545253212487_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=7QBxvUU0YgwAX_6d57w&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=4d8744dddfa5e0d14a49ab2da34c30f6&oe=5F0331FD
+Bên shop có xe nay ko","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-09 06:41:39,2020-06-09 06:41:45,6.0
+31,2020-06-09,3196563313740027,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-09 06:42:00,2020-06-09 06:42:00,0.0
+31,2020-06-09,3196563313740027,/connect_employee,bot handover_to_inbox,,handover_to_inbox,0,connect_employee,2020-06-09 06:42:07,no_timestamp,no_wait_time
+32,2020-06-09,2010721315680289,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103423811_2280568422239359_6443076849383541888_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=oLQ0lPSGSz4AX-qGfQL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=e6811a16f30da3aee0c99aa730d02cea&oe=5F0679A0
+Mình Ck xong địu em bé nha",bot handover_to_inbox,1.1,handover_to_inbox,0,handover_to_inbox,2020-06-09 03:55:56,no_timestamp,no_wait_time
+33,2020-06-09,3099266850165938,Có bàn ghế k ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",, ,0,query_knowledge_base,2020-06-09 02:06:33,2020-06-09 02:06:34,1.0
+33,2020-06-09,3099266850165938,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101799982_404099567143965_633643183570482430_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=2nlz31UELCsAX9cL6WZ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=849ff6871f761c9053e4637acfa2e062&oe=5F02A08F
+Đây ạ","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-09 02:08:02,2020-06-09 02:08:04,2.0
+33,2020-06-09,3099266850165938,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-09 02:08:37,2020-06-09 02:08:37,0.0
+33,2020-06-09,3099266850165938,Bộ mình gửi anh đó ạ,bot handover_to_inbox,,handover_to_inbox,0,query_knowledge_base,2020-06-09 02:09:00,no_timestamp,no_wait_time
+34,2020-06-08,4655795327779483,/start_conversation,"Chào Đào Hoàng Oanh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-08 06:36:09,2020-06-08 06:36:10,1.0
+34,2020-06-08,4655795327779483,"chào bạn
+ghế này bạn còn k
+https://scontent.xx.fbcdn.net/v/t1.15752-9/101850917_2581078348774230_2019549895028403871_n.png?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=Xe07WCWV9n8AX_yHCJb&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=84d76a4ded603c7980d3ef83fb4da084&oe=5F022802
+có hàng sẵn k ạ",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,, ,0,query_knowledge_base,2020-06-08 06:36:39,2020-06-08 06:36:46,7.0
+34,2020-06-08,4655795327779483,có hàng sẵn ở cửa hàng k ạ?,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-08 06:37:21,no_timestamp,no_wait_time
+35,2020-06-08,3016773925116833,/start_conversation,"Chào Hương Ngân, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-08 04:34:27,2020-06-08 04:34:27,0.0
+35,2020-06-08,3016773925116833,"Em ơi, bên em có xe đẩy mastella ko?","Sản phẩm Xe đẩy 2 chiều cao cấp Mastela hãng sản xuất Mastela hiện shop đang có mức giá: *1,640,000 VND (giá gốc 3,100,000 VND)*.
+",, ,0,query_knowledge_base,2020-06-08 04:35:04,2020-06-08 04:35:05,1.0
+35,2020-06-08,3016773925116833,Xe du lịch 1 chiều em ạ,"Sản phẩm Xe đẩy 2 chiều cao cấp Mastela hãng sản xuất Mastela hiện shop đang có mức giá: *1,640,000 VND (giá gốc 3,100,000 VND)*.
+",, ,0,query_knowledge_base,2020-06-08 04:35:47,2020-06-08 04:35:47,0.0
+35,2020-06-08,3016773925116833,https://scontent.xx.fbcdn.net/v/t1.15752-9/102572741_273787503815652_634168482762550545_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_oc=AQkUVtP8ecAaJZIE5RiIZ-ghcX2At1VPScBdzFaTkRlxvZkISg_Oyq0XVbAR-oNZXZZRyeZhvAKMOv-leU5rNQrr&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=49d3761631e158eb4ab3a4291f6ed91d&oe=5F02449A,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-08 04:36:29,2020-06-08 04:36:32,3.0
+35,2020-06-08,3016773925116833,Loại này em ạ,Bot doing sth,,other,1,query_knowledge_base,2020-06-08 04:36:40,2020-06-08 04:36:40,0.0
+36,2020-06-08,1453642688045073,Shop còn ghế ăn dặm Aria care ko ạ,Bot doing sth,1.1, ,0,query_knowledge_base,2020-06-08 04:21:09,2020-06-08 04:21:09,0.0
+36,2020-06-08,1453642688045073,https://scontent.xx.fbcdn.net/v/t1.15752-9/101010297_259284498671147_853708461528253475_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=MWnZozX70wAAX-sm2Gl&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=c436c7bf56b95ebefeb7dbe20d0e3881&oe=5F01B187,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",,other,1,send_link,2020-06-08 04:21:27,2020-06-08 04:21:33,6.0
+37,2020-06-05,1304961172966449,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101091924_184707619556051_4027479597548306432_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=pBzFjhfHsKcAX9YtdZJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=66fb96d2888de0fa50f5c3eb2b581667&oe=5F00908E
+Còn ko shop","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",1.1, ,0,query_knowledge_base,2020-06-05 08:52:42,2020-06-05 08:52:44,2.0
+37,2020-06-05,1304961172966449,https://scontent.xx.fbcdn.net/v/t1.15752-9/101091924_184707619556051_4027479597548306432_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=pBzFjhfHsKcAX9YtdZJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=66fb96d2888de0fa50f5c3eb2b581667&oe=5F00908E,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",,other,1,send_link,2020-06-05 08:53:21,2020-06-05 08:53:24,3.0
+38,2020-06-05,2195476057144108,"https://scontent.xx.fbcdn.net/v/t1.15752-9/99426024_3250833441603144_1695431163205648384_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=mM2s1mVESx8AX81CDrM&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=f8f48abb31257d86c6dfa46f6a771192&oe=5F002348
+Mình muốn đặt 2sp này","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,query_knowledge_base,2020-06-05 08:44:01,2020-06-05 08:44:06,5.0
+38,2020-06-05,2195476057144108,mình check trên shopee nhưng tận thứ 3 mới nhận dc,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-05 08:45:23,no_timestamp,no_wait_time
+39,2020-06-05,4506969552662036,/start_conversation,"Chào Phuong Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-05 07:49:59,2020-06-05 07:50:00,1.0
+39,2020-06-05,4506969552662036,Chào shop,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",, ,0,greet,2020-06-05 07:50:19,2020-06-05 07:50:19,0.0
+39,2020-06-05,4506969552662036,Mình muốn hỏi mua bộ này,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",, ,0,query_knowledge_base,2020-06-05 07:50:44,2020-06-05 07:50:45,1.0
+39,2020-06-05,4506969552662036,https://scontent.xx.fbcdn.net/v/t1.15752-9/101068651_343896426579181_5166309997356777472_n.png?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=sxSrG2Mj7LEAX_V0waJ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=1f86a695071f093522e832593a27ae0c&oe=5EFE16E6,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-05 07:51:08,2020-06-05 07:51:24,16.0
+39,2020-06-05,4506969552662036,"5,000,000 VND còn 4,100,000 VND phải không shop",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,, ,0,handover_to_inbox,2020-06-05 07:57:47,2020-06-05 07:58:54,67.0
+39,2020-06-05,4506969552662036,"/query_knowledge_base{""url"": ""https://www.facebook.com/shopgauvabingo/posts/2434989970144660"", ""product_id"": ""https://www.facebook.com/shopgauvabingo/posts/2434989970144660""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,,other,1,query_knowledge_base,2020-06-05 07:58:53,2020-06-05 07:58:54,1.0
+40,2020-06-05,1718344591571514,"Bạn ơi
+Bạn còn đàn guitar k",Bot doing sth,1.1, ,0,query_knowledge_base,2020-06-05 07:01:42,2020-06-05 07:01:43,1.0
+40,2020-06-05,1718344591571514,https://scontent.xx.fbcdn.net/v/t1.15752-9/101498229_253553652637318_4844843244418236416_n.jpg?_nc_cat=102&_nc_sid=b96e70&_nc_oc=AQkjv0QNx-FnWDoRkbEeao09ejprkDKg-py3UHgM-w1Kz9QaMJehRYHTEodsrHFZn_iRHwZu-GYomGobx5quKkN_&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=58ef36ef9a7db6db66781b2f1a3b8265&oe=5EFFC003,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-05 07:02:17,2020-06-05 07:02:20,3.0
+40,2020-06-05,1718344591571514,"Mình hỏi cái đàn guitar
+Mình gửi hình cho bạn r đấy
+Với cái vo lăng điện từ
+Bạn còn hàng k ak",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-05 07:03:14,no_timestamp,no_wait_time
+41,2020-06-05,1822393247778093,"https://scontent.xx.fbcdn.net/v/t1.15752-9/84095291_1180200439008185_8125990163101777920_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=zPLpu0QC3xAAX9qdDhp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03dcef530beca8e22dc059b95ebc8f50&oe=5EFF206C
+b shop có bán nôi ntn ko","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",1.1,other,1,query_knowledge_base,2020-06-05 04:22:12,2020-06-05 04:22:15,3.0
+42,2020-06-05,2621484447928698,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101735071_1025825091165903_1084107680324255744_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=_ROTyZqMLv8AX_q2jin&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=b0ab781f7d5474c7d69544024271b263&oe=5F010B4B
+ib nhé",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,1.1, ,0,query_knowledge_base,2020-06-05 03:46:39,2020-06-05 03:46:42,3.0
+42,2020-06-05,2621484447928698,có bảo hành ko b,"Sản phẩm Máy giặt tự động mini DOUX  hiện shop đang có thời gian bảo hành: *12 tháng*.
+Bạn tham khảo các sản phẩm sau nhé ạ:",, ,0,query_knowledge_base,2020-06-05 03:48:15,2020-06-05 03:48:15,0.0
+42,2020-06-05,2621484447928698,mình ở SG nhỡ có chuyện gì với máy thì bảo hành sao b,"Sản phẩm Máy giặt tự động mini DOUX  hiện shop đang có thời gian bảo hành: *12 tháng*.
+Bạn tham khảo các sản phẩm sau nhé ạ:",, ,0,query_knowledge_base,2020-06-05 03:49:51,2020-06-05 03:49:51,0.0
+42,2020-06-05,2621484447928698,sao b,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",, ,0,greet,2020-06-05 03:51:13,2020-06-05 03:51:13,0.0
+42,2020-06-05,2621484447928698,bảo hành... ở đâu á,"Sản phẩm Máy giặt tự động mini DOUX  hiện shop đang có thời gian bảo hành: *12 tháng*.
+Bạn tham khảo các sản phẩm sau nhé ạ:",, ,0,query_knowledge_base,2020-06-05 03:51:37,2020-06-05 03:51:37,0.0
+42,2020-06-05,2621484447928698,"chỉ ghi bảo hành ở Việt Nam
+nhưng ở đâu
+mình ở SG
+chẳng lẽ gửi ra HN",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-05 03:52:58,no_timestamp,no_wait_time
+43,2020-06-05,2774214605925248,"https://scontent.xx.fbcdn.net/v/t1.15752-9/100586203_769071940503889_2044779478030221312_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=4GvzM6-mXvAAX_XvxGP&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=105c4c049f3b9e6a7ada3d989f856425&oe=5EFFCF03
+B ơi bộ này bao tiền","Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+",1.1,other,1,query_knowledge_base,2020-06-05 03:48:20,2020-06-05 03:48:22,2.0
+44,2020-06-05,2072485216139281,14 tháng e ơi,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",1.1, ,0,greet,2020-06-05 02:27:53,2020-06-05 02:27:53,0.0
+44,2020-06-05,2072485216139281,"E muốn tìm ghế cho bé
+Loại tốt chút
+https://scontent.xx.fbcdn.net/v/t1.15752-9/103157693_308339603532824_2384752136945664000_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=SgjUeiCWqkIAX8H0y1X&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=1b80009fd91fa309db959dfdab63ebb3&oe=5EFF281C
+Loại này shop có ko ah","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",,other,1,query_knowledge_base,2020-06-05 02:29:28,2020-06-05 02:29:33,5.0
+45,2020-06-04,1789080991119235,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101895703_250373386061852_4749890231992320_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=BYTySI6p6MMAX-VzLrX&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=7e14b533065288b929744a7f8f62b621&oe=5EFCCABC
+Nay nhieu sh","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,query_knowledge_base,2020-06-04 09:03:50,2020-06-04 09:03:53,3.0
+45,2020-06-04,1789080991119235,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101895703_250373386061852_4749890231992320_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_ohc=BYTySI6p6MMAX-VzLrX&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=7e14b533065288b929744a7f8f62b621&oe=5EFCCABC
+Bô bạc si b",bot handover_to_inbox,,handover_to_inbox,0,query_knowledge_base,2020-06-04 09:04:28,no_timestamp,no_wait_time
+46,2020-06-04,3042325285859691,/start_conversation,"Chào Nguyễn Hân, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",, ,0,start_conversation,2020-06-04 06:11:47,2020-06-04 06:11:47,0.0
+46,2020-06-04,3042325285859691,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101342371_676710269727647_4816414387734577152_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=CpB56Xr73Z0AX_AeKbr&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=d791d72640d953cea5f61279ea05fb39&oe=5EFEEBB6
+bạn có gối này ko","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.2, ,0,query_knowledge_base,2020-06-04 06:12:19,2020-06-04 06:12:24,5.0
+46,2020-06-04,3042325285859691,mình cần mua gối chống bẹp đầu,"Sản phẩm  Gối   có giá bán thấp nhất từ: *119,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",, ,0,query_knowledge_base,2020-06-04 06:13:02,2020-06-04 06:13:02,0.0
+46,2020-06-04,3042325285859691,"https://www.facebook.com/shopgauvabingo/posts/1647517438891921/
+cái này cơ mà bạn","Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",1.2,other,1,query_knowledge_base,2020-06-04 06:15:03,2020-06-04 06:15:04,1.0
+47,2020-06-04,2026301540780894,/start_conversation,"Chào Nguyễn Phương Linh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-04 05:07:03,2020-06-04 05:07:03,0.0
+47,2020-06-04,2026301540780894,https://scontent.xx.fbcdn.net/v/t1.15752-9/101390012_1512450448960518_1704680967983071232_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_oc=AQklxkjopUzRsfF1H5VFRUsOmcfQCz2PL0naOrOYEodTkuvPTpFmd0GN0F0mk6jhwSRikK4FJ0BZXsb4wYjnP-G4&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=ac7a9b23d5b6bf532f913ab7d94a5fa7&oe=5EFDEE7C,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-04 05:07:27,2020-06-04 05:07:27,0.0
+47,2020-06-04,2026301540780894,Bộ cầu trượt c nhed,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-04 05:08:09,2020-06-04 05:08:13,4.0
+47,2020-06-04,2026301540780894,"/query_knowledge_base{""url"": ""https://shopee.vn/product/36371562/6513612615"", ""product_id"": ""https://shopee.vn/product/36371562/6513612615""}","Sản phẩm Cầu trượt xích đu Hola hải cẩu 2020  hiện shop đang có mức giá: *1,982,500 VND (giá gốc 3,250,000 VND)*.
+",, ,0,query_knowledge_base,2020-06-04 05:08:52,2020-06-04 05:08:52,0.0
+47,2020-06-04,2026301540780894,Shop kia bán rẻ hơn c nhỉ 1050,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-04 05:09:35,no_timestamp,no_wait_time
+48,2020-06-04,1718184264915821,b còn đồ chơi xúc cát k b ơi,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",1.1, ,0,query_knowledge_base,2020-06-04 03:14:33,2020-06-04 03:14:34,1.0
+48,2020-06-04,1718184264915821,https://scontent.xx.fbcdn.net/v/t1.15752-9/102412959_935421423567955_5618284017393598464_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=06i8lgVlLv0AX-01pKj&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=3f4dfa237dfe4f7be3cce7adf37aa117&oe=5EFD7950,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,send_link,2020-06-04 03:14:42,2020-06-04 03:14:47,5.0
+48,2020-06-04,1718184264915821,"m có gửi hình ảnh đấy bạn
+trước m mua của b 1 lần rồi
+giờ m muốn mua thêm",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-04 03:15:52,no_timestamp,no_wait_time
+49,2020-06-03,2196385107097790,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101804576_545427386332902_382866535955300352_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_oc=AQm7IlgK1R8daZ9fkGtZc9JX9g9zsz1h3LVa024aNUYhLAYcUnW_rZBibLFpimy-Dia9bLlpk0FHuNr6BZhxnWby&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=f8ff3d03c409ed82aca0040874bacba4&oe=5EFBAF2B
+shop còn kệ này k ah","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-03 04:51:52,2020-06-03 04:51:56,4.0
+49,2020-06-03,2196385107097790,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-03 04:52:36,2020-06-03 04:52:36,0.0
+49,2020-06-03,2196385107097790,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101804576_545427386332902_382866535955300352_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_oc=AQm7IlgK1R8daZ9fkGtZc9JX9g9zsz1h3LVa024aNUYhLAYcUnW_rZBibLFpimy-Dia9bLlpk0FHuNr6BZhxnWby&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=f8ff3d03c409ed82aca0040874bacba4&oe=5EFBAF2B
+đây mà b","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-03 04:52:54,2020-06-03 04:52:56,2.0
+49,2020-06-03,2196385107097790,"mạnh nhà shop bị đơ à
+hic",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-03 04:54:31,no_timestamp,no_wait_time
+50,2020-06-02,2943168532468545,"https://scontent.xx.fbcdn.net/v/t1.15752-9/96564789_281925776304547_6188056341681012736_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=MRuSUYD4DaIAX_vXlsr&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=95fb4918f595e35b210600277d466e98&oe=5EFC9AAD
+Shop có thảm này k ạ","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-02 10:26:03,2020-06-02 10:26:28,25.0
+50,2020-06-02,2943168532468545,"/query_knowledge_base{""url"": ""https://shopee.vn/product/36371562/2849771360"", ""product_id"": ""https://shopee.vn/product/36371562/2849771360""}","Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",1.2,other,1,query_knowledge_base,2020-06-02 10:27:09,2020-06-02 10:27:09,0.0
+51,2020-06-02,3260382887346217,/start_conversation,"Chào Nguyễn Hương Giang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-02 08:48:07,2020-06-02 08:48:08,1.0
+51,2020-06-02,3260382887346217,https://scontent.xx.fbcdn.net/v/t1.15752-9/102422779_589489631687551_4880899490573189120_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=ode5xhoqkoUAX9uJju2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=dcc82c92b4d95e6627800cf864eeada1&oe=5EFD03AC,Bạn đang tìm kiếm thông tin gì ạ?,, ,0,send_link,2020-06-02 08:51:02,2020-06-02 08:51:02,0.0
+51,2020-06-02,3260382887346217,B ơi  mình mua cái này trên shopee,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-02 08:51:14,no_timestamp,no_wait_time
+52,2020-06-01,2043629462316016,"Hi b
+B còn em này ko nhì
+https://scontent.xx.fbcdn.net/v/t1.15752-9/100679384_268659557614354_8786359535393570816_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=tdlls2VFDssAX9XWm8j&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9f7b66d2b06741dfbcad1fa055afb56e&oe=5EFA5D9F","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",1.1, ,0,query_knowledge_base,2020-06-01 08:24:18,2020-06-01 08:24:21,3.0
+52,2020-06-01,2043629462316016,"https://scontent.xx.fbcdn.net/v/t1.15752-9/100679384_268659557614354_8786359535393570816_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=tdlls2VFDssAX9XWm8j&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9f7b66d2b06741dfbcad1fa055afb56e&oe=5EFA5D9F
+Gấu bông này này b","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-01 08:24:56,2020-06-01 08:24:59,3.0
+52,2020-06-01,2043629462316016,Alooo,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,other,1,greet,2020-06-01 08:36:53,2020-06-01 08:36:53,0.0
+53,2020-06-01,1490627661029749,https://scontent.xx.fbcdn.net/v/t1.15752-9/95924396_2946321842110869_398733390687240192_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=SF5T3o0EUXAAX-mE8BA&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9831d50138666e549a451c0da15248e7&oe=5EFBB591,Bạn đang tìm kiếm thông tin gì ạ?,1.1, ,0,send_link,2020-06-01 06:50:43,2020-06-01 06:50:43,0.0
+53,2020-06-01,1490627661029749,"Balô nay có bánh xe k em
+https://scontent.xx.fbcdn.net/v/t1.15752-9/95924396_2946321842110869_398733390687240192_n.jpg?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=SF5T3o0EUXAAX-mE8BA&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=9831d50138666e549a451c0da15248e7&oe=5EFBB591",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-01 06:51:33,no_timestamp,no_wait_time
+54,2020-06-01,2170909172925487,/start_conversation,"Chào Lê Trang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",1.1, ,0,start_conversation,2020-06-01 04:34:26,2020-06-01 04:34:26,0.0
+54,2020-06-01,2170909172925487,"Bộ này có về lại ko ạ
+https://scontent.xx.fbcdn.net/v/t1.15752-9/96689610_2628134154109833_4626651080351023104_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_ohc=grLPIF_TLUwAX9RYOpj&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=454cdb0f50c873bb6819e9745d784e38&oe=5EFA2BEF",bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-01 04:34:51,no_timestamp,no_wait_time
+55,2020-06-01,1573116472772875,"Địu này thì sao ạ
+https://scontent.xx.fbcdn.net/v/t1.15752-9/82263361_535213703813820_1100154541430538240_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQkvEXnYS4upNVaanH34OUvYPPXb6zSWMdZfcCHqZTwQ0QShNeqzsQ9eMcRSR6Gtye6CGlR6pBttai4bZwFb7jhl&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=7d6bcb964dfda11205e33fe8b29f11fc&oe=5EF9629A",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,1.1, ,0,query_knowledge_base,2020-06-01 03:38:12,2020-06-01 03:38:16,4.0
+55,2020-06-01,1573116472772875,"Hnay có ship đc ko ạ
+Mình ở mễ trì b ạ",bot handover_to_inbox,,shipping_order,0,handover_to_inbox,2020-06-01 03:44:50,no_timestamp,no_wait_time
+56,2020-06-01,2372599362843381,"Cho mình đặt một cái
+289 Nguyễn Thái Bình phường 12 Tân Bình","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",, ,0,query_knowledge_base,2020-06-01 03:15:35,2020-06-01 03:15:36,1.0
+56,2020-06-01,2372599362843381,"https://scontent.xx.fbcdn.net/v/t1.15752-9/100053207_939528963150995_6609365575124647936_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_oc=AQlY5fp8JYkANSxtXJp9SZ3CZ2dCJxk31KlkiXG3a7h0P_QO6yLd-sNE7EuvEnwZ6u1UlhtPJdSjkjpsnApgxf3C&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=c80917ba1d60a86746b615e5ec79fbd7&oe=5EFA6D56
+Này nè bạn","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-01 03:16:12,2020-06-01 03:16:18,6.0
+56,2020-06-01,2372599362843381,"/disagree{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,1.2, ,0,disagree,2020-06-01 03:16:40,2020-06-01 03:16:40,0.0
+56,2020-06-01,2372599362843381,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101667761_271439810894014_7649944380379234304_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_oc=AQmcYNZFz58WyZPuqPAMi-1o89XJTPTdzGED5IMiHV0jLIwQoqorxVnAmRauyj4oqVb9IgDR76P9lEWwFsqB1F5Y&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=645233dbaa4a793e444c7c617de63c45&oe=5EF8F9DA
+Mình muốn đặt cái này","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-01 03:17:36,2020-06-01 03:17:41,5.0
+56,2020-06-01,2372599362843381,"Kệ chữ A Umoo
+https://scontent.xx.fbcdn.net/v/t1.15752-9/101667761_271439810894014_7649944380379234304_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_oc=AQmcYNZFz58WyZPuqPAMi-1o89XJTPTdzGED5IMiHV0jLIwQoqorxVnAmRauyj4oqVb9IgDR76P9lEWwFsqB1F5Y&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=645233dbaa4a793e444c7c617de63c45&oe=5EF8F9DA","Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",, ,0,query_knowledge_base,2020-06-01 03:20:09,2020-06-01 03:20:11,2.0
+56,2020-06-01,2372599362843381,Ủa shop bị sao vậy 🙄,bot handover_to_inbox,,handover_to_inbox,0,handover_to_inbox,2020-06-01 03:20:37,no_timestamp,no_wait_time
