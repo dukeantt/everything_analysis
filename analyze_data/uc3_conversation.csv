@@ -1,0 +1,611 @@
+id,timestamp,sender_id,message,bot_message,outcome,silent,user_intent,user_timestamp_detail,bot_timestamp_detail,wait_time
+2,2020-06-19,3249860898460524,/start_conversation,"Chào Linh Khanh Chi, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-19 10:17:30,2020-06-19 10:17:30,0.0
+2,2020-06-19,3249860898460524,Shop có địu k ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-19 10:17:42,2020-06-19 10:17:43,1.0
+2,2020-06-19,3249860898460524,"/confirm_attribute_value{""price"": ""100k - 500k""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-19 10:18:04,2020-06-19 10:18:04,0.0
+2,2020-06-19,3249860898460524,"/confirm_attribute_value{""color"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-19 10:18:14,2020-06-19 10:18:14,0.0
+2,2020-06-19,3249860898460524,"/confirm_attribute_value{""brand"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-19 10:18:22,2020-06-19 10:18:22,0.0
+2,2020-06-19,3249860898460524,"/confirm_attribute_value{""age_of_use"": ""0-36 Tháng""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-19 10:18:28,2020-06-19 10:18:28,0.0
+2,2020-06-19,3249860898460524,"/confirm_attribute_value{""size"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-19 10:18:38,2020-06-19 10:18:38,0.0
+2,2020-06-19,3249860898460524,"/confirm_attribute_value{""guarantee"": ""NULL_1""}","Dạ mời bạn tham khảo sản phẩm Địu giá 100k - 500k, độ tuổi sử dụng 0-36 Tháng hiện có tại shop nhé!", ,0,confirm_attribute_value,2020-06-19 10:18:46,2020-06-19 10:18:46,0.0
+4,2020-06-19,2179762168741499,Ghế ô tô joie stage có hàng k shop,bot handover_to_inbox, ,0,query_knowledge_base,2020-06-19 07:38:23,no_timestamp,no_wait_time
+6,2020-06-18,2231756573602729,Shop có bát ăn dặm luôn k ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-18 03:38:32,2020-06-18 03:38:33,1.0
+6,2020-06-18,2231756573602729,"/confirm_attribute_value{""price"": ""100k - 500k""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-18 03:39:08,2020-06-18 03:39:08,0.0
+6,2020-06-18,2231756573602729,"/confirm_attribute_value{""brand"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-18 03:39:27,2020-06-18 03:39:27,0.0
+6,2020-06-18,2231756573602729,Cho m xem list đc k,Bot doing sth, ,0,query_knowledge_base,2020-06-18 03:39:57,2020-06-18 03:39:57,0.0
+6,2020-06-18,2231756573602729,"/confirm_attribute_value{""color"": ""Set 2 Chiếc""}","Sản phẩm  Bát chống trượt Munchkin (Mỹ) chính hãng  Set 2 Chiếc, giá 100k - 500k  có giá bán thấp nhất từ: *74,700 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,confirm_attribute_value,2020-06-18 03:40:08,2020-06-18 03:40:08,0.0
+8,2020-06-17,2928258883896003,/start_conversation,"Chào Hoàng Anh Vichy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-17 04:56:16,2020-06-17 04:56:17,1.0
+8,2020-06-17,2928258883896003,"/query_knowledge_base{""object_type"": ""noi""}",Bot doing sth, ,0,query_knowledge_base,2020-06-17 04:56:25,2020-06-17 04:56:25,0.0
+8,2020-06-17,2928258883896003,"/confirm_attribute_value{""color"": ""Ghi Sao""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-06-17 04:56:51,2020-06-17 04:56:52,1.0
+8,2020-06-17,2928258883896003,Có cũi vải ko ạ,"Sản phẩm  Giuong chất liệu Vải  có giá bán thấp nhất từ: *2,990,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-17 04:57:23,2020-06-17 04:57:23,0.0
+9,2020-06-17,1722189217862437,/start_conversation,"Chào Nhm Khoi, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-17 03:39:42,2020-06-17 03:39:43,1.0
+9,2020-06-17,1722189217862437,Mình có phao bơi ko nhỉ,"Sản phẩm Phao  hiện shop đang có mức khuyến mãi: *11%*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-06-17 03:39:58,2020-06-17 03:39:59,1.0
+9,2020-06-17,1722189217862437,Ko có loại phao tay hả bạn,"Sản phẩm Phao  hiện shop đang có mức khuyến mãi: *11%*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-06-17 03:45:48,2020-06-17 03:45:49,1.0
+9,2020-06-17,1722189217862437,Bên mình có nhận đại lý ko nhỉ,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-17 03:46:39,no_timestamp,no_wait_time
+11,2020-06-16,3177399478982999,Có bạn quây ko ban,"Sản phẩm  Quây   có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-16 07:29:25,2020-06-16 07:29:26,1.0
+11,2020-06-16,3177399478982999,Hollla 1tr750 bnhiu m vay e,"Sản phẩm Quây Holla Vương Miện hãng sản xuất Holla, giá 1tr750 hiện shop đang có mức giá: *1,750,000 VND (giá gốc 3,000,000 VND)*.
+", ,0,query_knowledge_base,2020-06-16 10:15:18,2020-06-16 10:15:19,1.0
+11,2020-06-16,3177399478982999,"Phi giao hàng ntn e
+C o đồng nai",bot handover_to_inbox, ,0,handover_to_inbox,2020-06-16 10:18:53,no_timestamp,no_wait_time
+12,2020-06-16,1254904904632503,"Bên b có loại xe đẩy du lịch nào siêu nhỏ gọn ko
+Bé có thê nằm đc và có mái che",Bot doing sth, ,0,query_knowledge_base,2020-06-16 07:30:30,2020-06-16 07:30:31,1.0
+12,2020-06-16,1254904904632503,"/confirm_attribute_value{""price"": ""5M - 10M""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-16 08:06:41,2020-06-16 08:06:41,0.0
+13,2020-06-16,2994168683993134,/start_conversation,"Chào Tan Le, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-16 02:36:58,2020-06-16 02:36:58,0.0
+13,2020-06-16,2994168683993134,shop có cũi cho trẻ em không,Bot doing sth, ,0,query_knowledge_base,2020-06-16 02:37:31,2020-06-16 02:37:31,0.0
+13,2020-06-16,2994168683993134,có sản phẩm nào dưới 2 triệu không,"Sản phẩm  🔥 Giường cũi Joie Commuter Change Logan giá dưới 2 triệu  có giá bán thấp nhất từ: *2,250,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-16 02:38:19,2020-06-16 02:38:19,0.0
+13,2020-06-16,2994168683993134,cho xem các cũi từ 2 đến 6 triệu,"Sản phẩm  Giuong giá đến 6 triệu  có giá bán thấp nhất từ: *5,000,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-16 02:43:28,2020-06-16 02:43:28,0.0
+13,2020-06-16,2994168683993134,thế còn khoảng 3 triệu thì sao,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-16 02:44:00,no_timestamp,no_wait_time
+14,2020-06-15,2057778794304791,Shop co do choi ngam nuou cho be 6thang ko ah,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-06-15 07:43:43,2020-06-15 07:43:44,1.0
+14,2020-06-15,2057778794304791,Bộ đồ chơi ngặm nướu ah,"Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+", ,0,query_knowledge_base,2020-06-15 07:44:20,2020-06-15 07:44:20,0.0
+15,2020-06-15,2965298680190747,/start_conversation,"Chào Xu Xu, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-15 07:27:28,2020-06-15 07:27:29,1.0
+15,2020-06-15,2965298680190747,cho e hoi minh co thanh chắn giường 1m6x2m k ạ,"Dạ, sản phẩm Thanh Chắn Giường kích thước 1M6X2M hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-06-15 07:27:54,2020-06-15 07:27:55,1.0
+15,2020-06-15,2965298680190747,dạ e cảm on ạ,"Dạ, cảm ơn bạn!", ,0,thank,2020-06-15 07:31:15,2020-06-15 07:31:15,0.0
+16,2020-06-15,2773179252753665,Shop có bán ghế ăn dặm k ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-15 03:21:29,2020-06-15 03:21:30,1.0
+16,2020-06-15,2773179252753665,"/confirm_attribute_value{""price"": ""500k - 1M""}","Sản phẩm  Ghế Ăn giá 500k - 1m  có giá bán thấp nhất từ: *520,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,confirm_attribute_value,2020-06-15 03:21:41,2020-06-15 03:21:41,0.0
+17,2020-06-12,1617923238246768,Shop bí ngô ơi có bán cũi cho bé k ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-12 09:24:10,2020-06-12 09:24:11,1.0
+17,2020-06-12,1617923238246768,"/confirm_attribute_value{""price"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-12 09:24:41,2020-06-12 09:24:41,0.0
+17,2020-06-12,1617923238246768,Kích thước cũi phải k ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-12 09:26:06,2020-06-12 09:26:06,0.0
+18,2020-06-12,2830954116944829,"Xhi oi
+Có xe đẩy 1 chiều vovo nữa khong","Sản phẩm  Xe Đẩy hãng sản xuất Vovo  có giá bán thấp nhất từ: *2,200,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-12 08:42:57,2020-06-12 08:42:58,1.0
+18,2020-06-12,2830954116944829,Có xe đẩy đôi nào khong ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-12 08:43:39,2020-06-12 08:43:40,1.0
+18,2020-06-12,2830954116944829,"/confirm_attribute_value{""price"": ""1M - 2M""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-12 08:44:14,2020-06-12 08:44:15,1.0
+18,2020-06-12,2830954116944829,"/confirm_attribute_value{""brand"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-12 08:45:11,2020-06-12 08:45:11,0.0
+18,2020-06-12,2830954116944829,"/confirm_attribute_value{""color"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-12 08:45:19,2020-06-12 08:45:19,0.0
+18,2020-06-12,2830954116944829,"Cho em xem ảnh ấy ạ
+Em chọn nó dễ hơn",Bạn vui lòng bấm vào sản phẩm để xem ảnh và thông tin chi tiết nhé!, ,0,query_knowledge_base,2020-06-12 08:45:48,2020-06-12 08:45:48,0.0
+18,2020-06-12,2830954116944829,Shop xa quá chứ ko em cung phi qua ưa tiên xe đôi êm,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-12 08:46:07,no_timestamp,no_wait_time
+19,2020-06-12,2789113151197769,/start_conversation,"Chào Lưu Minh Huyền, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-12 07:58:36,2020-06-12 07:58:36,0.0
+19,2020-06-12,2789113151197769,bên bạn có máy xay hấp đa năng k,Bot doing sth, ,0,query_knowledge_base,2020-06-12 07:59:04,2020-06-12 07:59:05,1.0
+19,2020-06-12,2789113151197769,"/confirm_attribute_value{""price"": ""5M - 10M""}","Sản phẩm Máy xay hấp cao cấp Beaba Babycook 4 in 1 ĐÔI giá 5m - 10m hiện shop đang có mức giá: *6,603,300 VND (giá gốc 7,590,000 VND)*.
+", ,0,confirm_attribute_value,2020-06-12 08:00:15,2020-06-12 08:00:16,1.0
+19,2020-06-12,2789113151197769,Có máy đơn k b,"Sản phẩm Máy xay hấp cao cấp Beaba Babycook 4 in 1 ĐÔI giá 5m - 10m hiện shop đang có mức giá: *6,603,300 VND (giá gốc 7,590,000 VND)*.
+", ,0,query_knowledge_base,2020-06-12 08:01:03,2020-06-12 08:01:03,0.0
+19,2020-06-12,2789113151197769,Máy đơn ý b,Bot doing sth, ,0,query_knowledge_base,2020-06-12 08:04:27,2020-06-12 08:04:27,0.0
+19,2020-06-12,2789113151197769,Hãng fatz có k b,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-12 08:04:38,no_timestamp,no_wait_time
+21,2020-06-10,1768996979807474,sh có bán rời phần bình xay của babymoov ko?,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-10 07:05:50,no_timestamp,no_wait_time
+23,2020-06-09,4392963757384114,"Bạn ơi
+Nhà mình có bộ xúc cát cho bé ko bạn",Bot doing sth, ,0,query_knowledge_base,2020-06-09 07:30:26,2020-06-09 07:30:27,1.0
+23,2020-06-09,4392963757384114,Bộ đồ chơi xúc cát ý bạn,"Sản phẩm Bộ bảng gỗ chữ  hiện shop đang có mức giá: *140,000 VND (giá gốc 210,000 VND)*.
+", ,0,query_knowledge_base,2020-06-09 07:31:01,2020-06-09 07:31:01,0.0
+26,2020-06-08,1769988286440404,"Shop ui vậy để e check bên khác có màu xanh ko e báo lại nhé
+Chứ e k thích màu đỏ ạ",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!, ,0,disagree,2020-06-08 07:03:33,2020-06-08 07:03:33,0.0
+26,2020-06-08,1769988286440404,Là sao hả c?,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-08 07:04:01,no_timestamp,no_wait_time
+30,2020-06-08,2793329120779390,/start_conversation,"Chào Lê Thị Quỳnh Giang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-08 04:12:03,2020-06-08 04:12:03,0.0
+30,2020-06-08,2793329120779390,Shop mình có địu bé ko ạ,Bot doing sth, ,0,query_knowledge_base,2020-06-08 04:12:29,2020-06-08 04:12:30,1.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""price"": ""100k - 500k""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-08 04:12:43,2020-06-08 04:12:44,1.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""color"": ""Hồng""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-08 04:12:54,2020-06-08 04:12:54,0.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""brand"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-08 04:13:06,2020-06-08 04:13:06,0.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""age_of_use"": ""0-36 Tháng""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-08 04:13:16,2020-06-08 04:13:16,0.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""size"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-08 04:13:28,2020-06-08 04:13:28,0.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""guarantee"": ""12 Tháng""}","Sản phẩm  Địu ghế ngồi đa năng cao cấp Pier CHÍNH HÃNG  Hồng, giá 100k - 500k, độ tuổi sử dụng 0-36 Tháng, thời gian bảo hành 12 Tháng  có giá bán thấp nhất từ: *489,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,confirm_attribute_value,2020-06-08 04:13:38,2020-06-08 04:13:38,0.0
+30,2020-06-08,2793329120779390,Loại ko bảo hành thi sao ạ,"Sản phẩm Địu ghế ngồi đa năng cao cấp Pier CHÍNH HÃNG  Hồng, giá 100k - 500k, độ tuổi sử dụng 0-36 Tháng, thời gian bảo hành 12 Tháng hiện shop đang có thời gian bảo hành: *12 tháng*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-06-08 04:15:13,2020-06-08 04:15:13,0.0
+30,2020-06-08,2793329120779390,Loại tầm 250k_300k shop có ko ạ,"Dạ, sản phẩm Địu  Hồng, giá 300k, độ tuổi sử dụng 0-36 Tháng, thời gian bảo hành 12 Tháng hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-06-08 04:16:23,2020-06-08 04:16:23,0.0
+30,2020-06-08,2793329120779390,"/confirm_attribute_value{""guarantee"": ""NULL_1""}","Sản phẩm Địu lưới cao cấp siêu nhẹ AIEBAO Cool Air Chính hãng  Hồng, giá 300k hiện shop đang có thời gian bảo hành: *Không Bảo Hành*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-06-08 04:16:41,2020-06-08 04:16:41,0.0
+31,2020-06-05,1239975482793425,S có bộ bàn ghế ngồi học cho bé k ah,"Sản phẩm  Bộ Bàn Ghế   có giá bán thấp nhất từ: *890,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-05 10:23:54,2020-06-05 10:23:55,1.0
+31,2020-06-05,1239975482793425,M muốn tìm bộ bàn ghế cho bé tiểu học s ah,"Sản phẩm  Bộ Bàn Ghế   có giá bán thấp nhất từ: *890,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!", ,0,query_knowledge_base,2020-06-05 10:25:00,2020-06-05 10:25:00,0.0
+32,2020-06-05,1644989915552847,Trước e có mua 1 noi nấu cháo chậm ơi shop nhưng nồi sứ bên trong bị nứt rồi shop có bán lẻ nồi sứ ko ạ,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-05 09:01:35,no_timestamp,no_wait_time
+35,2020-06-05,3067036800038711,Ghế ăn dặm có cho lên cao thấp đc ko ah,bot handover_to_inbox, ,0,handover_to_inbox,2020-06-05 02:13:38,no_timestamp,no_wait_time
+37,2020-06-04,3005097469545393,/start_conversation,"Chào Tram Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-04 04:37:37,2020-06-04 04:37:38,1.0
+37,2020-06-04,3005097469545393,"shop ơi, mình có mấy món đồ muôn thanh lý rẻ lại cho mẹ nào cần
+shop up giúp mình đc ko ạ",bot handover_to_inbox, ,0,handover_to_inbox,2020-06-04 04:38:12,no_timestamp,no_wait_time
+38,2020-06-03,3124684960926084,/start_conversation,"Chào Lynn Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-06-03 04:43:59,2020-06-03 04:43:59,0.0
+38,2020-06-03,3124684960926084,shop còn ghế ăn dặm mastela hoạ tiết cáo nhỏ ko ạ ?,Bot doing sth, ,0,query_knowledge_base,2020-06-03 04:44:20,2020-06-03 04:44:21,1.0
+38,2020-06-03,3124684960926084,"/confirm_attribute_value{""price"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-03 04:44:40,2020-06-03 04:44:40,0.0
+38,2020-06-03,3124684960926084,"/confirm_attribute_value{""color"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-03 04:44:49,2020-06-03 04:44:49,0.0
+38,2020-06-03,3124684960926084,"/confirm_attribute_value{""weight"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-03 04:44:58,2020-06-03 04:44:58,0.0
+38,2020-06-03,3124684960926084,"/confirm_attribute_value{""size"": ""NULL_1""}",Bot doing sth, ,0,confirm_attribute_value,2020-06-03 04:45:06,2020-06-03 04:45:06,0.0
+38,2020-06-03,3124684960926084,"/confirm_attribute_value{""age_of_use"": ""NULL_1""}",Dạ mời bạn tham khảo sản phẩm Ghế Ăn hãng sản xuất Mastela hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-06-03 04:45:16,2020-06-03 04:45:16,0.0
+38,2020-06-03,3124684960926084,có ghế ăn mastela 1015 không ạ ?,Bot doing sth, ,0,query_knowledge_base,2020-06-03 04:46:24,2020-06-03 04:46:24,0.0
+43,2020-05-29,1595547530543127,Bên bạn có bàn chơi lego ghế tai thỏ ko,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-29 07:41:47,2020-05-29 07:41:48,1.0
+43,2020-05-29,1595547530543127,Bộ đồ bàn ghế chơi lego hoa anh đào đó bạn,Bot doing sth, ,0,query_knowledge_base,2020-05-29 07:53:43,2020-05-29 07:53:43,0.0
+43,2020-05-29,1595547530543127,"/confirm_object_type{""object_type"": ""bo_ban_ghe""}",Dạ mời bạn tham khảo sản phẩm Bộ Bàn Ghế  hiện có tại shop nhé!, ,0,confirm_object_type,2020-05-29 07:55:27,2020-05-29 07:55:27,0.0
+43,2020-05-29,1595547530543127,"Oh tiếc quá hết hàng rồi
+Cám ơn bann",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-29 07:56:32,no_timestamp,no_wait_time
+44,2020-05-29,3922554681151841,/start_conversation,"Chào Tạ Mai Hương, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-29 07:50:37,2020-05-29 07:50:37,0.0
+44,2020-05-29,3922554681151841,Bạn ơi bộ quây cũi có cầu trượt giá sao ban?,"Sản phẩm  Cầu Trượt  hiện shop đang có giá: *4,100,000 VND (giá gốc 5,000,000 VND), 1,982,500 VND (giá gốc 3,250,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-29 07:51:19,2020-05-29 07:51:19,0.0
+44,2020-05-29,3922554681151841,Còn bộ quây cũi k có câu trượt cho mình xem anh với,Dạ mời bạn tham khảo sản phẩm Cầu Trượt  hiện có tại shop nhé!, ,0,query_knowledge_base,2020-05-29 07:52:46,2020-05-29 07:52:46,0.0
+46,2020-05-29,2879569772160509,Cảm ơn shop mình liên hệ sau,"Dạ, cảm ơn bạn!", ,0,thank,2020-05-29 05:49:49,2020-05-29 05:49:49,0.0
+46,2020-05-29,2879569772160509,Bên shop có bán quây nhựa loại này trên tiki hay shopee không vậy,Dạ mời bạn tham khảo sản phẩm Quây  hiện có tại shop nhé!, ,0,query_knowledge_base,2020-05-29 06:21:16,2020-05-29 06:21:16,0.0
+46,2020-05-29,2879569772160509,Tại mình có sài thẻ tín dụng được giảm giá á,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-29 06:21:34,no_timestamp,no_wait_time
+47,2020-05-29,1945838965501717,"B ơi
+B có xe đẩy gấp gọn V1 không",Bot doing sth, ,0,query_knowledge_base,2020-05-29 06:02:14,2020-05-29 06:02:15,1.0
+47,2020-05-29,1945838965501717,Giá như thế nào b,Bot doing sth, ,0,query_knowledge_base,2020-05-29 06:04:47,2020-05-29 06:04:47,0.0
+47,2020-05-29,1945838965501717,B k báo già ad,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-29 06:07:37,no_timestamp,no_wait_time
+48,2020-05-29,1316952945100470,Có bình sữa hegen 240ml k vay,"Sản phẩm  Bình sữa cao cấp PPSU Tiny Baby ( Nhật Bản ) kích thước 240Ml hiện shop đang có giá: *159,000 VND (giá gốc 300,000 VND), 300,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-29 05:56:46,2020-05-29 05:56:47,1.0
+49,2020-05-29,4261850143828843,/start_conversation,"Chào Ho Anh Tuan, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-29 05:34:56,2020-05-29 05:34:57,1.0
+49,2020-05-29,4261850143828843,Shop mình có thuốc prenatal k ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-29 05:35:15,2020-05-29 05:35:15,0.0
+53,2020-05-27,2500226973337672,Shop ơi,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-27 03:09:41,2020-05-27 03:09:41,0.0
+53,2020-05-27,2500226973337672,Mình có xe chòi chân cho bé k,Bot doing sth, ,0,query_knowledge_base,2020-05-27 03:09:53,2020-05-27 03:09:54,1.0
+53,2020-05-27,2500226973337672,"/confirm_attribute_value{""price"": ""500k - 1M""}","Sản phẩm  Xe Chòi Chân giá 500k - 1m hiện shop đang có giá: *576,000 VND (giá gốc 800,000 VND), 790,000 VND (giá gốc 1,200,000 VND), 699,000 VND (giá gốc 998,000 VND), 580,000 VND (giá gốc 800,000 VND), 499,000 VND (giá gốc 800,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-27 03:12:15,2020-05-27 03:12:15,0.0
+53,2020-05-27,2500226973337672,Loại bánh có thể tháo rời,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-27 03:12:52,no_timestamp,no_wait_time
+54,2020-05-27,3181556278538939,/start_conversation,"Chào Phuong Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-27 02:32:33,2020-05-27 02:32:33,0.0
+54,2020-05-27,3181556278538939,"Shop ơi, bên mình có xe đẩy Gluck không?","Dạ, sản phẩm Xe Đẩy hãng sản xuất Gluck hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-27 02:33:08,2020-05-27 02:33:09,1.0
+54,2020-05-27,3181556278538939,Aprica hơi  cao so với budget của mình,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-27 02:33:55,no_timestamp,no_wait_time
+55,2020-05-27,2566124306811532,Shop ơi bên m có bột heinz mặn k,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-27 02:30:48,2020-05-27 02:30:49,1.0
+55,2020-05-27,2566124306811532,Bột ăn dặm heinz,bot handover_to_inbox, ,0,query_knowledge_base,2020-05-27 02:31:19,no_timestamp,no_wait_time
+56,2020-05-26,3168382006526009,Shop có bể bơi thành cao cho trẻ 2-3m k ạ,"Dạ, sản phẩm Bể Bơi độ tuổi sử dụng Trẻ 2-3M hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-26 10:44:13,2020-05-26 10:44:14,1.0
+58,2020-05-26,2879704312115549,/start_conversation,"Chào Vu Thuy Linh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-26 07:08:20,2020-05-26 07:08:20,0.0
+58,2020-05-26,2879704312115549,Sap 1-6 bên ban co chuong trinh gi giam gia cho ghế ăn dặm 6in1 joie ko a?,"Dạ, sản phẩm Ghế Ăn hãng sản xuất Joie hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-26 07:08:37,2020-05-26 07:08:38,1.0
+59,2020-05-26,3585829834765640,/start_conversation,"Chào Quynh Truong, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-26 04:11:07,2020-05-26 04:11:07,0.0
+59,2020-05-26,3585829834765640,Balo giu nhiet gia bn vậy sh,Bot doing sth, ,0,query_knowledge_base,2020-05-26 04:11:34,2020-05-26 04:11:34,0.0
+59,2020-05-26,3585829834765640,Kidsapro ạ,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-26 04:12:06,2020-05-26 04:12:06,0.0
+59,2020-05-26,3585829834765640,Balo giu nhiet kidsapro gia bn ạ,"Sản phẩm  Balo bỉm sữa giữ nhiệt cao cấp Kidsapro chính hãng hãng sản xuất Kidsapro hiện shop đang có giá: *249,000 VND (giá gốc 450,000 VND), 269,000 VND (giá gốc 450,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-26 04:12:50,2020-05-26 04:12:50,0.0
+59,2020-05-26,3585829834765640,Bên mình có bán kèm dá khô k ạ,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-26 04:13:51,no_timestamp,no_wait_time
+60,2020-05-26,4260368330641675,"loại này có nóng như loại xôp ko ạ
+mình muốn loại ko nóng, hầm lưng",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-26 02:31:45,no_timestamp,no_wait_time
+63,2020-05-25,2037470113039004,Bên mình có bảo hành ko ạ?,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-25 03:02:02,2020-05-25 03:02:02,0.0
+63,2020-05-25,2037470113039004,Thanh chắn umoo đó ah,Bot doing sth, ,0,query_knowledge_base,2020-05-25 03:02:28,2020-05-25 03:02:28,0.0
+64,2020-05-22,3678905615483742,Cho mình xin giá các loại thảm cho bé chơi ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-22 03:36:32,2020-05-22 03:36:32,0.0
+64,2020-05-22,3678905615483742,Cho mình xin hình ảnh thảm ứng với giá cho mình than khảo với,Dạ mời bạn tham khảo sản phẩm Thảm  hiện có tại shop nhé!, ,0,query_knowledge_base,2020-05-22 03:37:57,2020-05-22 03:37:57,0.0
+64,2020-05-22,3678905615483742,Bên mình k có thảm xốp xpe ạ?,"Dạ, sản phẩm Thảm chất liệu Xpe hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-22 03:38:55,2020-05-22 03:38:55,0.0
+64,2020-05-22,3678905615483742,"/confirm_attribute_value{""material"": ""Xốp""}",Dạ mời bạn tham khảo sản phẩm Thảm chất liệu Xốp hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-05-22 03:39:07,2020-05-22 03:39:07,0.0
+64,2020-05-22,3678905615483742,Khi nào có hàng và giá bao nhiêu ah,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-22 03:43:35,no_timestamp,no_wait_time
+65,2020-05-21,1696753453706415,"bạn ơi
+cho mình hỏi xe này
+có sẵn ở cửa hàng k",Bot doing sth, ,0,query_knowledge_base,2020-05-21 09:30:32,2020-05-21 09:30:32,0.0
+65,2020-05-21,1696753453706415,con mình khó tính nó phải xem và ngồi thử nó mới chịu mua,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-21 09:32:02,no_timestamp,no_wait_time
+66,2020-05-21,2164899270214386,"Bên bạn có link shopee k
+Để e đặt","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-21 08:22:58,2020-05-21 08:22:58,0.0
+67,2020-05-21,3183996444992883,Bạn ơi nhà mình có thanh quây giường Umoo không e?,"Dạ, sản phẩm Giuong hãng sản xuất Umoo hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-21 06:53:19,2020-05-21 06:53:20,1.0
+67,2020-05-21,3183996444992883,Thanks bạn,"Dạ, cảm ơn ạ!", ,0,thank,2020-05-21 06:54:49,2020-05-21 06:54:49,0.0
+67,2020-05-21,3183996444992883,Bạn có loại nào khác ko,Bot doing sth, ,0,query_knowledge_base,2020-05-21 06:55:05,2020-05-21 06:55:05,0.0
+68,2020-05-21,3075095142560004,/start_conversation,"Chào Nguyễn Thị Thu Hằng, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-21 03:19:58,2020-05-21 03:19:58,0.0
+68,2020-05-21,3075095142560004,Shop có bán cầu trượt riêng ko ạ,"Sản phẩm  Cầu Trượt  hiện shop đang có giá: *4,100,000 VND (giá gốc 5,000,000 VND), 1,982,500 VND (giá gốc 3,250,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-21 03:21:23,2020-05-21 03:21:24,1.0
+69,2020-05-20,2336023666507149,Dạ alo ạ,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-20 08:16:54,2020-05-20 08:16:54,0.0
+69,2020-05-20,2336023666507149,Shop co bán máy làm ẩm phòng k ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-20 08:17:06,2020-05-20 08:17:06,0.0
+69,2020-05-20,2336023666507149,"/confirm_object_type{""object_type"": ""may_tao_am""}","Sản phẩm  Máy tạo ẩm & khuếch tán tinh dầu BabyMoov  hiện shop đang có giá: *2,100,000 VND (giá gốc 2,890,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_object_type,2020-05-20 08:17:17,2020-05-20 08:17:17,0.0
+70,2020-05-20,2156246194442959,"Hi
+Mình có ghế oto cho bé k",Bot doing sth, ,0,query_knowledge_base,2020-05-20 06:15:16,2020-05-20 06:15:17,1.0
+70,2020-05-20,2156246194442959,"/confirm_attribute_value{""price"": ""1M - 2M""}",Bot doing sth, ,0,confirm_attribute_value,2020-05-20 06:15:37,2020-05-20 06:15:38,1.0
+70,2020-05-20,2156246194442959,"/confirm_attribute_value{""color"": ""NULL""}",Bot doing sth, ,0,confirm_attribute_value,2020-05-20 06:15:53,2020-05-20 06:15:53,0.0
+70,2020-05-20,2156246194442959,"/confirm_attribute_value{""origin"": ""NULL""}",Bot doing sth, ,0,confirm_attribute_value,2020-05-20 06:16:00,2020-05-20 06:16:00,0.0
+70,2020-05-20,2156246194442959,"/confirm_attribute_value{""age_of_use"": ""0-36 Tháng""}",Bot doing sth, ,0,confirm_attribute_value,2020-05-20 06:16:11,2020-05-20 06:16:12,1.0
+70,2020-05-20,2156246194442959,"/confirm_attribute_value{""guarantee"": ""12 Tháng""}","Sản phẩm  Ghế Ô Tô giá 1m - 2m, độ tuổi sử dụng 0-36 Tháng, thời gian bảo hành 12 Tháng hiện shop đang có giá: *2,000,000 VND (giá gốc 2,400,000 VND), 1,790,000 VND (giá gốc 2,100,000 VND), 1,785,000 VND (giá gốc 2,100,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-20 06:16:20,2020-05-20 06:16:20,0.0
+71,2020-05-20,2678446532205586,"Shop ơi
+Quây bóng xanh
+Shop có hàng ko","Sản phẩm  Quây  Xanh hiện shop đang có giá: *2,150,000 VND (giá gốc 3,000,000 VND), 4,100,000 VND (giá gốc 5,000,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-20 05:28:36,2020-05-20 05:28:36,0.0
+71,2020-05-20,2678446532205586,Quây bóng đợt trước mình mua,Bot doing sth, ,0,query_knowledge_base,2020-05-20 05:28:48,2020-05-20 05:28:48,0.0
+71,2020-05-20,2678446532205586,"Đắt hơn đợt mình mua à shop
+Đợt mua là 2050k",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-20 05:30:48,no_timestamp,no_wait_time
+74,2020-05-20,2924106777709170,/start_conversation,"Chào Nguyễn Hạnh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-20 03:52:42,2020-05-20 03:52:43,1.0
+74,2020-05-20,2924106777709170,Co goi bamboo k,"Dạ, sản phẩm Gối hãng sản xuất Bamboo hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-20 03:53:40,2020-05-20 03:53:41,1.0
+74,2020-05-20,2924106777709170,Thoi.,Vâng ạ!, ,0,agree,2020-05-20 03:54:13,2020-05-20 03:54:13,0.0
+74,2020-05-20,2924106777709170,Chung nao co hang bao cho,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-20 03:54:32,no_timestamp,no_wait_time
+76,2020-05-19,3057016524393302,/start_conversation,"Chào Thùy Dương, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-19 07:02:11,2020-05-19 07:02:11,0.0
+76,2020-05-19,3057016524393302,"/query_knowledge_base{""object_type"": ""ghe_an"",""brand"": ""mastela""}",Bot doing sth, ,0,query_knowledge_base,2020-05-19 07:02:19,2020-05-19 07:02:19,0.0
+76,2020-05-19,3057016524393302,Shop ơi bên mình có ghế ngồi ăn có nhạc k ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-19 07:02:45,2020-05-19 07:02:46,1.0
+76,2020-05-19,3057016524393302,"/confirm_attribute_value{""price"": ""500k - 1M""}","Sản phẩm  Ghế Ăn giá 500k - 1m hiện shop đang có giá: *551,310 VND (giá gốc 799,000 VND), 950,000 VND (giá gốc 1,300,000 VND), 520,000 VND (giá gốc 689,000 VND), 609,000 VND (giá gốc 799,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-19 07:02:59,2020-05-19 07:03:00,1.0
+76,2020-05-19,3057016524393302,Bên mình có ghế ăn có nhạc k ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-19 07:04:33,2020-05-19 07:04:33,0.0
+77,2020-05-19,2200916676655158,/start_conversation,"Chào Thủy Kều, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-19 06:46:29,2020-05-19 06:46:30,1.0
+77,2020-05-19,2200916676655158,C ơi cho e hỏi cửa hàng mình có bán máy hút mũi cho bé ko ạ?,"Sản phẩm  Máy Hút Mũi  hiện shop đang có giá: *560,000 VND (giá gốc 700,000 VND), 109,000 VND, 139,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-19 06:47:03,2020-05-19 06:47:03,0.0
+77,2020-05-19,2200916676655158,Vâng a,Dạ!, ,0,agree,2020-05-19 06:49:56,2020-05-19 06:49:56,0.0
+77,2020-05-19,2200916676655158,Ah htrc c có bán cả cái Baby futur đk ạ?,"Dạ, sản phẩm Máy Hút Mũi hãng sản xuất Baby Futur hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-19 06:50:46,2020-05-19 06:50:47,1.0
+77,2020-05-19,2200916676655158,Vâng để e xem lại,Vâng ạ!, ,0,agree,2020-05-19 06:51:21,2020-05-19 06:51:21,0.0
+77,2020-05-19,2200916676655158,Comfy c còn màu hồng ko ạ,"Sản phẩm  Máy hút mũi tự động Comfy Baby CHÍNH HÃNG hãng sản xuất Comfy,  Màu Hồng hiện shop đang có giá: *560,000 VND (giá gốc 700,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-19 06:51:44,2020-05-19 06:51:44,0.0
+77,2020-05-19,2200916676655158,Vâng c để e xem lại. Có gì e nhắn c sau ạ,Vâng ạ!, ,0,agree,2020-05-19 07:01:40,2020-05-19 07:01:40,0.0
+78,2020-05-19,2429551223787517,Sp nay co tren shopee cua shop k,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-19 06:59:49,2020-05-19 06:59:49,0.0
+78,2020-05-19,2429551223787517,2 loại bảng gôc trên ấy,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-19 07:01:10,no_timestamp,no_wait_time
+79,2020-05-19,1452271531557438,Ah b ơi thảm có về nữa k,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-19 06:47:16,no_timestamp,no_wait_time
+83,2020-05-19,3154631227921052,/start_conversation,"Chào Tran Tien Liem, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-19 02:17:22,2020-05-19 02:17:23,1.0
+83,2020-05-19,3154631227921052,Bên mình có ghế ăn dặm k b,Bot doing sth, ,0,query_knowledge_base,2020-05-19 02:17:51,2020-05-19 02:17:52,1.0
+83,2020-05-19,3154631227921052,"/confirm_attribute_value{""price"": ""1M - 2M""}","Sản phẩm  Ghế ăn đa năng cao cấp Pier giá 1m - 2m hiện shop đang có giá: *1,450,000 VND (giá gốc 2,000,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-19 02:18:02,2020-05-19 02:18:02,0.0
+83,2020-05-19,3154631227921052,Có ghế teknum k b,"Dạ, sản phẩm Ghế Ăn hãng sản xuất Teknum, giá 1m - 2m hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-19 02:18:32,2020-05-19 02:18:32,0.0
+84,2020-05-18,2161596513924824,chị ơi,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-18 09:28:24,2020-05-18 09:28:24,0.0
+84,2020-05-18,2161596513924824,bên mình có thanh chắn cửa ko ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-18 09:28:36,2020-05-18 09:28:37,1.0
+84,2020-05-18,2161596513924824,"/confirm_object_type{""object_type"": ""thanh_chan_giuong""}",Bot doing sth, ,0,confirm_object_type,2020-05-18 09:28:44,2020-05-18 09:28:45,1.0
+84,2020-05-18,2161596513924824,"em nhầm
+thanh chắn cửa í",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-18 09:29:13,no_timestamp,no_wait_time
+88,2020-05-18,2787088494649666,c ơi bộ bàn ghế lego giá bn c,Bot doing sth, ,0,query_knowledge_base,2020-05-18 05:02:03,2020-05-18 05:02:03,0.0
+88,2020-05-18,2787088494649666,"có tháo đc chân bàn, ghế để vận chuyển k ạ
+ghế đa năng ý ạ",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-18 05:02:44,no_timestamp,no_wait_time
+93,2020-05-14,1905097636231805,shop cho minhg hoit,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-14 07:40:13,2020-05-14 07:40:13,0.0
+93,2020-05-14,1905097636231805,shop có bán máy hút sữa ko,"Sản phẩm  Máy hút sữa điện đôi Avent Snow (Chính hãng - Cty Vạn An)  hiện shop đang có giá: *4,990,000 VND (giá gốc 6,950,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-14 07:40:28,2020-05-14 07:40:29,1.0
+93,2020-05-14,1905097636231805,của medela shop có ko vậy,"Dạ, sản phẩm Máy Hút Sữa hãng sản xuất Medela hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-14 07:42:56,2020-05-14 07:42:56,0.0
+94,2020-05-14,2034714856609781,mình có bô ngồi cho bé đi vsinh k ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-14 07:40:36,2020-05-14 07:40:37,1.0
+99,2020-05-13,3249297581770233,/start_conversation,"Chào Hồng Hằng, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-13 05:45:47,2020-05-13 05:45:48,1.0
+99,2020-05-13,3249297581770233,shop có thanh chắn giường k ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-13 05:46:10,2020-05-13 05:46:10,0.0
+99,2020-05-13,3249297581770233,"/confirm_attribute_value{""price"": ""100k - 500k""}","Sản phẩm  Thanh Chắn Giường giá 100k - 500k hiện shop đang có giá: *389,000 VND (giá gốc 400,000 VND), 460,000 VND (giá gốc 580,000 VND), 440,000 VND (giá gốc 560,000 VND), 400,000 VND (giá gốc 540,000 VND), 399,000 VND (giá gốc 450,000 VND), 483,650 VND (giá gốc 569,000 VND), 509,150 VND (giá gốc 599,000 VND), 500,000 VND (giá gốc 610,000 VND), 430,000 VND (giá gốc 500,000 VND), 458,150 VND (giá gốc 539,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-13 05:46:33,2020-05-13 05:46:33,0.0
+100,2020-05-13,2735343516476395,Xe có chắc chắn ko bạn,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,handover_to_inbox,2020-05-13 05:08:44,2020-05-13 05:08:56,12.0
+100,2020-05-13,2735343516476395,Có loại nào khác nữa ko shop nhỉ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-13 05:08:55,2020-05-13 05:08:56,1.0
+103,2020-05-12,2545015365598609,/start_conversation,"Chào Nhi Nhím, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-12 06:21:08,2020-05-12 06:21:09,1.0
+103,2020-05-12,2545015365598609,"/query_knowledge_base{""object_type"": ""ghe_an"",""brand"": ""mastela""}",Bot doing sth, ,0,query_knowledge_base,2020-05-12 06:21:22,2020-05-12 06:21:22,0.0
+103,2020-05-12,2545015365598609,"/confirm_attribute_value{""color"": ""Ghi""}",Bot doing sth, ,0,confirm_attribute_value,2020-05-12 06:22:10,2020-05-12 06:22:10,0.0
+103,2020-05-12,2545015365598609,"/confirm_attribute_value{""price"": ""500k - 1M""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-05-12 06:22:33,2020-05-12 06:22:33,0.0
+103,2020-05-12,2545015365598609,mình muốn xem ghế cao ạ,Dạ mời bạn tham khảo sản phẩm Ghế Ăn  hiện có tại shop nhé!, ,0,query_knowledge_base,2020-05-12 06:23:27,2020-05-12 06:23:28,1.0
+103,2020-05-12,2545015365598609,bên mình k có mastela 1510 ạ?,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-12 06:24:30,no_timestamp,no_wait_time
+105,2020-05-12,1827358367286328,"Shop ơi
+T có mua cái máy xay hấp
+Nh giờ ko còn quyển hdsd
+Bạn còn hdsd ko cho t xin",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-12 04:38:10,no_timestamp,no_wait_time
+106,2020-05-12,2458360414206253,Co tren Shopee ko,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-12 03:59:13,2020-05-12 03:59:13,0.0
+107,2020-05-12,2326910120716892,Có xúc cát trên shopee ko shop,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-12 02:11:54,2020-05-12 02:11:56,2.0
+107,2020-05-12,2326910120716892,Bộ đồ chơi xúc cát ấy,bot handover_to_inbox, ,0,query_knowledge_base,2020-05-12 02:12:24,no_timestamp,no_wait_time
+108,2020-05-11,1124064367696155,CHÀO SHOP,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-11 09:56:50,2020-05-11 09:56:50,0.0
+108,2020-05-11,1124064367696155,"ĐỢT MÌNH CÓ MUA MÁY HÚT SỮA MEDELA BÊN SHOP CHO BÉ ĐẦU ẤY
+BÂY H MÌNH CBI SINH BÉ THỨ 2
+MÌNH HỎI THĂM SHOP CÓ BÁN BỘ HÚT SỮA MỚI K AH",bot handover_to_inbox, ,0,handover_to_inbox,2020-05-11 09:57:26,no_timestamp,no_wait_time
+110,2020-05-11,1588453287935646,Alo,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-11 08:36:59,2020-05-11 08:36:59,0.0
+110,2020-05-11,1588453287935646,Bên mình có xe đạp cho trẻ tầm 4 5 tuổi k shop,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-11 08:37:19,2020-05-11 08:37:20,1.0
+110,2020-05-11,1588453287935646,Xe đạp trẻ em,Bot doing sth, ,0,query_knowledge_base,2020-05-11 08:38:14,2020-05-11 08:38:14,0.0
+110,2020-05-11,1588453287935646,"/deny_object_type{""object_type"": null}",bot handover_to_inbox, ,0,deny_object_type,2020-05-11 08:38:26,no_timestamp,no_wait_time
+111,2020-05-11,1603518759754520,Shop có xe tập đi cho bé ko,Bot doing sth, ,0,query_knowledge_base,2020-05-11 07:59:00,2020-05-11 07:59:01,1.0
+111,2020-05-11,1603518759754520,Xe tròn ý,Bot doing sth, ,0,query_knowledge_base,2020-05-11 07:59:34,2020-05-11 07:59:34,0.0
+111,2020-05-11,1603518759754520,"/deny_object_type{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!, ,0,deny_object_type,2020-05-11 07:59:42,2020-05-11 07:59:42,0.0
+111,2020-05-11,1603518759754520,/connect_employee,bot handover_to_inbox, ,0,connect_employee,2020-05-11 07:59:47,no_timestamp,no_wait_time
+113,2020-01-08,1984952921537281,"Uh
+Bh ship về chung cư northern diamond ngõ 202 dg cổ linh long biên cho c bh","Dạ shop Gấu & Bí Ngô bán trên các site: 
+- Link Shopee: https://shopee.vn/shopgaubingo 
+- Link Tiki: https://tiki.vn/cua-hang/gau-bi-ngo 
+ - Link Lazada: https://www.lazada.vn/shop/shop-gau-bi-ngo", ,0,query_knowledge_base,2020-01-08 02:07:51,2020-01-08 02:07:51,0.0
+113,2020-01-08,1984952921537281,"Bán hàng mất hứng
+Thì nói là hết hàng
+Khách mua luôm thì bảo mai","Dạ shop Gấu & Bí Ngô bán trên các site: 
+- Link Shopee: https://shopee.vn/shopgaubingo 
+- Link Tiki: https://tiki.vn/cua-hang/gau-bi-ngo 
+ - Link Lazada: https://www.lazada.vn/shop/shop-gau-bi-ngo", ,0,show_ecommerce_link,2020-01-08 02:07:51,2020-01-08 02:07:51,0.0
+113,2020-01-08,1984952921537281,Thôi lấy màu c gửi cũng dv,Thanks you!, ,0,query_knowledge_base,2020-01-08 02:07:52,2020-01-08 02:07:52,0.0
+113,2020-01-08,1984952921537281,"Ok e
+E ship c cbuwa",Thanks you!, ,0,agree,2020-01-08 02:07:52,2020-01-08 02:07:52,0.0
+113,2020-01-08,1984952921537281,Mấy h em,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,greet,2020-01-08 02:07:52,2020-01-08 02:07:53,1.0
+116,2020-05-08,2044164449025460,/start_conversation,"Chào Hoài Mẫu Trương, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-08 08:41:47,2020-05-08 08:41:47,0.0
+116,2020-05-08,2044164449025460,Chào shop,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-08 08:41:57,2020-05-08 08:41:57,0.0
+116,2020-05-08,2044164449025460,Cho e hỏi bên mình có quây bóng toy house ko ạ ?,"Dạ, sản phẩm Quây hãng sản xuất Toy House hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-08 08:42:20,2020-05-08 08:42:20,0.0
+116,2020-05-08,2044164449025460,"/confirm_attribute_value{""brand"": ""Toys House""}","Sản phẩm  Quây góc vuông cánh nhỏ hình ngôi nhà hãng sản xuất Toys House hiện shop đang có giá: *1,250,000 VND (giá gốc 1,390,000 VND), 1,440,000 VND (giá gốc 1,490,000 VND), 1,040,000 VND (giá gốc 1,290,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-08 08:43:15,2020-05-08 08:43:15,0.0
+117,2020-05-08,2931934286925148,/start_conversation,"Chào Thanh Hương Vũ, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-08 07:50:07,2020-05-08 07:50:07,0.0
+117,2020-05-08,2931934286925148,shop ơi cho m hỏi,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-08 07:50:24,2020-05-08 07:50:28,4.0
+117,2020-05-08,2931934286925148,"xe tròn tập đi tomorow
+shop còn loại nào a","Dạ, sản phẩm Xe Tập Đi hãng sản xuất Tomorow hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-05-08 07:50:50,2020-05-08 07:50:50,0.0
+117,2020-05-08,2931934286925148,"/confirm_attribute_value{""brand"": ""Tomorrow Sky""}","Sản phẩm  Xe tập đi cao cấp Tommorrow Sky - CHÍNH HÃNG hãng sản xuất Tomorrow Sky hiện shop đang có giá: *649,000 VND (giá gốc 850,000 VND), 469,000 VND (giá gốc 850,000 VND), 639,000 VND (giá gốc 850,000 VND), 479,000 VND (giá gốc 850,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,confirm_attribute_value,2020-05-08 07:51:09,2020-05-08 07:51:09,0.0
+117,2020-05-08,2931934286925148,có bảo hành k shop ơi,bot handover_to_inbox, ,0,query_knowledge_base,2020-05-08 07:54:47,no_timestamp,no_wait_time
+118,2020-05-08,3854798024562047,/start_conversation,"Chào Phuonh Anh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-08 06:53:40,2020-05-08 06:53:40,0.0
+118,2020-05-08,3854798024562047,bên mình có haenim 4 ko shop,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-08 06:53:59,2020-05-08 06:54:00,1.0
+120,2020-05-08,1419128478124470,Cho e hỏi m.có mẫu đồ chơi nào trong phòng tắm cho pé ko ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-08 03:13:22,2020-05-08 03:13:22,0.0
+120,2020-05-08,1419128478124470,Mấy món đồ dạng vòi sen chơi trong phòng tắm cho pé ạ,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-08 03:14:30,no_timestamp,no_wait_time
+121,2020-05-08,3000353100022860,/start_conversation,"Chào Lê Hằng, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-08 02:11:59,2020-05-08 02:12:00,1.0
+121,2020-05-08,3000353100022860,C oi,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-05-08 02:12:11,2020-05-08 02:12:11,0.0
+121,2020-05-08,3000353100022860,Bên m có máy hâm nước pha sữa không c,Bot doing sth, ,0,query_knowledge_base,2020-05-08 02:12:32,2020-05-08 02:12:33,1.0
+121,2020-05-08,3000353100022860,"/deny_object_type{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!, ,0,deny_object_type,2020-05-08 02:12:51,2020-05-08 02:12:51,0.0
+121,2020-05-08,3000353100022860,/connect_employee,bot handover_to_inbox, ,0,connect_employee,2020-05-08 02:13:01,no_timestamp,no_wait_time
+123,2020-05-07,3729999597072251,/start_conversation,"Chào Thien Trang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-07 05:58:19,2020-05-07 05:58:19,0.0
+123,2020-05-07,3729999597072251,"B oi, xe đẩy vinng còn hàng ko ạ
+Giá bn vậy ạ","Sản phẩm  Xe Đẩy hãng sản xuất Vinng hiện shop đang có giá: *1,390,000 VND (giá gốc 2,500,000 VND), 1,990,000 VND (giá gốc 3,000,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-07 05:58:50,2020-05-07 05:58:50,0.0
+123,2020-05-07,3729999597072251,B có shopee ko ạ,Dạ mời bạn tham khảo sản phẩm Xe Đẩy hãng sản xuất Vinng hiện có tại shop nhé!, ,0,query_knowledge_base,2020-05-07 05:59:45,2020-05-07 05:59:45,0.0
+123,2020-05-07,3729999597072251,Dạ ok ạ,Dạ!, ,0,agree,2020-05-07 06:00:12,2020-05-07 06:00:12,0.0
+123,2020-05-07,3729999597072251,Mình thấy trên shopee hết hàng r í,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,handover_to_inbox,2020-05-07 06:03:33,2020-05-07 06:03:46,13.0
+123,2020-05-07,3729999597072251,Loại đẩy ngồi đảo chiều ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-07 06:03:45,2020-05-07 06:03:46,1.0
+124,2020-05-07,3162536323778019,/start_conversation,"Chào Vân Vũ, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-07 05:13:31,2020-05-07 05:13:31,0.0
+124,2020-05-07,3162536323778019,b ơi bên mình có bán máy vắt sữa k a,Bot doing sth, ,0,query_knowledge_base,2020-05-07 05:14:05,2020-05-07 05:14:05,0.0
+124,2020-05-07,3162536323778019,"/deny_object_type{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!, ,0,deny_object_type,2020-05-07 05:14:13,2020-05-07 05:14:13,0.0
+124,2020-05-07,3162536323778019,"Trọn bộ Medela Pump rút gọn
+e tìm cái nay y a",bot handover_to_inbox, ,0,query_knowledge_base,2020-05-07 05:15:10,no_timestamp,no_wait_time
+125,2020-05-07,1770691886289253,Bộ bàn có bé k hả b? Bé 3 tuổi ngồi có thấp k ạ,bot handover_to_inbox, ,0,query_knowledge_base,2020-05-07 03:34:07,no_timestamp,no_wait_time
+126,2020-05-06,3071513356234945,/start_conversation,"Chào Huyền Đỗ, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-05-06 09:13:09,2020-05-06 09:13:09,0.0
+126,2020-05-06,3071513356234945,"Shop ơi
+Nhà mình có máy hâm sữa ko ạ?",Bot doing sth, ,0,query_knowledge_base,2020-05-06 09:13:32,2020-05-06 09:13:33,1.0
+126,2020-05-06,3071513356234945,"/confirm_attribute_value{""price"": ""500k - 1M""}",Bot doing sth, ,0,confirm_attribute_value,2020-05-06 09:13:48,2020-05-06 09:13:48,0.0
+126,2020-05-06,3071513356234945,"/confirm_attribute_value{""brand"": ""Chicco""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-05-06 09:14:01,2020-05-06 09:14:01,0.0
+126,2020-05-06,3071513356234945,Bên mình ko có của avent ạ?,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-06 09:15:12,no_timestamp,no_wait_time
+128,2020-05-06,1896922523746910,"Có đồ chơi j
+Cho be 3t k","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-06 07:37:07,2020-05-06 07:37:07,0.0
+128,2020-05-06,1896922523746910,Đồ chơi gì cho bé 3 tuổi,bot handover_to_inbox, ,0,query_knowledge_base,2020-05-06 07:37:35,no_timestamp,no_wait_time
+129,2020-05-06,2293129874056858,shop ơi cho mình xin giá thanh chắn giường với,Bot doing sth, ,0,query_knowledge_base,2020-05-06 04:04:35,2020-05-06 04:04:35,0.0
+129,2020-05-06,2293129874056858,mình muốn mua 3 thanh: 2 cái 2m 1 cái 2m2,"Sản phẩm  Thanh chắn giường cao cấp dạng trượt Umoo chính hãng kích thước 2M2 hiện shop đang có giá: *430,000 VND (giá gốc 610,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-06 04:04:55,2020-05-06 04:04:55,0.0
+129,2020-05-06,2293129874056858,2m thì giá ntn ạ,"Sản phẩm  Thanh chắn giường điều chỉnh độ cao Mastela cao cấp kích thước 2M hiện shop đang có giá: *509,150 VND (giá gốc 599,000 VND), 458,150 VND (giá gốc 539,000 VND), 483,650 VND (giá gốc 569,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-05-06 04:06:01,2020-05-06 04:06:02,1.0
+129,2020-05-06,2293129874056858,Dòng umoo này chỉ có 1 màu này thôi đúng k ạ?,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-06 04:06:25,no_timestamp,no_wait_time
+131,2020-05-06,2271898692915014,"Giá bnhieu ạ
+Có bọc da đúg k shop","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-06 03:15:26,2020-05-06 03:15:26,0.0
+131,2020-05-06,2271898692915014,Ghế này có thêm bọc da ko ạ,Bot doing sth, ,0,query_knowledge_base,2020-05-06 03:16:40,2020-05-06 03:16:40,0.0
+131,2020-05-06,2271898692915014,Hay là ghế trơn ý shop,bot handover_to_inbox, ,0,handover_to_inbox,2020-05-06 03:16:53,no_timestamp,no_wait_time
+132,2020-05-05,2559022317488589,Shop có bình đun nước moaz bebe ko ạh,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-05-05 09:38:06,2020-05-05 09:38:07,1.0
+132,2020-05-05,2559022317488589,Và máy tiệt trùng bình sữa,bot handover_to_inbox, ,0,query_knowledge_base,2020-05-05 09:38:17,no_timestamp,no_wait_time
+136,2020-04-29,1787025718020069,Cái quây cũi nhựa có bán lẻ k shop ơi?,Bot doing sth, ,0,query_knowledge_base,2020-04-29 02:43:58,2020-04-29 02:43:59,1.0
+136,2020-04-29,1787025718020069,"/confirm_attribute_value{""price"": ""1M - 2M""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-04-29 02:55:26,2020-04-29 02:55:26,0.0
+136,2020-04-29,1787025718020069,Tôi chỉ muốn mua khoảng 3 tấm thôi thì không bán lẻ hả shop?,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-29 02:58:06,no_timestamp,no_wait_time
+137,2020-04-28,1983756081740213,B có sẵn máy giặt không,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-28 06:56:01,2020-04-28 06:56:01,0.0
+137,2020-04-28,1983756081740213,Máy giặt tự động mini doux ý b,Vâng. Mình là trợ lý ảo của shop Gấu và Bí Ngô ạ., ,0,ask_is_bot,2020-04-28 06:56:32,2020-04-28 06:56:32,0.0
+137,2020-04-28,1983756081740213,Chào bạn. Bạn có sẵn máy giặt doux k,Bot doing sth, ,0,query_knowledge_base,2020-04-28 11:09:13,2020-04-28 11:09:13,0.0
+137,2020-04-28,1983756081740213,"/deny_object_type{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!, ,0,deny_object_type,2020-04-28 11:11:25,2020-04-28 11:11:25,0.0
+137,2020-04-28,1983756081740213,/connect_employee,bot handover_to_inbox, ,0,connect_employee,2020-04-28 11:11:31,no_timestamp,no_wait_time
+142,2020-04-28,2473199459432889,Có xe chòi chân cho bé 1y ko b,"Sản phẩm  Xe Chòi Chân độ tuổi sử dụng Bé 1Y hiện shop đang có giá: *448,400 VND (giá gốc 590,000 VND), 499,000 VND (giá gốc 800,000 VND), 580,000 VND (giá gốc 800,000 VND), 576,000 VND (giá gốc 800,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-04-28 03:55:28,2020-04-28 03:55:29,1.0
+142,2020-04-28,2473199459432889,Xe luddy mẫu bn vậy b,Bot doing sth, ,0,query_knowledge_base,2020-04-28 03:56:39,2020-04-28 03:56:40,1.0
+144,2020-04-27,2310251182411434,/start_conversation,"Chào Trang Autumn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-04-27 06:57:30,2020-04-27 06:57:31,1.0
+144,2020-04-27,2310251182411434,Bên mình có bán xe trượt cho bé ko ạ,Bot doing sth, ,0,query_knowledge_base,2020-04-27 06:57:53,2020-04-27 06:57:53,0.0
+144,2020-04-27,2310251182411434,Bé nhà e 2 tuổi rưỡi r ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-27 06:58:19,2020-04-27 06:58:19,0.0
+146,2020-04-27,1801591056608422,Cái này lắp đường ống nước có dễ ko shop,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-27 02:20:24,no_timestamp,no_wait_time
+149,2020-04-23,2453096111485297,Shop có ghế nhún k b,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-23 10:11:47,2020-04-23 10:11:47,0.0
+150,2020-04-23,2728195033969509,/start_conversation,"Chào Ki Hoa, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-04-23 10:00:49,2020-04-23 10:00:49,0.0
+150,2020-04-23,2728195033969509,/start_conversation,"Chào Ki Hoa, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-04-23 10:00:51,2020-04-23 10:00:51,0.0
+150,2020-04-23,2728195033969509,"Mình mua bộ đồ chơi nấu ăn cho bé
+Happy little chef","Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-23 10:01:34,2020-04-23 10:01:34,0.0
+150,2020-04-23,2728195033969509,Bên shop có link Shopee ko ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-23 10:01:47,2020-04-23 10:01:47,0.0
+150,2020-04-23,2728195033969509,Bộ đồ chơi nhà bếp,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-23 10:02:01,2020-04-23 10:02:01,0.0
+151,2020-04-23,2021483761307025,Chào shop,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-23 08:10:23,2020-04-23 08:10:23,0.0
+151,2020-04-23,2021483761307025,Shop cho hỏi có bán ghế ăn dặm cho trẻ con không,Bot doing sth, ,0,query_knowledge_base,2020-04-23 08:10:46,2020-04-23 08:10:46,0.0
+151,2020-04-23,2021483761307025,"/confirm_attribute_value{""price"": ""500k - 1M""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-04-23 08:10:55,2020-04-23 08:10:55,0.0
+151,2020-04-23,2021483761307025,Tôi muốn mua loại 799k,"Sản phẩm  Ghế ăn đa năng kết hợp xe kéo MASTELA 1018 CHÍNH HÃNG giá 799k hiện shop đang có giá: *950,000 VND (giá gốc 1,300,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-04-23 08:11:50,2020-04-23 08:11:51,1.0
+151,2020-04-23,2021483761307025,Muốn mua trực tiếp thì đến đâu xem,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-23 08:14:39,no_timestamp,no_wait_time
+152,2020-04-23,2985133004833142,"Dạ,bao lâu thì biết đc mình có đc nhận qà hay k ạ",bot handover_to_inbox, ,0,handover_to_inbox,2020-04-23 07:54:33,no_timestamp,no_wait_time
+154,2020-04-22,2426569427375187,Có ko shop?,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-22 08:25:18,no_timestamp,no_wait_time
+157,2020-04-22,1567051710027929,Có đó ko shop,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-22 05:08:41,no_timestamp,no_wait_time
+158,2020-04-22,3070331879693048,Vâng ạ. Phí ship SG khoảng bao nhiêu ạ,Vâng ạ!, ,0,agree,2020-04-22 03:49:45,2020-04-22 03:49:45,0.0
+158,2020-04-22,3070331879693048,Nếu mua trên shopee thì có ko ạ,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-22 03:50:02,no_timestamp,no_wait_time
+161,2020-04-22,1660263914007206,Bạn ơi,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?", ,0,greet,2020-04-22 03:35:42,2020-04-22 03:35:42,0.0
+161,2020-04-22,1660263914007206,Giờ mình đặt trực tiếp có nhanh hơn được ko,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-22 03:36:16,no_timestamp,no_wait_time
+162,2020-04-21,3764032587000128,/start_conversation,"Chào Nguyễn Kim Mỹ Linh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!", ,0,start_conversation,2020-04-21 03:12:48,2020-04-21 03:12:49,1.0
+162,2020-04-21,3764032587000128,Shop có xe scooter ko ạ?,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-21 03:13:19,2020-04-21 03:13:20,1.0
+162,2020-04-21,3764032587000128,Xe trượt scooter loại 3 bánh ạ,Bot doing sth, ,0,query_knowledge_base,2020-04-21 03:14:01,2020-04-21 03:14:01,0.0
+162,2020-04-21,3764032587000128,"/deny_object_type{""object_type"": null}",Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!, ,0,deny_object_type,2020-04-21 03:15:12,2020-04-21 03:15:12,0.0
+162,2020-04-21,3764032587000128,/connect_employee,bot handover_to_inbox, ,0,connect_employee,2020-04-21 03:15:21,no_timestamp,no_wait_time
+163,2020-04-21,1601160689904639,Bạn ơi bên bạn hiện còn những loại cầu trượt nào nhỉ,"Sản phẩm  Cầu trượt xích đu Hola hải cẩu 2020  hiện shop đang có giá: *1,982,500 VND (giá gốc 3,250,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-04-21 03:09:28,2020-04-21 03:09:29,1.0
+163,2020-04-21,1601160689904639,"Có cái nào rẻ hơn k bạn
+Cầu trượt riêng thôi",bot handover_to_inbox, ,0,handover_to_inbox,2020-04-21 03:10:34,no_timestamp,no_wait_time
+164,2020-04-21,2550243945069734,Cái này bé mà đứng vịn lên có chắc chắn ko shop,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-21 02:47:56,no_timestamp,no_wait_time
+166,2020-04-18,2427766530588323,Cho t một xe chòi chân luddy,"Dạ, sản phẩm Xe Chòi Chân hãng sản xuất Xe_Choi_Chan hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-04-18 06:31:46,2020-04-18 06:31:47,1.0
+166,2020-04-18,2427766530588323,Bên bạn còn loại nào,"Sản phẩm  Xe Chòi Chân  hiện shop đang có giá: *699,000 VND (giá gốc 998,000 VND), 448,400 VND (giá gốc 590,000 VND), 499,000 VND (giá gốc 800,000 VND), 580,000 VND (giá gốc 800,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-04-18 06:32:36,2020-04-18 06:32:37,1.0
+166,2020-04-18,2427766530588323,"Của luddy còn đúng k bạn
+Bạn đang gửi t có",bot handover_to_inbox, ,0,handover_to_inbox,2020-04-18 06:35:18,no_timestamp,no_wait_time
+167,2020-04-18,2025490810903976,Bộ này có gấp lại dc k shop,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-18 02:05:39,no_timestamp,no_wait_time
+169,2020-04-11,1862947600436581,Bộ xanh size nhỏ có sẵn ko shop,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!", ,0,query_knowledge_base,2020-04-11 04:20:58,2020-04-11 04:20:58,0.0
+170,2020-04-11,1956654751079065,"Giống hình ko shop
+Bữa cũng có shop bán loại này
+Nhưng khi giao lại là mẫu khác",bot handover_to_inbox, ,0,handover_to_inbox,2020-04-11 03:23:03,no_timestamp,no_wait_time
+172,2020-04-11,2873440899405338,Shop có ghế ăn dăm k,Bot doing sth, ,0,query_knowledge_base,2020-04-11 03:07:26,2020-04-11 03:07:26,0.0
+172,2020-04-11,2873440899405338,"/confirm_attribute_value{""price"": ""100k - 500k""}",Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!, ,0,confirm_attribute_value,2020-04-11 03:07:48,2020-04-11 03:07:48,0.0
+173,2020-04-10,1927870790666943,"b ơi cho mình hỏi chút
+bên mình có quây k k ạ","Sản phẩm  Quây  hiện shop đang có giá: *1,440,000 VND (giá gốc 1,490,000 VND), 1,040,000 VND (giá gốc 1,290,000 VND), 1,340,000 VND (giá gốc 1,390,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-04-10 06:03:18,2020-04-10 06:03:20,2.0
+173,2020-04-10,1927870790666943,mẫu này kt bn hả b,"Sản phẩm  Quây  hiện shop đang có kích thước: *100x132x60cm, 132x165x60cm, 132x132x60cm*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-04-10 06:04:23,2020-04-10 06:04:23,0.0
+173,2020-04-10,1927870790666943,"mai ship mình bộ này b nhé
+đây là của hãng gì hả b",bot handover_to_inbox, ,0,handover_to_inbox,2020-04-10 06:05:44,no_timestamp,no_wait_time
+175,2020-04-09,2784719241613627,Loại có 2 bánh trc ạ,bot handover_to_inbox, ,0,handover_to_inbox,2020-04-09 10:36:43,no_timestamp,no_wait_time
+179,2020-03-29,2616917071751695,/greet,"Chào Nguyen Thuy Linh, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-03-29 14:15:18,2020-03-29 14:15:18,0.0
+179,2020-03-29,2616917071751695,"/find_product_by_category{""category_id"":188}",Dạ mời bạn tham khảo các loại sản phẩm{reference}hiện có tại shop nhé!, ,0,find_product_by_category,2020-03-29 14:15:28,2020-03-29 14:15:36,8.0
+179,2020-03-29,2616917071751695,"/find_product_by_category{""category_id"":181}",Dạ mời bạn tham khảo các loại sản phẩm{reference}hiện có tại shop nhé!, ,0,find_product_by_category,2020-03-29 14:15:35,2020-03-29 14:15:36,1.0
+179,2020-03-29,2616917071751695,"/find_product_by_category{""category_id"":181}",Dạ mời bạn tham khảo các loại sản phẩm{reference}hiện có tại shop nhé!, ,0,find_product_by_category,2020-03-29 14:15:38,2020-03-29 14:15:39,1.0
+179,2020-03-29,2616917071751695,Shop còn bộ này k ạ,Bạn có thể nói với tôi theo 1 cách khác được không?, ,0,query_knowledge_base,2020-03-29 14:15:41,2020-03-29 14:15:41,0.0
+179,2020-03-29,2616917071751695,Bạn có cái bể bơi k,"Sản phẩm  Bể Bơi  hiện shop đang có giá: *800,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-29 14:16:07,2020-03-29 14:16:07,0.0
+180,2020-03-28,2825652034197583,/greet,"Chào Hannah Chu, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-03-28 14:02:00,2020-03-28 14:02:02,2.0
+180,2020-03-28,2825652034197583,Báo giá mình quây thảm với,"Sản phẩm  Quây  hiện shop đang có giá: *1,290,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-28 14:02:20,2020-03-28 14:02:20,0.0
+180,2020-03-28,2825652034197583,Cái này có kèm thảm và bóng ko bạn,"Sản phẩm  Quây  hiện shop đang có giá: *1,290,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-28 14:11:17,2020-03-28 14:11:17,0.0
+180,2020-03-28,2825652034197583,Ko thấy nói bạn ơi,Bạn có thể nói với tôi theo 1 cách khác được không?, ,0,disagree,2020-03-28 14:15:29,2020-03-28 14:15:29,0.0
+181,2020-03-28,2907461142664561,/greet,"Chào Hà Moon, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-03-28 13:08:04,2020-03-28 13:08:05,1.0
+181,2020-03-28,2907461142664561,Cho mình hỏi bên bạn có máy hút sữa Avent hoa tuyết không ạ?,"Sản phẩm  Máy Hút Sữa hãng sản xuất Avent hiện shop đang có giá: *6,950,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-28 13:08:37,2020-03-28 13:08:39,2.0
+181,2020-03-28,2907461142664561,Đang giảm còn 4.990k đúng không ạ?,"Dạ, sản phẩm Máy Hút Sữa hãng sản xuất Avent, giá 4.990k bên shop hiện tại không có ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-03-28 13:11:54,2020-03-28 13:11:54,0.0
+181,2020-03-28,2907461142664561,"Vâng ạ, vì link bạn gửi mình đọc thì thấy giảm 28% nên mình tưởng giá đó :D
+Cảm ơn shop nhé!",Dạ mời bạn tham khảo các loại sản phẩm Máy Hút Sữa  hiện có tại shop nhé!, ,0,agree,2020-03-28 13:13:06,2020-03-28 13:13:06,0.0
+183,2020-03-28,3082579845196795,Hi shop,"Chào Ha Hang, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-03-28 01:59:09,2020-03-28 01:59:10,1.0
+183,2020-03-28,3082579845196795,"/find_product_by_category{""category_id"":165}",Dạ mời bạn tham khảo các loại sản phẩm{reference}hiện có tại shop nhé!, ,0,find_product_by_category,2020-03-28 01:59:34,2020-03-28 01:59:34,0.0
+183,2020-03-28,3082579845196795,Shop có xe đẩy ko,Bot doing sth, ,0,query_knowledge_base,2020-03-28 02:00:27,2020-03-28 02:00:28,1.0
+183,2020-03-28,3082579845196795,Shop có xe đẩy ko,Bot doing sth, ,0,query_knowledge_base,2020-03-28 02:04:55,2020-03-28 02:04:56,1.0
+183,2020-03-28,3082579845196795,"/query_knowledge_base{""price"": ""1M - 2M""}",Bot doing sth, ,0,query_knowledge_base,2020-03-28 02:06:24,2020-03-28 02:06:25,1.0
+183,2020-03-28,3082579845196795,"/confirm_attribute_value{""brand"": ""NULL""}",Bot doing sth, ,0,confirm_attribute_value,2020-03-28 02:06:33,2020-03-28 02:06:33,0.0
+183,2020-03-28,3082579845196795,"/query_knowledge_base{""color"": ""Hồng""}",Bot doing sth, ,0,query_knowledge_base,2020-03-28 02:06:41,2020-03-28 02:06:41,0.0
+183,2020-03-28,3082579845196795,"/confirm_attribute_value{""weight"": ""NULL""}",Bot doing sth, ,0,confirm_attribute_value,2020-03-28 02:06:48,2020-03-28 02:06:48,0.0
+183,2020-03-28,3082579845196795,"/query_knowledge_base{""age_of_use"": ""0 - 36 Tháng""}",Bot doing sth, ,0,query_knowledge_base,2020-03-28 02:06:56,2020-03-28 02:06:56,0.0
+183,2020-03-28,3082579845196795,"/confirm_attribute_value{""guarantee"": ""NULL""}","Dạ mời bạn tham khảo các loại sản phẩm Xe Đẩy  Hồng, giá 1m - 2m, độ tuổi sử dụng 0 - 36 Tháng hiện có tại shop nhé!", ,0,confirm_attribute_value,2020-03-28 02:07:25,2020-03-28 02:07:25,0.0
+183,2020-03-28,3082579845196795,Thế xe nào 2 chiều,"Dạ mời bạn tham khảo các loại sản phẩm Xe Đẩy  Hồng, giá 1m - 2m, độ tuổi sử dụng 0 - 36 Tháng hiện có tại shop nhé!", ,0,query_knowledge_base,2020-03-28 02:08:19,2020-03-28 02:08:19,0.0
+184,2020-03-27,3671378446270172,/greet,"Chào Trần Bá Nhận, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-03-27 11:15:07,2020-03-27 11:15:07,0.0
+184,2020-03-27,3671378446270172,mình cần tìm ghế ăn dặm,Bot doing sth, ,0,query_knowledge_base,2020-03-27 11:15:29,2020-03-27 11:15:30,1.0
+184,2020-03-27,3671378446270172,"/query_knowledge_base{""price"": ""1M - 2M""}","Sản phẩm  Ghế Ăn giá 1m - 2m hiện shop đang có giá: *2,000,000 VND, 1,300,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-27 11:15:36,2020-03-27 11:15:37,1.0
+184,2020-03-27,3671378446270172,ghế mastela sản xuất ở đâu vậy shop?,"Sản phẩm  Ghế Ăn hãng sản xuất Mastela, giá 1m - 2m hiện shop đang có nơi sản xuất: *Trung Quốc*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-27 11:16:31,2020-03-27 11:16:31,0.0
+184,2020-03-27,3671378446270172,bé bao nhiêu tháng thì dùng đc ghế này?,"Sản phẩm  Ghế Ăn hãng sản xuất Mastela, giá 1m - 2m hiện shop đang có độ tuổi sử dụng: *6 tháng - 5 tuổi*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-27 11:17:03,2020-03-27 11:17:03,0.0
+184,2020-03-27,3671378446270172,ok shop,Cảm ơn bạn!, ,0,thank,2020-03-27 11:17:33,2020-03-27 11:17:33,0.0
+184,2020-03-27,3671378446270172,shop có xe đẩy k?,Bot doing sth, ,0,query_knowledge_base,2020-03-27 11:17:55,2020-03-27 11:17:55,0.0
+184,2020-03-27,3671378446270172,"/query_knowledge_base{""age_of_use"": ""0 - 36 Tháng""}",Bot doing sth, ,0,query_knowledge_base,2020-03-27 11:18:04,2020-03-27 11:18:04,0.0
+184,2020-03-27,3671378446270172,"/query_knowledge_base{""price"": ""2M - 5M""}",Bot doing sth, ,0,query_knowledge_base,2020-03-27 11:18:11,2020-03-27 11:18:11,0.0
+184,2020-03-27,3671378446270172,"/confirm_attribute_value{""brand"": ""NULL""}",Bot doing sth, ,0,confirm_attribute_value,2020-03-27 11:18:18,2020-03-27 11:18:18,0.0
+184,2020-03-27,3671378446270172,"/confirm_attribute_value{""material"": ""NULL""}",Bot doing sth, ,0,confirm_attribute_value,2020-03-27 11:18:23,2020-03-27 11:18:23,0.0
+184,2020-03-27,3671378446270172,"/query_knowledge_base{""color"": ""Ghi""}","Sản phẩm  Xe Đẩy  Ghi, giá 2m - 5m, độ tuổi sử dụng 0 - 36 Tháng hiện shop đang có giá: *2,500,000 VND, 3,000,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-27 11:18:38,2020-03-27 11:18:38,0.0
+184,2020-03-27,3671378446270172,shop có ghế đa năng cho bé 10 tháng k?,Bot doing sth, ,0,query_knowledge_base,2020-03-27 11:19:13,2020-03-27 11:19:13,0.0
+184,2020-03-27,3671378446270172,"/query_knowledge_base{""price"": ""1M - 2M""}",Bot doing sth, ,0,query_knowledge_base,2020-03-27 11:19:23,2020-03-27 11:19:24,1.0
+184,2020-03-27,3671378446270172,"/query_knowledge_base{""brand"": ""More Kiss""}","Sản phẩm  Ghế Đa Năng hãng sản xuất More Kiss, giá 1m - 2m, độ tuổi sử dụng Bé 10 Tháng hiện shop đang có giá: *1,990,000 VND*.
+Bạn tham khảo các sản phẩm sau nhé ạ:", ,0,query_knowledge_base,2020-03-27 11:19:53,2020-03-27 11:19:54,1.0
+186,2020-01-08,1955556537827938,"Huhu thế à
+Có về thêm ko b","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:18,2020-01-08 02:08:18,0.0
+187,2020-01-08,2398571066853949,Nếu mình chỉ bắt vít phía dưới có dc ko,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:15,2020-01-08 02:08:15,0.0
+188,2020-01-08,2062180597238109,"cho mình xin giá bộ cầu trượt vs đu
+mình vừa like ý","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:06,2020-01-08 02:08:06,0.0
+188,2020-01-08,2062180597238109,có bộ nào rẻ hơn k shop,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:06,2020-01-08 02:08:06,0.0
+188,2020-01-08,2062180597238109,"shop cho mình loại 1990k nhé
+có ship luôn chiều nay giúp mình đc k ?","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:07,2020-01-08 02:08:07,0.0
+188,2020-01-08,2062180597238109,vậy mai ship cho mình,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,agree,2020-01-08 02:08:07,2020-01-08 02:08:07,0.0
+188,2020-01-08,2062180597238109,ship đắt thế à,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:07,2020-01-08 02:08:07,0.0
+188,2020-01-08,2062180597238109,"cho mình xin địa chri nhé
+để mình nhờ ng qua lấy","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:07,2020-01-08 02:08:07,0.0
+188,2020-01-08,2062180597238109,khi nào có báo mình để mình nhwof ng qua nhé,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:08:08,2020-01-08 02:08:08,0.0
+189,2020-01-08,1632494790186779,B ơi cho m giá néh,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:58,2020-01-08 02:07:58,0.0
+189,2020-01-08,1632494790186779,"Có bán quây bóng và thảm riêng k b
+Có mấy sz hả b",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:58,2020-01-08 02:07:58,0.0
+190,2020-01-08,2679903738766559,"Ok shop
+Vậy ship cho mình nhé
+Minhg ở trần duy hưng trung hòa cầu giấy","Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,query_knowledge_base,2020-01-08 02:07:57,2020-01-08 02:07:57,0.0
+190,2020-01-08,2679903738766559,Mình ở vinhome D capitale tòa C7 trần duy hưng trung hòa cầu giáy,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,greet,2020-01-08 02:07:57,2020-01-08 02:07:57,0.0
+190,2020-01-08,2679903738766559,"Có màu khác k shop
+Thế ah
+Vậy bên b còn kệ nào nhiều ngăn như vậy k",bot handover_to_inbox, ,0,query_knowledge_base,2020-01-08 02:07:58,no_timestamp,no_wait_time
+191,2020-01-08,2410042959008326,Mình có sănz xe chòi chân k,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:56,2020-01-08 02:07:56,0.0
+192,2020-01-08,2925783064119136,Bên shop có bộ quây cũi cầu trượt xích đu không ạ,Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:56,2020-01-08 02:07:56,0.0
+192,2020-01-08,2925783064119136,M muốn hỏi full bộ nha b,bot handover_to_inbox, ,0,agree,2020-01-08 02:07:56,no_timestamp,no_wait_time
+193,2020-01-08,2820813431309347,"c ơiiii
+mình còn xe ngựa bập bênh màu hồng ko ạ?","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:54,2020-01-08 02:07:54,0.0
+193,2020-01-08,2820813431309347,"c ship giúp e trong ngày hnay
+tới địa chỉ số 73 ngách 63 ngõ 1194 đường Láng đc ko ạ?","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:54,2020-01-08 02:07:54,0.0
+193,2020-01-08,2820813431309347,"0989191112
+c cho e xin stk
+e chuyển khoản cho mình luôn ạ","Thông tin chuyển khoản: 
+ - 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ 
+ - 1500216756861 - Agribank chi nhánh Hà Nội - Nguyễn Lê Thủy 
+ - 19022876983383 - Techcombank chi nhánh Hà Nội. Nguyễn Tuấn Quang! 
+ Nội dung chuyển khoản bạn ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi chuyển khoản nhé.", ,0,show_shop_account_number,2020-01-08 02:07:54,2020-01-08 02:07:54,0.0
+193,2020-01-08,2820813431309347,"sdt nhận hàng thêm 1 số
+0936252168","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:54,2020-01-08 02:07:54,0.0
+193,2020-01-08,2820813431309347,e gửi rồi c nhé,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:55,2020-01-08 02:07:55,0.0
+193,2020-01-08,2820813431309347,"mình sẽ ship dc khoảng tầm giờ nào c nhỉ?
+để e báo ng ở nhà nhận","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:55,2020-01-08 02:07:55,0.0
+193,2020-01-08,2820813431309347,"oki bạn
+chị ơi
+c check giúp e xem shipper giao chưa ạ?","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:55,2020-01-08 02:07:55,0.0
+193,2020-01-08,2820813431309347,"huhuhu
+e biết giao hnay rồi ạ
+nhưng khoảng mấy giờ c ơi
+tại nhà e có bé nhỏ nên nhiều khi lơ đễnh ko cầm đt
+nên e phải báo ng nhận hộ
+nên e mới hỏi c là khoảng tgian nào đó","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:55,2020-01-08 02:07:55,0.0
+194,2020-01-08,2623071794466659,"Mình muốn mua mấy món này shop báo đơn
+Và có chế độ khuyến mãi j ko",bot handover_to_inbox, ,0,query_knowledge_base,2020-01-08 02:07:54,no_timestamp,no_wait_time
+195,2020-01-08,2610915495649604,B ơii,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-01-08 02:07:43,2020-01-08 02:07:43,0.0
+195,2020-01-08,2610915495649604,"À
+Cả bộ này là 640k ạ
+Có sẵn luôn ko b",Ship nội thành Hà Nội giao động từ 30-40k bạn nhé., ,0,query_knowledge_base,2020-01-08 02:07:44,2020-01-08 02:07:45,1.0
+195,2020-01-08,2610915495649604,Ôi thế ạ,Ship nội thành Hà Nội giao động từ 30-40k bạn nhé., ,0,agree,2020-01-08 02:07:44,2020-01-08 02:07:45,1.0
+195,2020-01-08,2610915495649604,"M muốn lấy cùng với xe đẩy đi chơi í ạ
+Vậy xe đẩy đi chơi
+M lấy cái màu hồng
+M để cho m nhé","Dạ, sản phẩm này bên shop hiện tại không có ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-01-08 02:07:45,2020-01-08 02:07:45,0.0
+195,2020-01-08,2610915495649604,"À m lays cái này này
+990 phải ko b
+M lấy màu hồng","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:45,2020-01-08 02:07:45,0.0
+195,2020-01-08,2610915495649604,"Ok
+Ship luôn cho m vs đk ko ạ","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:45,2020-01-08 02:07:45,0.0
+195,2020-01-08,2610915495649604,Vậy còn những màu nào ah,Thanks you!, ,0,query_knowledge_base,2020-01-08 02:07:45,2020-01-08 02:07:46,1.0
+195,2020-01-08,2610915495649604,"Ok b ạ
+Cc seasons avenue mỗ lao, hà đông",Thanks you!, ,0,agree,2020-01-08 02:07:46,2020-01-08 02:07:46,0.0
+195,2020-01-08,2610915495649604,"B ship bảo mai giao b ạ
+Vì giờ ko ship đk ohair 7h-8h cơ",bot handover_to_inbox, ,0,query_knowledge_base,2020-01-08 02:07:48,no_timestamp,no_wait_time
+196,2020-01-08,2563059537097286,Đồ chơi này có nhạc ko a,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:42,2020-01-08 02:07:42,0.0
+196,2020-01-08,2563059537097286,Shop có xe 3 bánh ko a,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:42,2020-01-08 02:07:42,0.0
+196,2020-01-08,2563059537097286,Xe tập đi y a,Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:42,2020-01-08 02:07:42,0.0
+197,2020-01-08,1978232885522727,Cho mình giá bảng này nha,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:37,2020-01-08 02:07:37,0.0
+197,2020-01-08,1978232885522727,Có về hàng nữa ko ah,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:37,2020-01-08 02:07:37,0.0
+198,2020-01-08,2022916924390426,"Có thể qua tận nơi mua k bạn
+Có thể qua tận nơi mua k bạn",bot handover_to_inbox, ,0,query_knowledge_base,2020-01-08 02:07:36,no_timestamp,no_wait_time
+199,2020-01-08,1857857050895203,Chị ơi cầu thang nhà em rộng 104cm thì lấy thanh chắn như nào ạ,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:34,2020-01-08 02:07:34,0.0
+199,2020-01-08,1857857050895203,"Shop có ship cod tỉnh không ạ
+E ở ninh bình","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:35,2020-01-08 02:07:35,0.0
+199,2020-01-08,1857857050895203,"E vừa vào shopee,nhưng ko có mục chọn thanh chắn 12 mà chỉ có loại 36","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:35,2020-01-08 02:07:35,0.0
+200,2020-01-08,2408238999199339,"Ok shop
+Alo b ouq
+Cho mih hoi
+Sao cái đai em bé ko thăt đc
+em bé nhà mình có 13 tháng
+8kg mà ko thắt đc vì chật quá ko kéo dài ra thêm đ
+c",bot handover_to_inbox, ,0,query_knowledge_base,2020-01-08 02:07:33,no_timestamp,no_wait_time
+201,2020-01-08,2104215246317016,"Shop ui
+Có cách nào giao đc cầu trượt bập bênh cho em k ạ","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:32,2020-01-08 02:07:32,0.0
+202,2020-01-08,1771149992962977,"Shop cho m hỏi chút
+Bên b có bán mình bộ quây cũi, bóng và k gồm cầu trượt vs xích đu k ạ",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:30,2020-01-08 02:07:30,0.0
+202,2020-01-08,1771149992962977,Nếu m k lấy thảm thì giá như nào vậy b?,Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:30,2020-01-08 02:07:31,1.0
+203,2020-01-08,2433033480150338,"2 mặt 2m
+1 mặt m8",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:24,2020-01-08 02:07:24,0.0
+203,2020-01-08,2433033480150338,"18 phân
+Chồi lên giường ntn",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:24,2020-01-08 02:07:24,0.0
+203,2020-01-08,2433033480150338,Phí tn vậy e,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,query_knowledge_base,2020-01-08 02:07:24,2020-01-08 02:07:25,1.0
+203,2020-01-08,2433033480150338,Vinhomw gardenia Hàm Nghi mỹ đình,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,greet,2020-01-08 02:07:24,2020-01-08 02:07:25,1.0
+203,2020-01-08,2433033480150338,Đã có phí vận chuyển tr đó chưa,Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,disagree,2020-01-08 02:07:25,2020-01-08 02:07:25,0.0
+203,2020-01-08,2433033480150338,"Thế là tổng là bn tiền b nhỉ
+2 thanh 2m
+1 thanh m8
+3 mặt của giường m8-2m",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:25,2020-01-08 02:07:25,0.0
+203,2020-01-08,2433033480150338,"Bthuong các nhà khác đệm cứng thì tn
+Chả lẽ shop chưa lắp nhà ai đệm cứng à
+Chứ mình chưa lắp cái nè bao h shop hỏi vậy mình chịu","Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,query_knowledge_base,2020-01-08 02:07:26,2020-01-08 02:07:27,1.0
+203,2020-01-08,2433033480150338,Uh,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,greet,2020-01-08 02:07:26,2020-01-08 02:07:27,1.0
+203,2020-01-08,2433033480150338,"Hở tầm 2 phân mà vẫn ko đc à
+Thế thì có đệm nào mà lắp đc","Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,query_knowledge_base,2020-01-08 02:07:27,2020-01-08 02:07:28,1.0
+203,2020-01-08,2433033480150338,Nhà mình đệm bông ép,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,greet,2020-01-08 02:07:27,2020-01-08 02:07:28,1.0
+204,2020-01-08,1280588248735058,Gửi về Hp mất tầm bao lâu b nhỉ,"Dạ, sản phẩm này bên shop hiện tại không có ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-01-08 02:07:18,2020-01-08 02:07:19,1.0
+204,2020-01-08,1280588248735058,"Oke bạn
+Mình chọn thêm 1 cái nôi đa năng nữa","Dạ, sản phẩm này bên shop hiện tại không có ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!", ,0,query_knowledge_base,2020-01-08 02:07:19,2020-01-08 02:07:19,0.0
+204,2020-01-08,1280588248735058,"Cái này là ghế ăn luôn b nhỉ
+Vậy bạn còn loại nào",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:19,2020-01-08 02:07:19,0.0
+204,2020-01-08,1280588248735058,"Cái này ko nằm ngửa hẳn ra như mẫu cũ đc b nhỉ
+Bạn có loại nào để bé nằm hẳn ra như nằm trên giường ko
+Đây là ghế ngồi ô tô bạn nhỉ
+Loại này bạn còn ko",Dạ mời bạn tham khảo các loại sản phẩm hiện có tại shop nhé!, ,0,query_knowledge_base,2020-01-08 02:07:19,2020-01-08 02:07:20,1.0
+204,2020-01-08,1280588248735058,Hàng này mình đặt thì coa về nữa ko b,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,order_product,2020-01-08 02:07:20,2020-01-08 02:07:20,0.0
+204,2020-01-08,1280588248735058,"Thế mình đặt mẫu 0-4 nhé
+Bạn gửi xe hoàng long hộ mình
+Thanh toán ck hay ntn bạn?","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:20,2020-01-08 02:07:20,0.0
+204,2020-01-08,1280588248735058,Vậy ship tận nhà cho mình nhỉ,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:20,2020-01-08 02:07:20,0.0
+204,2020-01-08,1280588248735058,"Oke
+Oke
+Vậy mình ck trc nhé","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:20,2020-01-08 02:07:20,0.0
+204,2020-01-08,1280588248735058,Bạn ship giúp mình,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:21,2020-01-08 02:07:21,0.0
+204,2020-01-08,1280588248735058,À,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,,2020-01-08 02:07:21,2020-01-08 02:07:21,0.0
+204,2020-01-08,1280588248735058,Mình lấy màu ghi nhé,"Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-08 02:07:21,2020-01-08 02:07:21,0.0
+204,2020-01-08,1280588248735058,"Ơ phía trên bạn bảo có màu ghi mà
+Thế chỉ có màu đen à","Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,query_knowledge_base,2020-01-08 02:07:21,2020-01-08 02:07:22,1.0
+204,2020-01-08,1280588248735058,Oke bạn,"Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: mình muốn mua xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!", ,0,greet,2020-01-08 02:07:22,2020-01-08 02:07:22,0.0
+204,2020-01-08,1280588248735058,Khoảng tầm nào hàng về đến Hp bạn ơi,bot handover_to_inbox, ,0,query_knowledge_base,2020-01-08 02:07:23,no_timestamp,no_wait_time
+205,2020-01-03,1507885795991490,hi,"Chào Trang, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-01-03 08:26:58,2020-01-03 08:26:58,0.0
+205,2020-01-03,1507885795991490,"Bên s có máy hút mũi gì lực k quá mạnh gây đau cho bé k ạ
+Bé 6m thôi ạ","Nếu bạn đang tìm kiếm sản phẩm? Hãy nói với tôi theo 1 cách khác, ví dụ Tìm ghế ăn dặm mastela.", ,0,query_knowledge_base,2020-01-03 08:27:52,2020-01-03 08:27:52,0.0
+205,2020-01-03,1507885795991490,Máy hút mũi,"Chào Trang, mình là trợ lý ảo của Shop Gấu & Bí Ngô", ,0,greet,2020-01-03 08:28:20,2020-01-03 08:28:20,0.0

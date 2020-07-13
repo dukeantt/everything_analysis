@@ -17,19 +17,27 @@ def get_sender_id_image_case(all_conv_detail):
     :return: List of sender id and timestamp of conversations that the customers send image
     """
     sender_id_image = []
+    sender_id_text = []
     # Loop all conversation
     for conversation in all_conv_detail.itertuples():
         sender_id = conversation.sender_id
         events = literal_eval(conversation.events)
         user_messages = [x for x in events if x["event"] == "user"]
         # Only care about conversation in specific month
-        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["06"]]
+        user_messages = [x for x in user_messages]
         # user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["03","04","05","06"]]
 
-        conversation_date = []
-        for user_message in user_messages:
+        img_conversation_date = []
+        txt_conversation_date = []
+        for index, user_message in enumerate(user_messages):
             timestamp = int(user_message["timestamp"])
             timestamp_date = get_timestamp(timestamp, "%d")
+
+            try:
+                next_event_timestamp_date = get_timestamp(int(user_messages[index + 1]["timestamp"]), "%d")
+            except:
+                next_event_timestamp_date = timestamp_date
+
             try:
                 message_text = user_message["parse_data"]["text"]
             except Exception as e:
@@ -39,11 +47,48 @@ def get_sender_id_image_case(all_conv_detail):
                 message_text = "user message"
 
                 # If the conversation date of sender id already existed move to next conversation
-            if "scontent.xx.fbcdn.net" in message_text and timestamp_date not in conversation_date:
-                conversation_date.append(timestamp_date)
+            if "scontent.xx.fbcdn.net" in message_text and timestamp_date not in img_conversation_date:
+                img_conversation_date.append(timestamp_date)
                 # Append timestamp and sender id to list
                 sender_id_image.append((sender_id, get_timestamp(timestamp, "%Y-%m-%d")))
-    return sender_id_image
+            elif "scontent" not in message_text and timestamp_date not in txt_conversation_date:
+                txt_conversation_date.append(timestamp_date)
+                sender_id_text.append((sender_id, get_timestamp(timestamp, "%Y-%m-%d")))
+
+    return sender_id_image, sender_id_text
+
+def split_uc3_and_uc4(all_conv_no_image, sender_id_text):
+    necessary_info_uc3 = {"timestamp": [], "sender_id": [], "message": []}
+
+    for conversation in all_conv_no_image.itertuples():
+        sender_id = conversation.sender_id
+        set_date = sender_id_text[sender_id]
+        events = literal_eval(conversation.events)
+        user_messages = [x for x in events if x["event"] == "user"]
+        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%Y-%m-%d") == set_date]
+        for user_message in user_messages:
+            try:
+                message_text = user_message["parse_data"]["text"]
+            except Exception as e:
+                message_text = "asd"
+            # Do correction
+            if message_text is not None:
+                message_text = do_correction(message_text)
+            else:
+                continue
+            key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk",
+                         "số tài khoản", "gửi về"]
+
+            if "có" in message_text and "không" in message_text and "giá" not in message_text and "bao nhiêu" not in message_text:
+                if any(a in message_text for a in key_words):
+                    continue
+                else:
+                    necessary_info_uc3["timestamp"].append(set_date)
+                    necessary_info_uc3["sender_id"].append(sender_id)
+                    necessary_info_uc3["message"].append(message_text)
+
+    necessary_info_uc3_df = pd.DataFrame.from_dict(necessary_info_uc3)
+    return necessary_info_uc3_df, []
 
 
 def get_uc2_price_case(all_conv_about_image, sender_id_image):
@@ -196,10 +241,10 @@ def processing_uc_conversations(all_uc2_conversation, dict_info):
 
 
 def add_outcome(uc_conversation_df, uc):
-    # uc2_conversations_df = pd.read_csv("analyze_data/uc2_conversation.csv")
-    uc2_conversations_df = uc_conversation_df
+    uc2_conversations_df = pd.read_csv("analyze_data/uc3_conversation.csv")
+    # uc2_conversations_df = uc_conversation_df
     conversation_ids_list = list(set(uc2_conversations_df["id"]))
-    key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản"]
+    key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản", "gửi về"]
     filter_words = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
 
     for conversation_id in conversation_ids_list:
@@ -267,10 +312,14 @@ def handle_cases_in_uc1(uc1_conversation_df):
 def main():
     all_conv_detail = get_all_conv_detail()
     # Get all case that customer send image
-    sender_id_image = get_sender_id_image_case(all_conv_detail)
+    sender_id_image, sender_id_text = get_sender_id_image_case(all_conv_detail)
     sender_id_image = {a: b for a, b in sender_id_image}
     all_conv_about_image = all_conv_detail[all_conv_detail["sender_id"].isin(list(sender_id_image.keys()))]
 
+    sender_id_text = {a: b for a,b in sender_id_text}
+    all_conv_no_image = all_conv_detail[all_conv_detail["sender_id"].isin(list(sender_id_text.keys()))]
+
+    df_uc3, df_uc4 = split_uc3_and_uc4(all_conv_no_image, sender_id_text)
     # Get all usecase 2: User sends product image and asks for the product's price
     df_uc1, df_uc2 = get_uc2_price_case(all_conv_about_image, sender_id_image)
 
@@ -284,19 +333,39 @@ def main():
     timestamp_info_uc2 = list(df_uc2["timestamp"])
     senderid_timestamp_pair_uc2 = dict(zip(sender_id_info_uc2, timestamp_info_uc2))
 
+    df_uc3 = df_uc3.drop_duplicates(subset=["timestamp", "sender_id"], keep="first")
+    sender_id_info_uc3 = list(df_uc3["sender_id"])
+    timestamp_info_uc3 = list(df_uc3["timestamp"])
+    senderid_timestamp_pair_uc3 = dict(zip(sender_id_info_uc3, timestamp_info_uc3))
+
     # Processing all uc1
     all_uc1_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info_uc1)]
     uc1_conversation_df = processing_uc_conversations(all_uc1_conversation, senderid_timestamp_pair_uc1)
     uc1_conversation_df = handle_cases_in_uc1(uc1_conversation_df)
-    uc1_conversation_df.to_csv("analyze_data/uc1_conversation.csv", index=False)
+
     # Processing all uc2
     all_uc2_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info_uc2)]
     uc2_conversation_df = processing_uc_conversations(all_uc2_conversation, senderid_timestamp_pair_uc2)
     # uc2_conversation_df.to_csv("analyze_data/uc2_conversation.csv", index=False)
 
-    # Add outcome for conversation
+    # Processing all uc3
+    all_uc3_conversation = all_conv_detail[all_conv_detail["sender_id"].isin(sender_id_info_uc3)]
+    uc3_conversation_df = processing_uc_conversations(all_uc3_conversation, senderid_timestamp_pair_uc3)
+    for conversation_id in list(set(uc3_conversation_df["id"])):
+        sub_uc3_df = uc3_conversation_df[uc3_conversation_df["id"] == conversation_id]
+        messages = sub_uc3_df["message"].tolist()
+        for message in messages:
+            if "scontent" in message:
+                indexNames = sub_uc3_df.index
+                uc3_conversation_df = uc3_conversation_df.drop(indexNames)
+                break
+    uc3_conversation_df.to_csv("analyze_data/uc3_conversation.csv", index=False)
+
+    # Add outcome for conversation uc1 and uc2
     add_outcome(uc2_conversation_df, "uc2")
+    add_outcome(uc3_conversation_df, "uc3")
     add_outcome(uc1_conversation_df, "uc1")
 
 
 main()
+# add_outcome([], "uc3")
