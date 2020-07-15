@@ -362,10 +362,10 @@ def main():
     uc3_conversation_df.to_csv("analyze_data/uc3_conversation.csv", index=False)
 
     # Add outcome for conversation uc1 and uc2
-    add_outcome(uc2_conversation_df, "uc2")
-    add_outcome(uc3_conversation_df, "uc3")
-    add_outcome(uc1_conversation_df, "uc1")
+    # add_outcome(uc2_conversation_df, "uc2")
+    # add_outcome(uc3_conversation_df, "uc3")
+    # add_outcome(uc1_conversation_df, "uc1")
 
 
-main()
-# add_outcome([], "uc3")
+# main()
+add_outcome([], "uc3")

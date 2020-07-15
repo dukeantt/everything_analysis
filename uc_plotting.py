@@ -48,8 +48,4 @@ def main():
             success_counter += 1
         a = 0
 
-
-    a = 0
-
-
 main()
