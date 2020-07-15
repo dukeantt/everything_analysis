@@ -311,6 +311,34 @@ def handle_cases_in_uc1(uc1_conversation_df):
 
 def main():
     all_conv_detail = get_all_conv_detail()
+    df_data = {"id": [], "sender_id": [],"message": [], "timestamp": []}
+    id = 0
+    fmt = '%Y-%m-%d %H:%M:%S'
+
+    for index, conv in all_conv_detail.iterrows():
+        id += 1
+        events = literal_eval(conv["events"])
+        user_messages = [x for x in events if x["event"] == "user"]
+        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["05","06"]]
+        sender_id = conv["sender_id"]
+        for index, user_message in enumerate(user_messages):
+            current_timestamp = get_timestamp(user_message["timestamp"], fmt)
+            df_data["id"].append(id)
+            df_data["sender_id"].append(sender_id)
+            df_data["message"].append(user_message["text"])
+            df_data["timestamp"].append(current_timestamp)
+
+            current_timestamp = datetime.strptime(current_timestamp, fmt)
+            try:
+                next_timestamp = get_timestamp(user_messages[index + 1]["timestamp"], fmt)
+                next_timestamp = datetime.strptime(next_timestamp, fmt)
+            except:
+                break
+            time_diff = (next_timestamp - current_timestamp).total_seconds()
+            if time_diff > 900:
+                id += 1
+    conversations_df = pd.DataFrame.from_dict(df_data)
+
     # Get all case that customer send image
     sender_id_image, sender_id_text = get_sender_id_image_case(all_conv_detail)
     sender_id_image = {a: b for a, b in sender_id_image}
@@ -367,5 +395,5 @@ def main():
     # add_outcome(uc1_conversation_df, "uc1")
 
 
-# main()
-add_outcome([], "uc3")
+main()
+# add_outcome([], "uc3")
