@@ -3,6 +3,7 @@ from ast import literal_eval
 import logging
 from heuristic_correction import *
 from utils.helper import *
+from datetime import datetime
 
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
@@ -126,7 +127,46 @@ def get_success_conv(all_conv_detail):
     return combine_df, conversation_id_to_remove
 
 
+def get_success_case():
+    all_conv_detail = get_all_conv_detail()
+    df_data = {"id": [], "sender_id": [], "message": [], "timestamp": []}
+    id = 0
+    fmt = '%Y-%m-%d %H:%M:%S'
+    checked_senderid = []
+    for index, conv in all_conv_detail.iterrows():
+        try:
+            events = literal_eval(conv["events"])
+        except:
+            continue
+
+        user_messages = [x for x in events if x["event"] == "user"]
+        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["07"]]
+        if len(user_messages) > 0:
+            sender_id = conv["sender_id"]
+            if sender_id not in checked_senderid:
+                id += 1
+            for index, user_message in enumerate(user_messages):
+                current_timestamp = get_timestamp(user_message["timestamp"], fmt)
+                df_data["id"].append(id)
+                df_data["sender_id"].append(sender_id)
+                df_data["message"].append(user_message["text"])
+                df_data["timestamp"].append(current_timestamp)
+
+                current_timestamp = datetime.strptime(current_timestamp, fmt)
+                try:
+                    next_timestamp = get_timestamp(user_messages[index + 1]["timestamp"], fmt)
+                    next_timestamp = datetime.strptime(next_timestamp, fmt)
+                except:
+                    break
+                time_diff = (next_timestamp - current_timestamp).total_seconds()
+                if time_diff > 900:
+                    id += 1
+    conversations_df = pd.DataFrame.from_dict(df_data)
+    a = 0
+
+
 def main():
+    get_success_case()
     all_conv_detail = get_all_conv_detail()
     result_df1, conversation_id_to_remove_1 = get_success_conv(all_conv_detail)
     result_df = pd.concat([result_df1])
@@ -145,6 +185,7 @@ def main():
 
     result_df = result_df[~result_df["sender_id"].isin(["default", "me", "abcdef", "123456"])]
     result_df.to_csv("analyze_data/success_conversations.csv", index=False)
+
 
 # export_conversations()
 # export_conversation_detail()
