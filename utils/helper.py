@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_all_conv():
-    with open('chatlog_data/all_conv.pkl', 'rb') as f:
+    with open('../chatlog_data/all_conv.pkl', 'rb') as f:
         data = pickle.load(f)
     return data
 
@@ -45,7 +45,7 @@ def export_conversation_detail():
     """
     Export all conversation detail to file so that we dont have to crawl everytime
     """
-    file_name = "chatlog_data/all_conv_detail.csv"
+    file_name = "../chatlog_data/all_conv_detail.csv"
     all_conv = get_all_conv()
     all_sender_id = [x["sender_id"] for x in all_conv]
     for sender_id in all_sender_id:
@@ -69,7 +69,7 @@ def export_conversations():
     conversation_api = "curl -H \"Authorization: Bearer $TOKEN\" -s https://babeshop.ftech.ai/api/conversations"
     token = "TOKEN=$(curl -s https://babeshop.ftech.ai/api/auth -d '{\"username\": \"me\", \"password\": \"w4J6OObi996nDGcQ4mlYNK4F\"}' | jq -r .access_token)"
     all_conversations = json.loads(os.popen(token + " && " + conversation_api).read())
-    with open('chatlog_data/all_conv.pkl', 'wb') as f:
+    with open('../chatlog_data/all_conv.pkl', 'wb') as f:
         pickle.dump(all_conversations, f)
 
 
@@ -92,19 +92,19 @@ def get_fb_conversations():
 
     next_conversations_api = ""
     conversations_timestamp_year = "2020"
+    # conversations_timestamp_month = "06"
     first_time = True
     all_message_df = []
     while conversations_timestamp_year == "2020":
+    # while conversations_timestamp_month == "06":
         if first_time:
             conversations = os.popen(conversation_api).read().replace("\n", " ")
             first_time = False
         else:
             conversations = os.popen('curl -i -X GET \"'+next_conversations_api+'\"').read().replace("\n", " ")
 
-        try:
-            conversations = json.loads(conversations.split(" ")[-1])
-        except:
-            a = 0
+        conversations = json.loads(conversations.split(" ")[-1])
+
         try:
             conversations = conversations["conversations"]
         except:
@@ -113,15 +113,22 @@ def get_fb_conversations():
         conversations_timestamp = conversations["data"][-1]["updated_time"][:10]
         conversations_timestamp = time.mktime(datetime.datetime.strptime(conversations_timestamp, "%Y-%m-%d").timetuple())
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
+        conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
-
+        if conversations_timestamp_month != "05":
+            continue
         conversations_data = conversations["data"]
         for conversation in conversations_data:
             id = conversation["id"]
             updated_time = conversation["updated_time"]
             message_df = get_fb_converstaions_message(id, updated_time)
-            all_message_df.append(message_df)
-    return all_message_df
+            if isinstance(message_df, pd.DataFrame):
+                all_message_df.append(message_df)
+            else:
+                a = 0
+    result = pd.concat(all_message_df)
+    result.to_csv("../analyze_data/all_chat_fb/all_chat_fb_may.csv", index=False)
+    return result
 
 def get_fb_converstaions_message(conversation_id, updated_time):
     collect_info = {"sender_id": [], "user_message": [], "bot_message": [], "updated_time": []}
@@ -139,13 +146,13 @@ def get_fb_converstaions_message(conversation_id, updated_time):
             message_from = message["from"]["name"]
             if message_from != shop_name:
                 sender_id = message["from"]["id"]
-                user_message = message["message"]
+                user_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
                 collect_info["sender_id"].append(sender_id)
                 collect_info["user_message"].append(user_message)
                 collect_info["bot_message"].append("bot")
                 collect_info["updated_time"].append(updated_time)
             else:
-                bot_message = message["message"]
+                bot_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
                 collect_info["sender_id"].append(sender_id)
                 collect_info["user_message"].append("user")
                 collect_info["bot_message"].append(bot_message)
@@ -156,8 +163,22 @@ def get_fb_converstaions_message(conversation_id, updated_time):
         collect_info["bot_message"].append("")
         collect_info["updated_time"].append("")
 
+    # for i in range(0, len(collect_info["sender_id"])):
+    #     sender_id = collect_info["sender_id"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
+    #     user_message = collect_info["user_message"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
+    #     bot_message = collect_info["bot_message"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
+    #     updated_time = collect_info["updated_time"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
+    #     line = sender_id + "," + user_message + "," + bot_message + "," + updated_time
+    #     with open("../analyze_data/all_chat_fb_july.csv", "a") as file:
+    #         file.write("\n")
+    #         try:
+    #             file.write(line)
+    #         except:
+    #             continue
     message_df = pd.DataFrame.from_dict(collect_info)
     return message_df
 
 
-get_fb_conversations()
+# get_fb_conversations()
+# export_conversations()
+# export_conversation_detail()
