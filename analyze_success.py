@@ -127,7 +127,11 @@ def get_success_conv(all_conv_detail):
     return combine_df, conversation_id_to_remove
 
 
-def get_success_case():
+def get_conversation_case_by_month(months: list):
+    """
+
+    :param months:
+    """
     all_conv_detail = get_all_conv_detail()
     df_data = {"id": [], "sender_id": [], "message": [], "timestamp": [], "user_intent": []}
     id = 0
@@ -140,7 +144,7 @@ def get_success_case():
             continue
 
         user_messages = [x for x in events if x["event"] == "user"]
-        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in ["07"]]
+        user_messages = [x for x in user_messages if get_timestamp(int(x["timestamp"]), "%m") in months]
         if len(user_messages) > 0:
             sender_id = conv["sender_id"]
             if sender_id not in checked_senderid:
@@ -168,16 +172,14 @@ def get_success_case():
                     id += 1
     conversations_df = pd.DataFrame.from_dict(df_data)
     add_outcome(conversations_df, "abc")
-    a = 0
 
 
 def main():
-    get_success_case()
+    get_conversation_case_by_month(["07"])
     all_conv_detail = get_all_conv_detail()
-    result_df1, conversation_id_to_remove_1 = get_success_conv(all_conv_detail)
+    result_df1, conversation_id_to_remove = get_success_conv(all_conv_detail)
     result_df = pd.concat([result_df1])
     result_df = result_df.sort_values(by=["begin"], ascending=False).drop_duplicates(subset=["sender_id"], keep="first")
-    conversation_id_to_remove = conversation_id_to_remove_1
     conversation_id_to_remove = list(set(conversation_id_to_remove))
     result_sender_id_list = list(result_df["sender_id"])
 
@@ -193,46 +195,10 @@ def main():
     result_df.to_csv("analyze_data/success_conversations.csv", index=False)
 
 
-def add_outcome(uc_conversation_df, uc):
-    # uc2_conversations_df = pd.read_csv("analyze_data/uc3_conversation.csv")
-    uc2_conversations_df = uc_conversation_df
-    conversation_ids_list = list(set(uc2_conversations_df["id"]))
-    # cho minh
-    key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản", "gửi về"]
-    filter_words = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
 
-    for conversation_id in conversation_ids_list:
-        convesation_df = uc2_conversations_df[uc2_conversations_df["id"] == conversation_id]
-        last_turn = convesation_df.iloc[-1]
-        last_turn_row_index = convesation_df.index.tolist()[-1]
-        # bot_message = last_turn["bot_message"]
-        user_message = last_turn["message"]
-        user_intent = last_turn["user_intent"]
 
-        if user_intent == "thank":
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "thanks"
-
-        elif any(key_word in user_message for key_word in key_words) and any(
-                filter_word not in user_message for filter_word in filter_words):
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "shipping_order"
-
-        # elif user_intent == "handover_to_inbox" or "handover_to_inbox" in bot_message:
-        #     uc2_conversations_df.at[last_turn_row_index, "outcome"] = "handover_to_inbox"
-        #
-        # elif bot_message == "Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!" or user_intent == "disagree":
-        #     uc2_conversations_df.at[last_turn_row_index, "outcome"] = "cv_fail"
-        #     uc2_conversations_df.at[last_turn_row_index, "silent"] = 1
-        #
-        # else:
-        #     uc2_conversations_df.at[last_turn_row_index, "outcome"] = "other"
-        #     uc2_conversations_df.at[last_turn_row_index, "silent"] = 1
-    uc2_conversations_df = uc2_conversations_df.drop_duplicates(subset=["timestamp", "sender_id", "message"], keep="first")
-    uc2_conversations_df.to_csv("analyze_data/" + uc + "_conversation_with_outcome.csv", index=False)
-
-# export_conversations()
-# export_conversation_detail()
 main()
 
 # chatlog from 18/12/2019 to 19/6/2020
-# ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng","đ/c", "thanh toán", "tổng", "ck", "chuyển khoản"]
-# ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
+# test_sender_id = ["default", "me", "abcdef", "123456"]
+

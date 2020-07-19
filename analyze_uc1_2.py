@@ -245,43 +245,6 @@ def processing_uc_conversations(all_uc2_conversation, dict_info):
     return necessary_info_df
 
 
-def add_outcome(uc_conversation_df, uc):
-    # uc2_conversations_df = pd.read_csv("analyze_data/uc3_conversation.csv")
-    uc2_conversations_df = uc_conversation_df
-    conversation_ids_list = list(set(uc2_conversations_df["id"]))
-    # cho minh
-    key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản", "gửi về"]
-    filter_words = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
-
-    for conversation_id in conversation_ids_list:
-        convesation_df = uc2_conversations_df[uc2_conversations_df["id"] == conversation_id]
-        last_turn = convesation_df.iloc[-1]
-        last_turn_row_index = convesation_df.index.tolist()[-1]
-        bot_message = last_turn["bot_message"]
-        user_message = last_turn["message"]
-        user_intent = last_turn["user_intent"]
-
-        if user_intent == "thank":
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "thanks"
-
-        elif any(key_word in user_message for key_word in key_words) and any(
-                filter_word not in user_message for filter_word in filter_words):
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "shipping_order"
-
-        elif user_intent == "handover_to_inbox" or "handover_to_inbox" in bot_message:
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "handover_to_inbox"
-
-        elif bot_message == "Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!" or user_intent == "disagree":
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "cv_fail"
-            uc2_conversations_df.at[last_turn_row_index, "silent"] = 1
-
-        else:
-            uc2_conversations_df.at[last_turn_row_index, "outcome"] = "other"
-            uc2_conversations_df.at[last_turn_row_index, "silent"] = 1
-    uc2_conversations_df = uc2_conversations_df.drop_duplicates(subset=["timestamp", "sender_id", "message"], keep="first")
-    uc2_conversations_df.to_csv("analyze_data/" + uc + "_conversation_with_outcome.csv", index=False)
-
-
 def handle_cases_in_uc1(uc1_conversation_df):
     user_message_keywords = ["không còn"]
     bot_message_keywords = ["mô tả rõ hơn", "chưa xác định", "hết hàng"]

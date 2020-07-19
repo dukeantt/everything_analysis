@@ -85,7 +85,7 @@ def get_timestamp(timestamp: int, format: str):
 
 
 def get_fb_conversations():
-    month_list = ["01","02","03","04","05","06","07"]
+    month_list = ["01", "02", "03", "04", "05", "06", "07"]
     conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/1454523434857990?" \
                        "fields=conversations&" \
                        "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
@@ -96,12 +96,12 @@ def get_fb_conversations():
     first_time = True
     all_message_df = []
     while conversations_timestamp_year == "2020":
-    # while conversations_timestamp_month == "06":
+        # while conversations_timestamp_month == "06":
         if first_time:
             conversations = os.popen(conversation_api).read().replace("\n", " ")
             first_time = False
         else:
-            conversations = os.popen('curl -i -X GET \"'+next_conversations_api+'\"').read().replace("\n", " ")
+            conversations = os.popen('curl -i -X GET \"' + next_conversations_api + '\"').read().replace("\n", " ")
 
         conversations = json.loads(conversations.split(" ")[-1])
 
@@ -111,7 +111,8 @@ def get_fb_conversations():
             conversations = conversations
 
         conversations_timestamp = conversations["data"][-1]["updated_time"][:10]
-        conversations_timestamp = time.mktime(datetime.datetime.strptime(conversations_timestamp, "%Y-%m-%d").timetuple())
+        conversations_timestamp = time.mktime(
+            datetime.datetime.strptime(conversations_timestamp, "%Y-%m-%d").timetuple())
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
         conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
@@ -129,6 +130,7 @@ def get_fb_conversations():
     result = pd.concat(all_message_df)
     result.to_csv("../analyze_data/all_chat_fb/all_chat_fb_may.csv", index=False)
     return result
+
 
 def get_fb_converstaions_message(conversation_id, updated_time):
     collect_info = {"sender_id": [], "user_message": [], "bot_message": [], "updated_time": []}
@@ -179,6 +181,49 @@ def get_fb_converstaions_message(conversation_id, updated_time):
     return message_df
 
 
-# get_fb_conversations()
-# export_conversations()
-# export_conversation_detail()
+def add_outcome(uc_conversation_df, uc):
+    """
+
+    :param uc_conversation_df:
+    :param uc: processing uc
+    """
+    # uc_conversation_df = pd.read_csv("analyze_data/uc3_conversation.csv")
+    conversation_ids_list = list(set(uc_conversation_df["id"]))
+    # key words để filter shipping/ order case
+    # cho minh
+    key_words = ["ship", "gửi hàng", "lấy", "địa chỉ", "giao hàng", "đ/c", "thanh toán", "tổng", "stk", "số tài khoản",
+                 "gửi về"]
+    filter_words = ["địa chỉ shop", "địa chỉ cửa hàng", "lấy rồi", "giao hàng chậm"]
+
+    # loop qua từng conversation_id  rồi sau đó lấy conversation đấy trong tập conversations theo id
+    for conversation_id in conversation_ids_list:
+        convesation_df = uc_conversation_df[uc_conversation_df["id"] == conversation_id]
+        # đánh giá outcome của conversation theo turn cuối cùng
+        last_turn = convesation_df.iloc[-1]
+        last_turn_row_index = convesation_df.index.tolist()[-1]
+        # lấy message của người và bot turn cuối cùng
+        bot_message = last_turn["bot_message"]
+        user_message = last_turn["message"]
+        user_intent = last_turn["user_intent"]
+        if user_intent is None:
+            a = 0
+
+        # dựa vào IC để lấy trường hợp cảm ơn
+        if user_intent == "thank":
+            uc_conversation_df.at[last_turn_row_index, "outcome"] = "thanks"
+        elif any(key_word in user_message for key_word in key_words) and any(
+                filter_word not in user_message for filter_word in filter_words):
+        # dựa vào key words lấy trường hợp shipping order
+            uc_conversation_df.at[last_turn_row_index, "outcome"] = "shipping_order"
+        elif user_intent == "handover_to_inbox" or "handover_to_inbox" in bot_message:
+            uc_conversation_df.at[last_turn_row_index, "outcome"] = "handover_to_inbox"
+        elif bot_message == "Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!" or user_intent == "disagree":
+            uc_conversation_df.at[last_turn_row_index, "outcome"] = "cv_fail"
+            uc_conversation_df.at[last_turn_row_index, "silent"] = 1
+        else:
+            uc_conversation_df.at[last_turn_row_index, "outcome"] = "other"
+            uc_conversation_df.at[last_turn_row_index, "silent"] = 1
+    uc_conversation_df = uc_conversation_df.drop_duplicates(subset=["timestamp", "sender_id", "message"],
+                                                                keep="first")
+    uc_conversation_df.to_csv("analyze_data/" + uc + "_conversation_with_outcome.csv", index=False)
+    return uc_conversation_df
