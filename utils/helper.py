@@ -86,17 +86,13 @@ def get_timestamp(timestamp: int, format: str):
 
 def get_fb_conversations():
     month_list = ["01", "02", "03", "04", "05", "06", "07"]
-    conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/1454523434857990?" \
-                       "fields=conversations&" \
-                       "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/1454523434857990?fields=conversations&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
 
     next_conversations_api = ""
     conversations_timestamp_year = "2020"
-    # conversations_timestamp_month = "06"
     first_time = True
     all_message_df = []
     while conversations_timestamp_year == "2020":
-        # while conversations_timestamp_month == "06":
         if first_time:
             conversations = os.popen(conversation_api).read().replace("\n", " ")
             first_time = False
@@ -135,10 +131,7 @@ def get_fb_conversations():
 def get_fb_converstaions_message(conversation_id, updated_time):
     collect_info = {"sender_id": [], "user_message": [], "bot_message": [], "updated_time": []}
     shop_name = 'Shop Gấu & Bí Ngô - Đồ dùng Mẹ & Bé cao cấp'
-    message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/" \
-                  "{id}/messages?" \
-                  "fields=from,message&" \
-                  "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/{id}/messages?fields=from,message&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
     message_api = message_api.format(id=conversation_id)
     messages = os.popen(message_api).read().replace("\n", " ")
     try:
@@ -213,7 +206,7 @@ def add_outcome(uc_conversation_df, uc):
             uc_conversation_df.at[last_turn_row_index, "outcome"] = "thanks"
         elif any(key_word in user_message for key_word in key_words) and any(
                 filter_word not in user_message for filter_word in filter_words):
-        # dựa vào key words lấy trường hợp shipping order
+            # dựa vào key words lấy trường hợp shipping order
             uc_conversation_df.at[last_turn_row_index, "outcome"] = "shipping_order"
         elif user_intent == "handover_to_inbox" or "handover_to_inbox" in bot_message:
             uc_conversation_df.at[last_turn_row_index, "outcome"] = "handover_to_inbox"
@@ -224,6 +217,8 @@ def add_outcome(uc_conversation_df, uc):
             uc_conversation_df.at[last_turn_row_index, "outcome"] = "other"
             uc_conversation_df.at[last_turn_row_index, "silent"] = 1
     uc_conversation_df = uc_conversation_df.drop_duplicates(subset=["timestamp", "sender_id", "message"],
-                                                                keep="first")
+                                                            keep="first")
     uc_conversation_df.to_csv("analyze_data/" + uc + "_conversation_with_outcome.csv", index=False)
     return uc_conversation_df
+
+
