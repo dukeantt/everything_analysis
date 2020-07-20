@@ -121,7 +121,7 @@ def get_fb_conversations():
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
         conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
-        if conversations_timestamp_month != "04":
+        if conversations_timestamp_month != "06":
             continue
         conversations_data = conversations["data"]
         for conversation in conversations_data:
@@ -131,7 +131,7 @@ def get_fb_conversations():
             all_message_df.append(message_df)
 
     result = pd.concat(all_message_df)
-    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_3.csv", index=False)
+    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_6.csv", index=False)
     return result
 
 
