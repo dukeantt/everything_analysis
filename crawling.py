@@ -7,6 +7,7 @@ import pickle
 import datetime
 import time
 from ast import literal_eval
+import json
 
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
@@ -121,7 +122,7 @@ def get_fb_conversations():
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
         conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
-        if conversations_timestamp_month != "06":
+        if conversations_timestamp_month != "07":
             continue
         conversations_data = conversations["data"]
         for conversation in conversations_data:
@@ -131,7 +132,7 @@ def get_fb_conversations():
             all_message_df.append(message_df)
 
     result = pd.concat(all_message_df)
-    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_6.csv", index=False)
+    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_abc.csv", index=False)
     return result
 
 
@@ -150,7 +151,9 @@ def get_fb_converstaions_message(conversation_id, updated_time):
         sender_id = ""
         for message in messages["data"]:
             message_from = message["from"]["name"]
+            message_id = message["id"]
             created_time = message["created_time"]
+            message_attachments = get_message_attachments(message_id)
             if message_from != shop_name:
                 sender_id = message["from"]["id"]
                 user_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
@@ -160,6 +163,7 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                 collect_info["bot_message"].append("bot")
                 collect_info["updated_time"].append(updated_time)
                 collect_info["created_time"].append(created_time)
+                collect_info["attachments"].append(message_attachments)
             else:
                 bot_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
                 collect_info["sender_id"].append(sender_id)
@@ -168,6 +172,7 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                 collect_info["bot_message"].append(bot_message)
                 collect_info["updated_time"].append(updated_time)
                 collect_info["created_time"].append(created_time)
+                collect_info["attachments"].append(message_attachments)
     except:
         collect_info["sender_id"].append("")
         collect_info["sender_name"].append("")
@@ -175,8 +180,24 @@ def get_fb_converstaions_message(conversation_id, updated_time):
         collect_info["bot_message"].append("")
         collect_info["updated_time"].append("")
         collect_info["created_time"].append("")
+        collect_info["attachments"].append("")
     message_df = pd.DataFrame.from_dict(collect_info)
     return message_df
+
+
+def get_message_attachments(message_id):
+    message_attachments_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/" \
+                              "{id}/attachments?" \
+                              "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    message_attachments_api = message_attachments_api.format(id=message_id)
+    message_attachments = os.popen(message_attachments_api).read().replace("\n", " ")
+    try:
+        message_attachments = literal_eval(message_attachments[message_attachments.index('{"data"'):])
+        attachments = json.dumps(message_attachments["data"])
+    except:
+        attachments = " "
+
+    return attachments
 
 
 get_fb_conversations()
