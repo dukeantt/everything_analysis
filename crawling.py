@@ -122,8 +122,8 @@ def get_fb_conversations():
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
         conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
-        if conversations_timestamp_month != "07":
-            continue
+        if int(conversations_timestamp_month) < 3:
+            break
         conversations_data = conversations["data"]
         for conversation in conversations_data:
             id = conversation["id"]
@@ -132,49 +132,66 @@ def get_fb_conversations():
             all_message_df.append(message_df)
 
     result = pd.concat(all_message_df)
-    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_abc.csv", index=False)
+    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_3.csv", index=False)
     return result
 
 
 def get_fb_converstaions_message(conversation_id, updated_time):
-    collect_info = {"sender_id": [], "sender_name": [], "user_message": [], "bot_message": [], "updated_time": [],
-                    "created_time": []}
+    collect_info = {"message_id": [],"sender_id": [], "sender_name": [], "user_message": [], "bot_message": [], "updated_time": [],
+                    "created_time": [], "attachments": []}
     shop_name = 'Shop Gấu & Bí Ngô - Đồ dùng Mẹ & Bé cao cấp'
     message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/" \
                   "{id}/messages?" \
-                  "fields=from,message,created_time&" \
+                  "fields=from,message,created_time,attachments&" \
                   "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    # message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/t_1181980712162491/messages?fields=from,message,created_time,attachments&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
     message_api = message_api.format(id=conversation_id)
     messages = os.popen(message_api).read().replace("\n", " ")
     try:
-        messages = literal_eval(messages[messages.index('{"data"'):])
+        # messages = literal_eval(messages[messages.index('{"data"'):])
+        messages = json.loads(messages[messages.index('{"data"'):])
         sender_id = ""
         for message in messages["data"]:
             message_from = message["from"]["name"]
             message_id = message["id"]
             created_time = message["created_time"]
-            message_attachments = get_message_attachments(message_id)
-            if message_from != shop_name:
-                sender_id = message["from"]["id"]
-                user_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
-                collect_info["sender_id"].append(sender_id)
-                collect_info["sender_name"].append(message_from)
-                collect_info["user_message"].append(user_message)
-                collect_info["bot_message"].append("bot")
-                collect_info["updated_time"].append(updated_time)
-                collect_info["created_time"].append(created_time)
-                collect_info["attachments"].append(message_attachments)
-            else:
-                bot_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
-                collect_info["sender_id"].append(sender_id)
-                collect_info["sender_name"].append(message_from)
-                collect_info["user_message"].append("user")
-                collect_info["bot_message"].append(bot_message)
-                collect_info["updated_time"].append(updated_time)
-                collect_info["created_time"].append(created_time)
-                collect_info["attachments"].append(message_attachments)
+            created_time_date = created_time[:10]
+            created_time_date = time.mktime(datetime.datetime.strptime(created_time_date, "%Y-%m-%d").timetuple())
+            created_time_month = get_timestamp(int(created_time_date), "%m")
+            created_time_year = get_timestamp(int(created_time_date), "%Y")
+            if created_time_year == "2020" and created_time_month == "03":
+                message_attachments = ""
+                if 'attachments' in message:
+                    attachments_data = message["attachments"]["data"]
+                    try:
+                        for item in attachments_data:
+                            message_attachments += item["image_data"]["url"] +", "
+                    except:
+                        message_attachments = " "
+                if message_from != shop_name:
+                    sender_id = message["from"]["id"]
+                    user_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
+                    collect_info["sender_id"].append(sender_id)
+                    collect_info["message_id"].append(message_id)
+                    collect_info["sender_name"].append(message_from)
+                    collect_info["user_message"].append(user_message)
+                    collect_info["bot_message"].append("bot")
+                    collect_info["updated_time"].append(updated_time)
+                    collect_info["created_time"].append(created_time)
+                    collect_info["attachments"].append(message_attachments)
+                else:
+                    bot_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
+                    collect_info["sender_id"].append(sender_id)
+                    collect_info["message_id"].append(message_id)
+                    collect_info["sender_name"].append(message_from)
+                    collect_info["user_message"].append("user")
+                    collect_info["bot_message"].append(bot_message)
+                    collect_info["updated_time"].append(updated_time)
+                    collect_info["created_time"].append(created_time)
+                    collect_info["attachments"].append(message_attachments)
     except:
         collect_info["sender_id"].append("")
+        collect_info["message_id"].append("")
         collect_info["sender_name"].append("")
         collect_info["user_message"].append("")
         collect_info["bot_message"].append("")
