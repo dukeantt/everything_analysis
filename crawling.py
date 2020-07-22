@@ -122,7 +122,7 @@ def get_fb_conversations():
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
         conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
-        if int(conversations_timestamp_month) < 3:
+        if int(conversations_timestamp_month) < 2:
             break
         conversations_data = conversations["data"]
         for conversation in conversations_data:
@@ -132,7 +132,7 @@ def get_fb_conversations():
             all_message_df.append(message_df)
 
     result = pd.concat(all_message_df)
-    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_3.csv", index=False)
+    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_2.csv", index=False)
     return result
 
 
@@ -144,7 +144,6 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                   "{id}/messages?" \
                   "fields=from,message,created_time,attachments&" \
                   "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
-    # message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/t_1181980712162491/messages?fields=from,message,created_time,attachments&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
     message_api = message_api.format(id=conversation_id)
     messages = os.popen(message_api).read().replace("\n", " ")
     try:
@@ -159,7 +158,7 @@ def get_fb_converstaions_message(conversation_id, updated_time):
             created_time_date = time.mktime(datetime.datetime.strptime(created_time_date, "%Y-%m-%d").timetuple())
             created_time_month = get_timestamp(int(created_time_date), "%m")
             created_time_year = get_timestamp(int(created_time_date), "%Y")
-            if created_time_year == "2020" and created_time_month == "03":
+            if created_time_year == "2020" and created_time_month == "02":
                 message_attachments = ""
                 if 'attachments' in message:
                     attachments_data = message["attachments"]["data"]
