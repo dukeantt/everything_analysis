@@ -1,8 +1,9 @@
 import pickle
 import pandas as pd
+from heuristic_correction import *
 
 
-def main():
+def get_accuracy():
     uc1_data_list = []
     uc2_data_list = []
     other_data_list = []
@@ -35,7 +36,68 @@ def main():
 
     predicted = list(clf.predict(uc1_uc2_data_test["feature"]))
     uc1_uc2_data_test.insert(2, "prediction", predicted)
-    a = 0
+    a = []
+    for index, item in uc1_uc2_data_test.iterrows():
+        if item["target"] != item["prediction"]:
+            a.append((item["feature"], item["target"], item["prediction"]))
 
+    return str(int(100 - (len(a) / len(uc1_uc2_data_test) * 100))) + "%"
+
+
+def predict():
+    with open("models/ic_for_uc1_2.pkl", "rb") as file:
+        clf = pickle.load(file)
+    for month in ["1", "2", "3", "4", "5", "6"]:
+        fb_conversation_by_month = pd.read_csv("temporary_data/fb_conversation_" + month + ".csv")
+        fb_conversation_by_month.insert(9, "prediction", "")
+        fb_conversation_by_month.insert(10, "turn", "")
+        conversation_ids = list(fb_conversation_by_month["conversation_id"])
+        conversation_ids = sorted(set(conversation_ids),
+                                  key=conversation_ids.index)
+        for conversation_id in conversation_ids:
+            sub_df = fb_conversation_by_month[fb_conversation_by_month["conversation_id"] == conversation_id]
+            attachments = list(sub_df["attachments"])
+            if any("scontent" in str(x) for x in attachments):
+                found_user_message = False
+                turn = 0
+                for index, item in sub_df.iterrows():
+                    if item["sender_name"] != 'Shop Gấu & Bí Ngô - Đồ dùng Mẹ & Bé cao cấp':
+                        found_user_message = True
+                    if found_user_message:
+                        user_message = item["user_message"]
+                        if item["sender_name"] == 'Shop Gấu & Bí Ngô - Đồ dùng Mẹ & Bé cao cấp':
+                            turn += 1
+                        if str(user_message) == "nan":
+                            continue
+
+                        user_message_correction = do_correction(user_message)
+                        test_data = []
+                        test_data.append({"feature": user_message_correction})
+                        df_test = pd.DataFrame(test_data)
+                        predicted = list(clf.predict(df_test["feature"]))
+                        fb_conversation_by_month.at[index, "prediction"] = predicted[0]
+                        fb_conversation_by_month.at[index, "turn"] = turn
+                        if predicted[0] == "uc_1" or predicted[0] == "uc_2":
+                            break
+        fb_conversation_by_month.to_csv("result/uc1_uc2_month_" + month, index=False)
+
+
+def count_uc1_uc2():
+    for month in ["1", "2", "3", "4", "5", "6"]:
+        conversation_by_month = pd.read_csv("result/uc1_uc2_month_" + month)
+        total_conversations = len(set(conversation_by_month["conversation_id"]))
+        first_turn_each_conv = conversation_by_month[(conversation_by_month["turn"] == 0) | (conversation_by_month["turn"] == 1)]
+        conversation_uc1 = first_turn_each_conv[first_turn_each_conv["prediction"] == "uc_1"]
+        conversation_uc2 = first_turn_each_conv[first_turn_each_conv["prediction"] == "uc_2"]
+
+        print("Uc1 in month " +month+": "+str(len(conversation_uc1))+"/"+str(total_conversations)+" ("
+              +str(int(len(conversation_uc1)/total_conversations * 100))+"%)")
+        print("Uc2 in month " +month+": "+str(len(conversation_uc2))+"/"+str(total_conversations)+" ("
+              +str(int(len(conversation_uc2)/total_conversations * 100))+"%)")
+
+
+def main():
+    # predict()
+    count_uc1_uc2()
 
 main()

@@ -86,7 +86,9 @@ def get_timestamp(timestamp: int, format: str):
 
 def get_fb_conversations():
     month_list = ["01", "02", "03", "04", "05", "06", "07"]
-    conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/1454523434857990?fields=conversations&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/" \
+                       "1454523434857990?fields=conversations&" \
+                       "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
 
     next_conversations_api = ""
     conversations_timestamp_year = "2020"
@@ -129,9 +131,12 @@ def get_fb_conversations():
 
 
 def get_fb_converstaions_message(conversation_id, updated_time):
-    collect_info = {"sender_id": [], "user_message": [], "bot_message": [], "updated_time": []}
+    collect_info = {"sender_id": [],"sender_name":[], "user_message": [], "bot_message": [], "updated_time": [], "created_time": []}
     shop_name = 'Shop Gấu & Bí Ngô - Đồ dùng Mẹ & Bé cao cấp'
-    message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/{id}/messages?fields=from,message&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/" \
+                  "{id}/messages?" \
+                  "fields=from,message,created_time&" \
+                  "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
     message_api = message_api.format(id=conversation_id)
     messages = os.popen(message_api).read().replace("\n", " ")
     try:
@@ -146,30 +151,20 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                 collect_info["user_message"].append(user_message)
                 collect_info["bot_message"].append("bot")
                 collect_info["updated_time"].append(updated_time)
+                collect_info["created_time"].append(updated_time)
             else:
                 bot_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
                 collect_info["sender_id"].append(sender_id)
                 collect_info["user_message"].append("user")
                 collect_info["bot_message"].append(bot_message)
                 collect_info["updated_time"].append(updated_time)
+                collect_info["created_time"].append(updated_time)
     except:
         collect_info["sender_id"].append("")
         collect_info["user_message"].append("")
         collect_info["bot_message"].append("")
         collect_info["updated_time"].append("")
 
-    # for i in range(0, len(collect_info["sender_id"])):
-    #     sender_id = collect_info["sender_id"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
-    #     user_message = collect_info["user_message"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
-    #     bot_message = collect_info["bot_message"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
-    #     updated_time = collect_info["updated_time"][i].encode('utf-16', 'surrogatepass').decode('utf-16')
-    #     line = sender_id + "," + user_message + "," + bot_message + "," + updated_time
-    #     with open("../analyze_data/all_chat_fb_july.csv", "a") as file:
-    #         file.write("\n")
-    #         try:
-    #             file.write(line)
-    #         except:
-    #             continue
     message_df = pd.DataFrame.from_dict(collect_info)
     return message_df
 

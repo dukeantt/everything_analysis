@@ -93,12 +93,12 @@ def process_uc1_and_uc2(month, fb_conversations=None):
 
 
 def main():
-    for x in ["3","4","5","6"]:
+    for x in ["1","2","3","4","5","6"]:
         fb_conversations = pd.read_csv("analyze_data/all_chat_fb/all_chat_fb_"+x+".csv")
         fb_conversations = fb_conversations[~fb_conversations["sender_id"].isna()]
         fb_conversations = fb_conversations.iloc[::-1].reset_index(drop=True)
         fb_conversations = label_conversation(fb_conversations)
-        fb_conversations.to_csv("temporary_data/fb_conversaton_"+x+".csv", index=False)
+        fb_conversations.to_csv("temporary_data/fb_conversation_"+x+".csv", index=False)
         process_uc1_and_uc2(x, fb_conversations)
 
 
