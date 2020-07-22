@@ -39,8 +39,8 @@ def label_conversation(fb_conversations):
     return fb_conversations
 
 
-def process_uc1_and_uc2(fb_conversations=None):
-    fb_conversations = pd.read_csv("temporary_data/fb_conversaton.csv")
+def process_uc1_and_uc2(month, fb_conversations=None):
+    # fb_conversations = pd.read_csv("temporary_data/fb_conversation_5.csv")
     fb_conversations.insert(6, 'usecase', "")
     conversation_ids = list(fb_conversations["conversation_id"])
     conversation_ids = sorted(set(conversation_ids), key=conversation_ids.index)
@@ -68,30 +68,39 @@ def process_uc1_and_uc2(fb_conversations=None):
             user_message_correction = unicodedata.normalize("NFC", user_message_correction)
             sender_name = item["sender_name"]
             if "giá" in user_message_correction or "bao nhiêu" in user_message_correction or "tiền" in user_message_correction:
-                uc_2_conversation_ids.append((conversation_id, user_message))
+                uc_2_conversation_ids.append((conversation_id, user_message_correction))
                 break
             elif ("có" in user_message_correction
                   or "còn" in user_message_correction or
                   "sẵn hàng" in user_message_correction or "có sẵn" in user_message_correction or "còn sẵn" in user_message_correction) \
                     and "không" in user_message_correction\
                     and "ship" not in user_message_correction and "link shopee" not in user_message_correction:
-                uc_1_conversation_ids.append((conversation_id, user_message))
+                uc_1_conversation_ids.append((conversation_id, user_message_correction))
                 break
             else:
-                others.append((conversation_id, user_message))
+                others.append((conversation_id, user_message_correction))
                 break
+    uc1_df = pd.DataFrame([x[1] for x in uc_1_conversation_ids], columns =['feature'])
+    uc1_df.insert(1, "target", "uc_1")
+    uc2_df = pd.DataFrame([x[1] for x in uc_2_conversation_ids], columns=['feature'])
+    uc2_df.insert(1, "target", "uc_2")
+    others_df = pd.DataFrame([x[1] for x in others], columns=['feature'])
+    others_df.insert(1, "target", "other")
 
-    a = 0
+    uc1_df.to_csv("temporary_data/uc1_data_"+month+".csv", index=False)
+    uc2_df.to_csv("temporary_data/uc2_data_"+month+".csv", index=False)
+    others_df.to_csv("temporary_data/other_data_"+month+".csv", index=False)
+
 
 def main():
-    fb_conversations = pd.read_csv("analyze_data/all_chat_fb/all_chat_fb_5.csv")
-    fb_conversations = fb_conversations[~fb_conversations["sender_id"].isna()]
-    fb_conversations = fb_conversations.iloc[::-1].reset_index(drop=True)
-    fb_conversations = label_conversation(fb_conversations)
-    fb_conversations.to_csv("temporary_data/fb_conversaton.csv", index=False)
+    for x in ["3","4","5","6"]:
+        fb_conversations = pd.read_csv("analyze_data/all_chat_fb/all_chat_fb_"+x+".csv")
+        fb_conversations = fb_conversations[~fb_conversations["sender_id"].isna()]
+        fb_conversations = fb_conversations.iloc[::-1].reset_index(drop=True)
+        fb_conversations = label_conversation(fb_conversations)
+        fb_conversations.to_csv("temporary_data/fb_conversaton_"+x+".csv", index=False)
+        process_uc1_and_uc2(x, fb_conversations)
 
-    a = 0
 
-
-# main()
-process_uc1_and_uc2()
+main()
+# process_uc1_and_uc2()
