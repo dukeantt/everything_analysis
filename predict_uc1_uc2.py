@@ -4,6 +4,44 @@ from heuristic_correction import *
 from utils.helper import *
 
 
+def test_uc1():
+    with open("uc1_test_messages", encoding="utf8") as file:
+        lines = file.readlines()
+
+    messages = [x.replace("\n", "") for x in lines]
+
+    df_test = pd.DataFrame(messages, columns=["feature"])
+    df_test["feature"] = df_test["feature"].apply(lambda x: do_correction(x))
+
+    with open("models/ic_for_uc1_2.pkl", "rb") as file:
+        clf = pickle.load(file)
+    predicted = list(clf.predict(df_test["feature"]))
+    df_test.insert(1, "prediction", predicted)
+    count = 0
+    for item in predicted:
+        if item == "uc_1":
+            count += 1
+    print(str(int(count/len(df_test) * 100)) + "%")
+
+def test_uc2():
+    with open("uc2_test_messages", encoding="utf8") as file:
+        lines = file.readlines()
+
+    messages = [x.replace("\n", "") for x in lines]
+    df_test = pd.DataFrame(messages, columns=["feature"])
+    df_test["feature"] = df_test["feature"].apply(lambda x: do_correction(x))
+
+    with open("models/ic_for_uc1_2.pkl", "rb") as file:
+        clf = pickle.load(file)
+    predicted = list(clf.predict(df_test["feature"]))
+    df_test.insert(1, "prediction", predicted)
+    count = 0
+    for item in predicted:
+        if item == "uc_2":
+            count += 1
+    print(str(int(count/len(df_test) * 100)) + "%")
+
+
 def get_accuracy():
     uc1_data_list = []
     uc2_data_list = []
@@ -164,4 +202,6 @@ def main():
     # get_accuracy()
 
 
-main()
+# main()
+test_uc1()
+test_uc2()
