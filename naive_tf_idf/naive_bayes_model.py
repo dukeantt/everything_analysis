@@ -3,6 +3,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from naive_tf_idf.feature_transformer import FeatureTransformer
+from sklearn.linear_model import SGDClassifier
 
 
 class NaiveBayesModel(object):
@@ -16,6 +17,7 @@ class NaiveBayesModel(object):
             ("vect", CountVectorizer()),#bag-of-words
             ("tfidf", TfidfTransformer()),#tf-idf
             ("clf", MultinomialNB())#model naive bayes
+            # ("clf-svm", SGDClassifier(loss='log', penalty='l2', alpha=1e-3, random_state=None))
         ])
 
         return pipe_line
