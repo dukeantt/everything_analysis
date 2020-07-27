@@ -5,7 +5,7 @@ from utils.helper import *
 
 
 def test_uc1():
-    with open("uc1_test_messages", encoding="utf8") as file:
+    with open("test_set_data/uc1_test_messages", encoding="utf8") as file:
         lines = file.readlines()
 
     messages = [x.replace("\n", "") for x in lines]
@@ -21,10 +21,11 @@ def test_uc1():
     for item in predicted:
         if item == "uc_1":
             count += 1
-    print(str(int(count/len(df_test) * 100)) + "%")
+    print("UC_1: " + str(int(count / len(df_test) * 100)) + "%")
+
 
 def test_uc2():
-    with open("uc2_test_messages", encoding="utf8") as file:
+    with open("test_set_data/uc2_test_messages", encoding="utf8") as file:
         lines = file.readlines()
 
     messages = [x.replace("\n", "") for x in lines]
@@ -39,8 +40,25 @@ def test_uc2():
     for item in predicted:
         if item == "uc_2":
             count += 1
-    print(str(int(count/len(df_test) * 100)) + "%")
+    print("UC_2: " + str(int(count / len(df_test) * 100)) + "%")
 
+
+def test_uc1_uc2():
+    test_df = pd.read_csv("test_set_data/test_set_uc1_uc2.csv")
+    confusion_matrix = {"uc_1": {"uc_1": 0, "uc_2": 0, "other": 0},
+                        "uc_2": {"uc_1": 0, "uc_2": 0, "other": 0},
+                        "other": {"uc_1": 0, "uc_2": 0, "other": 0}}
+    with open("models/ic_for_uc1_2.pkl", "rb") as file:
+        clf = pickle.load(file)
+    predicted = list(clf.predict(test_df["feature"]))
+    test_df.insert(2, "prediction", predicted)
+    for index, item in confusion_matrix.items():
+        sub_df = test_df[test_df["prediction"] == index]
+        for row in sub_df.itertuples():
+            target = row.target
+            item[target] += 1
+
+    a = 0
 
 def get_accuracy():
     uc1_data_list = []
@@ -69,6 +87,9 @@ def get_accuracy():
         uc2_data_total[no_train_uc2:],
         other_data_total[no_train_other:]
     ])
+    with open('other_training_set', 'w') as f:
+        for item in list(other_data_total[no_train_other:]["feature"]):
+            f.write("%s\n" % item)
 
     with open("models/ic_for_uc1_2.pkl", "rb") as file:
         clf = pickle.load(file)
@@ -199,9 +220,11 @@ def main():
     count_uc1_uc2_bot_chat(a)
     predict()
     count_uc1_uc2()
-    # get_accuracy()
 
 
 # main()
-test_uc1()
-test_uc2()
+# test_uc1()
+# test_uc2()
+# get_accuracy()
+test_uc1_uc2()
+#

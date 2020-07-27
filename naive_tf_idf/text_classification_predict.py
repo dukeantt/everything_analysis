@@ -14,6 +14,6 @@ class TextClassificationPredict(object):
         # init model naive bayes
         model = NaiveBayesModel()
         clf = model.clf.fit(df_train["feature"], df_train.target)
-        with open('models/ic_for_uc1_2.pkl', 'wb') as file:
+        with open('models/ic_for_uc1_2_2.pkl', 'wb') as file:
             pickle.dump(clf, file)
         return clf
