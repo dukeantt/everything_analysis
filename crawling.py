@@ -87,9 +87,7 @@ def get_timestamp(timestamp: int, format: str):
 
 def get_fb_conversations():
     month_list = ["01", "02", "03", "04", "05", "06", "07"]
-    conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/1454523434857990?" \
-                       "fields=conversations&" \
-                       "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
+    conversation_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/1454523434857990?fields=conversations&access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
 
     next_conversations_api = ""
     conversations_timestamp_year = "2020"
@@ -122,7 +120,7 @@ def get_fb_conversations():
         conversations_timestamp_year = get_timestamp(int(conversations_timestamp), "%Y")
         conversations_timestamp_month = get_timestamp(int(conversations_timestamp), "%m")
         next_conversations_api = conversations["paging"]["next"]
-        if int(conversations_timestamp_month) < 2:
+        if int(conversations_timestamp_month) < 3:
             break
         conversations_data = conversations["data"]
         for conversation in conversations_data:
@@ -132,17 +130,18 @@ def get_fb_conversations():
             all_message_df.append(message_df)
 
     result = pd.concat(all_message_df)
-    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_2.csv", index=False)
+    result.to_csv("analyze_data/all_chat_fb/all_chat_fb_3.csv", index=False)
     return result
 
 
 def get_fb_converstaions_message(conversation_id, updated_time):
-    collect_info = {"message_id": [],"sender_id": [], "sender_name": [], "user_message": [], "bot_message": [], "updated_time": [],
+    collect_info = {"message_id": [], "fb_conversation_id": [], "sender_id": [], "to_sender_id": [], "sender_name": [],
+                    "user_message": [], "bot_message": [], "updated_time": [],
                     "created_time": [], "attachments": []}
     shop_name = 'Shop Gấu & Bí Ngô - Đồ dùng Mẹ & Bé cao cấp'
     message_api = "curl -i -X GET \"https://graph.facebook.com/v6.0/" \
                   "{id}/messages?" \
-                  "fields=from,message,created_time,attachments&" \
+                  "fields=from,to,message,created_time,attachments&" \
                   "access_token=EAAm7pZBf3ed8BAJISrzp5gjX7QZCZCbwHHF0CbJJ2hnoqOdITf7RMpZCrpvaFJulpL8ptx73iTLKS4SzZAa6ub5liZAsp6dfmSbGhMoMKXy2tQhZAi0CcnPIxKojJmf9XmdRh376SFlOZBAnpSymsmUjR7FX5rC1BWlsTdhbDj0XbwZDZD\""
     message_api = message_api.format(id=conversation_id)
     messages = os.popen(message_api).read().replace("\n", " ")
@@ -150,6 +149,7 @@ def get_fb_converstaions_message(conversation_id, updated_time):
         # messages = literal_eval(messages[messages.index('{"data"'):])
         messages = json.loads(messages[messages.index('{"data"'):])
         sender_id = ""
+        to_sender_id = ""
         for message in messages["data"]:
             message_from = message["from"]["name"]
             message_id = message["id"]
@@ -158,7 +158,7 @@ def get_fb_converstaions_message(conversation_id, updated_time):
             created_time_date = time.mktime(datetime.datetime.strptime(created_time_date, "%Y-%m-%d").timetuple())
             created_time_month = get_timestamp(int(created_time_date), "%m")
             created_time_year = get_timestamp(int(created_time_date), "%Y")
-            if created_time_year == "2020" and created_time_month == "02":
+            if created_time_year == "2020" and created_time_month == "03":
                 message_attachments = ""
                 if 'attachments' in message:
                     attachments_data = message["attachments"]["data"]
@@ -167,10 +167,15 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                             message_attachments += item["image_data"]["url"] +", "
                     except:
                         message_attachments = " "
-                if message_from != shop_name:
+                if "id" in message["from"]:
                     sender_id = message["from"]["id"]
+                if "data" in message["to"] and len(message["to"]["data"]) > 0:
+                    to_sender_id = message["to"]["data"][0]["id"]
+                if message_from != shop_name:
                     user_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
                     collect_info["sender_id"].append(sender_id)
+                    collect_info["fb_conversation_id"].append(conversation_id)
+                    collect_info["to_sender_id"].append(to_sender_id)
                     collect_info["message_id"].append(message_id)
                     collect_info["sender_name"].append(message_from)
                     collect_info["user_message"].append(user_message)
@@ -181,6 +186,8 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                 else:
                     bot_message = message["message"].encode('utf-16', 'surrogatepass').decode('utf-16')
                     collect_info["sender_id"].append(sender_id)
+                    collect_info["fb_conversation_id"].append(conversation_id)
+                    collect_info["to_sender_id"].append(to_sender_id)
                     collect_info["message_id"].append(message_id)
                     collect_info["sender_name"].append(message_from)
                     collect_info["user_message"].append("user")
@@ -189,7 +196,9 @@ def get_fb_converstaions_message(conversation_id, updated_time):
                     collect_info["created_time"].append(created_time)
                     collect_info["attachments"].append(message_attachments)
     except:
+        collect_info["fb_conversation_id"].append(conversation_id)
         collect_info["sender_id"].append("")
+        collect_info["to_sender_id"].append("")
         collect_info["message_id"].append("")
         collect_info["sender_name"].append("")
         collect_info["user_message"].append("")
