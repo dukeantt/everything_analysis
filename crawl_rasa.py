@@ -61,6 +61,8 @@ def export_conversation_detail(all_conv, selected_month: str):
     """
     Export all conversation detail to file so that we dont have to crawl everytime
     """
+    if selected_month is None:
+        selected_month = ""
     file_name = "chatlog_data/all_conv_detail_" + selected_month + ".csv"
     # all_conv = get_all_conv()
     all_sender_id = [x["sender_id"] for x in all_conv]
@@ -84,11 +86,14 @@ def export_conversations(month_start: str, month_end: str):
     """
     Export all conversation to file so that we dont have to crawl everytime
     """
-    date_start = date_map[month_start]
-    date_end = date_map[month_end]
-    conversation_api = "curl -H \"Authorization: Bearer $TOKEN\" -s https://babeshop.ftech.ai/api/conversations?start=" + date_start + "T17:00:00.000Z&until=" + date_end + "T17:00:00.000Z"
-    # token = "TOKEN=$(curl -s https://babeshop.ftech.ai/api/auth -d '{\"username\": \"me\", \"password\": \"w4J6OObi996nDGcQ4mlYNK4F\"}' | jq -r .access_token)"
-    token = "TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VybmFtZSI6Im1lIiwiZXhwIjoxNTk2OTI2MTM1LCJ1c2VyIjp7InVzZXJuYW1lIjoibWUiLCJyb2xlcyI6WyJhZG1pbiJdLCJkYXRhIjpudWxsLCJhcGlfdG9rZW4iOiI0NjkxMzAxZjRkMGU3M2JiMDEwNDJjZmEyYWMyMzg1MzJlM2EzZWM1In0sInNjb3BlcyI6WyJhY3Rpb25QcmVkaWN0aW9uOmNyZWF0ZSIsImFjdGlvblByZWRpY3Rpb246Z2V0IiwiYWN0aW9uczpjcmVhdGUiLCJhY3Rpb25zOmRlbGV0ZSIsImFjdGlvbnM6Z2V0IiwiYWN0aW9uczp1cGRhdGUiLCJhbGxFdmFsdWF0aW9uczpjcmVhdGUiLCJhbGxFdmFsdWF0aW9uczpsaXN0IiwiYW5hbHl0aWNzOmdldCIsImJyYW5jaDp1cGRhdGUiLCJidWxrRGF0YTpnZXQiLCJidWxrRGF0YTp1cGRhdGUiLCJidWxrUmVzcG9uc2VUZW1wbGF0ZXM6dXBkYXRlIiwiYnVsa1N0b3JpZXM6Z2V0IiwiYnVsa1N0b3JpZXM6dXBkYXRlIiwiY2hhdFRva2VuOmdldCIsImNoYXRUb2tlbjp1cGRhdGUiLCJjbGllbnRFdmFsdWF0aW9uOmRlbGV0ZSIsImNsaWVudEV2YWx1YXRpb246Z2V0IiwiY2xpZW50RXZhbHVhdGlvbjp1cGRhdGUiLCJjbGllbnRFdmVudHM6Y3JlYXRlIiwiY2xpZW50RXZlbnRzOnVwZGF0ZSIsImNsaWVudE1lc3NhZ2VzOmxpc3QiLCJjbGllbnRzOmdldCIsImNvbW1pdDpjcmVhdGUiLCJjb25maWc6Z2V0IiwiY29udmVyc2F0aW9uQWN0aW9uczpsaXN0IiwiY29udmVyc2F0aW9uRW50aXRpZXM6bGlzdCIsImNvbnZlcnNhdGlvbkludGVudHM6bGlzdCIsImNvbnZlcnNhdGlvblBvbGljaWVzOmxpc3QiLCJjb252ZXJzYXRpb25UYWdzOmNyZWF0ZSIsImNvbnZlcnNhdGlvblRhZ3M6ZGVsZXRlIiwiY29udmVyc2F0aW9uVGFnczpsaXN0IiwiY29udmVyc2F0aW9uVGFnczp1cGRhdGUiLCJkb21haW46Z2V0IiwiZG9tYWluOnVwZGF0ZSIsImRvbWFpbldhcm5pbmdzOmdldCIsImVudGl0aWVzOmxpc3QiLCJlbnRpdHlfc3lub255bV92YWx1ZXM6Y3JlYXRlIiwiZW50aXR5X3N5bm9ueW1fdmFsdWVzOmRlbGV0ZSIsImVudGl0eV9zeW5vbnltX3ZhbHVlczp1cGRhdGUiLCJlbnRpdHlfc3lub255bXM6Y3JlYXRlIiwiZW50aXR5X3N5bm9ueW1zOmRlbGV0ZSIsImVudGl0eV9zeW5vbnltczpnZXQiLCJlbnRpdHlfc3lub255bXM6bGlzdCIsImVudGl0eV9zeW5vbnltczp1cGRhdGUiLCJlbnZpcm9ubWVudHM6bGlzdCIsImVudmlyb25tZW50czp1cGRhdGUiLCJleGFtcGxlczpjcmVhdGUiLCJleGFtcGxlczpkZWxldGUiLCJleGFtcGxlczpnZXQiLCJleGFtcGxlczpsaXN0IiwiZXhhbXBsZXM6dXBkYXRlIiwiZmVhdHVyZXM6dXBkYXRlIiwiaW50ZW50czpjcmVhdGUiLCJpbnRlbnRzOmRlbGV0ZSIsImludGVudHM6bGlzdCIsImludGVudHM6dXBkYXRlIiwibG9nczpjcmVhdGUiLCJsb2dzOmRlbGV0ZSIsImxvZ3M6Z2V0IiwibG9nczpsaXN0IiwibG9nczpsaXN0IiwibG9va3VwX3RhYmxlczpjcmVhdGUiLCJsb29rdXBfdGFibGVzOmRlbGV0ZSIsImxvb2t1cF90YWJsZXM6Z2V0IiwibG9va3VwX3RhYmxlczpsaXN0IiwibWVzc2FnZUZsYWdzOmRlbGV0ZSIsIm1lc3NhZ2VGbGFnczp1cGRhdGUiLCJtZXNzYWdlSW50ZW50czpkZWxldGUiLCJtZXNzYWdlSW50ZW50czp1cGRhdGUiLCJtZXNzYWdlczpjcmVhdGUiLCJtZXRhZGF0YTpjcmVhdGUiLCJtZXRhZGF0YTpnZXQiLCJtZXRhZGF0YTpsaXN0IiwibW9kZWxzOmNyZWF0ZSIsIm1vZGVsczpkZWxldGUiLCJtb2RlbHMuZXZhbHVhdGlvbnM6ZGVsZXRlIiwibW9kZWxzLmV2YWx1YXRpb25zOmdldCIsIm1vZGVscy5ldmFsdWF0aW9uczpsaXN0IiwibW9kZWxzLmV2YWx1YXRpb25zOnVwZGF0ZSIsIm1vZGVsczpnZXQiLCJtb2RlbHMuam9iczpjcmVhdGUiLCJtb2RlbHM6bGlzdCIsIm1vZGVscy5tb2RlbEJ5VGFnOmdldCIsIm1vZGVscy5zZXR0aW5nczpnZXQiLCJtb2RlbHMuc2V0dGluZ3M6dXBkYXRlIiwibW9kZWxzLnRhZ3M6ZGVsZXRlIiwibW9kZWxzLnRhZ3M6dXBkYXRlIiwibmxnUmVzcG9uc2U6Y3JlYXRlIiwicHJvamVjdHM6Y3JlYXRlIiwicmVnZXhlczpjcmVhdGUiLCJyZWdleGVzOmRlbGV0ZSIsInJlZ2V4ZXM6Z2V0IiwicmVnZXhlczpsaXN0IiwicmVnZXhlczp1cGRhdGUiLCJyZXBvc2l0b3JpZXM6Y3JlYXRlIiwicmVwb3NpdG9yaWVzOmRlbGV0ZSIsInJlcG9zaXRvcmllczpnZXQiLCJyZXBvc2l0b3JpZXM6bGlzdCIsInJlcG9zaXRvcmllczp1cGRhdGUiLCJyZXBvc2l0b3J5X3N0YXR1czpnZXQiLCJyZXNwb25zZVRlbXBsYXRlczpjcmVhdGUiLCJyZXNwb25zZVRlbXBsYXRlczpkZWxldGUiLCJyZXNwb25zZVRlbXBsYXRlczpsaXN0IiwicmVzcG9uc2VUZW1wbGF0ZXM6dXBkYXRlIiwicm9sZXM6Y3JlYXRlIiwicm9sZXM6ZGVsZXRlIiwicm9sZXM6Z2V0Iiwicm9sZXM6bGlzdCIsInJvbGVzOnVwZGF0ZSIsInJvbGVzLnVzZXJzOmxpc3QiLCJyb2xlcy51c2Vyczp1cGRhdGUiLCJzdGF0aXN0aWNzOmdldCIsInN0b3JpZXM6Y3JlYXRlIiwic3RvcmllczpkZWxldGUiLCJzdG9yaWVzOmdldCIsInN0b3JpZXM6bGlzdCIsInN0b3JpZXM6dXBkYXRlIiwidGVsZW1ldHJ5OmNyZWF0ZSIsInRlbGVtZXRyeTpkZWxldGUiLCJ0ZWxlbWV0cnk6Z2V0IiwidXNlcjpnZXQiLCJ1c2VyLnBhc3N3b3JkOnVwZGF0ZSIsInVzZXI6dXBkYXRlIiwidXNlci52YWx1ZXM6dXBkYXRlIiwidXNlckdvYWxzOmNyZWF0ZSIsInVzZXJHb2FsczpkZWxldGUiLCJ1c2VyczpjcmVhdGUiLCJ1c2VyczpkZWxldGUiLCJ1c2VyczpsaXN0IiwidXNlcnMucm9sZXM6ZGVsZXRlIiwidXNlcnMucm9sZXM6bGlzdCIsInVzZXJzLnJvbGVzOnVwZGF0ZSIsIndhcm5pbmdzOmdldCJdfQ.cjtSWyhI79lyI_Om31S22W5KRYlQ2CEf8nL-gYvnhYPH0ZFiOpE5XLM67RznbThdTaRujCoiwUjkkwDO3lHm_Eq5fHXNGy8xM1mErqGSYD4aeFY8gn4SbInOFVoWTkxviTOR6xwGLhajBx-xs4P4tiNS8Eht9DnJmIHxQ2_tMtkkgvfoCWbSg1z5EaZk1KpYQI5BQvhyQPdqyq1fmWUvgwUx1vyErJGOOjx0xRyxt-HLUJZsMvtJCEjniURmpgDxHnsa_N1z31vbwDW8h6wSBlN8GvCrRtUKnbNPhWgAn9uy2KIXFUfQuUhFCD1KFC74YGTWPfNdt8IorB7QNDupOg"
+    if month_start and month_end:
+        date_start = date_map[month_start]
+        date_end = date_map[month_end]
+
+    # conversation_api = "curl -H \"Authorization: Bearer $TOKEN\" -s https://babeshop.ftech.ai/api/conversations?start=" + date_start + "T17:00:00.000Z&until=" + date_end + "T17:00:00.000Z"
+    conversation_api = "curl -H \"Authorization: Bearer $TOKEN\" -s https://babeshop.ftech.ai/api/conversations"
+    token = "TOKEN=$(curl -s https://babeshop.ftech.ai/api/auth -d '{\"username\": \"me\", \"password\": \"w4J6OObi996nDGcQ4mlYNK4F\"}' | jq -r .access_token)"
+    # token = "TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VybmFtZSI6Im1lIiwiZXhwIjoxNTk2OTI2MTM1LCJ1c2VyIjp7InVzZXJuYW1lIjoibWUiLCJyb2xlcyI6WyJhZG1pbiJdLCJkYXRhIjpudWxsLCJhcGlfdG9rZW4iOiI0NjkxMzAxZjRkMGU3M2JiMDEwNDJjZmEyYWMyMzg1MzJlM2EzZWM1In0sInNjb3BlcyI6WyJhY3Rpb25QcmVkaWN0aW9uOmNyZWF0ZSIsImFjdGlvblByZWRpY3Rpb246Z2V0IiwiYWN0aW9uczpjcmVhdGUiLCJhY3Rpb25zOmRlbGV0ZSIsImFjdGlvbnM6Z2V0IiwiYWN0aW9uczp1cGRhdGUiLCJhbGxFdmFsdWF0aW9uczpjcmVhdGUiLCJhbGxFdmFsdWF0aW9uczpsaXN0IiwiYW5hbHl0aWNzOmdldCIsImJyYW5jaDp1cGRhdGUiLCJidWxrRGF0YTpnZXQiLCJidWxrRGF0YTp1cGRhdGUiLCJidWxrUmVzcG9uc2VUZW1wbGF0ZXM6dXBkYXRlIiwiYnVsa1N0b3JpZXM6Z2V0IiwiYnVsa1N0b3JpZXM6dXBkYXRlIiwiY2hhdFRva2VuOmdldCIsImNoYXRUb2tlbjp1cGRhdGUiLCJjbGllbnRFdmFsdWF0aW9uOmRlbGV0ZSIsImNsaWVudEV2YWx1YXRpb246Z2V0IiwiY2xpZW50RXZhbHVhdGlvbjp1cGRhdGUiLCJjbGllbnRFdmVudHM6Y3JlYXRlIiwiY2xpZW50RXZlbnRzOnVwZGF0ZSIsImNsaWVudE1lc3NhZ2VzOmxpc3QiLCJjbGllbnRzOmdldCIsImNvbW1pdDpjcmVhdGUiLCJjb25maWc6Z2V0IiwiY29udmVyc2F0aW9uQWN0aW9uczpsaXN0IiwiY29udmVyc2F0aW9uRW50aXRpZXM6bGlzdCIsImNvbnZlcnNhdGlvbkludGVudHM6bGlzdCIsImNvbnZlcnNhdGlvblBvbGljaWVzOmxpc3QiLCJjb252ZXJzYXRpb25UYWdzOmNyZWF0ZSIsImNvbnZlcnNhdGlvblRhZ3M6ZGVsZXRlIiwiY29udmVyc2F0aW9uVGFnczpsaXN0IiwiY29udmVyc2F0aW9uVGFnczp1cGRhdGUiLCJkb21haW46Z2V0IiwiZG9tYWluOnVwZGF0ZSIsImRvbWFpbldhcm5pbmdzOmdldCIsImVudGl0aWVzOmxpc3QiLCJlbnRpdHlfc3lub255bV92YWx1ZXM6Y3JlYXRlIiwiZW50aXR5X3N5bm9ueW1fdmFsdWVzOmRlbGV0ZSIsImVudGl0eV9zeW5vbnltX3ZhbHVlczp1cGRhdGUiLCJlbnRpdHlfc3lub255bXM6Y3JlYXRlIiwiZW50aXR5X3N5bm9ueW1zOmRlbGV0ZSIsImVudGl0eV9zeW5vbnltczpnZXQiLCJlbnRpdHlfc3lub255bXM6bGlzdCIsImVudGl0eV9zeW5vbnltczp1cGRhdGUiLCJlbnZpcm9ubWVudHM6bGlzdCIsImVudmlyb25tZW50czp1cGRhdGUiLCJleGFtcGxlczpjcmVhdGUiLCJleGFtcGxlczpkZWxldGUiLCJleGFtcGxlczpnZXQiLCJleGFtcGxlczpsaXN0IiwiZXhhbXBsZXM6dXBkYXRlIiwiZmVhdHVyZXM6dXBkYXRlIiwiaW50ZW50czpjcmVhdGUiLCJpbnRlbnRzOmRlbGV0ZSIsImludGVudHM6bGlzdCIsImludGVudHM6dXBkYXRlIiwibG9nczpjcmVhdGUiLCJsb2dzOmRlbGV0ZSIsImxvZ3M6Z2V0IiwibG9nczpsaXN0IiwibG9nczpsaXN0IiwibG9va3VwX3RhYmxlczpjcmVhdGUiLCJsb29rdXBfdGFibGVzOmRlbGV0ZSIsImxvb2t1cF90YWJsZXM6Z2V0IiwibG9va3VwX3RhYmxlczpsaXN0IiwibWVzc2FnZUZsYWdzOmRlbGV0ZSIsIm1lc3NhZ2VGbGFnczp1cGRhdGUiLCJtZXNzYWdlSW50ZW50czpkZWxldGUiLCJtZXNzYWdlSW50ZW50czp1cGRhdGUiLCJtZXNzYWdlczpjcmVhdGUiLCJtZXRhZGF0YTpjcmVhdGUiLCJtZXRhZGF0YTpnZXQiLCJtZXRhZGF0YTpsaXN0IiwibW9kZWxzOmNyZWF0ZSIsIm1vZGVsczpkZWxldGUiLCJtb2RlbHMuZXZhbHVhdGlvbnM6ZGVsZXRlIiwibW9kZWxzLmV2YWx1YXRpb25zOmdldCIsIm1vZGVscy5ldmFsdWF0aW9uczpsaXN0IiwibW9kZWxzLmV2YWx1YXRpb25zOnVwZGF0ZSIsIm1vZGVsczpnZXQiLCJtb2RlbHMuam9iczpjcmVhdGUiLCJtb2RlbHM6bGlzdCIsIm1vZGVscy5tb2RlbEJ5VGFnOmdldCIsIm1vZGVscy5zZXR0aW5nczpnZXQiLCJtb2RlbHMuc2V0dGluZ3M6dXBkYXRlIiwibW9kZWxzLnRhZ3M6ZGVsZXRlIiwibW9kZWxzLnRhZ3M6dXBkYXRlIiwibmxnUmVzcG9uc2U6Y3JlYXRlIiwicHJvamVjdHM6Y3JlYXRlIiwicmVnZXhlczpjcmVhdGUiLCJyZWdleGVzOmRlbGV0ZSIsInJlZ2V4ZXM6Z2V0IiwicmVnZXhlczpsaXN0IiwicmVnZXhlczp1cGRhdGUiLCJyZXBvc2l0b3JpZXM6Y3JlYXRlIiwicmVwb3NpdG9yaWVzOmRlbGV0ZSIsInJlcG9zaXRvcmllczpnZXQiLCJyZXBvc2l0b3JpZXM6bGlzdCIsInJlcG9zaXRvcmllczp1cGRhdGUiLCJyZXBvc2l0b3J5X3N0YXR1czpnZXQiLCJyZXNwb25zZVRlbXBsYXRlczpjcmVhdGUiLCJyZXNwb25zZVRlbXBsYXRlczpkZWxldGUiLCJyZXNwb25zZVRlbXBsYXRlczpsaXN0IiwicmVzcG9uc2VUZW1wbGF0ZXM6dXBkYXRlIiwicm9sZXM6Y3JlYXRlIiwicm9sZXM6ZGVsZXRlIiwicm9sZXM6Z2V0Iiwicm9sZXM6bGlzdCIsInJvbGVzOnVwZGF0ZSIsInJvbGVzLnVzZXJzOmxpc3QiLCJyb2xlcy51c2Vyczp1cGRhdGUiLCJzdGF0aXN0aWNzOmdldCIsInN0b3JpZXM6Y3JlYXRlIiwic3RvcmllczpkZWxldGUiLCJzdG9yaWVzOmdldCIsInN0b3JpZXM6bGlzdCIsInN0b3JpZXM6dXBkYXRlIiwidGVsZW1ldHJ5OmNyZWF0ZSIsInRlbGVtZXRyeTpkZWxldGUiLCJ0ZWxlbWV0cnk6Z2V0IiwidXNlcjpnZXQiLCJ1c2VyLnBhc3N3b3JkOnVwZGF0ZSIsInVzZXI6dXBkYXRlIiwidXNlci52YWx1ZXM6dXBkYXRlIiwidXNlckdvYWxzOmNyZWF0ZSIsInVzZXJHb2FsczpkZWxldGUiLCJ1c2VyczpjcmVhdGUiLCJ1c2VyczpkZWxldGUiLCJ1c2VyczpsaXN0IiwidXNlcnMucm9sZXM6ZGVsZXRlIiwidXNlcnMucm9sZXM6bGlzdCIsInVzZXJzLnJvbGVzOnVwZGF0ZSIsIndhcm5pbmdzOmdldCJdfQ.cjtSWyhI79lyI_Om31S22W5KRYlQ2CEf8nL-gYvnhYPH0ZFiOpE5XLM67RznbThdTaRujCoiwUjkkwDO3lHm_Eq5fHXNGy8xM1mErqGSYD4aeFY8gn4SbInOFVoWTkxviTOR6xwGLhajBx-xs4P4tiNS8Eht9DnJmIHxQ2_tMtkkgvfoCWbSg1z5EaZk1KpYQI5BQvhyQPdqyq1fmWUvgwUx1vyErJGOOjx0xRyxt-HLUJZsMvtJCEjniURmpgDxHnsa_N1z31vbwDW8h6wSBlN8GvCrRtUKnbNPhWgAn9uy2KIXFUfQuUhFCD1KFC74YGTWPfNdt8IorB7QNDupOg"
     try:
         all_conversations = json.loads(os.popen(token + " && " + conversation_api).read())
     except:
@@ -153,7 +158,7 @@ def process_raw_rasa_chatlog(input_month, rasa_chatlog_in_month: pd.DataFrame):
                             for item in entities:
                                 if "value" in item:
                                     if item["value"] is not None:
-                                        entity_list += item["value"] + ","
+                                        entity_list += str(item["value"]) + ","
                     if "intent" in event["parse_data"]:
                         if "name" in event["parse_data"]["intent"]:
                             user_intent = event['parse_data']['intent']['name']
@@ -199,12 +204,13 @@ def process_raw_rasa_chatlog(input_month, rasa_chatlog_in_month: pd.DataFrame):
     return rasa_chatlog_df
 
 
-def crawl_rasa_chatlog(month_start, month_end):
+def crawl_rasa_chatlog(month_start=None, month_end=None):
     all_conversations = export_conversations(month_start=month_start, month_end=month_end)
     if all_conversations is None:
         return None
     export_conversation_detail(all_conversations, selected_month=month_end)
-
+    if month_end is None:
+        month_end = ""
     file_name = "chatlog_data/all_conv_detail_" + month_end + ".csv"
     field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
                   'events',
@@ -224,8 +230,11 @@ def upload_rasa_chatlog_to_db(month: str):
     collection.insert_many(data_dict)
 
 
-def upload_all_rasa_chatlog_to_atlas_mongodb():
-    chatlog_rasa = pd.read_csv("chatlog_data/all_rasa_conversations.csv")
+def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
+    # chatlog_rasa = pd.read_csv("chatlog_data/rasa/rasa_chatlog_"+month+".csv")
+    chatlog_rasa = chalog_all
+    date_list = [datetime.datetime.strptime(x[:10], "%Y-%m-%d") for x in list(chatlog_rasa["created_time"])]
+    chatlog_rasa.insert(9, "date", date_list)
 
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
@@ -240,14 +249,32 @@ def upload_all_rasa_chatlog_to_atlas_mongodb():
 
 def main():
     month_list = ["01", "02", "03", "04", "05", "06", "07", "08"]
+    # for index, month in enumerate(month_list):
+    #     if month != "01":
+    #         month_start = month_list[index - 1]
+    #         month_end = month
+    #         rasa_chatlog_in_month = crawl_rasa_chatlog(month_start, month_end)
+    #         if rasa_chatlog_in_month is not None:
+    #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
+
+    # rasa_chatlog_in_month = crawl_rasa_chatlog()
+    # field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
+    #               'events',
+    #               'latest_input_channel', 'active_form', 'latest_action_name']
+    # file_name = "chatlog_data/all_conv_detail_.csv"
+    # rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
+    # if rasa_chatlog_in_month is not None:
+    #     for index, month in enumerate(month_list):
+    #         if month != "01":
+    #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
+
+    chatlog_list = []
     for index, month in enumerate(month_list):
         if month != "01":
-            month_start = month_list[index - 1]
-            month_end = month
-            rasa_chatlog_in_month = crawl_rasa_chatlog(month_start, month_end)
-            if rasa_chatlog_in_month is not None:
-                process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
-    # upload_all_rasa_chatlog_to_atlas_mongodb()
+            chatlog = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
+            chatlog_list.append(chatlog)
+    chalog_all = pd.concat(chatlog_list)
+    upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all)
 
 
 main()
