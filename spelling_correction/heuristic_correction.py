@@ -474,10 +474,7 @@ def correct_sentence_with_word_dict(output_text, abb_dict, ignore, step1_fixed):
 
     # -------------------------- Fix first word --------------------------
     # Todo fix first word
-    try:
-        a = output_text_list[0]
-    except:
-        b = 0
+
     if output_text_list[0] not in ignore and len(output_text_list) > 1:
         output_text_list = fix_first_word(output_text, output_text_list, step1_fixed)
 
