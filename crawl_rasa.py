@@ -9,6 +9,7 @@ import time
 from ast import literal_eval
 from pymongo import MongoClient
 from data_cleaning import *
+from rasa_chatlog_processor import RasaChalogProcessor
 
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
@@ -272,8 +273,11 @@ def main():
             chat_log = correction_message(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
             chat_log = remove_col_white_space(df=chat_log, col_name="user_message_correction")
             chatlog_list.append(chat_log)
-    chalog_all = pd.concat(chatlog_list)
-    upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all)
+    chatlog_all = pd.concat(chatlog_list)
+    chatlog_all = chatlog_all.reset_index(drop=True)
+    processor = RasaChalogProcessor()
+    chatlog_all = processor.process_rasa_chatlog("06", "abc", chatlog_all)
+    upload_all_rasa_chatlog_to_atlas_mongodb(chatlog_all)
 
 
 main()
