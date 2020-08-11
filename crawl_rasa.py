@@ -240,7 +240,7 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
-    collection = db['new_rasa_chatlog_all']
+    collection = db['new_new_rasa_chatlog_all']
     # chatlog_rasa.reset_index(inplace=True)
     data_dict = chatlog_rasa.to_dict("records")
 

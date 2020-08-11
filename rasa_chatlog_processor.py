@@ -128,6 +128,8 @@ class RasaChalogProcessor():
         sender_ids = list(rasa_chatlog_df["sender_id"].dropna())
         sender_ids = sorted(set(sender_ids), key=sender_ids.index)
         conversation_id = 0
+        last_conversation_id = None
+        conversation_begin_date = None
         checked_sender_id = []
         for sender_id_index, sender_id in enumerate(sender_ids):
             if sender_id not in checked_sender_id:
@@ -135,8 +137,11 @@ class RasaChalogProcessor():
                 checked_sender_id.append(sender_id)
             sub_df = rasa_chatlog_df[rasa_chatlog_df["sender_id"] == sender_id].reset_index()
             for index, item in sub_df.iterrows():
+                if last_conversation_id is None or last_conversation_id != conversation_id:
+                    conversation_begin_date = datetime.datetime.strptime(item["created_time"][:10], "%Y-%m-%d")
                 message_index = item["index"]
                 rasa_chatlog_df.at[message_index, "conversation_id"] = conversation_id
+                rasa_chatlog_df.at[message_index, "conversation_begin_date"] = conversation_begin_date
                 if index + 1 < len(sub_df):
                     next_message = sub_df.iloc[index + 1]
                     current_time = item["created_time"][:10] + " " + item["created_time"][11:19]
@@ -148,6 +153,7 @@ class RasaChalogProcessor():
                     time_diff = (next_time - current_time).total_seconds()
                     if time_diff > 86400:
                         conversation_id += 1
+                last_conversation_id = conversation_id
         print("Split to conversations: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
