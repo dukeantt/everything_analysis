@@ -8,6 +8,7 @@ import datetime
 import time
 from ast import literal_eval
 from pymongo import MongoClient
+from data_cleaning import *
 
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
@@ -231,7 +232,6 @@ def upload_rasa_chatlog_to_db(month: str):
 
 
 def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
-    # chatlog_rasa = pd.read_csv("chatlog_data/rasa/rasa_chatlog_"+month+".csv")
     chatlog_rasa = chalog_all
     date_list = [datetime.datetime.strptime(x[:10], "%Y-%m-%d") for x in list(chatlog_rasa["created_time"])]
     chatlog_rasa.insert(9, "date", date_list)
@@ -239,7 +239,7 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
-    collection = db['rasa_chatlog_all']
+    collection = db['new_rasa_chatlog_all']
     # chatlog_rasa.reset_index(inplace=True)
     data_dict = chatlog_rasa.to_dict("records")
 
@@ -249,13 +249,6 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
 
 def main():
     month_list = ["01", "02", "03", "04", "05", "06", "07", "08"]
-    # for index, month in enumerate(month_list):
-    #     if month != "01":
-    #         month_start = month_list[index - 1]
-    #         month_end = month
-    #         rasa_chatlog_in_month = crawl_rasa_chatlog(month_start, month_end)
-    #         if rasa_chatlog_in_month is not None:
-    #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
 
     # rasa_chatlog_in_month = crawl_rasa_chatlog()
     # field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
@@ -271,8 +264,14 @@ def main():
     chatlog_list = []
     for index, month in enumerate(month_list):
         if month != "01":
-            chatlog = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
-            chatlog_list.append(chatlog)
+            print(month)
+            chat_log = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
+            chat_log["user_message_correction"] = chat_log["user_message"]
+            chat_log = remove_col_str(df=chat_log, col_name="user_message_correction")
+            chat_log = deEmojify(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
+            chat_log = correction_message(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
+            chat_log = remove_col_white_space(df=chat_log, col_name="user_message_correction")
+            chatlog_list.append(chat_log)
     chalog_all = pd.concat(chatlog_list)
     upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all)
 
