@@ -1,6 +1,7 @@
 import pandas as pd
 import datetime
 import time
+from data_cleaning import *
 
 
 def split_chatlog_to_conversation(fb_conversations: pd.DataFrame) -> pd.DataFrame:
@@ -94,9 +95,9 @@ def main():
         output_file_path = "data/chatlog_fb/processed_chatlog/all_chat_fb_{month}.csv"
 
         chatlog_df = pd.read_csv(input_file_path.format(month=month))
+        chatlog_df = do_clean(chatlog_df)
         chatlog_df = pre_process_chat_log(chatlog_df)
-
-        chatlog_df.to_csv(output_file_path.format(month=month))
+        chatlog_df.to_csv(output_file_path.format(month=month), index=False)
 
 
 main()
