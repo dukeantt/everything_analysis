@@ -1,0 +1,345 @@
+{
+  "bao nhiêu": [
+    "bn",
+    "bnhiu",
+    "nhiu",
+    "bnhiêu",
+    "bnhieu",
+    "bnh"
+  ],
+  "tài khoản": [
+    "tk"
+  ],
+  "số tài khoản": [
+    "stk"
+  ],
+  "số điện thoại": [
+    "sđt",
+    "sdt"
+  ],
+  "hôm qua": [
+    "hqua",
+    "hqa"
+  ],
+  "chuyển khoản": [
+    "ck"
+  ],
+  "trả lời": [
+    "tl"
+  ],
+  "kích thước": [
+    "kt",
+    "kthuoc",
+    "kthước"
+  ],
+  "địa chỉ": [
+    "đc"
+  ],
+  "được": [
+    "đc",
+    "dc",
+    "đk",
+    "dk"
+  ],
+  "không": [
+    "k",
+    "ko",
+    "hem",
+    "hok",
+    "khg"
+  ],
+  "bạn": [
+    "b"
+  ],
+  "điện thoại": [
+    "đt"
+  ],
+  "facebook": [
+    "fb"
+  ],
+  "chị": [
+    "c"
+  ],
+  "hôm nay": [
+    "hnay"
+  ],
+  "hôm nọ": [
+    "hno"
+  ],
+  "rồi": [
+    "r"
+  ],
+  "người nhận": [
+    "ng nhận"
+  ],
+  "kiểm tra": [
+    "ktra"
+  ],
+  "khuyến mại": [
+    "km",
+    "kmai"
+  ],
+  "tớ": [
+    "t"
+  ],
+  "hàn quốc": [
+    "hq"
+  ],
+  "sản phẩm": [
+    "sp"
+  ],
+  "giờ": [
+    "h"
+  ],
+  "Sài Gòn": [
+    "sg"
+  ],
+  "như thế nào": [
+    "ntn"
+  ],
+  "công việc": [
+    "cv"
+  ],
+  "Hà Nội": [
+    "hn"
+  ],
+  "em": [
+    "e"
+  ],
+  "xin lỗi": [
+    "xloi"
+  ],
+  "nói": [
+    "ns"
+  ],
+  "với": [
+    "vs"
+  ],
+  "điều hòa": [
+    "đhoa"
+  ],
+  "thường": [
+    "thg"
+  ],
+  "nhân viên": [
+    "nv",
+    "nvien"
+  ],
+  "size": [
+    "sz"
+  ],
+  "triệu": [
+    "tr"
+  ],
+  "Hồ Chí Minh": [
+    "hcm"
+  ],
+  "trước": [
+    "trc"
+  ],
+  "nước": [
+    "nc"
+  ],
+  "người": [
+    "ng"
+  ],
+  "thông tin": [
+    "tt"
+  ],
+  "gì": [
+    "j",
+    "ji"
+  ],
+  "google": [
+    "gg"
+  ],
+  "hướng dẫn": [
+    "hd"
+  ],
+  "sử dụng": [
+    "sd"
+  ],
+  "comment": [
+    "cmt"
+  ],
+  "shop": [
+    "sh"
+  ],
+  "nhắn tin": [
+    "nt"
+  ],
+  "thế nào": [
+    "tn",
+    "tnao"
+  ],
+  "sản xuất": [
+    "sx",
+    "sxuat"
+  ],
+  "Trung Quốc": [
+    "tq"
+  ],
+  "Hàn Quốc": [
+    "hq"
+  ],
+  "thành phố": [
+    "tp"
+  ],
+  "thành phố Hồ Chí Minh": [
+    "tphcm"
+  ],
+  "phải không": [
+    "pk"
+  ],
+  "bao giờ": [
+    "bao h"
+  ],
+  "bình thường": [
+    "bthg"
+  ],
+  "vậy": [
+    "v"
+  ],
+  "phải": [
+    "fai",
+    "pải"
+  ],
+  "ạ": [
+    "ah"
+  ],
+  "à": [
+    "ak"
+  ],
+  "vợ": [
+    "vk"
+  ],
+  "Ví dụ": [
+    "vd"
+  ],
+  "Vấn đề": [
+    "vde",
+    "vđ"
+  ],
+  "thanks": [
+    "tks",
+    "thank",
+    "ciu"
+  ],
+  "chuyển phát nhanh": [
+    "cpn"
+  ],
+  "bây giờ": [
+    "bjo"
+  ],
+  "cũng": [
+    "cx",
+    "cug"
+  ],
+  "gia đình": [
+    "gđ"
+  ],
+  "chương trình": [
+    "ctrinh"
+  ],
+  "tư vấn": [
+    "tv",
+    "tvấn"
+  ],
+  "ghế": [
+    "gh"
+  ],
+  "mình": [
+    "munh",
+    "munhf",
+    "mik",
+    "mih",
+    "mk",
+    "mihf",
+    "mh",
+    "m"
+  ],
+  "bảo hành": [
+    "bh",
+    "bhành",
+    "bhanh"
+  ],
+  "nhưng": [
+    "nhug"
+  ],
+  "không sao": [
+    "ksao"
+  ],
+  "quyết định": [
+    "qđ"
+  ],
+  "việt nam": [
+    "vn"
+  ],
+  "muốn": [
+    "mún"
+  ],
+  "liên hệ": [
+    "lh"
+  ],
+  "vietcombank": [
+    "vcb"
+  ],
+  "mọi người": [
+    "mng"
+  ],
+  "công ty": [
+    "cty"
+  ],
+  "hành chính": [
+    "hc"
+  ],
+  "inbox": [
+    "Ib",
+    "inb",
+    "ib"
+  ],
+  "tomorrow": [
+    "tômrrow"
+  ],
+  "quan tâm": [
+    "qtam",
+    "qtâm"
+  ],
+  "quá": [
+    "qá"
+  ],
+  "mới": [
+    "ms"
+  ],
+  "hôm trước": [
+    "htrc"
+  ],
+  "hướng dẫn sử dụng": [
+    "hdsd"
+  ],
+  "việt nam xuất khẩu": [
+    "vnxk"
+  ],
+  "như vậy": [
+    "nvay"
+  ],
+  "dùng": [
+    "dùg"
+  ],
+  "tháng": [
+    "thág"
+  ],
+  "nhà sản xuất": [
+    "nsx"
+  ],
+  "vận chuyển": [
+    "vc"
+  ],
+  "người ta": [
+    "ngta"
+  ],
+  "biết": [
+    "bik"
+  ]
+  }
+
