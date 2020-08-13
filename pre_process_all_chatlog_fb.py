@@ -95,6 +95,7 @@ def main():
         output_file_path = "data/chatlog_fb/processed_chatlog/all_chat_fb_{month}.csv"
 
         chatlog_df = pd.read_csv(input_file_path.format(month=month))
+        chatlog_df = chatlog_df.iloc[::-1]
         chatlog_df = do_clean(chatlog_df)
         chatlog_df = pre_process_chat_log(chatlog_df)
         chatlog_df.to_csv(output_file_path.format(month=month), index=False)

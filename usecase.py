@@ -30,7 +30,8 @@ def get_conversation_turn_without_and_with_image(chatlog_df: pd.DataFrame):
 def specify_usecase():
     with open("models/model_ner.pkl", "rb") as model_file:
         model_ner = pickle.load(model_file)
-    for month in range(1, 7):
+    # for month in range(1, 7):
+    for month in [6]:
         print(month)
         start_time = time.time()
         input_file = "data/chatlog_fb/processed_chatlog/all_chat_fb_{month}.csv"
@@ -43,8 +44,11 @@ def specify_usecase():
 
         uc_s4_necessary_attribute = ["object_type"]
         uc_s51_necessary_attribute = ["object_type", "price"]
-        all_attribute = ["attribute", "age_of_use", "brand", "guarantee", "color", "material", "origin", "promotion",
-                         "size", "weight"]
+        all_attribute = ["attribute", "age_of_use", "guarantee", "color", "material", "origin", "promotion",
+                         "size", "weight", "brand",
+                         # "price"
+                         ]
+        filter_word_for_price_case = ["ship", "số điện thoại"]
         con_variation = ['con', 'còn', 'conf', 'cofn']
         khong_variation = ['không', 'k', 'ko', 'hem', 'hok', 'khg', 'khoong']
         price = ["giá", "tiền", "nhiêu", "bao nhiêu"]
@@ -68,14 +72,17 @@ def specify_usecase():
 
                         if len(entities) == 0:
                             continue
+                        entity_values = [x["value"] for x in ner_output]
                         if any(x in entities for x in uc_s4_necessary_attribute) and all(
                                 x in user_message for x in ["còn", "không"]):
                             chatlog_df.at[message_index, "use_case"] = "uc_s4"
-                        elif all(x in entities for x in uc_s51_necessary_attribute) or "bao nhiêu" in user_message:
-                            if len(set(all_attribute) & set(entities)) == 1:
+                        elif not any(x in user_message for x in filter_word_for_price_case) \
+                                and (all(x in entities for x in uc_s51_necessary_attribute) or "bao nhiêu" in user_message):
+                            if len(set(all_attribute[1:]) & set(entities)) == 0:
+                                if "price" in entities or "price" in entity_values:
+                                    chatlog_df.at[message_index, "use_case"] = "uc_s51"
+                            elif len(set(all_attribute) & set(entities)) <=3:
                                 chatlog_df.at[message_index, "use_case"] = "uc_s52"
-                            elif len(set(all_attribute) & set(entities)) == 0:
-                                chatlog_df.at[message_index, "use_case"] = "uc_s51"
                             else:
                                 chatlog_df.at[message_index, "use_case"] = "uc_s53"
                         else:
@@ -100,11 +107,14 @@ def specify_usecase():
                         entities = [x["entity"] for x in ner_output]
                         if len(entities) == 0:
                             continue
-                        if all(x in user_message for x in ["có", "không"]) and str(user_message).index("có") < str(
-                                user_message).index("không"):
-                            chatlog_df.at[message_index, "use_case"] = "uc_s6"
-                        elif "có sẵn" in str(user_message):
+                        if "có sẵn" in str(user_message):
                             chatlog_df.at[message_index, "use_case"] = "uc_s7"
+                        elif all(x in user_message for x in ["có", "không"]) and str(user_message).index("có") < str(
+                                user_message).index("không"):
+                            if any(x in entities for x in ["mention", "object_type"]) and not any(x in entities for x in all_attribute[:-1]):
+                                chatlog_df.at[message_index, "use_case"] = "uc_s6"
+                            else:
+                                chatlog_df.at[message_index, "use_case"] = "uc_s6x"
 
         chatlog_df.to_csv(output_file.format(month=str(month)), index=False)
         print("Specify usecase -" + str(time.time() - start_time))

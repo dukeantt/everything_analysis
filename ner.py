@@ -9,14 +9,13 @@ import pickle
 import os
 from spelling_correction.heuristic_correction import *
 
-model_path_ner = 'models/vi_nerr.pt'
-model_ner = FlairSequenceTagger(mode='inference', model_path=model_path_ner)
+# model_path_ner = 'models/vi_nerr.pt'
+# model_ner = FlairSequenceTagger(mode='inference', model_path=model_path_ner)
 
 #  load model của ner hơi lâu (5') nên để loads hết đoạn ở trên rồi load ở dưới dùng jupyter ấy
-# with open("models/model_ner.pkl", "rb") as model_file:
-#     pickle.dump(model_ner, model_file)
-print(do_correction("bạn có ghế an mastela  màu hồng gias tien"))
-output = model_ner.process(sample=do_correction("em sẽ chuyển khoản cho chị 1.300k còn lại em thanh toán bằng tiền mặt nhé"))
+with open("models/model_ner.pkl", "rb") as model_file:
+    model_ner = pickle.load(model_file)
+output = model_ner.process(sample=do_correction("cân nặng tối đa là bao nhiêu"))
 from pprint import pprint
 #
 pprint(output)
