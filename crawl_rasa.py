@@ -112,7 +112,7 @@ def get_timestamp(timestamp: int, format: str):
     :param format: %Y-%m-%d %H:%M:%S
     :return:
     """
-    readable_timestamp = datetime.datetime.utcfromtimestamp(timestamp).strftime(format)
+    readable_timestamp = datetime.datetime.fromtimestamp(timestamp).strftime(format)
     return readable_timestamp
 
 
