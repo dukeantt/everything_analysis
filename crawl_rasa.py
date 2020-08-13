@@ -237,8 +237,10 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     # date_list = [datetime.datetime.strptime(x[:10], "%Y-%m-%d") for x in list(chatlog_rasa["created_time"])]
     date_list = [datetime.datetime.strptime(x, "%Y-%m-%d %H:%M:%S") for x in list(chatlog_rasa["created_time"])]
     time_list = [datetime.datetime.strptime(x[11:], "%H:%M:%S") for x in list(chatlog_rasa["created_time"])]
+    week_day = [datetime.datetime.strptime(x[:10], "%Y-%m-%d").weekday() for x in list(chatlog_rasa["created_time"])]
     chatlog_rasa.insert(9, "date", date_list)
     chatlog_rasa.insert(10, "conversation_time", time_list)
+    chatlog_rasa.insert(11, "week_day", week_day)
 
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
@@ -255,15 +257,15 @@ def main():
     month_list = ["01", "02", "03", "04", "05", "06", "07", "08"]
 
     # rasa_chatlog_in_month = crawl_rasa_chatlog()
-    field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
-                  'events',
-                  'latest_input_channel', 'active_form', 'latest_action_name']
-    file_name = "chatlog_data/all_conv_detail_.csv"
-    rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
-    if rasa_chatlog_in_month is not None:
-        for index, month in enumerate(month_list):
-            if month != "01":
-                process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
+    # field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
+    #               'events',
+    #               'latest_input_channel', 'active_form', 'latest_action_name']
+    # file_name = "chatlog_data/all_conv_detail_.csv"
+    # rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
+    # if rasa_chatlog_in_month is not None:
+    #     for index, month in enumerate(month_list):
+    #         if month != "01":
+    #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
 
     chatlog_list = []
     for index, month in enumerate(month_list):
