@@ -1,4 +1,50 @@
 message_id,sender_id,sender,user_message,bot_message,intent,entities,created_time,attachments
+75176073ec6c4c8d8c1af67025c1de0a,2596384490479200,user,/greet,,greet,,2020-06-01 09:07:41,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-01 09:07:42,
+02d803ab8ca742bea654d8e6dcbbf257,2596384490479200,user,/greet,,greet,,2020-06-10 17:13:39,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-10 17:13:39,
+2fb1e83d51d548caacab1fb9f045b3c3,2596384490479200,user,"hi
+hi
+hi",,greet,,2020-06-30 14:37:06,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-30 14:37:08,
+ef5731a06a9a42af8b1fa00dfcba4b3d,2596384490479200,user,gi cung duoc,,agree,,2020-06-30 14:37:30,
+,2596384490479200,bot,,Dạ!,,,2020-06-30 14:37:30,
+d17fadb31cab43fb81861d8706d851f8,2010721315680289,user,Mình Ck xong địu em bé nha ,,handover_to_inbox,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103423811_2280568422239359_6443076849383541888_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=oLQ0lPSGSz4AX-qGfQL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=e6811a16f30da3aee0c99aa730d02cea&oe=5F0679A0,diu,",2020-06-09 10:55:56,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103423811_2280568422239359_6443076849383541888_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=oLQ0lPSGSz4AX-qGfQL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=e6811a16f30da3aee0c99aa730d02cea&oe=5F0679A0, "
+7580221fd461404da5b038f67e0ff045,3997487680293412,user,/start_conversation,,start_conversation,,2020-06-19 12:45:51,
+,3997487680293412,bot,,"Chào Nguyễn Hải Yến, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-06-19 12:45:51,
+0159b849e37144c4845a46263f7aa850,3997487680293412,user,Shop ới,,greet,,2020-06-19 12:46:04,
+,3997487680293412,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-19 12:46:04,
+03305b31e0b147589220a93af26616a5,3997487680293412,user,,,send_link,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103569049_1378771055657575_5331851704586927922_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=BrnD9gjo5vYAX-mMxTd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=14edbeb9645d5f687a8dfe02171fc09b&oe=5F11E635,",2020-06-19 12:46:16,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103569049_1378771055657575_5331851704586927922_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=BrnD9gjo5vYAX-mMxTd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=14edbeb9645d5f687a8dfe02171fc09b&oe=5F11E635, "
+,3997487680293412,bot,,Bạn đang tìm kiếm thông tin gì ạ?,,,2020-06-19 12:46:16,
+bc51ea1751e34037b006a21e5c4247d2,3997487680293412,user,Shop còn bộ đồ chơi tắm k,,query_knowledge_base,"bo_do_choi,",2020-06-19 12:47:05,
+,3997487680293412,bot,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",,,2020-06-19 12:47:08,
+,3997487680293412,bot,,,,,2020-06-19 12:47:08,
+,3997487680293412,bot,,,,,2020-06-19 12:47:08,
+0b9a253567e1473bba4657d3bd725747,3997487680293412,user,"/disagree{""object_type"": null}",,disagree,,2020-06-19 12:49:58,
+,3997487680293412,bot,,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,,,2020-06-19 12:49:58,
+7941537e2d364d38afad75a9c7918767,3997487680293412,user,/connect_employee,,connect_employee,,2020-06-19 12:50:15,
+b93a97783ea745669c935fbefd78fb9a,3002906476434699,user,Bn b,,query_knowledge_base,"price,",2020-06-05 11:34:21,
+,3002906476434699,bot,,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",,,2020-06-05 11:34:21,
+91769ae4bd844193856269a8a50e4a42,3002906476434699,user,,,send_link,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC,",2020-06-05 11:34:32,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC, "
+,3002906476434699,bot,,"Sản phẩm Tông đơ cất tóc Kiza 0700 KZA  hiện shop đang có mức giá: *420,000 VND (giá gốc 499,000 VND)*.
+",,,2020-06-05 11:34:34,
+,3002906476434699,bot,,,,,2020-06-05 11:34:34,
+ac533e630e85424d9d6f21f7df8b3efe,3002906476434699,user,Con loai nao nua k b ,,query_knowledge_base,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC,",2020-06-05 11:35:41,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC, "
+,3002906476434699,bot,,"Sản phẩm Tông đơ cất tóc Kiza 0700 KZA  hiện shop đang có mức giá: *420,000 VND (giá gốc 499,000 VND)*.
+",,,2020-06-05 11:35:43,
+,3002906476434699,bot,,,,,2020-06-05 11:35:43,
+9137d865b735497aa10c13fdab54dfb5,3002906476434699,user,Bn bn shop ,,query_knowledge_base,"https://scontent.xx.fbcdn.net/v/t1.15752-9/83234940_573188230049728_4213120571580593298_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=fTPW_9VMaH0AX81yHNe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0dccc127df12ec69dc304cd55bfb8f9f&oe=5F0D1062,price,",2020-06-15 15:35:00,"https://scontent.xx.fbcdn.net/v/t1.15752-9/83234940_573188230049728_4213120571580593298_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=fTPW_9VMaH0AX81yHNe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0dccc127df12ec69dc304cd55bfb8f9f&oe=5F0D1062, "
+,3002906476434699,bot,,,,,2020-06-15 15:35:02,
+addc88a5432a42d390a3519ecfc47d58,3002906476434699,user,"/confirm_object_type{""object_type"": ""ke""}",,confirm_object_type,"ke,",2020-06-15 15:35:20,
+,3002906476434699,bot,,,,,2020-06-15 15:35:20,
+9b25c49dcb72421ba755c2ca5ea43684,3002906476434699,user,Loai cao nhat bn,,query_knowledge_base,"size,",2020-06-15 15:36:10,
+,3002906476434699,bot,,,,,2020-06-15 15:36:10,
+5d4b8d73670d480e905a20b1c27186c5,3002906476434699,user,"Nhu hinh di
+Sau nhiu vay
+Kho chon",,handover_to_inbox,"image,",2020-06-15 15:36:57,
+4fbaf8aa5b6d4a8eb3c9bd3bec522054,3002906476434699,user,Nhu hinh gia ra sau,,handover_to_inbox,"price,",2020-06-15 15:37:08,
 0253e970fc7541faac65569a55a3498a,3547113778635846,user,/start_conversation,,start_conversation,,2020-06-24 11:25:01,
 ,3547113778635846,bot,,"Chào Nguyễn Tú Anh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
 Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-06-24 11:25:01,
@@ -98,16 +144,6 @@ Bạn tham khảo các sản phẩm sau nhé ạ:",,,2020-06-30 17:26:38,
 e56e17bdb90345348e8ed1683119165b,2395680917174327,user,Cai dan gita xai pịn hay ntn v shop,,query_knowledge_base,"dan,",2020-06-05 12:29:22,
 ,2395680917174327,bot,,"Sản phẩm  Đàn   có giá bán thấp nhất từ: *328,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",,,2020-06-05 12:29:22,
 ,2395680917174327,bot,,,,,2020-06-05 12:29:22,
-75176073ec6c4c8d8c1af67025c1de0a,2596384490479200,user,/greet,,greet,,2020-06-01 09:07:41,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-01 09:07:42,
-02d803ab8ca742bea654d8e6dcbbf257,2596384490479200,user,/greet,,greet,,2020-06-10 17:13:39,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-10 17:13:39,
-2fb1e83d51d548caacab1fb9f045b3c3,2596384490479200,user,"hi
-hi
-hi",,greet,,2020-06-30 14:37:06,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-30 14:37:08,
-ef5731a06a9a42af8b1fa00dfcba4b3d,2596384490479200,user,gi cung duoc,,agree,,2020-06-30 14:37:30,
-,2596384490479200,bot,,Dạ!,,,2020-06-30 14:37:30,
 e4abb9d6c5814853b383d2682530cd0a,1608083789231534,user,Alo,,greet,,2020-06-17 13:28:53,
 ,1608083789231534,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-17 13:28:53,
 c99a6fbddd0c4828a7d355894ae9af11,1608083789231534,user,"Ôi
@@ -183,21 +219,6 @@ c8451319fc34453c985a1eced92ac7f6,2767264773292852,user,Giá bao nh hả shop?,,q
 ,3116882791665580,bot,,"Chào Thảo Liên, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
 Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-06-19 14:14:04,
 fa97371d95ce4239909e234758cb4a08,3116882791665580,user,Cho m hỏi m tạo độ ẩm,,handover_to_inbox,"tạo độ ẩm,",2020-06-19 14:14:24,
-7580221fd461404da5b038f67e0ff045,3997487680293412,user,/start_conversation,,start_conversation,,2020-06-19 12:45:51,
-,3997487680293412,bot,,"Chào Nguyễn Hải Yến, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
-Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-06-19 12:45:51,
-0159b849e37144c4845a46263f7aa850,3997487680293412,user,Shop ới,,greet,,2020-06-19 12:46:04,
-,3997487680293412,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-06-19 12:46:04,
-03305b31e0b147589220a93af26616a5,3997487680293412,user,,,send_link,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103569049_1378771055657575_5331851704586927922_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=BrnD9gjo5vYAX-mMxTd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=14edbeb9645d5f687a8dfe02171fc09b&oe=5F11E635,",2020-06-19 12:46:16,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103569049_1378771055657575_5331851704586927922_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=BrnD9gjo5vYAX-mMxTd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=14edbeb9645d5f687a8dfe02171fc09b&oe=5F11E635, "
-,3997487680293412,bot,,Bạn đang tìm kiếm thông tin gì ạ?,,,2020-06-19 12:46:16,
-bc51ea1751e34037b006a21e5c4247d2,3997487680293412,user,Shop còn bộ đồ chơi tắm k,,query_knowledge_base,"bo_do_choi,",2020-06-19 12:47:05,
-,3997487680293412,bot,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
- (Vui lòng ấn chọn 1 sản phẩm)",,,2020-06-19 12:47:08,
-,3997487680293412,bot,,,,,2020-06-19 12:47:08,
-,3997487680293412,bot,,,,,2020-06-19 12:47:08,
-0b9a253567e1473bba4657d3bd725747,3997487680293412,user,"/disagree{""object_type"": null}",,disagree,,2020-06-19 12:49:58,
-,3997487680293412,bot,,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,,,2020-06-19 12:49:58,
-7941537e2d364d38afad75a9c7918767,3997487680293412,user,/connect_employee,,connect_employee,,2020-06-19 12:50:15,
 d093a15222914f3e9bb5328525578f2f,3751272288231725,user,/start_conversation,,start_conversation,,2020-06-19 12:43:52,
 ,3751272288231725,bot,,"Chào Bi Nguyễn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
 Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-06-19 12:43:52,
@@ -591,26 +612,6 @@ aa94c9a3f19d4fdbbca7a5ebe4941bf2,3090170581060440,user,/start_conversation,,star
 5ae5589cd63048d286de977b1e062c52,3090170581060440,user,32 miếng sếp ah shiop,,handover_to_inbox,,2020-06-16 09:13:09,
 c35aad22b76d4be2ad4e392775a1b5a0,3697702676966514,user,"Bao nhiu vay
 De m ck ạ",,handover_to_inbox,"price,",2020-06-16 09:12:28,
-b93a97783ea745669c935fbefd78fb9a,3002906476434699,user,Bn b,,query_knowledge_base,"price,",2020-06-05 11:34:21,
-,3002906476434699,bot,,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",,,2020-06-05 11:34:21,
-91769ae4bd844193856269a8a50e4a42,3002906476434699,user,,,send_link,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC,",2020-06-05 11:34:32,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC, "
-,3002906476434699,bot,,"Sản phẩm Tông đơ cất tóc Kiza 0700 KZA  hiện shop đang có mức giá: *420,000 VND (giá gốc 499,000 VND)*.
-",,,2020-06-05 11:34:34,
-,3002906476434699,bot,,,,,2020-06-05 11:34:34,
-ac533e630e85424d9d6f21f7df8b3efe,3002906476434699,user,Con loai nao nua k b ,,query_knowledge_base,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC,",2020-06-05 11:35:41,"https://scontent.xx.fbcdn.net/v/t1.15752-9/101654589_403140673899070_5717385165068566528_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=sh3-yqe3vIMAX8-HEsp&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=5d3d9a4d8d34b921e9b9bea9a7714f8c&oe=5EFFA1DC, "
-,3002906476434699,bot,,"Sản phẩm Tông đơ cất tóc Kiza 0700 KZA  hiện shop đang có mức giá: *420,000 VND (giá gốc 499,000 VND)*.
-",,,2020-06-05 11:35:43,
-,3002906476434699,bot,,,,,2020-06-05 11:35:43,
-9137d865b735497aa10c13fdab54dfb5,3002906476434699,user,Bn bn shop ,,query_knowledge_base,"https://scontent.xx.fbcdn.net/v/t1.15752-9/83234940_573188230049728_4213120571580593298_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=fTPW_9VMaH0AX81yHNe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0dccc127df12ec69dc304cd55bfb8f9f&oe=5F0D1062,price,",2020-06-15 15:35:00,"https://scontent.xx.fbcdn.net/v/t1.15752-9/83234940_573188230049728_4213120571580593298_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=fTPW_9VMaH0AX81yHNe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=0dccc127df12ec69dc304cd55bfb8f9f&oe=5F0D1062, "
-,3002906476434699,bot,,,,,2020-06-15 15:35:02,
-addc88a5432a42d390a3519ecfc47d58,3002906476434699,user,"/confirm_object_type{""object_type"": ""ke""}",,confirm_object_type,"ke,",2020-06-15 15:35:20,
-,3002906476434699,bot,,,,,2020-06-15 15:35:20,
-9b25c49dcb72421ba755c2ca5ea43684,3002906476434699,user,Loai cao nhat bn,,query_knowledge_base,"size,",2020-06-15 15:36:10,
-,3002906476434699,bot,,,,,2020-06-15 15:36:10,
-5d4b8d73670d480e905a20b1c27186c5,3002906476434699,user,"Nhu hinh di
-Sau nhiu vay
-Kho chon",,handover_to_inbox,"image,",2020-06-15 15:36:57,
-4fbaf8aa5b6d4a8eb3c9bd3bec522054,3002906476434699,user,Nhu hinh gia ra sau,,handover_to_inbox,"price,",2020-06-15 15:37:08,
 e83e7698ad9f444dad0240725c80337b,2500067176780569,user,"Bạn ơi
 Bộ bàn lego còn ko bạn
 giá bao nhiêu ạ?",,query_knowledge_base,"bộ bàn,lego,price,",2020-06-10 16:24:03,
@@ -1091,7 +1092,6 @@ ec4d7744fa434c2691057c04396c1b11,3519462031401944,user,Tủ nhựa kub,,query_kn
 ,3519462031401944,bot,,,,,2020-06-09 11:06:14,
 b355df748a6348e581a1acde2abf7c3d,3519462031401944,user,"Chị xem trên Shopee có 1599k
 Cũng của shop em",,handover_to_inbox,"link,1599k,",2020-06-09 11:07:41,
-d17fadb31cab43fb81861d8706d851f8,2010721315680289,user,Mình Ck xong địu em bé nha ,,handover_to_inbox,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103423811_2280568422239359_6443076849383541888_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=oLQ0lPSGSz4AX-qGfQL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=e6811a16f30da3aee0c99aa730d02cea&oe=5F0679A0,diu,",2020-06-09 10:55:56,"https://scontent.xx.fbcdn.net/v/t1.15752-9/103423811_2280568422239359_6443076849383541888_n.jpg?_nc_cat=103&_nc_sid=b96e70&_nc_ohc=oLQ0lPSGSz4AX-qGfQL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=e6811a16f30da3aee0c99aa730d02cea&oe=5F0679A0, "
 5e87fcdd07334b599fd8c35d6dcad6e0,3794077780666792,user,Máy này của hãng nào vậy bạn?,,query_knowledge_base,"may,này,brand,",2020-06-09 10:14:44,
 ,3794077780666792,bot,,,,,2020-06-09 10:14:44,
 8f70c8cd7a124353a7911b7c40b2254f,2089456507836512,user,/start_conversation,,start_conversation,,2020-06-09 10:01:22,
@@ -1799,6 +1799,10 @@ e44ed863720649db889d6fb347748e96,4503730866319384,user,Ok em,,agree,,2020-06-02 
 43115b7c5abf4a9ea4b72861e2bc4cee,4503730866319384,user,"Em giao đi rồi báo anh
 Hàng chuẩn thảm silicon
 Đúng ko em",,handover_to_inbox,"tham,silicon,",2020-06-02 10:44:54,
+7971f7bb5e134df29b9b082090e203fe,2228904373821907,user,"https://www.facebook.com/shopgauvabingo/media_set/?set=a.2016849515292043
+Em thấy album rùi
+Aprica ạ
+Combi cũng có nha",,handover_to_inbox,"https://www.facebook.com/shopgauvabingo/media_set/?set=a.2016849515292043,image,aprica,combi,",2020-06-02 10:38:44,
 38864298176e42dba922f4336c294231,2689677037800323,user,/start_conversation,,start_conversation,,2020-06-01 16:01:09,
 ,2689677037800323,bot,,"Chào Nguyễn Việt Cường, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
 Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-06-01 16:01:10,

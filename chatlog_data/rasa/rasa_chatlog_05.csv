@@ -1,4 +1,26 @@
 message_id,sender_id,sender,user_message,bot_message,intent,entities,created_time,attachments
+898fe29eed084ba3852bd91e97dde8fc,2596384490479200,user,/greet,,greet,,2020-05-04 11:27:45,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-04 11:27:45,
+a944f70893a348e5b12ea9743d576348,2596384490479200,user,/greet,,greet,,2020-05-04 11:29:27,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-04 11:29:27,
+de532e349b58433abde543d401cbd133,2596384490479200,user,/greet,,greet,,2020-05-06 18:20:52,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-06 18:20:53,
+bdf3f944a505432f95da8b0cadc58bda,2596384490479200,user,"/greet
+/greet",,"greet
+/greet",,2020-05-13 09:17:21,
+017218b6b2304436b1feceddc928277e,2596384490479200,user,hello,,greet,"hello,",2020-05-13 09:19:58,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-13 09:19:58,
+aef84bc1cabd48c08fd3be4689b9645b,2596384490479200,user,/greet,,greet,,2020-05-13 09:20:17,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-13 09:20:17,
+e1465eff107f4599ae84c260d74e6016,2596384490479200,user,/greet,,greet,,2020-05-15 10:27:02,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-15 10:27:02,
+e127a81885b4408787014d9487d35c50,2596384490479200,user,https://cf.shopee.vn/file/5428a8fa1e572602a819450e7e12a2a2 có giá bao nhiêu,,query_knowledge_base,"['https://cf.shopee.vn/file/5428a8fa1e572602a819450e7e12a2a2'],price,",2020-05-15 10:27:58,
+,2596384490479200,bot,,"Sản phẩm  Xe tập đi đa năng kiêm bập bênh Zaracos Mura (Mỹ)  hiện shop đang có giá: *1,130,000 VND (giá gốc 1,285,000 VND)*.
+Bạn tham khảo các sản phẩm sau nhé ạ:",,,2020-05-15 10:28:04,
+,2596384490479200,bot,,,,,2020-05-15 10:28:04,
+afdde3c5d79f419381290a394adf4be5,2596384490479200,user,/greet,,greet,,2020-05-19 08:48:36,
+,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-19 08:48:37,
+957644c23a8d43388d35c9aadf53f7cc,1861786853926802,user,B ui ship cho m chưa,,handover_to_inbox,,2020-05-04 14:43:23,
 37edd01bba184d51a9babc8f38b26c0c,1824332964315133,user,Báo giá Em với ,,query_knowledge_base,"['https://scontent.xx.fbcdn.net/v/t1.15752-9/96143238_1542293112596549_1826598300489351168_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=_Ozhk5f64XUAX_vP_jm&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=8ad9a9a8de94369f5fd74f5805019afb&oe=5ED956A2', 'https://scontent.xx.fbcdn.net/v/t1.15752-9/96585780_527507364585405_9191964723430555648_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_ohc=AN3h9QR7wAEAX-kxcUs&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=fa380bd2339bf23c7390ad643ce94352&oe=5ED9D2C0'],price,",2020-05-08 15:38:45,"https://scontent.xx.fbcdn.net/v/t1.15752-9/96143238_1542293112596549_1826598300489351168_n.jpg?_nc_cat=110&_nc_sid=b96e70&_nc_ohc=_Ozhk5f64XUAX_vP_jm&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=8ad9a9a8de94369f5fd74f5805019afb&oe=5ED956A2, https://scontent.xx.fbcdn.net/v/t1.15752-9/96585780_527507364585405_9191964723430555648_n.jpg?_nc_cat=105&_nc_sid=b96e70&_nc_ohc=AN3h9QR7wAEAX-kxcUs&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=fa380bd2339bf23c7390ad643ce94352&oe=5ED9D2C0, "
 ,1824332964315133,bot,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
  (Vui lòng ấn chọn 1 sản phẩm)",,,2020-05-08 15:38:47,
@@ -24,27 +46,6 @@ bd511d8d90aa4a258bf43ac92c7d3ed5,1575483865868177,user,Shop ơi hình ảnh này
  (Vui lòng ấn chọn 1 sản phẩm)",,,2020-05-18 16:45:09,
 ,1503552583082746,bot,,,,,2020-05-18 16:45:09,
 ,1503552583082746,bot,,,,,2020-05-18 16:45:09,
-898fe29eed084ba3852bd91e97dde8fc,2596384490479200,user,/greet,,greet,,2020-05-04 11:27:45,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-04 11:27:45,
-a944f70893a348e5b12ea9743d576348,2596384490479200,user,/greet,,greet,,2020-05-04 11:29:27,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-04 11:29:27,
-de532e349b58433abde543d401cbd133,2596384490479200,user,/greet,,greet,,2020-05-06 18:20:52,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-06 18:20:53,
-bdf3f944a505432f95da8b0cadc58bda,2596384490479200,user,"/greet
-/greet",,"greet
-/greet",,2020-05-13 09:17:21,
-017218b6b2304436b1feceddc928277e,2596384490479200,user,hello,,greet,"hello,",2020-05-13 09:19:58,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-13 09:19:58,
-aef84bc1cabd48c08fd3be4689b9645b,2596384490479200,user,/greet,,greet,,2020-05-13 09:20:17,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-13 09:20:17,
-e1465eff107f4599ae84c260d74e6016,2596384490479200,user,/greet,,greet,,2020-05-15 10:27:02,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-15 10:27:02,
-e127a81885b4408787014d9487d35c50,2596384490479200,user,https://cf.shopee.vn/file/5428a8fa1e572602a819450e7e12a2a2 có giá bao nhiêu,,query_knowledge_base,"['https://cf.shopee.vn/file/5428a8fa1e572602a819450e7e12a2a2'],price,",2020-05-15 10:27:58,
-,2596384490479200,bot,,"Sản phẩm  Xe tập đi đa năng kiêm bập bênh Zaracos Mura (Mỹ)  hiện shop đang có giá: *1,130,000 VND (giá gốc 1,285,000 VND)*.
-Bạn tham khảo các sản phẩm sau nhé ạ:",,,2020-05-15 10:28:04,
-,2596384490479200,bot,,,,,2020-05-15 10:28:04,
-afdde3c5d79f419381290a394adf4be5,2596384490479200,user,/greet,,greet,,2020-05-19 08:48:36,
-,2596384490479200,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-05-19 08:48:37,
 b877ed8cff154be09238539a174b5721,2713992922048415,user,"Cho số tk Shop ơi
 M ck 100%",,handover_to_inbox,,2020-05-13 10:38:40,
 3d24511484da41a3b55a61c8b7583761,2185202514879696,user,,,send_link,"['https://scontent.xx.fbcdn.net/v/t39.1997-6/cp0/39178562_1505197616293642_5411344281094848512_n.png?_nc_cat=1&_nc_sid=ac3552&_nc_oc=AQkVvq5PXa3zxhky3fVe4R9wXeNQAV1IZauuqgXnXVgCY1tNyJLKMhF7Rn9PRTSkIQR7M7wMjkAje1O35NjcX69l&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=3e90efcf9b071d6924606be38ad3e99a&oe=5ED806C9'],",2020-05-07 15:56:06,"https://scontent.xx.fbcdn.net/v/t39.1997-6/cp0/39178562_1505197616293642_5411344281094848512_n.png?_nc_cat=1&_nc_sid=ac3552&_nc_oc=AQkVvq5PXa3zxhky3fVe4R9wXeNQAV1IZauuqgXnXVgCY1tNyJLKMhF7Rn9PRTSkIQR7M7wMjkAje1O35NjcX69l&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=3e90efcf9b071d6924606be38ad3e99a&oe=5ED806C9, "
@@ -315,6 +316,12 @@ a9f70d24afe84d529e19127937ae259e,2220692944718655,user,Cả set này thì bn ah 
 Bạn tham khảo các sản phẩm sau nhé ạ:",,,2020-05-29 13:34:52,
 ,2220692944718655,bot,,,,,2020-05-29 13:34:52,
 0ebca16c7f584ddb9471cdd0581c9084,2220692944718655,user,Set đấy có bao gồm ngựa ko nhỉ,,handover_to_inbox,"set đấy,",2020-05-29 13:36:17,
+baf2ef95bdb94d5f870de38b773e90b7,2879569772160509,user,Cảm ơn shop mình liên hệ sau,,thank,,2020-05-29 12:49:49,
+,2879569772160509,bot,,"Dạ, cảm ơn bạn!",,,2020-05-29 12:49:49,
+97380b92e05948589d3ee990cac2e528,2879569772160509,user,Bên shop có bán quây nhựa loại này trên tiki hay shopee không vậy,,query_knowledge_base,"quay,này,link,link,",2020-05-29 13:21:16,
+,2879569772160509,bot,,Dạ mời bạn tham khảo sản phẩm Quây  hiện có tại shop nhé!,,,2020-05-29 13:21:16,
+,2879569772160509,bot,,,,,2020-05-29 13:21:16,
+b7547a26246a415d8fc682686d58269b,2879569772160509,user,Tại mình có sài thẻ tín dụng được giảm giá á,,handover_to_inbox,"promotion,",2020-05-29 13:21:34,
 cbd4114b9a5343519306faec04d50293,1945838965501717,user,"B ơi
 B có xe đẩy gấp gọn V1 không",,query_knowledge_base,"xe_day,",2020-05-29 13:02:14,
 ,1945838965501717,bot,,,,,2020-05-29 13:02:15,
@@ -585,12 +592,6 @@ Bạn tham khảo các sản phẩm sau nhé ạ:",,,2020-05-26 14:46:44,
 ,3013614735372149,bot,,,,,2020-05-26 14:46:44,
 395e75a16d42445aa1022a0b440b561f,3013614735372149,user,"trên shoppe báo hét hàng rồi shop
 :P",,handover_to_inbox,"link,",2020-05-26 14:47:42,
-14e669c4d3a54f19a38248097aa29379,2879704312115549,user,/start_conversation,,start_conversation,,2020-05-26 14:08:20,
-,2879704312115549,bot,,"Chào Vu Thuy Linh, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
-Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-05-26 14:08:20,
-7a19fd979ffa49988dd93c6130f7833e,2879704312115549,user,Sap 1-6 bên ban co chuong trinh gi giam gia cho ghế ăn dặm 6in1 joie ko a?,,query_knowledge_base,"promotion,promotion,ghe_an,joie,",2020-05-26 14:08:37,
-,2879704312115549,bot,,"Dạ, sản phẩm Ghế Ăn hãng sản xuất Joie hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",,,2020-05-26 14:08:38,
-,2879704312115549,bot,,,,,2020-05-26 14:08:38,
 7e5c5347610f4bf4ae1572874233970e,3009586865815113,user,/start_conversation,,start_conversation,,2020-05-26 12:10:56,
 ,3009586865815113,bot,,"Chào Ái Nguyễn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
 Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-05-26 12:10:56,
@@ -2818,6 +2819,13 @@ Mẫu 2019",,query_knowledge_base,"nadle,màu vàng,",2020-05-04 16:53:44,
 sau 6h tối được không ạ
 vì lúc đó em mới ở nhà
 bao nhiêu tiền / cái chị nhỉ",,handover_to_inbox,"price,",2020-05-04 16:42:58,
+12156016b5cb4602b79bd3dc9339b4bd,3051147371611788,user,Cho minh xem lai anh voi,,query_knowledge_base,"image,",2020-05-04 16:16:15,
+,3051147371611788,bot,,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",,,2020-05-04 16:16:15,
+aaf19c5f4abc49ddbdca51106afac709,3051147371611788,user,Xe day danh cho be 0-36 thang,,query_knowledge_base,"xe_day,be 0-36 thang,",2020-05-04 16:16:59,
+,3051147371611788,bot,,,,,2020-05-04 16:16:59,
+e674cbc219534f73aafbe65e6e54f8eb,3051147371611788,user,"/confirm_attribute_value{""price"": ""500k - 1M""}",,confirm_attribute_value,"500k - 1M,",2020-05-04 16:20:36,
+,3051147371611788,bot,,Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,,,2020-05-04 16:20:36,
+,3051147371611788,bot,,,,,2020-05-04 16:20:36,
 968723cf48804e5c8b48e417bac12f8d,3109806639044381,user,Xe chòi chân gía bao nhiêu ạ,,query_knowledge_base,"xe_choi_chan,price,",2020-05-04 16:06:46,
 ,3109806639044381,bot,,,,,2020-05-04 16:06:46,
 23d308ddde924eaca8ff4eda1028955b,3109806639044381,user,"/confirm_attribute_value{""price"": ""500k - 1M""}",,confirm_attribute_value,"500k - 1M,",2020-05-04 16:07:09,
@@ -2835,7 +2843,6 @@ eca7902486934d7db615f3ba71edcd9f,2148649705200644,user,Này nè shop ,,query_kno
 1e00894d5a4d44a5a2f586ac2b297e51,1921789927887211,user,cho mình xin giá của Máy diệt khuẩn UV cầm tay Colimida Nhật Bản,,query_knowledge_base,"price,colimida,nhật,",2020-05-04 14:46:29,
 ,1921789927887211,bot,,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",,,2020-05-04 14:46:29,
 7f813d34af9a446a86bb32fdf71ec51d,1921789927887211,user,cái này ạ ,,handover_to_inbox,"['https://scontent.xx.fbcdn.net/v/t1.15752-9/95462850_2757577544364526_3326186569974415360_n.png?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=xUtjpKV1MW0AX8_YZc0&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=29ddeca673e6be93b0a537906dad2d84&oe=5ED67628'],cái này,",2020-05-04 14:47:22,"https://scontent.xx.fbcdn.net/v/t1.15752-9/95462850_2757577544364526_3326186569974415360_n.png?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=xUtjpKV1MW0AX8_YZc0&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=29ddeca673e6be93b0a537906dad2d84&oe=5ED67628, "
-957644c23a8d43388d35c9aadf53f7cc,1861786853926802,user,B ui ship cho m chưa,,handover_to_inbox,,2020-05-04 14:43:23,
 e7c2adca88db4230851b5998ff8a612a,2975155032550617,user,/start_conversation,,start_conversation,,2020-05-04 11:08:50,
 ,2975155032550617,bot,,"Chào Mai Thu Hang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
 Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",,,2020-05-04 11:08:50,

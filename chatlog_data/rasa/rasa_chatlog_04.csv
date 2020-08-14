@@ -1844,6 +1844,12 @@ ea3680ace90d409b8b713c528d60e59a,2242925705798323,user,nay vẽ bút lông lên 
 d4b03606baf14fc68c1ddf1a3c1a9f29,2423154131046089,user,Bạn ơi ship cho mình 1 thanh chắn cửa và 1 thanh nối 12cm nhé,,query_knowledge_base,"12cm,",2020-04-10 17:17:08,
 ,2423154131046089,bot,,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",,,2020-04-10 17:17:09,
 48cc344609664303ad9149f82dc07fb3,2423154131046089,user,Địa chỉ: số nhà 103 ngõ 22 Tôn Thất Tùng,,handover_to_inbox,"địa,",2020-04-10 17:17:24,
+fc8e8a84c9044aec9762e3093bfa259a,3637681629638653,user,/start_conversation,,start_conversation,,2020-04-10 16:12:34,
+,3637681629638653,bot,,"Chào Huyền Trần, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm (ví dụ: xe tập đi...) hoặc tham khảo danh mục sản phẩm của shop nhé!",,,2020-04-10 16:12:34,
+,3637681629638653,bot,,,,,2020-04-10 16:12:34,
+4be5aced439e43e6b52b2d3d6bb137d9,3637681629638653,user,"shop ơi mình cần mua váy vắt sửa
+sưa",,handover_to_inbox,,2020-04-10 16:19:03,
 fcd462f9d5224337aafa07739e71a0e8,1218165698284076,user,Alo,,greet,,2020-04-10 13:21:00,
 ,1218165698284076,bot,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",,,2020-04-10 13:21:00,
 9bbbc32884424eca9f7941b1d4d9cb1a,1218165698284076,user,,,send_link,"['https://scontent.xx.fbcdn.net/v/t1.15752-9/93049506_230567204722153_3091303153677631488_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=U5aAIvE1cnoAX-OQDkx&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=f0e42a84100aba274a52478c37af6d52&oe=5EB6C3EE'],",2020-04-10 13:23:16,"https://scontent.xx.fbcdn.net/v/t1.15752-9/93049506_230567204722153_3091303153677631488_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_ohc=U5aAIvE1cnoAX-OQDkx&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=f0e42a84100aba274a52478c37af6d52&oe=5EB6C3EE, "
