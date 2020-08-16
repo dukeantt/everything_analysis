@@ -309,7 +309,8 @@ class RasaChalogProcessor():
                     rasa_chatlog_df.at[index, "outcome"] = "handover_to_inbox"
                     break
                 elif str(user_intent) != "nan" and user_intent == "agree":
-                    rasa_chatlog_df.at[index, "outcome"] = "agree"
+                    # rasa_chatlog_df.at[index, "outcome"] = "agree"
+                    rasa_chatlog_df.at[index, "outcome"] = "other"
                     break
                 elif message_counter == (len(last_turn_message_df) - 1) and item["sender"] == "bot":
                     rasa_chatlog_df.at[index, "outcome"] = "silence"

@@ -245,7 +245,7 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
-    collection = db['rasa_chatlog_all_14_8']
+    collection = db['rasa_chatlog_all_16_8_ver2']
     # chatlog_rasa.reset_index(inplace=True)
     data_dict = chatlog_rasa.to_dict("records")
 
@@ -257,16 +257,15 @@ def main():
     month_list = ["01", "02", "03", "04", "05", "06", "07", "08"]
 
     # rasa_chatlog_in_month = crawl_rasa_chatlog()
-    # rasa_chatlog_in_month = crawl_rasa_chatlog("07","08")
-    field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
-                  'events',
-                  'latest_input_channel', 'active_form', 'latest_action_name']
-    file_name = "chatlog_data/all_conv_detail_.csv"
-    rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
-    if rasa_chatlog_in_month is not None:
-        for index, month in enumerate(month_list):
-            if month != "01":
-                process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
+    # field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
+    #               'events',
+    #               'latest_input_channel', 'active_form', 'latest_action_name']
+    # file_name = "chatlog_data/all_conv_detail_.csv"
+    # rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
+    # if rasa_chatlog_in_month is not None:
+    #     for index, month in enumerate(month_list):
+    #         if month != "01":
+    #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
 
     chatlog_list = []
     for index, month in enumerate(month_list):
@@ -283,6 +282,15 @@ def main():
     chatlog_all = chatlog_all.reset_index(drop=True)
     processor = RasaChalogProcessor()
     chatlog_all = processor.process_rasa_chatlog("06", "abc", chatlog_all)
+
+    conversation_ids = chatlog_all["conversation_id"].drop_duplicates(keep="first").to_list()
+    trash_conversation_ids = []
+    for id in conversation_ids:
+        sub_df = chatlog_all[chatlog_all["conversation_id"] == id]
+        number_of_turns = len(sub_df["turn"].drop_duplicates(keep="first").to_list())
+        if number_of_turns == 1:
+            trash_conversation_ids.append(id)
+    chatlog_all = chatlog_all[~chatlog_all["conversation_id"].isin(trash_conversation_ids)]
     upload_all_rasa_chatlog_to_atlas_mongodb(chatlog_all)
 
 
