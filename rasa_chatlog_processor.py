@@ -123,6 +123,7 @@ class RasaChalogProcessor():
         logger.info("Split chatlog to conversations")
         rasa_chatlog_df.insert(0, 'conversation_id', 0)
         rasa_chatlog_df.insert(9, 'conversation_begin_date', None)
+        rasa_chatlog_df.insert(10, 'conversation_begin_time', None)
 
         fmt = '%Y-%m-%d %H:%M:%S'
         sender_ids = list(rasa_chatlog_df["sender_id"].dropna())
@@ -130,6 +131,7 @@ class RasaChalogProcessor():
         conversation_id = 0
         last_conversation_id = None
         conversation_begin_date = None
+        conversation_begin_time = None
         checked_sender_id = []
         for sender_id_index, sender_id in enumerate(sender_ids):
             if sender_id not in checked_sender_id:
@@ -139,9 +141,11 @@ class RasaChalogProcessor():
             for index, item in sub_df.iterrows():
                 if last_conversation_id is None or last_conversation_id != conversation_id:
                     conversation_begin_date = datetime.datetime.strptime(item["created_time"][:10], "%Y-%m-%d")
+                    conversation_begin_time = datetime.datetime.strptime(item["created_time"][11:], "%H:%M:%S")
                 message_index = item["index"]
                 rasa_chatlog_df.at[message_index, "conversation_id"] = conversation_id
                 rasa_chatlog_df.at[message_index, "conversation_begin_date"] = conversation_begin_date
+                rasa_chatlog_df.at[message_index, "conversation_begin_time"] = conversation_begin_time
 
                 last_conversation_id = conversation_id
 
