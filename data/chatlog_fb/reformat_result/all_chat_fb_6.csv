@@ -1,0 +1,800 @@
+,conversation_id,uc5,outcome,uc4,sender_id,user_message,bot_message,created_time
+0,3,,silence,,2584625094931834,Get Started,"Chào Thùy Dương, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-02T05:51:58+0000
+1,3,uc_s5.2,silence,,2584625094931834,shop cho e hỏi gia xe vovo gấp gọn 1 chiều nha,Sản phẩm bạn đang tìm có phải là?,2020-06-02T05:52:13+0000
+2,3,,silence,,2584625094931834,Xe Đẩy,"Sản phẩm  Xe Đẩy hãng sản xuất Vovo  có giá bán thấp nhất từ: *2,200,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-02T05:52:36+0000
+3,3,,other,,1454523434857990,,,
+4,9,,other,,1734523043236410,Get Started,,2020-06-02T07:35:26+0000
+5,9,,thank,,1734523043236410,E ơi,"Chào Thu Thủy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-02T07:35:28+0000
+6,9,,other,,1454523434857990,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",
+7,9,uc_s5.2,other,,1734523043236410,Tư vấn c xe đẩy cho bé giá dưới 1tr với,"Sản phẩm  Xe Đẩy giá 1tr  có giá bán thấp nhất từ: *850,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-02T07:35:45+0000
+8,9,,silence,,1454523434857990,,Hiện tại sản phẩm Xe Đẩy giá 1tr  shop đang có những *hãng sản xuất* sau ạ:,
+9,9,,,,1734523043236410,Joovy,"Sản phẩm  Xe đẩy đảo chiều gấp gọn Joovy Qatta S113 hãng sản xuất Joovy, giá 1tr  có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-02T07:36:10+0000
+10,9,,,,1454523434857990,,,
+11,9,,,,1734523043236410,Xe nằm cho bé sơ sinh ấy shop,,2020-06-02T07:37:01+0000
+12,9,,,,1734523043236410,K phải xe đẩy kiểu này,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,2020-06-02T07:37:07+0000
+13,9,,,,1734523043236410,Chat với nhân viên,xe nằm cho bé sơ sinh k có loại duwosi 1 triệu đâu ạ,2020-06-02T07:37:28+0000
+14,16,,,uc_s4.2,2037877336278437,Xe đẩy umoo còn k ạ?,mk còn ạ 750k,2020-06-02T15:12:19+0000
+15,22,uc_s5.2,,,1476585065791295,Cái bảng hola thì bn b,,2020-06-03T02:04:19+0000
+16,22,,,,1476585065791295,Có nam châm dính ko hay chỉ viết thôi,,2020-06-03T02:04:33+0000
+17,23,uc_s5.2,,,2869775669730192,Xe đẩy gấp gọn Vinng mẫu mới nhất là của năm bnhieu ạ,,2020-06-02T12:04:27+0000
+18,23,,,,2869775669730192,Xe đẩy kèm theo những j ạ,mình ko còn VINNG ạ,2020-06-02T12:04:42+0000
+19,23,,,,2869775669730192,,,2020-06-03T02:16:19+0000
+20,23,,other,,2869775669730192,Dạ,,2020-06-03T02:16:19+0000
+21,25,,,,1823938154327596,shop ơi,,2020-06-02T11:34:36+0000
+22,25,,,uc_s4.2,1823938154327596,cho mình hỏi bên mình còn xe đạp 3 bánh naddle ko shop ?,mình ko còn ạ,2020-06-02T11:34:51+0000
+23,25,,,,1823938154327596,ukie cảm ơn shop nhé,Cảm ơn bạn!,2020-06-03T02:31:36+0000
+24,30,uc_s5.1,,,4015050185201891,"Shop ơi, trên mình có địu cho bé không? Và có những loại và giá như nào? Shop nhắn giúp mình nhé",Hiện tại sản phẩm Địu   shop đang có những *giá* sau ạ:,2020-06-03T03:47:53+0000
+25,30,,,,4015050185201891,Sao cũng được!,Hiện tại sản phẩm Địu   shop đang có những *màu* sau ạ:,2020-06-03T03:48:39+0000
+26,30,,,,4015050185201891,Hồng,Hiện tại sản phẩm Địu  Hồng  shop đang có những *hãng sản xuất* sau ạ:,2020-06-03T03:48:54+0000
+27,30,,,,4015050185201891,Sao cũng được!,Hiện tại sản phẩm Địu  Hồng  shop đang có những *độ tuổi sử dụng* sau ạ:,2020-06-03T03:49:02+0000
+28,30,,,,4015050185201891,0-36 Tháng,"Hiện tại sản phẩm Địu  Hồng, độ tuổi sử dụng 0-36 Tháng  shop đang có những *kích thước* sau ạ:",2020-06-03T03:49:10+0000
+29,30,,,,4015050185201891,Sao cũng được!,bạn xem dùm mk,2020-06-03T03:49:22+0000
+30,30,,,,1454523434857990,,https://shopee.vn/search?keyword=%C4%91%E1%BB%8Bu&shop=36371562,
+31,30,,,,4015050185201891,,,2020-06-03T04:04:45+0000
+32,33,uc_s5.1,,,1939147366104320,báo giá giúp m bộ này,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",2020-06-03T04:31:40+0000
+33,33,,,,1939147366104320,,"Sản phẩm  Bàn ghế đa năng Lego Holla chính hãng / Mẫu Gấu  hiện shop đang có mức giá: *890,000 VND (giá gốc 1,400,000 VND)*.",2020-06-03T04:33:26+0000
+34,33,,,,1454523434857990,,,
+35,33,,,,1939147366104320,bàn này là loại khác hả b,,2020-06-03T04:40:46+0000
+36,33,,,,1939147366104320,,"Sản phẩm Bàn ghế chơi Lego đa năng cao cấp gấp gọn SMONEO  hiện shop đang có mức giá: *1,100,000 VND (giá gốc 1,890,000 VND)*.",2020-06-03T04:40:47+0000
+37,33,,,,1454523434857990,,,
+38,33,,,,1939147366104320,bàn đầu tiên 850k là k gập được đúng k b,,2020-06-03T04:42:39+0000
+39,34,,silence,,3124684960926084,Get Started,"Chào Lynn Nguyen, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-03T04:43:54+0000
+40,34,,,uc_s4.3,3124684960926084,shop còn ghế ăn dặm mastela hoạ tiết cáo nhỏ ko ạ ?,Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *giá* sau ạ:,2020-06-03T04:44:05+0000
+41,34,,,,3124684960926084,Sao cũng được!,Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *màu* sau ạ:,2020-06-03T04:44:37+0000
+42,34,,,,3124684960926084,Sao cũng được!,Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *trọng lượng* sau ạ:,2020-06-03T04:44:47+0000
+43,34,,,,3124684960926084,Sao cũng được!,Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *kích thước* sau ạ:,2020-06-03T04:44:55+0000
+44,34,,,,3124684960926084,Sao cũng được!,Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *độ tuổi sử dụng* sau ạ:,2020-06-03T04:45:04+0000
+45,34,,,,3124684960926084,Sao cũng được!,Dạ mời bạn tham khảo sản phẩm Ghế Ăn hãng sản xuất Mastela hiện có tại shop nhé!,2020-06-03T04:45:15+0000
+46,34,,,,1454523434857990,,,
+47,34,,,,3124684960926084,có ghế ăn mastela 1015 không ạ ?,Hiện tại sản phẩm Ghế Ăn hãng sản xuất Mastela  shop đang có những *giá* sau ạ:,2020-06-03T04:46:10+0000
+48,40,,,,1828419810617061,,,2020-06-03T09:16:27+0000
+49,40,,,,1828419810617061,Xe này bnh thế c,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-03T09:16:33+0000
+50,40,,,,1454523434857990,,,
+51,40,,,,1454523434857990,,...,
+52,40,,,,1828419810617061,cái này,"Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",2020-06-03T09:17:34+0000
+53,40,,,uc_s4.1,1828419810617061,Xe lắc k còn mẫu nào à c,"Sản phẩm  Xe Chòi Chân   có giá bán thấp nhất từ: *510,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-03T09:17:58+0000
+54,40,,,,1454523434857990,,,
+55,40,,,,1828419810617061,,,2020-06-03T09:20:59+0000
+56,40,,,,1828419810617061,Xe xanh ạ,Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,2020-06-03T09:21:00+0000
+57,40,,,,1454523434857990,,,
+58,40,,thank,,1828419810617061,Mình thấy còn mẫu,,2020-06-03T09:22:06+0000
+59,40,,,,1828419810617061,Bạn cho mình đătj qua đây đc k,Hiện tại sản phẩm Xe Đẩy  Xanh  shop đang có những *giá* sau ạ:,2020-06-03T09:22:18+0000
+60,40,,,,1828419810617061,Là sao ạ,,2020-06-03T09:22:59+0000
+61,51,,,,4006833302724537,,,2020-06-04T02:39:56+0000
+62,51,,,,4006833302724537,Giá bn b oie,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-04T02:39:59+0000
+63,51,,,,1454523434857990,,,
+64,51,,,,1454523434857990,,...,
+65,51,,,,4006833302724537,cái này,"Sản phẩm Đàn piano cổ điển kèm Mic Winfun 2045  hiện shop đang có mức giá: *950,000 VND (giá gốc 1,500,000 VND)*.",2020-06-04T02:42:49+0000
+66,51,,,,1454523434857990,,,
+67,51,,,,4006833302724537,Shopee giá 880.000 thì mình mua bên nào b ơi,à vâng bên mk mới gaimr giá,2020-06-04T02:43:26+0000
+68,51,,,,1454523434857990,,bạn mua fb hoặc shopee đều dk ạ,
+69,51,,,,4006833302724537,Oke vậy m mua luôn ở đây nha b,,2020-06-04T03:24:10+0000
+70,51,,,,4006833302724537,"Phạm ánh tuyết 
+152 trần đình xu, phường Nguyễn cư trinh quận 1 tp hcm 
+0935335669",,2020-06-04T03:24:21+0000
+71,51,,,,4006833302724537,Ship qua đây nữa thì tổng là bn,khoảng hơn 100k ạ,2020-06-04T03:24:29+0000
+72,51,,silence,,4006833302724537,Oke b,,2020-06-04T03:27:47+0000
+73,51,,,,4006833302724537,Vậy chốt cho m nha,,2020-06-04T03:27:53+0000
+74,51,uc_s5.2,other,,4006833302724537,Giá đàn 880.000 + phí ship trên 100.000 đúng ko b,bạn ck mình gửi nhe,2020-06-04T03:28:21+0000
+75,51,,,,4006833302724537,Giờ m Ck 880.000 pk b,,2020-06-04T03:28:57+0000
+76,51,,,,4006833302724537,Cho m stk,ok bạn nhe,2020-06-04T03:29:02+0000
+77,51,,silence,,1454523434857990,,"❌ 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ
+
+❌ 19034987361010 - Nguyễn Lê Thuỷ
+Ngân hàng Techcombank
+
+
+Nội dung chuyển khoản Snow Pham  ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi CK nhé.",
+78,51,,,,4006833302724537,Khoảng bao lâu m nhận được hàng ah,dạ khaonrg 5-7 ngày ạ,2020-06-04T03:29:21+0000
+79,83,,,,1454523434857990,,,
+80,83,,,,1454523434857990,,,
+81,83,,silence,,1454523434857990,,e còn mẫu này,
+82,83,,,,1454523434857990,,vâng,
+83,83,uc_s5.2,silence,,4506969552662036,"Mẫu này cũng giá 3,350,000 VND",vâng ạ e còn mẫu này thôi,2020-06-05T08:05:14+0000
+84,83,,,,1454523434857990,,vâng ạ e còn mẫu này thôi,
+85,83,,,,4506969552662036,,,2020-06-05T08:05:53+0000
+86,83,,,,4506969552662036,Mẫu này còn đúng không ạ?,,2020-06-05T08:06:03+0000
+87,83,,silence,,4506969552662036,Mẫu có cả bóng rổ ý ạ,ko ạ mẫu e vừa gửi thôi ạ,2020-06-05T08:06:14+0000
+88,83,,,,1454523434857990,,mẫu bóng rổ e hết r,
+89,83,,silence,,1454523434857990,,mẫu e gửi có phát nhạc ở xishc đu,
+90,83,,,,4506969552662036,,,2020-06-05T08:07:26+0000
+91,83,,,,4506969552662036,Còn 2 mẫu này,,2020-06-05T08:07:29+0000
+92,83,,other,,4506969552662036,"3,350k",,2020-06-05T08:07:36+0000
+93,83,,,,4506969552662036,Đúng ko bạn,vâng,2020-06-05T08:07:39+0000
+94,83,,,,4506969552662036,Bạn cho mình xin kích thước với,,2020-06-05T08:13:37+0000
+95,83,,,,4506969552662036,,1m8x2m c a,2020-06-05T08:13:49+0000
+96,83,,,,4506969552662036,,,2020-06-05T08:20:46+0000
+97,83,,,,4506969552662036,Cảm ơn shop,,2020-06-05T08:20:52+0000
+98,83,,other,,4506969552662036,Mình sẽ nt khi đặt hàng nhé,vâng ạ,2020-06-05T08:21:03+0000
+99,85,,,,2181209528639709,Get Started,"Chào Rin Ken, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-05T03:57:42+0000
+100,85,uc_s5.1,,,2181209528639709,Alo xe V3 bao nhiêu shop ơi,Sản phẩm bạn đang tìm có phải là?,2020-06-05T03:58:01+0000
+101,85,,,,2181209528639709,Xe Đẩy,Hiện tại sản phẩm Xe Đẩy   shop đang có những *giá* sau ạ:,2020-06-05T03:58:26+0000
+102,85,,,,2181209528639709,,,2020-06-05T03:59:32+0000
+103,85,,,,2181209528639709,Xe kiểu này V3,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-05T03:59:41+0000
+104,85,,,,1454523434857990,,,
+105,85,,,,1454523434857990,,...,
+106,85,,,,2181209528639709,Gửi cho mình mấy mẫu ghế ngồi ăn dặm nữa,,2020-06-05T08:50:53+0000
+107,85,,,,2181209528639709,Mình xem ok thì mình lấy luôn,Hiện tại sản phẩm Ghế Ăn   shop đang có những *giá* sau ạ:,2020-06-05T08:51:04+0000
+108,85,,,,2181209528639709,Sao cũng được!,,2020-06-05T08:51:21+0000
+109,85,,,,2181209528639709,,,2020-06-05T08:52:13+0000
+110,85,,,,2181209528639709,Dạng ghế này nhé,https://shopee.vn/-CH%C3%8DNH-H%C3%83NG-Gh%E1%BA%BF-%C4%91a-n%C4%83ng-HANBEI-(-full-b%C3%A1nh-xe-%C4%91%E1%BB%87m-l%C6%B0ng-H%C3%A0ng-nh%E1%BA%ADp-kh%E1%BA%A9u-ch%C3%ADnh-h%C3%A3ng-h%E1%BB%99p-ti%E1%BA%BFng-Anh-)-i.36371562.2711535629,2020-06-05T08:52:21+0000
+111,92,,,,2200979489976377,Bạn ơi,,2020-06-06T00:16:58+0000
+112,92,,,uc_s4.2,2200979489976377,Shop còn xe scooter nào k,,2020-06-06T00:17:07+0000
+113,94,,,,2630132590352422,B ơi,,2020-06-05T14:25:00+0000
+114,94,,thank,uc_s4.2,2630132590352422,Ghế ô tô Joie Stage bên b còn hàng ko,mình ko còn ạ,2020-06-05T14:25:13+0000
+115,103,,,,2273048092739002,,,2020-06-05T15:52:52+0000
+116,103,,,,2273048092739002,bên mình có sỉ mẫu này k ạ,mình bán lẻ =sỉ r ạ,2020-06-05T15:52:59+0000
+117,103,uc_s5.1,,,2273048092739002,mẫu này giá sao ạ,dạ 760k ạ,2020-06-06T03:41:11+0000
+118,104,uc_s5.3,other,,3364268720272309,xe đây chuột mickey có châm bi mau đỏ gia bn á shop ơi,mình không còn mẫu đó ạ,2020-06-06T04:25:20+0000
+119,107,,,,2211721262205103,,,2020-06-05T11:31:51+0000
+120,107,,,,2211721262205103,Tham nay con hang k b? Size bnhiu nhi?,mình không còn ạ,2020-06-05T11:32:02+0000
+121,107,,,uc_s4.2,2211721262205103,Shop con tham silicone k a,mình hết r ạ,2020-06-06T04:28:21+0000
+122,124,,,uc_s4.2,2000632963290799,M còn phao cổ cho bé sơ sinh ko ạ,mình không còn ạ,2020-06-07T01:35:37+0000
+123,130,uc_s5.1,,,2026301540780894,Cầu trượt e gửi ảnh chị ghi 13xx là Bn vậy c,,2020-06-07T10:56:54+0000
+124,130,,silence,,2026301540780894,Có sẵn k ah,,2020-06-07T10:57:02+0000
+125,130,,,,2026301540780894,C ib cho e,,2020-06-08T02:24:09+0000
+126,135,,,uc_s4.2,1453642688045073,Shop còn ghế ăn dặm Aria care ko ạ,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T04:20:53+0000
+127,135,,,,1453642688045073,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-08T04:21:15+0000
+128,135,,,,1454523434857990,,,
+129,135,,,,1454523434857990,,...,
+130,135,,,,1454523434857990,,mình khoonng còn ạ,
+131,135,,,,1453642688045073,Ok ạ,"Chào Diệu Vy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-08T04:22:07+0000
+132,142,,,uc_s4.2,1617978794922445,Bên mìh còn bán máy hút sữa của medela k??,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",2020-06-08T07:39:47+0000
+133,142,,,,1617978794922445,???,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T07:40:00+0000
+134,142,,,,1617978794922445,Không đúng!,"Sản phẩm Máy hút sữa điện đôi Avent Snow (Chính hãng - Cty Vạn An)  hiện shop đang có mức giá: *4,990,000 VND (giá gốc 6,950,000 VND)*.",2020-06-08T07:40:08+0000
+135,142,,,,1454523434857990,,,
+136,142,,,,1617978794922445,Mìh muốn hỏi máy hút sữa của medela,,2020-06-08T07:40:42+0000
+137,142,,,,1617978794922445,Trc mình đã từg mua sp bên bạn,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T07:40:53+0000
+138,142,,,,1617978794922445,Thấy rất tin tưởng,dạ hiện bên mình ko bán hút sữa medela r ạ,2020-06-08T07:40:57+0000
+139,142,,,,1617978794922445,Vậy àh,,2020-06-08T07:41:23+0000
+140,142,,,,1617978794922445,Tiếc nhỉ,,2020-06-08T07:41:26+0000
+141,142,,,,1617978794922445,:(,,2020-06-08T07:41:27+0000
+142,142,,,,1617978794922445,Bạn quen bên nào bán hàg chuẩn như bên bạn đã từg bán k?,0358640912 đây là số bạn bên hãng ạ,2020-06-08T07:41:42+0000
+143,142,,silence,,1454523434857990,,bạn call thử dùm mk ạ,
+144,142,,,,1617978794922445,Hàng mới hay like new vậy bạn?,vì lâu r bên mk ko bán nên ko rõ bên đó còn loại anof,2020-06-08T07:42:28+0000
+145,142,,,,1454523434857990,,b thử lhe ạ,
+146,142,,,,1617978794922445,Uki b,,2020-06-08T07:43:24+0000
+147,142,,,,1617978794922445,Thanks b nhé,vâng ạ,2020-06-08T07:43:28+0000
+148,144,uc_s5.1,,,2925041644199668,Xin giá máy giặt doux với,"💥 Máy giặt tự động mini DOUX cao cấp 
+GẤU & BÍ NGÔ KM CHỈ #2990K 
+
+Khối lượng giặt: 4kg
+
+. Độ ồn giặt <62bB, thân máy ổn định không rung lắc
+
+. Công suất: 350W siêu tiết kiệm điện năng
+
+. Kích thước: 39*44*72cm. Thiết kế máy thời trang và sang trọng, phù hợp đặt cực gọn ngay trong nhà tắm mà k tốn diện tích
+
+. Độ bền cao, tuổi thọ máy lớn với 1 NĂM BẢO HÀNH chính hãng tại Việt Nam.
+
+Thông tin chi tiết và ảnh thật các m,ẹ xem dùm mình link dưới nhe :
+
+https://www.facebook.com/shopgauvabingo/posts/2448311358812521",2020-06-07T09:56:46+0000
+149,144,,silence,,2925041644199668,Mình đặt bao giờ có hàng nhi,bạn ở đâu ạ,2020-06-08T03:45:25+0000
+150,144,,,,2925041644199668,Mình định công,dạ nếu b lấy mai hàng bên mk ve ạ,2020-06-08T05:32:33+0000
+151,144,,,,2925041644199668,Ok có gì tối mình báo,,2020-06-08T08:29:32+0000
+152,145,uc_s5.1,,,3156636967723353,Bộ này bao tiền shop ơi ?,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",2020-06-08T05:42:05+0000
+153,145,,,,1454523434857990,,Bạn đang trả lời bình luận của người dùng về bài viết trên Trang của mình. Xem bình luận.(https://facebook.com/1454523434857990/posts/2481992345444422/?comment_id=2484499995193657),
+154,145,,,,1454523434857990,,dạ 3390k ạ,
+155,145,,,,3156636967723353,cả chuồng cầu trượt ngựa,,2020-06-08T08:36:16+0000
+156,145,uc_s5.1,,,3156636967723353,Nếu mình chỉ mua chuồng và cầu trượt thì là bao nhiêu ?,mình ko bán rời cầu trượt r ạ,2020-06-08T08:36:40+0000
+157,145,,,,1454523434857990,,"Quây bóng Hola Vương miện chính hãng gồm 2 size: 1m6x 1m8 & 1m8 x 2m
+Full bộ gồm:
+
+. 01 quây bóng
+. 01 thảm chống 2 mặt XPE
+. bóng Pastel
+
+Size 1m6 x 1m8 Gấu & Bí Ngô giá KM chỉ 1750K
+Size 1m8 x 2m Gấu & Bí Ngô giá KM chỉ 1850K
+
+Ảnh Bạn Quân Dấu Tên tham khảo tại đây giúp mình:  
+
+https://www.facebook.com/shopgauvabingo/posts/2436360940007563",
+158,146,,,,1454523434857990,,vâng ạ,
+159,146,,,,4655795327779483,giao trc 4h giúp mình nhé,,2020-06-08T06:54:09+0000
+160,146,,,,4655795327779483,"mình lại k đủ tm ở nhà, bạn giao hàng m ktra rồi ck nhé",,2020-06-08T06:54:32+0000
+161,146,,thank,,4655795327779483,cho m xin stk luôn,"❌ 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ
+
+❌ 19034987361010 - Nguyễn Lê Thuỷ
+Ngân hàng Techcombank
+
+
+Nội dung chuyển khoản Đào Hoàng Oanh  ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi CK nhé.",2020-06-08T06:54:35+0000
+162,146,,,,4655795327779483,ok bạn,,2020-06-08T06:56:44+0000
+163,146,,,,4655795327779483,bạn ship hàng trc 4h nhé,vaag bên mk giao dk duwosi chân tòa nhà thôi b nh,2020-06-08T06:56:48+0000
+164,146,,,,4655795327779483,sau 4h k có người ở nhà,,2020-06-08T06:56:51+0000
+165,146,,,,4655795327779483,ok,,2020-06-08T06:56:52+0000
+166,146,,,uc_s4.3,4655795327779483,shop mình còn xe đẩy mamago compact 319 màu đen k nhỉ,,2020-06-08T07:00:48+0000
+167,146,,,,4655795327779483,giá tnao ạ,,2020-06-08T07:00:50+0000
+168,146,,,,4655795327779483,có hàng thì nhắn m nhé,,2020-06-08T07:03:21+0000
+169,146,,,,4655795327779483,mamago bảo hành tnao nhỉ,bảo hành 6 tháng ạ,2020-06-08T07:03:26+0000
+170,146,,,,4655795327779483,bảo hành tại shop đúng k ạ?,bảo hành tại hãng luôn c ạ,2020-06-08T07:04:04+0000
+171,146,,,,4655795327779483,"ok bạn, cứ ship cho mình cái ghế trc nhé",,2020-06-08T07:07:59+0000
+172,146,,,,4655795327779483,mình đã ck từ tài khoản Hoàng Phú Quý nhé,vâng ạ mình cảm ơn,2020-06-08T08:45:08+0000
+173,146,,,,4655795327779483,,,2020-06-08T08:45:44+0000
+174,146,,,,4655795327779483,có xe mamago compact thì nhắn m nhé,ok b ạ xe đó mk còn đỏ thôi ạ,2020-06-08T08:45:54+0000
+175,146,,,,4655795327779483,uh khi nào xe đen về ý,oki b,2020-06-08T08:46:17+0000
+176,158,,,,2209895182365535,,,2020-06-07T23:28:54+0000
+177,158,,other,,2209895182365535,Cho mình hỏi giá 3 sản phẩm này ạ,bàn ghế mk hết,2020-06-07T23:29:05+0000
+178,158,,,,1454523434857990,,kệ 1350k,
+179,158,,,,1454523434857990,,xích đu 1290k ạ,
+180,158,,,uc_s4.1,2209895182365535,Bên mình còn loại cầu trượt nào cho bé nữa k ạ,https://shopee.vn/C%E1%BA%A6U-TR%C6%AF%E1%BB%A2T-B%E1%BA%ACP-B%C3%8ANH-HOLLA-3IN1-i.36371562.7413613537,2020-06-09T01:53:55+0000
+181,159,,,,3099266850165938,,,2020-06-08T15:26:47+0000
+182,159,,,,3099266850165938,Báo giá giúp mình ạ,mk còn kệ 620k,2020-06-08T15:26:52+0000
+183,159,,,,3099266850165938,Có bàn ghế k ạ,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",2020-06-09T02:06:18+0000
+184,159,,,,3099266850165938,,,2020-06-09T02:07:47+0000
+185,159,,,,3099266850165938,Đây ạ,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-09T02:07:50+0000
+186,159,,silence,,1454523434857990,,,
+187,159,,,,1454523434857990,,...,
+188,159,,,,3099266850165938,Không có cái nào!,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,2020-06-09T02:08:35+0000
+189,159,,,,3099266850165938,Bộ mình gửi anh đó ạ,mình không còn ạ,2020-06-09T02:08:47+0000
+190,159,,silence,,3099266850165938,Ok,,2020-06-09T02:24:31+0000
+191,159,uc_s5.1,,,3099266850165938,Bộ đó tâmd mấy tiền v ạ,khoảng trên duwosi 1300k ạ,2020-06-09T02:24:41+0000
+192,159,,silence,,3099266850165938,Dạ mình cảm ơn,"Sản phẩm  Ghế Ô Tô hãng sản xuất Graco, giá 5m - 10m, độ tuổi sử dụng 2 Tuổi  có giá bán thấp nhất từ: *7,560,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:28:04+0000
+193,161,,,,1454523434857990,,,
+194,161,uc_s5.2,silence,,2971528689595051,Ghế ô tô giá dưới 5tr,"Sản phẩm  Ghế Ô Tô giá dưới 5tr  có giá bán thấp nhất từ: *4,320,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:33:04+0000
+195,161,,,,1454523434857990,,,
+196,161,uc_s5.3,,,2971528689595051,Ghế ô tô Graco giá dưới 5tr,"Dạ, sản phẩm Ghế Ô Tô hãng sản xuất Graco, giá dưới 5tr hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",2020-06-09T02:33:53+0000
+197,161,uc_s5.2,,,2971528689595051,Ghế ô tô cho trẻ em giá dưới 7tr,Hiện tại sản phẩm Ghế Ô Tô giá 7tr  shop đang có những *hãng sản xuất* sau ạ:,2020-06-09T02:34:54+0000
+198,161,,,,2971528689595051,Sao cũng được!,Hiện tại sản phẩm Ghế Ô Tô giá 7tr  shop đang có những *màu* sau ạ:,2020-06-09T02:35:20+0000
+199,161,,,,2971528689595051,Sao cũng được!,Hiện tại sản phẩm Ghế Ô Tô giá 7tr  shop đang có những *nơi sản xuất* sau ạ:,2020-06-09T02:35:26+0000
+200,161,,,,2971528689595051,Sao cũng được!,Dạ mời bạn tham khảo sản phẩm Ghế Ô Tô giá 7tr hiện có tại shop nhé!,2020-06-09T02:35:33+0000
+201,161,,,,1454523434857990,,,
+202,161,,,,2971528689595051,Bỉm cho trẻ 16 tháng,"Dạ mời bạn tham khảo sản phẩm Ghế Ô Tô giá 7tr, độ tuổi sử dụng Trẻ 16 Tháng hiện có tại shop nhé!",2020-06-09T02:36:43+0000
+203,161,,silence,,1454523434857990,,,
+204,161,,,,1454523434857990,,sr a bên e ko có bỉm,
+205,161,,,,1454523434857990,,e xin lỗi bên e đang test phân mềm trả lời tự động,
+206,161,,,,1454523434857990,,a muốn mua ghế ô tô klhoangr bn tiền ạ,
+207,161,,,,2971528689595051,"Ok, mình thấy bot hay dùng thử thôi bạn nhé. Tks.",vâng,2020-06-09T02:38:22+0000
+208,161,,silence,,2971528689595051,Ghế xe ô tô cho trẻ dưới 10 tuổi,,2020-06-09T02:40:03+0000
+209,163,,,,3362618307091539,Get Started,"Chào Tieu Cong Thang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-09T02:47:32+0000
+210,163,uc_s5.2,,,3362618307091539,ghế xe ô tô giá dưới 5 tr,Sản phẩm bạn đang tìm có phải là?,2020-06-09T02:48:37+0000
+211,163,,,,3362618307091539,Ghế Ô Tô,"Sản phẩm  Ghế Ô Tô giá dưới 5 tr  có giá bán thấp nhất từ: *4,320,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:49:13+0000
+212,163,,,,1454523434857990,,,
+213,163,uc_s5.2,,,3362618307091539,Ghế xe ô tô giá dưới 7 tr,"Sản phẩm  Ghế Ô Tô giá dưới 7 tr  có giá bán thấp nhất từ: *6,342,300 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:50:21+0000
+214,163,,,,1454523434857990,,Hiện tại sản phẩm Ghế Ô Tô giá dưới 7 tr  shop đang có những *hãng sản xuất* sau ạ:,
+215,163,,,,3362618307091539,sao cũng được,,2020-06-09T02:51:23+0000
+216,163,,,,3362618307091539,ghế ngồi ăn trên xe ô tô,bé nhà a bn tháng r ạ,2020-06-09T02:52:16+0000
+217,167,,,uc_s4.1,3147916835257493,Bên mình còn phao cổ k ạ,https://shopee.vn/Phao-c%E1%BB%95-Baby-Hop-CH%C3%8DNH-H%C3%83NG-i.36371562.947130771,2020-06-09T04:56:47+0000
+218,167,,,,3147916835257493,Còn size cho bé 6m 7kg k ạ,,2020-06-09T06:58:37+0000
+219,167,,,,3147916835257493,Màu xanh ạ,mình ko còn size nhỏ r ạ,2020-06-09T06:58:40+0000
+220,173,,silence,uc_s4.2,1925499867577574,Shop còn bán máy pha sữa Tiny baby ko,mk ko còn ạ,2020-06-09T08:55:12+0000
+221,181,uc_s5.2,,,1955625604563999,Xe lắc chòi chân holla giá bn vậy shop,dạ 779k ạ,2020-06-09T15:56:33+0000
+222,194,uc_s5.1,,,1474871625902822,Cho mình giá của thanh chắn cầu thang nghen shop,Hiện tại sản phẩm Thanh Nối Chặn   shop đang có những *giá* sau ạ:,2020-06-10T05:47:01+0000
+223,194,,,,1474871625902822,Và giá tông đơ doux,,2020-06-10T05:56:10+0000
+224,194,,,,1474871625902822,Giá ntn ạ,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-10T05:56:19+0000
+225,194,,shipping_order,,1474871625902822,Minhd muốn xin giá của thanh chắn và tông đơ,,2020-06-10T05:58:17+0000
+226,194,,,,1474871625902822,,Sản phẩm bạn đang tìm có phải là?,2020-06-10T05:58:19+0000
+227,194,,silence,,1474871625902822,Thanh Chắn Giường,Hiện tại sản phẩm Thanh Chắn Giường   shop đang có những *giá* sau ạ:,2020-06-10T06:01:05+0000
+228,194,,,,1474871625902822,Thanh chắn cầu thang chứ,Hiện tại sản phẩm Thanh Nối Chặn   shop đang có những *giá* sau ạ:,2020-06-10T06:01:31+0000
+229,194,,,,1474871625902822,100K - 500K,Dạ mời bạn tham khảo sản phẩm hiện có tại shop nhé!,2020-06-10T06:02:34+0000
+230,194,,shipping_order,,1454523434857990,,,
+231,196,,,,2925795474207970,Get Started,,2020-06-10T07:00:02+0000
+232,196,,,,2925795474207970,Hi shop,"Chào Do Thu Trang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-10T07:00:06+0000
+233,196,uc_s5.2,,,2925795474207970,Cho m xin báo giá xe lắc holla,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",2020-06-10T07:00:19+0000
+234,196,,,,1454523434857990,,"Sản phẩm  Xe Chòi Chân hãng sản xuất Holla  có giá bán thấp nhất từ: *510,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",
+235,196,,,,1454523434857990,,,
+236,216,,,,2705623442806274,/restart,,2020-06-10T02:56:41+0000
+237,216,,,,2705623442806274,/restart,,2020-06-10T02:57:20+0000
+238,216,,,uc_s4.2,2705623442806274,Bên shop còn máy pha sữa tiny baby ko,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-10T02:57:42+0000
+239,216,,,,2705623442806274,/restart,,2020-06-11T06:11:53+0000
+240,216,,silence,,2705623442806274,giá bao nhiêu shop,,2020-06-11T06:12:00+0000
+241,216,,,,2705623442806274,,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,2020-06-11T06:12:02+0000
+242,216,,,,2705623442806274,cái này giá bao nhiêu,,2020-06-11T06:12:23+0000
+243,216,,silence,,2705623442806274,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-11T06:12:25+0000
+244,216,,,,1454523434857990,,,
+245,216,,silence,,1454523434857990,,...,
+246,216,,,,2705623442806274,cái này,"Dạ, sản phẩm hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",2020-06-11T06:12:46+0000
+247,219,,silence,uc_s4.1,2046348648739431,Shop ơi còn đàn này ko,dạ mình còn hàng nha bạn,2020-06-11T04:28:56+0000
+248,219,,,,2046348648739431,Ship cho em 1 đàn đến 36 trần quốc toản quận hải châu đà nẵng nhé,,2020-06-11T06:40:46+0000
+249,219,,other,,2046348648739431,0935793977,,2020-06-11T06:40:50+0000
+250,219,,,,2046348648739431,Gửi lại hình giúp em nhé,"Dạ địa chỉ này Đặng Ngọc Tú Uyên vui lòng chuyển khoản 50% hoặc 100% giá trị đơn hàng dùm mình-bên mình gửi VIETELL
+Bạn ck tiền hàng - tiền ship bạn thanh toán khi nhận ạ .
+Hoặc bạn đặt shopee nếu cần COD
+https://shopee.vn/shopgaubingo",2020-06-11T06:41:04+0000
+251,219,,,,2046348648739431,Cho em stk nhé,"❌ 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ
+
+
+Nội dung chuyển khoản Đặng Ngọc Tú Uyên  ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi CK nhé.",2020-06-11T08:08:42+0000
+252,222,,other,uc_s4.2,3199786623437583,Bên mình còn xe đẩy đảo chiều vinng ko,mình không còn ạ,2020-06-11T18:03:15+0000
+253,229,uc_s5.2,,,3124583800887634,Add cho em hỏi giá ghế umoo,dạ 570k ạ,2020-06-12T01:57:11+0000
+254,229,,,,3124583800887634,Hanbei thì sao add,450k ạ,2020-06-12T01:58:15+0000
+255,229,,,,3124583800887634,Ship tây ninh nhiêu add,khoảng trên dưới 100k ạk,2020-06-12T02:00:20+0000
+256,236,,,,3034624113311743,Bắt đầu,,2020-06-12T06:59:32+0000
+257,236,,,,3034624113311743,Quây cao cấp hình ngôi nhà Toys House CHÍNH HÃNG TH319-142B,"Chào Hoang Anh Kim, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-12T06:59:35+0000
+258,236,,silence,uc_s4.1,3034624113311743,bên mình còn hàng này ko em ?,"Sản phẩm  Quây góc vuông cánh nhỏ hình ngôi nhà hãng sản xuất Toys House  có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-12T06:59:45+0000
+259,236,,,,1454523434857990,,,
+260,236,,,,1454523434857990,,"Sản phẩm  Quây góc vuông cánh nhỏ hình ngôi nhà hãng sản xuất Toys House  có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",
+261,236,,,,1454523434857990,,,
+262,236,,,,3034624113311743,Quây Toys House,,2020-06-12T07:09:16+0000
+263,236,,,,3034624113311743,tư vấn em ơi,"Sản phẩm  Quây góc vuông cánh nhỏ hình ngôi nhà hãng sản xuất Toys House  có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-12T07:09:21+0000
+264,236,,silence,,1454523434857990,,,
+265,236,,,,1454523434857990,,"Mẫu NGÔI NHÀ - Quây bóng Toys House gồm 3 size.
+
+. Kích thước 100cm x 132cm x 60cm (gồm 11 cánh và 1 cửa) 
+-Gấu & Bí Ngô KM chỉ #990k
+
+. Kích thước 132cm x 132cm x 60cm (gồm 13 cánh và 1 cửa)- Gấu & Bí Ngô KM chỉ #1290k
+
+ Kích thước 132cm x 165cm x 60cm(gồm 15 cánh và 1 cửa ) -Gấu & Bí Ngô KM chỉ #1390k
+
+
+Ảnh thật đây ạ: https://www.facebook.com/1454523434857990/posts/2191143281195998?sfns=mo
+
+NẾU CÁC MẸ MUỐN FREE SHIP TOÀN QUỐC ĐẶT LINK DƯỚI DÙM MÌNH NHE : 
+https://tiki.vn/quay-cao-cap-hinh-ngoi-nha-toys-house-chinh-hang-th319-102b-p48489553.html?src=search&2hi=0&keyword=Qu%C3%A2y+cao+c%E1%BA%A5p+h%C3%ACnh+ng%C3%B4i+nh%C3%A0+Toys+House+CH%C3%8DNH+H%C3%83NG
+
+https://tiki.vn/quay-cao-cap-hinh-ngoi-nha-toys-house-chinh-hang-th319-122b-p48490900.html?src=search&2hi=0&keyword=Qu%C3%A2y+cao+c%E1%BA%A5p+h%C3%ACnh+ng%C3%B4i+nh%C3%A0+Toys+House+CH%C3%8DNH+H%C3%83NG
+
+https://tiki.vn/quay-cao-cap-hinh-ngoi-nha-toys-house-chinh-hang-th319-142b-p48490570.html?src=search&2hi=0&keyword=Qu%C3%A2y+cao+c%E1%BA%A5p+h%C3%ACnh+ng%C3%B4i+nh%C3%A0+Toys+House+CH%C3%8DNH+H%C3%83NG",
+266,242,,,,3922952747778447,Get Started,"Chào Liên Nguyễn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-12T09:06:58+0000
+267,242,,,uc_s4.2,3922952747778447,Chị ơi chị còn máy xay hấp babycook hoặc fatz k ạ?,"Sản phẩm  Máy Xay hãng sản xuất Fatz  có giá bán thấp nhất từ: *1,050,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-12T09:07:23+0000
+268,242,,,,1454523434857990,,,
+269,246,uc_s5.2,other,,2262293830555829,Xe day beleco bn vay shop,mình không còn ạ,2020-06-13T00:36:57+0000
+270,258,uc_s5.2,,,2423278687772141,B ơi bập bênh holla giá bnhieu,cầu trượt bập bênh 3 in 1 đang có giá 490k ạ,2020-06-13T09:26:16+0000
+271,260,,,,2050793925013028,shop ơi,,2020-06-11T10:21:51+0000
+272,260,,,uc_s4.2,2050793925013028,bên shop còn xe naddle 3 in1  k ạ,,2020-06-11T10:21:58+0000
+273,261,,,,2050793925013028,https://www.facebook.com/1454523434857990/posts/2487941704849486/?d=n,,2020-06-14T08:38:39+0000
+274,261,uc_s5.1,,,2050793925013028,Shop oie xe này bn ạ,,2020-06-14T08:38:44+0000
+275,261,,silence,,2050793925013028,,,2020-06-14T08:41:52+0000
+276,291,,,,2500067176780569,Bạn ơi,,2020-06-10T09:23:38+0000
+277,291,,,uc_s4.1,2500067176780569,Bộ bàn lego còn ko bạn,,2020-06-10T09:23:44+0000
+278,291,,,,2500067176780569,giá bao nhiêu ạ?,Sản phẩm bạn đang tìm có phải là?,2020-06-10T09:23:49+0000
+279,291,,,,2500067176780569,Bộ Bàn Ghế,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-10T09:24:47+0000
+280,291,,,,2500067176780569,Không đúng!,"Sản phẩm  Bộ Bàn Ghế   có giá bán thấp nhất từ: *890,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-10T09:24:57+0000
+281,291,,,,1454523434857990,,,
+282,292,uc_s5.2,,,2500067176780569,báo giá giúp mình ẦU TRƯỢT BẬP BÊNH HOLLA 3IN1,Sản phẩm bạn đang tìm có phải là?,2020-06-15T07:55:13+0000
+283,292,,,,2500067176780569,Cầu Trượt,"Sản phẩm  Cầu Trượt hãng sản xuất Holla  có giá bán thấp nhất từ: *1,982,500 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-15T07:56:01+0000
+284,292,,silence,,1454523434857990,,,
+285,292,,,,2500067176780569,không phải bạn ơi,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,2020-06-15T07:57:27+0000
+286,292,,,,2500067176780569,HOLLA 3IN1 b ơi,"Sản phẩm  Cầu Trượt hãng sản xuất Holla  có giá bán thấp nhất từ: *1,982,500 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-15T07:57:41+0000
+287,292,,,,1454523434857990,,,
+288,296,,,uc_s4.1,1552317654789605,nhà chị còn thanh chắn giường ko?,"Thanh chắn giường UMOO có giá cụ thể như sau:
+
+1m6 giá 370K / thanh
+1m8 giá 400K / thanh
+2m giá 430K/ thanh
+2m2 460k/thanh
+
+
+Video sản phẩm tham khảo tại đây: https://www.facebook.com/1454523434857990/posts/2191678854475774?sfns=mo",2020-06-14T10:43:53+0000
+289,296,,,,1552317654789605,cho e 1 thanh 2m nhé,,2020-06-16T01:13:41+0000
+290,296,,shipping_order,,1552317654789605,ship về Phương mai cho e,,2020-06-16T01:13:51+0000
+291,296,,,,1552317654789605,Ship sau 5h chiều đc ko chị?,sr b mk hết hàng r ạ,2020-06-16T01:14:03+0000
+292,296,,,,1552317654789605,,,2020-06-16T01:43:12+0000
+293,308,,,,3090170581060440,Bắt đầu,,2020-06-16T02:10:46+0000
+294,308,,,,3090170581060440,,"Chào Nguyen Thuy Dung, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-16T02:10:50+0000
+295,308,uc_s5.1,,,3090170581060440,cho m xin giá bộ này ah,"Sản phẩm Bàn học, bản chơi lắp ghép Lego cao cấp  hiện shop đang có mức giá: *995,000 VND (giá gốc 1,750,000 VND)*.",2020-06-16T02:10:55+0000
+296,308,,,,1454523434857990,,,
+297,308,,,,3090170581060440,32 miếng sếp ah shiop,vâng,2020-06-16T02:12:56+0000
+298,308,,,,1454523434857990,,870k b ạ,
+299,311,,,,3378698615474077,Get Started,"Chào Đào Nguyễn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-16T02:29:12+0000
+300,311,uc_s5.2,,,3378698615474077,Shop cho mình hỏi xe đẩy vinng bn?,"Sản phẩm  Xe Đẩy hãng sản xuất Vinng  có giá bán thấp nhất từ: *1,390,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-16T02:29:30+0000
+301,311,,other,,1454523434857990,,,
+302,311,,,,3378698615474077,Mình hỏi xe đẩy đảo chiều gấp gọn,,2020-06-16T02:31:27+0000
+303,311,,,,3378698615474077,,mình còn mẫu khác thôi ạ,2020-06-16T02:31:32+0000
+304,311,,,,1454523434857990,,"Sản phẩm Xe đẩy đảo chiều gấp gọn VINNG  hiện shop đang có mức giá: *1,390,000 VND (giá gốc 2,500,000 VND)*.",
+305,311,,,,1454523434857990,,,
+306,311,,silence,,3378698615474077,Có màu đỏ ko shop?,https://facebook.com/1454523434857990_2490314381278885,2020-06-16T02:32:13+0000
+307,311,,,,1454523434857990,,mk còn mẫu này thôi ạ,
+308,316,,,,1686670464705634,,,2020-06-16T02:41:41+0000
+309,316,,,,1686670464705634,Shop còn k ạ,mình còn ạ,2020-06-16T02:41:44+0000
+310,316,,,,1686670464705634,Giá sao v shop,,2020-06-16T04:10:34+0000
+311,316,,,,1686670464705634,Ship về qng ah,riêng máy alf 1510k,2020-06-16T04:10:43+0000
+312,316,,,,1454523434857990,,thêm tiệt trùng là 1710k ạ,
+313,316,,,,1686670464705634,Ship tỉnh giá sao an,,2020-06-16T04:11:51+0000
+314,316,uc_s5.1,,,1686670464705634,Máy này tiệt trùng đc bnhiu bình sữaaj,"Dạ địa chỉ này Vu Duyen vui lòng chuyển khoản 50% hoặc 100% giá trị đơn hàng dùm mình-bên mình gửi VIETELL
+Bạn ck tiền hàng - tiền ship bạn thanh toán khi nhận ạ .
+Hoặc bạn đặt shopee nếu cần COD
+https://shopee.vn/shopgaubingo
+https://shopee.vn/quan01683242286
+HOẶC
+Tiki : https://tiki.vn/cua-hang/gau-bi-ngo",2020-06-16T04:12:32+0000
+315,324,,silence,,2892220344222201,Get Started,"Chào Tô Thủy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-16T08:24:46+0000
+316,324,,,,2892220344222201,,,2020-06-16T08:24:56+0000
+317,324,,silence,,2892220344222201,,,2020-06-16T08:25:00+0000
+318,324,,,,2892220344222201,Shop còn xe này ko ạ,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-16T08:25:07+0000
+319,324,,,,1454523434857990,,,
+320,324,,,,1454523434857990,,...,
+321,324,,,uc_s4.1,2892220344222201,Shop ko còn loại xe t gửi à,Sản phẩm bạn đang tìm có phải là?,2020-06-16T08:26:09+0000
+322,324,,,,2892220344222201,,,2020-06-16T08:26:56+0000
+323,324,,,,2892220344222201,Xe như này mà shop,mình ko còn ạ,2020-06-16T08:27:03+0000
+324,324,,,,2892220344222201,,,2020-06-16T08:27:16+0000
+325,343,,,,2437026813066784,Bắt đầu,"Chào Thanh Bui, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-17T05:19:24+0000
+326,343,uc_s5.1,,,2437026813066784,Cho biết  giá  của  ghế,"Mình chưa xác định được món đồ bạn hỏi, bạn mô tả rõ hơn giúp mình nhé!",2020-06-17T05:19:53+0000
+327,343,,,,2437026813066784,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-17T05:21:57+0000
+328,343,,,,1454523434857990,,,
+329,343,,,,1454523434857990,,...,
+330,347,,,,3902067819863342,Get Started,"Chào Như Lài, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-17T06:35:57+0000
+331,347,,,,3902067819863342,,Bạn đang tìm kiếm thông tin gì ạ?,2020-06-17T06:36:04+0000
+332,347,uc_s5.1,,,3902067819863342,Cho e hoi tham nay giá bao nhiu zay shop,"Sản phẩm CẦU TRƯỢT BẬP BÊNH HOLLA 3IN1  hiện shop đang có mức giá: *550,000 VND (giá gốc 800,000 VND)*.",2020-06-17T06:36:19+0000
+333,347,,silence,,1454523434857990,,,
+334,347,,,,3902067819863342,Cho e xin giá tham,,2020-06-17T06:39:15+0000
+335,347,,,,3902067819863342,,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-17T06:39:23+0000
+336,347,,silence,,1454523434857990,,,
+337,347,,,,1454523434857990,,...,
+338,347,,,,1454523434857990,,dạ thảm 330k ạ,
+339,361,uc_s5.2,,,3103396669686392,Xin giá xe đấy đảo chiều Tomorow?,dạ 1300k ạ,2020-06-17T10:49:00+0000
+340,364,,,,4272049099473736,Chào bạn ạ,,2020-06-17T11:31:53+0000
+341,364,,,,4272049099473736,bạn ơi bạn cho mình hỏi,,2020-06-17T11:31:57+0000
+342,364,,,,4272049099473736,,,2020-06-17T11:32:05+0000
+343,364,uc_s5.1,,,4272049099473736,mẫu xe này giá bn ạ?,dạ 1290k ạ,2020-06-17T11:32:12+0000
+344,364,,,,4272049099473736,Dạ,,2020-06-18T01:57:33+0000
+345,364,uc_s5.1,,,4272049099473736,Giá này đã bao gồm đai bảo vệ chưa ạ?,dạ gồm r b ạ,2020-06-18T01:57:45+0000
+346,364,,,,4272049099473736,Dạ,,2020-06-18T01:59:11+0000
+347,364,,,,4272049099473736,Bạn ơi,,2020-06-18T01:59:13+0000
+348,364,,,,4272049099473736,Mình ở HN thì ship là bn ạ?,cho mk đc cụ thể,2020-06-18T01:59:22+0000
+349,364,,,,4272049099473736,"Dạ, mình ở Phạm Huy Thông, Ngọc Khánh, Ba Đình, HN ạ",,2020-06-18T02:01:18+0000
+350,364,,,,4272049099473736,Bạn ktra giúp mình,dạ ship 35k b ạ,2020-06-18T02:01:24+0000
+351,364,,,,4272049099473736,Dạ,,2020-06-18T02:01:50+0000
+352,364,,,,4272049099473736,Bên bạn còn màu đỏ ko ạ?,mk còn ạ,2020-06-18T02:01:56+0000
+353,364,,silence,,4272049099473736,Bạn đợi mình xíu nhé,,2020-06-18T02:03:32+0000
+354,364,,,,4272049099473736,Mình hỏi lại màu r báo bạn ạ,okie b nhe,2020-06-18T02:03:38+0000
+355,378,uc_s5.1,silence,,1882167655225013,Xe này nặng bn kg hả shop?,Sản phẩm bạn đang tìm có phải là?,2020-06-18T06:48:20+0000
+356,378,uc_s5.1,,,1882167655225013,Xe này bn cân bạn,Sản phẩm bạn đang tìm có phải là?,2020-06-18T06:49:05+0000
+357,379,,,,2989458507819393,E muốn đặt 1 xe này màu vàng,,2020-06-17T08:29:31+0000
+358,379,,,,2989458507819393,Bên shop có sẵn k ạ,mai bên mk về ạ,2020-06-17T08:29:41+0000
+359,379,,,,1454523434857990,,b cần giao ve đâu ah],
+360,379,,,,2989458507819393,Vâng ship cho e đến số 39 ngõ 140 nghĩa dũng ạ,ship 30k nha b,2020-06-17T08:30:14+0000
+361,379,,,,1454523434857990,,cho mk sdt,
+362,379,,,,2989458507819393,0829939331 sđt mình đây ạ,,2020-06-17T08:30:57+0000
+363,379,uc_s5.1,,,2989458507819393,Xe này giá bn bạn nhỉ,oki b,2020-06-17T08:31:04+0000
+364,379,,,,1454523434857990,,dạ 520k ạ,
+365,379,,,,2989458507819393,Vâng thế ship đến nơi bạn cứ gọi cho mình nhé,ok b,2020-06-17T08:33:05+0000
+366,379,,,,1454523434857990,,sr b xe bên mk còn màu xanh thôi ạ,
+367,379,,,,2989458507819393,Khi nào thì có màu vàng ạ :(,mình chưa có lịch ve ạh,2020-06-17T08:37:28+0000
+368,379,,,,2989458507819393,Trước 28/6 sẽ k có đúng k ạ,mình chưa có lịch về ý ạ,2020-06-17T08:40:06+0000
+369,379,,,,2989458507819393,Thế mình lấy màu xanh cũg đc ạ,ok b,2020-06-17T08:44:47+0000
+370,379,,,,2989458507819393,Khi nào bên bạn ship ạ,Chiều hàng về mk giao b nhé,2020-06-18T06:09:44+0000
+371,379,,other,,1454523434857990,,Trc 6h dk k ạ vì tầm đó hàng bên mk ms ve,
+372,379,,,,2989458507819393,Đc bạn nhé,oki b,2020-06-18T06:41:52+0000
+373,389,,other,uc_s4.1,1803470979778000,E ơi còn thanh chặn cửa ko e?,"Thanh chắn cửa/ cầu thang an toàn có giá 520K/ thanh Nga Hong Mai nhé
+
+Có thể điều chỉnh chiều ngang từ 74cm tới 83cm (cao 77cm). Nếu thiếu mua thêm thanh nối 12cm giá 140K / thanh nối 36cm giá 280K nhé
+
+Xem chi tiết các kích thước cửa cần lắp tại đây: https://www.facebook.com/1454523434857990/posts/2089132531397074/
+
+Lắp đặt cực đơn giản xem tại đây: 
+https://www.facebook.com/watch/?v=2169930109731549",2020-06-18T13:16:52+0000
+374,406,,,,2482724818405016,Có nệm mái che đầy đủ k ạ,Sản phẩm bạn đang tìm có phải là?,2020-06-19T05:05:46+0000
+375,406,,silence,,2482724818405016,Là xe Tomorrow ấy,,2020-06-19T05:07:05+0000
+376,406,,,,2482724818405016,Shop cho biết thông tin đi ạ để em đặt xe của shop mình bên shope,mk hết pkien r ạ,2020-06-19T06:50:43+0000
+377,406,,,,1454523434857990,,còn mẫu ko kèm pk 1060k,
+378,406,,,,2482724818405016,Mẫu 1060k k có màn che luôn phải k ạ,ko b ạ,2020-06-19T06:51:54+0000
+379,406,,thank,,2482724818405016,Đặt shopee hay đặt ở đây giao nhanh hơn ạ,,2020-06-19T08:32:02+0000
+380,406,,,,2482724818405016,"M1.21-05 Jamona city, đường đào trí, phú thuận, quận 7 tp hcm",như nhau thôi ạ,2020-06-19T08:32:45+0000
+381,406,uc_s5.1,,,2482724818405016,Tiền ship xe đó vào địa chỉ đó bao nhiêu ạ,khoảng trên dưới 120k b ạ,2020-06-19T08:51:33+0000
+382,406,,,,2482724818405016,Shop tính giúp ak,,2020-06-19T08:52:01+0000
+383,406,,,,2482724818405016,Em đặt luôn ạ,bạn ck hay đặt shopee ạ,2020-06-19T08:52:14+0000
+384,406,,,,2482724818405016,Ship cod ạ,nếu cần cod bạn đặt qua shopee dùm mk,2020-06-19T08:53:25+0000
+385,406,,,,2482724818405016,,vâng ạ,2020-06-19T08:57:35+0000
+386,406,,,,2482724818405016,Shop ghi thêm giúp em thêm sđt này nữa lỡ k gọi đc 0912104497 do nhà em hay mất sóng,,2020-06-19T08:58:28+0000
+387,406,,,,2482724818405016,Shop ship nhanh giúp em nhé,dạ vận chuyển là do shopee giao b ạ,2020-06-19T09:01:56+0000
+388,406,,,,1454523434857990,,mk k tham gia vào vận chueyenr dk ạ,
+389,406,,,,2482724818405016,,,2020-06-19T09:14:18+0000
+390,409,uc_s5.1,,,2205163992876378,Ib m giá xe này shop ơi,,2020-06-19T10:17:03+0000
+391,409,,,,2205163992876378,https://www.facebook.com/1454523434857990/posts/2491958467781143/,,2020-06-19T10:17:06+0000
+392,441,uc_s5.2,,,2515501468512576,Xe đẩy tomorrow giá bn shop?,mih ko còn ạ,2020-06-20T16:19:20+0000
+393,443,,,,2896458623786240,Có ai chat được bây giờ không?,,2020-06-20T17:50:46+0000
+394,443,uc_s5.1,,,2896458623786240,Cho em hỏi giá xe tập đi ạ,cho mk ảnh sp ạ,2020-06-20T17:50:59+0000
+395,443,,,,2896458623786240,EMm hỏi xe tập đi ạ,,2020-06-22T02:03:57+0000
+396,443,,,,2896458623786240,hôm qua chắc bên shop nghỉ nên em mua bên khác. Lần sau ủng hộ shop sau nhé. em cảm ơn!,vâng ạ,2020-06-22T02:04:33+0000
+397,444,uc_s5.1,,,2893445347386631,Em lấy luôn 2 mã này shop tính tiền luôn giúp em nhé,https://shopee.vn/%C4%90ai-xe-m%C3%A1y-c%C3%B3-ph%E1%BA%A3n-quang-m%E1%BA%ABu-m%E1%BB%9Bi-2019-i.36371562.2435092373,2020-06-18T07:15:15+0000
+398,444,,silence,,1454523434857990,,đai mk còn mẫu này,
+399,444,,,,1454523434857990,,mk còn đủ 2 màu,
+400,444,,,,1454523434857990,,3390+139+130=3659k sj,
+401,444,,,,2893445347386631,Em lấy màu xanh ạ,vâng,2020-06-18T07:22:14+0000
+402,444,,,,2893445347386631,,,2020-06-18T10:19:43+0000
+403,444,,,,2893445347386631,Shop xem nhận đc chưa ạ,,2020-06-18T10:20:18+0000
+404,444,,,,2893445347386631,Em ko lấy bộ quay nhựa với đai thôi ạ,,2020-06-18T10:20:58+0000
+405,444,,,,2893445347386631,Bộ đồ chơi em ko lấy nữa ạ,,2020-06-18T10:21:19+0000
+406,444,,,,2893445347386631,"Em nhắn nhầm , em lấy bộ quây nhựa với đai cho bé nhé",ok b nhe,2020-06-18T10:30:02+0000
+407,444,,,,1454523434857990,,hôm nay mk gửi nhe,
+408,444,,,,2893445347386631,Vâng,bạn ơi mình xin lỗi hnay snhaan viên bên mk quên k đóng đai xe máy,2020-06-19T01:49:20+0000
+409,444,,,,1454523434857990,,hôm nay mk gửi viettel cho b nhe,
+410,444,,,,2893445347386631,Gửi bên viettel họ giao đến tận nhà ạ.,,2020-06-19T09:22:15+0000
+411,444,,,,2893445347386631,"Em cũng ko cần gấp ko mai shop gửi xe cũng đc , tại nhà em ngay mặt đg lấy cũng tiện ạ",vâng  bộ holla bên mình gwuir từ trưa r ạ,2020-06-19T09:23:32+0000
+412,444,,,,2893445347386631,Vâng,,2020-06-19T09:45:29+0000
+413,444,,,,2893445347386631,Em nhận đc quây nhựa rồi,,2020-06-20T10:16:37+0000
+414,444,,,,2893445347386631,Mà shop ko gửi đai đeo ngồi xe máy cho em à,mình báo bên mình quên chưa đóng hàng r đó ạ,2020-06-20T10:17:02+0000
+415,444,,,,1454523434857990,,bên mk gửi viettel cho bạn từ t7 r bạn,
+416,449,uc_s5.2,other,,3305083622855631,shop cho mình hỏi xe đẩy đảo chiều - TOMORROW giá tn ạ,1060k b ạ,2020-06-20T01:53:25+0000
+417,449,,other,,3305083622855631,Vâng ạ,,2020-06-20T01:57:11+0000
+418,449,,other,,3305083622855631,Xe này so với dòng V5 đảo chiều thì có ưu điểm gì hơn k shop,,2020-06-20T01:57:29+0000
+419,449,,,,3305083622855631,Mình đang phân vân khi lựa 1 trong 2 dòng này,v5 bên mnhf lại ko có,2020-06-20T01:57:57+0000
+420,449,,,,1454523434857990,,nhưng loại này thì ngả dk ạ,
+421,449,,,,3305083622855631,Vâng ạ,,2020-06-20T02:00:44+0000
+422,449,,,,3305083622855631,địa chỉ cửa hàng nhà mình ở đâu ạ,"Địa chỉ kho hàng Shop Gấu & Bí Ngô - 0912749696
+Số nhà 16 ngõ Đê Quai ÂU Cơ 
+(đi hết ngõ 124 Âu Cơ, rẽ trái số nhà 16). Nhà 4 tầng màu vàng bạn nhé
+Địa chỉ Hà Nội Nơi Ấy Bình Yên ạ
+
+Giờ làm việc từ 8h30- 12h  và 1h30 -  5h30 chiều hàng ngày. Nghỉ chủ nhật ạ",2020-06-20T02:00:54+0000
+423,449,,,,3305083622855631,,,2020-06-20T02:09:36+0000
+424,449,,,,3305083622855631,Vâng ạ,,2020-06-20T02:12:57+0000
+425,449,,,,3305083622855631,Bạn ơi giá xe 1060k đã đầy đủ phụ kiện chưa ạ,dạ chưa b ạ,2020-06-20T11:20:33+0000
+426,449,,,,1454523434857990,,https://shopee.vn/search?keyword=xe%20t%E1%BA%ADp%20%C4%91i&shop=36371562,
+427,449,,,,1454523434857990,,bạn xem dùm mk,
+428,449,,,,3305083622855631,Bạn ới,,2020-06-22T02:46:51+0000
+429,449,,,,3305083622855631,Thêm phụ kiện là thêm những gì đó ạ?,,2020-06-22T02:47:05+0000
+430,449,,,,3305083622855631,Để hnay mình oder ship với,,2020-06-22T02:47:16+0000
+431,449,,,,3305083622855631,chủ nhật tính qua mà bên bạn k làm việc nên giờ mới hỏi lại dc,dạ hijen bên mình hết hàng r ạ,2020-06-22T02:47:39+0000
+432,449,,,,3305083622855631,"ui, thế bao giờ hàng về nữa ạ",nếu hàng evef mk báo trên fb nha b,2020-06-22T02:51:22+0000
+433,449,,,,3305083622855631,ok b ạ,,2020-06-22T03:06:06+0000
+434,450,,,uc_s4.1,2899036923526893,Shop còn bộ đũa muỗng cho bé ko ạ,,2020-06-22T03:27:59+0000
+435,454,,,uc_s4.1,1949901345070098,shop còn bộ đồ chơi xúc cát cho bé ko ạ,,2020-06-22T06:52:44+0000
+436,472,,,,1382148668571541,mai ship cho mình xe này nhé,,2020-06-19T12:18:11+0000
+437,472,,silence,,1382148668571541,,,2020-06-19T12:18:15+0000
+438,472,,,,1382148668571541,xe hồng đây nha shop,,2020-06-19T12:18:22+0000
+439,472,,silence,,1382148668571541,,,2020-06-19T12:18:27+0000
+440,472,,,,1382148668571541,số 6 ngách 27 ngõ 16 hoàng cầu 0906336946.giao sáng mai giúp mình vì chiều mai mình đi tặng sinh nhật nhé,mình còn màu xanh thôi ạ,2020-06-19T12:18:50+0000
+441,472,,,,1382148668571541,ok vậy ship minh màu xanh nhé,ship 40k nha bạn,2020-06-20T02:59:40+0000
+442,472,,,,1454523434857990,,mình giao hnay ck k ạ,
+443,472,,,,1382148668571541,giao luôn mình,,2020-06-20T03:00:34+0000
+444,472,,,,1382148668571541,trước 4h chiều nha,ok b nhe,2020-06-20T03:00:38+0000
+445,472,,,,1382148668571541,ban oi,,2020-06-20T03:45:24+0000
+446,472,,,uc_s4.2,1382148668571541,xe đẩy joie còn k,mình  ko còn ạ,2020-06-20T03:45:31+0000
+447,472,,,,1382148668571541,k còn mẫu nào ạ,vâng ạ,2020-06-20T04:48:15+0000
+448,472,,,,1382148668571541,thế jo xe đẩy bên mình còn hãng nào b,,2020-06-20T05:06:11+0000
+449,472,,silence,,1382148668571541,nhớ giao cái kia cho m cho kịp nhé,,2020-06-20T05:19:34+0000
+450,472,,,,1382148668571541,b oi thôi,,2020-06-20T05:26:42+0000
+451,472,,,,1382148668571541,k còn màu hồng thi thôu nha minh xl huhu vì bé gái mẹ cháu lại k thichd,ok b nhé,2020-06-20T05:28:18+0000
+452,472,,silence,,1382148668571541,,,2020-06-23T00:47:59+0000
+453,472,,,,1382148668571541,shop có máy pha sữa nay k ạ,mình không có ạ,2020-06-23T00:48:05+0000
+454,473,,,uc_s4.2,3585499334811999,Mình còn nôi kề giường Mastela ko shop?,mình ko còn ạ,2020-06-22T09:33:17+0000
+455,477,,thank,,1454523434857990,,Bạn đang trả lời bình luận của người dùng về bài viết trên Trang của mình. Xem bình luận.(https://facebook.com/1454523434857990/posts/2495554064088250/?comment_id=2496706477306342),
+456,477,,,,1454523434857990,,dạ 510k b ạ,
+457,477,,,,1607328169314342,Xe lắc hả b,,2020-06-23T01:50:01+0000
+458,477,uc_s5.1,,,1607328169314342,Thế đai xe máy cho bé bn ạ,vâng đai 139k ạ,2020-06-23T01:50:14+0000
+459,477,,,,1607328169314342,,,2020-06-23T01:50:31+0000
+460,477,,,,1607328169314342,Đai này chắc chắn e nhỉ,vâng dùng cho bé tới 12 tuổi ạ,2020-06-23T01:54:32+0000
+461,477,,,,1607328169314342,,,2020-06-23T01:55:19+0000
+462,477,,,,1607328169314342,,,2020-06-23T02:39:30+0000
+463,477,,,,1607328169314342,Bộ này thì bn ạ,bảng vẽ hola 2 in 1 bên mình giá 850k ạ,2020-06-23T02:39:38+0000
+464,491,,,,2888243391285065,Bạn ơi,,2020-06-23T15:25:24+0000
+465,491,,,uc_s4.2,2888243391285065,Bên mình còn xe đẩy du lịch tomorow ko ah,mình hết r ạ,2020-06-23T15:25:35+0000
+466,498,,,,3901270949901101,,mình hết r ah,2020-06-24T03:08:23+0000
+467,498,uc_s5.1,,,3901270949901101,Trước bộ này shop bán bao nhiêu,3390k ạ,2020-06-24T03:09:11+0000
+468,498,,,,3901270949901101,Dạ e cám ơn,,2020-06-24T03:10:58+0000
+469,501,,,,3997487680293412,À,vâng hãng lại hết hàng r ạ,2020-06-24T02:18:31+0000
+470,501,,,,3997487680293412,Vậy khó nhỉ,vâng mình chưa có lịch về,2020-06-24T02:25:52+0000
+471,501,,,,3997487680293412,Thế mình đổi sang mặt hàng khác của b dc k,,2020-06-24T02:27:37+0000
+472,501,,other,,3997487680293412,"Kiểu cầu trượt, xích đu",vâng được b ạ,2020-06-24T02:27:58+0000
+473,501,,,,1454523434857990,,bạn xem muốn đổi sp gì b bao mk,
+474,501,,,,3997487680293412,B ơi,,2020-06-24T04:19:54+0000
+475,501,uc_s5.1,,,3997487680293412,"Mình cứ gửi lại ghế, b giữ tiền",dạ mình nghe ạ,2020-06-24T04:20:09+0000
+476,501,,,,3997487680293412,Để mình mua sau nhé,bạn mang qua bên mình nhé,2020-06-24T04:20:31+0000
+477,501,,,,1454523434857990,,nếu bên mình thuê ship qua b mất phí ship ạ,
+478,501,,,,3997487680293412,OK thế bạn thuê ship giúp,"bên mình thuê ship qua ship 60k cơ ạ 
+vì tiền cước đi vs về",2020-06-24T04:21:34+0000
+479,501,,,,3997487680293412,,,2020-06-24T04:27:10+0000
+480,501,,,,3997487680293412,OK. B thuê ship nhé,,2020-06-24T04:27:19+0000
+481,501,,,,3997487680293412,,vaag chiều or mai ship bên mình qua nhe,2020-06-24T04:27:23+0000
+482,501,,,,3997487680293412,Hoá đơn đây. Mình giữ nhỉ,vâng được b ạ,2020-06-24T04:27:39+0000
+483,501,,,,1454523434857990,,bên mình cũng có hóa đơn trên hệ thống mà,
+484,501,,,,1454523434857990,,bạn yên yaam,
+485,501,,,,3997487680293412,,,2020-06-24T04:28:50+0000
+486,505,,,,2183700008391397,Để mình 1 cặp xách này nhé,,2020-06-21T07:08:00+0000
+487,505,,,,2183700008391397,,,2020-06-21T07:08:10+0000
+488,505,,silence,,2183700008391397,Shop mình có ghê ô tô trẻ em ko?,cặp 380k ạ,2020-06-21T07:08:23+0000
+489,505,,other,,1454523434857990,,bạn muốn mua ghế khaonrg bn tiền ạk,
+490,505,,,,2183700008391397,Dạ tầm 2-4 tr,,2020-06-22T02:19:50+0000
+491,505,,thank,,2183700008391397,"Hi, đang chờ tu vấn shop ơi",https://shopee.vn/Gh%E1%BA%BF-%C3%B4-t%C3%B4-Zaracos-Aroma-(M%E1%BB%B9)-i.36371562.1744173026,2020-06-23T04:46:27+0000
+492,505,,,,1454523434857990,,mình còn loại này,
+493,505,,,,1454523434857990,,dùng cho bé 0-6 tuổi ạ,
+494,505,,silence,,2183700008391397,Xe này mình chưa ứng lắm,,2020-06-24T07:09:14+0000
+495,505,,,,2183700008391397,Báo giúp mình ship ba lô về Quảng Ngãi,,2020-06-24T07:09:33+0000
+496,505,,,,2183700008391397,Mình ck mua ba lô,"❌ 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ
+
+
+Nội dung chuyển khoản Lysliana Doan  ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi CK nhé.",2020-06-24T07:09:40+0000
+497,505,,other,,1454523434857990,,khoảng 40-50k ship ạ,
+498,505,uc_s5.1,,,2183700008391397,Mình ck tiền balo ship tự trả hay ck tiền ship luôn shop,vâng bạn thanh toán ship khi nhận ạ,2020-06-24T07:12:00+0000
+499,505,,,,1454523434857990,,bạn ơi mình xin  lỗi mẫu này mk còn xanh thôi ạ,
+500,505,,silence,,2183700008391397,"Ôi, xanh thì ko dc. Bé nhà mình ko thích.",vâng bên hãng mới báo mk lại hết r ạ,2020-06-24T07:13:46+0000
+501,507,uc_s5.1,,,1946813715370673,Giá thanh chắn cầu thang là bn b,,2020-06-24T09:09:36+0000
+502,509,,,uc_s4.1,3478127822213127,Bên shop mình có xe tập đi con gà ko ak?,mình ko có ạ,2020-06-24T09:21:41+0000
+503,509,,shipping_order,,3478127822213127,Ok mình cám ơn,,2020-06-24T09:22:45+0000
+504,521,,,,1928625633818750,Aloo,,2020-06-25T03:19:57+0000
+505,521,uc_s5.1,other,,1928625633818750,E ơi shop mình có bộ đồ chơi nấu ăn ko? Cho c link và giá,"Bộ đồ chơi nhà bếp thông minh gồm 2 size 
+_ Size nhỏ kthc  57x30x77cm giá KM chỉ #560k-chỉ có màu hồng ạ
+_ Size to kthc 51x32x100 Giá Km chỉ #730k-mình có đủ hồng và xanh
+
+Vifdeo sp đây ạ : https://zalo-file-dl1.zdn.vn/f1b43cee9c4d7013295c/6817563880731541621
+
+thông tin chi tiết các mẹ xem LInk dưới dùm mình nhé : 
+
+https://www.facebook.com/shopgauvabingo/posts/2434776596832664",2020-06-25T03:20:27+0000
+506,535,,,,3231401553549328,Tôi có câu hỏi. Bạn có thể trợ giúp không?,,2020-06-25T10:09:35+0000
+507,535,,,uc_s4.2,3231401553549328,Bên mình còn ghế ô tô joie stage k ạ,mình ko còn ạ,2020-06-25T10:09:44+0000
+508,535,,silence,,3231401553549328,,,2020-06-25T10:13:49+0000
+509,537,,,,3544922048855754,Bạn ơu,,2020-06-25T12:40:16+0000
+510,537,uc_s5.2,,,3544922048855754,Xe đẩy hellobaby 2 chiều giá bn thế,mình khoog có ạ,2020-06-25T12:40:25+0000
+511,538,,,uc_s4.2,3322212764464383,thảm nhạc UMOO còn ko ah?,,2020-06-25T10:19:17+0000
+512,538,,silence,,3322212764464383,mình cần gấp tối mình qua lấy trực tiếp đc ko?,thảm nhạc bên mình sẵn màu xanh nhưng 6h bên mình nghỉ rồi ạ,2020-06-25T10:19:26+0000
+513,538,,,,3322212764464383,mình qua lấy cũng ko đc hả b?,vâng ạ,2020-06-25T10:48:41+0000
+514,546,,,,1168787973221236,B ơi,,2020-06-26T04:44:41+0000
+515,546,,,uc_s4.3,1168787973221236,"Bên mình còn thanh chắn giường 2,2m k b",,2020-06-26T04:44:50+0000
+516,557,,,,1996852403701669,Bạn ơi,,2020-06-26T07:32:21+0000
+517,557,uc_s5.2,silence,,1996852403701669,Xe motion bên bạn giá bn vậy,dạ 335k ạ,2020-06-26T07:32:29+0000
+518,559,uc_s5.1,,,1954844461223417,Thanh chắn cầu thang trẻ em bn b,Bạn đang trả lời bình luận của người dùng về bài viết trên Trang của mình. Xem bình luận.(https://facebook.com/1454523434857990/posts/2498561923787464/?comment_id=2500043953639261),2020-06-27T01:37:29+0000
+519,559,,,,1454523434857990,,"Thanh chắn cửa/ cầu thang an toàn có giá 520K/ thanh Xiao Na nhé
+
+Có thể điều chỉnh chiều ngang từ 74cm tới 83cm (cao 77cm). Nếu thiếu mua thêm thanh nối 12cm giá 140K / thanh nối 36cm giá 280K nhé
+
+Xem chi tiết các kích thước cửa cần lắp tại đây: https://www.facebook.com/1454523434857990/posts/2089132531397074/
+
+Lắp đặt cực đơn giản xem tại đây: 
+https://www.facebook.com/watch/?v=2169930109731549",
+520,559,,,,1954844461223417,Nhà mình cầu thang rộng 1.05m thì mua tnao ?,1 thanh chính vs 2 thanh 12 ạ,2020-06-27T02:02:44+0000
+521,560,,silence,,2310891472313971,Em ơi,,2020-06-27T01:49:07+0000
+522,560,,,uc_s4.1,2310891472313971,Shop còn bập bênh cầu trượt cho bé ko em,mk còn ạ 490k,2020-06-27T01:49:21+0000
+523,560,,silence,,2310891472313971,Cho chị xin ảnh thật nhé,,2020-06-27T02:02:25+0000
+524,560,,,,2310891472313971,Màu xanh còn ko em,sr c e nhầm bên e hết hàng r ạ,2020-06-27T02:02:30+0000
+525,570,,,uc_s4.1,2472040096207007,Bạn ơi còn ghế nhún k ạ?,,2020-06-26T10:54:13+0000
+526,570,,silence,,2472040096207007,Mình xin giá,mình còn ạ 1190k,2020-06-26T10:54:24+0000
+527,570,,,,2472040096207007,Cho mình xin ảnh với ạ,,2020-06-27T03:49:13+0000
+528,582,uc_s5.2,,,1522890191132335,cho em hỏi máy mini doux bên mình bao nhiu ạ MÁY GIẶT TỰ ĐỘNG MINI DOUX,dạ 2990k ạ,2020-06-29T01:31:06+0000
+529,592,,,,2652175881543150,E oi,,2020-06-27T11:03:49+0000
+530,592,,,uc_s4.2,2652175881543150,E còn chắn giường umoo k,"Thanh chắn giường UMOO có giá cụ thể như sau:
+
+1m6 giá 370K / thanh
+1m8 giá 400K / thanh
+2m giá 430K/ thanh
+2m2 460k/thanh
+
+
+Video sản phẩm tham khảo tại đây: https://www.facebook.com/1454523434857990/posts/2191678854475774?sfns=mo",2020-06-27T11:03:58+0000
+531,592,,,,1454523434857990,,,
+532,614,uc_s5.3,,,2264102177022580,"Thanh chắn giường UMOO có giá cụ thể như sau:
+
+1m6 giá 400K / thanh
+1m8 giá 440K / thanh
+2m giá 460K/ thanh
+2m2 500k/thanh
+
+Link ảnh thật và thông tin chi tiết Đức Vũ   tham khảo link dưới nhe :
+https://www.facebook.com/1454523434857990/posts/2184769218500071?sfns=mo
+
+Video sản phẩm tham khảo tại đây: https://www.facebook.com/1454523434857990/posts/2191678854475774?sfns=mo",,2020-06-29T05:04:41+0000
+533,614,,,uc_s4.1,2264102177022580,bên shop còn hàng này ko,mình còn ạ,2020-06-29T05:04:53+0000
+534,614,,,,1454523434857990,,"Thanh chắn giường UMOO có giá cụ thể như sau:
+
+1m6 giá 370K / thanh
+1m8 giá 400K / thanh
+2m giá 430K/ thanh
+2m2 460k/thanh
+
+
+Video sản phẩm tham khảo tại đây: https://www.facebook.com/1454523434857990/posts/2191678854475774?sfns=mo",
+535,614,,silence,,1454523434857990,,,
+536,614,,,,2264102177022580,là mua theo thanh hả shop,,2020-06-29T07:04:43+0000
+537,614,,,,2264102177022580,hay là bộ có sẵn 3 thanh,vâng giá từng thanh bạn ạ,2020-06-29T07:05:02+0000
+538,614,,silence,,2264102177022580,,,2020-06-29T07:07:10+0000
+539,614,,,,2264102177022580,để mình đo giường cái báo lại shop,oki b ạ,2020-06-29T07:07:28+0000
+540,616,,silence,uc_s4.1,2064958590223796,C oi còn ghế ngồi bé oto ko a,bạn muốn mua ghế khoảng bn tiền ạ,2020-06-10T16:05:32+0000
+541,616,,,,2064958590223796,Tầm 5tr ạ,https://shopee.vn/Gh%E1%BA%BF-%C3%B4-t%C3%B4-cao-c%E1%BA%A5p-Joie-Stage-i.36371562.1056037842,2020-06-11T01:47:09+0000
+542,616,,,,1454523434857990,,bạn xem qua loại này ạ,
+543,629,uc_s5.2,,,2041079315911220,Xe đẩy tomorro giá bn ạ,mình ko còn ạ,2020-06-30T01:55:37+0000
+544,647,,,uc_s4.2,1802350743216787,Xe đẩy tomorrow còn k c ơi,,2020-06-27T14:19:18+0000
+545,647,,,,1802350743216787,Giá bnh ạ,mình ko còn ạ,2020-06-27T14:19:21+0000
+546,647,,,,1802350743216787,Vâng e cảm ơn,,2020-06-29T01:57:51+0000
+547,647,,,,1802350743216787,,,2020-06-30T03:32:35+0000
+548,647,,,,1802350743216787,Bộ bàn lắp lego bnhiu thee ạ,dạ 890k ạ,2020-06-30T03:32:42+0000
+549,647,,shipping_order,,1802350743216787,,,2020-06-30T03:46:40+0000
+550,647,,,,1802350743216787,Thế còn bộ này ạ,750k ạ,2020-06-30T03:46:44+0000
+551,647,,,,1802350743216787,E đà phân vân,,2020-06-30T03:49:10+0000
+552,647,,silence,,1802350743216787,Chưa biết nên lấy loại nào,mỗi cái có 1 tính năng khác nhau ạh,2020-06-30T03:49:18+0000
+553,647,,,,1454523434857990,,b xem nhu cầu e bé nên cần gì thi mua thôi ạ,
+554,652,uc_s5.1,,,3161811430531173,Thảm cuộn bn ạ,mình ko còn an,2020-06-30T05:13:25+0000
+555,653,,,,2873590549416213,B ơi,,2020-06-29T11:05:23+0000
+556,653,,,,2873590549416213,Cho mình hỏi quây bóng nhựa bên mình với,"Mẫu NGÔI NHÀ - Quây bóng Toys House gồm 3 size.
+
+. Kích thước 100cm x 132cm x 60cm (gồm 11 cánh và 1 cửa) 
+-Gấu & Bí Ngô KM chỉ #990k
+
+. Kích thước 132cm x 132cm x 60cm (gồm 13 cánh và 1 cửa)- Gấu & Bí Ngô KM chỉ #1290k
+
+ Kích thước 132cm x 165cm x 60cm(gồm 15 cánh và 1 cửa ) -Gấu & Bí Ngô KM chỉ #1390k
+
+
+Ảnh thật đây ạ: https://www.facebook.com/1454523434857990/posts/2191143281195998?sfns=mo
+
+NẾU CÁC MẸ MUỐN FREE SHIP TOÀN QUỐC ĐẶT LINK DƯỚI DÙM MÌNH NHE : 
+https://tiki.vn/quay-cao-cap-hinh-ngoi-nha-toys-house-chinh-hang-th319-102b-p48489553.html?src=search&2hi=0&keyword=Qu%C3%A2y+cao+c%E1%BA%A5p+h%C3%ACnh+ng%C3%B4i+nh%C3%A0+Toys+House+CH%C3%8DNH+H%C3%83NG
+
+https://tiki.vn/quay-cao-cap-hinh-ngoi-nha-toys-house-chinh-hang-th319-122b-p48490900.html?src=search&2hi=0&keyword=Qu%C3%A2y+cao+c%E1%BA%A5p+h%C3%ACnh+ng%C3%B4i+nh%C3%A0+Toys+House+CH%C3%8DNH+H%C3%83NG
+
+https://tiki.vn/quay-cao-cap-hinh-ngoi-nha-toys-house-chinh-hang-th319-142b-p48490570.html?src=search&2hi=0&keyword=Qu%C3%A2y+cao+c%E1%BA%A5p+h%C3%ACnh+ng%C3%B4i+nh%C3%A0+Toys+House+CH%C3%8DNH+H%C3%83NG",2020-06-29T11:05:37+0000
+557,653,,,,1454523434857990,,,
+558,653,,,,2873590549416213,Shop còn bộ này k ạ,,2020-06-30T04:21:43+0000
+559,653,,,,2873590549416213,,mình không còn ạ,2020-06-30T04:21:47+0000
+560,653,,,,2873590549416213,Mẫu này mẫu cũ đúng k ạ,vâng ạ,2020-06-30T06:54:50+0000
+561,653,,,,2873590549416213,H nó ra mẫu con thỏ ạ,mình cũng hết r ạ,2020-06-30T06:55:10+0000
+562,653,,,,2873590549416213,Mình hỏi chút mẫu góc vuông với góc tròn thì khác nhau ở độ bền hả shop,ở góc thôi ạ,2020-06-30T06:56:08+0000
+563,653,,,,1454523434857990,,góc vuông thì đầu 2 cạnh n sẽ nhọn như hình vuông,
+564,653,,,,1454523434857990,,góc vuông thì đầu 2 cạnh n sẽ nhọn như hình vuông,
+565,653,,,,1454523434857990,,góc tròn thì như ảnh ạ,
+566,653,,,,2873590549416213,Ừ mình thấy góc rùi nhưng ý là chỉ khác ở thiết kế thui hay về độ bền hay chắc k ạ,góc tròn thì e bé bị ngã thì độ an toàn cao hơn góc vuông b ah,2020-06-30T06:57:36+0000
+567,653,,,,1454523434857990,,góc vuông sợ có đầu nhọn,
+568,653,,,,1454523434857990,,"nhưng đó là lí thuyết 
+chứ thanh nhựa họ làm thanh to chứ cũng k nhỏ",
+569,653,,,,1454523434857990,,nên k sợ b ạ,
+570,653,uc_s5.1,silence,,2873590549416213,"À mình hiểu rùi, bộ con thỏ này shop bán bn vậy ạ",,2020-06-30T06:59:52+0000
+571,653,,,,2873590549416213,Toy house này dùng có thích hơn holla k ạ,giá tùy đợt b ạ,2020-06-30T07:00:16+0000
+572,655,,,,1454523434857990,,Bạn đang trả lời bình luận của người dùng về bài viết trên Trang của mình. Xem bình luận.(https://facebook.com/shopgauvabingo/photos/a.1464581583852175/2501913583452298/?type=3&comment_id=2502561043387552),
+573,655,,,,1454523434857990,,dạ 1650k ạ,
+574,655,,,,3435431619816075,1650 k ha a,vâng ạ,2020-06-30T01:54:12+0000
+575,655,uc_s5.1,,,3435431619816075,Chiết xe mau do  gia cug vay ha,bằng giá nhau  b ạ,2020-06-30T01:55:42+0000
+576,655,,,,3435431619816075,Cho xinh so dt di,"Dạ địa chỉ này Thanh Thiện vui lòng chuyển khoản 50% hoặc 100% giá trị đơn hàng dùm mình-bên mình gửi VIETELL
+Bạn ck tiền hàng - tiền ship bạn thanh toán khi nhận ạ .
+HOẶC
+Tiki : https://tiki.vn/cua-hang/gau-bi-ngo",2020-06-30T01:57:08+0000
+577,655,,,,1454523434857990,,,
+578,655,,,,3435431619816075,Toi nhan duok xe se tra ngay,bên em không gửi như vậy rồi ạ,2020-06-30T08:28:39+0000
+579,655,,,,3435431619816075,Vay thoi toi bi luâ nhiu roi,"Dạ a ơi bên em ở hà nội 
+bên e án hàng tỉnh nhiều rồi ạ  
+a cứ tham khảo thaori mái",2020-06-30T08:30:38+0000
+580,655,,,,1454523434857990,,chứ bên e làm ăn đàng hoàng,
+581,655,,,,1454523434857990,,không lừa ai bao giờ ạ,
+582,655,,,,1454523434857990,,hoặc a chuyển khoản 200k rooid số còn lại a thanh toán khi nhậ,
+583,655,,,,3435431619816075,Duok roi ma goi bd ha,gửi viettel post ạ,2020-06-30T08:34:20+0000
+584,655,,,,3435431619816075,Roi nhan hang o dau,nguwoif ta giao tận nhà ạ,2020-06-30T08:35:57+0000
+585,655,,,,3435431619816075,Ok,"❌ 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ
+
+
+Nội dung chuyển khoản Thanh Thiện  ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi CK nhé.",2020-06-30T08:41:58+0000
+586,655,,other,,1454523434857990,,a ck báo e nhe,
+587,655,,,,3435431619816075,Ok toi di lam roi 0902121334,,2020-06-30T08:50:56+0000
+588,659,,silence,uc_s4.1,1836943709700809,Bên b còn bán cái máy đặt phòng điều hoà đỡ khô k,https://shopee.vn/search?keyword=t%E1%BA%A1o%20%E1%BA%A9m&shop=36371562,2020-06-30T15:15:32+0000
+589,659,,,,1454523434857990,,,
+590,764,,,,2985746458187877,Get Started,"Chào Thanh Hải Đặng, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-08T05:45:13+0000
+591,764,uc_s5.2,,,2985746458187877,"Mình muốn mua Set phụ kiện máy vắt sữa  medela. Nhờ shop báo giá, tư vấn",Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T05:46:25+0000
+592,764,,,,2985746458187877,Không đúng!,"Sản phẩm Máy hút sữa điện đôi Avent Snow (Chính hãng - Cty Vạn An)  hiện shop đang có mức giá: *4,990,000 VND (giá gốc 6,950,000 VND)*.",2020-06-08T05:46:54+0000
+593,764,,,,1454523434857990,,,
+594,764,,,,2985746458187877,Phụ kiện máy hút sữa medela,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T05:47:22+0000
+595,764,,,,2985746458187877,Không đúng!,"Sản phẩm Máy hút sữa điện đôi Avent Snow (Chính hãng - Cty Vạn An)  hiện shop đang có mức giá: *4,990,000 VND (giá gốc 6,950,000 VND)*.",2020-06-08T05:47:42+0000
+596,764,,silence,,1454523434857990,,,
+597,764,,,,1454523434857990,,mình không bán ạ,
+598,768,,,,2336532083069803,,,2020-06-24T08:10:01+0000
+599,768,,,,2336532083069803,giá nhiêu vậy shop,,2020-06-24T08:10:06+0000
+600,768,,,,2336532083069803,,dạ 85k ạ,2020-06-24T08:10:08+0000
+601,768,,,,2336532083069803,balo này kích thước sao hả shop,,2020-06-24T08:11:14+0000
+602,768,,,,2336532083069803,,,2020-06-24T08:11:15+0000
+603,768,,,,2336532083069803,bé học lớp 3 mang được k,dạ được ạ,2020-06-24T08:11:22+0000
+604,768,,,,1454523434857990,,380k,
+605,768,uc_s5.1,,,2336532083069803,kích thước balo bao nhiêu vậy shop,,2020-06-24T08:19:13+0000
+606,768,,,,2336532083069803,có đựng vừa tờ A4 k,32x16x40 ạ,2020-06-24T08:19:22+0000
+607,768,,,,2336532083069803,trên shopee có link sp này chưa shop,,2020-06-24T08:21:07+0000
+608,768,,,,2336532083069803,mình đặt trên đó cho đỡ ship,mình còn mỗi màu xanh,2020-06-24T08:21:15+0000
+609,768,,,,1454523434857990,,nên ko đăng shopee r ạ,
+610,768,,,,2336532083069803,hu hu mình đang muốn mua màu hồng,,2020-06-24T08:25:07+0000
+611,768,,other,,2336532083069803,vì mua cho con gái,bên mk lại hết r ạ,2020-06-24T08:25:12+0000
+612,768,,,,2336532083069803,buồn,,2020-06-24T08:47:02+0000
+613,781,,silence,uc_s4.1,1788711657884725,Bạn oi babj còn bộ đồ chơi bác sĩ k,mih còn ạ 115k,2020-06-27T03:46:18+0000
