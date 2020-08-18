@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def main():
+def count_outcome_of_usecase():
     june_file_path = "data/chatlog_fb/result/final/all_chat_fb_6.csv"
     july_file_path = "data/chatlog_fb/result/final/all_chat_fb_7.csv"
     august_file_path = "data/chatlog_fb/result/final/all_chat_fb_8.csv"
@@ -18,7 +18,8 @@ def main():
         "uc_s5.3": {"thank": 0, "shipping_order": 0, "handover_to_inbox": 0, "silence": 0, "other": 0},
     }
     # for df in [pd.read_csv(june_file_path), pd.read_csv(july_file_path), pd.read_csv(august_file_path)]:
-    for index, df in enumerate([pd.read_csv(june_file_path), pd.read_csv(july_file_path), pd.read_csv(august_file_path)]):
+    for index, df in enumerate(
+            [pd.read_csv(june_file_path), pd.read_csv(july_file_path), pd.read_csv(august_file_path)]):
         uc4_conversation_id = df[~df["uc4"].isna()]["conversation_id"].drop_duplicates().to_list()
 
         for id in uc4_conversation_id:
@@ -36,7 +37,11 @@ def main():
             outcome = sub_df["outcome"].dropna().to_list()[0]
             for usecase in usecases:
                 uc5_dict[usecase][outcome] += 1
+    return uc4_dict, uc5_dict
 
+def reformat_df(df):
+    
+def main():
     a = 0
 
 
