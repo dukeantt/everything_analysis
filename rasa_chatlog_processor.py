@@ -268,7 +268,7 @@ class RasaChalogProcessor():
         print("Specify usecases: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
-    def specify_conversation_outcome(self, rasa_chatlog_df: pd.DataFrame):
+    def  specify_conversation_outcome(self, rasa_chatlog_df: pd.DataFrame):
         logger.info("Specify outcome for conversations")
         start_time = time.time()
         rasa_chatlog_df.insert(3, "outcome", "")
@@ -301,7 +301,7 @@ class RasaChalogProcessor():
 
                 bot_message = item["bot_message"]
                 user_intent = item["intent"]
-                if str(user_intent) != "nan" and user_intent == "thank":
+                if str(user_intent) != "nan" and (user_intent == "thank" or any(x in user_message_correction for x in ["thanks", "thank", "tks", "cảm ơn", "thankyou", "cám ơn"])):
                     rasa_chatlog_df.at[index, "outcome"] = "thank"
                     break
                 elif user_message_correction and any(x in user_message_correction for x in key_words) and all(
