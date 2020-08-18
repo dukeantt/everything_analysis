@@ -89,7 +89,7 @@ def pre_process_chat_log(chatlog_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def do_process():
-    for month in range(1, 7):
+    for month in range(1, 9):
         print(month)
         input_file_path = "data/chatlog_fb/all_chat_fb_{month}.csv"
         output_file_path = "data/chatlog_fb/processed_chatlog/all_chat_fb_{month}.csv"
