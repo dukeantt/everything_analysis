@@ -52,6 +52,7 @@ def specify_uc4(chatlog_df, conversation_turn_pair_without_img, model_ner):
                 message_index = sub_df.at[item_index, "index"]
                 con = [word for word in CON if (word in user_message)]
                 khong = [word for word in KHONG if (word in user_message)]
+
                 if str(user_message) == "nan" or str(user_message) == "user":
                     continue
                 ner_output = model_ner.process(sample=user_message)
@@ -113,20 +114,18 @@ def specify_uc5(chatlog_df, conversation_turn_pair_without_img, model_ner):
 
 
 def specify_usecase():
-    # do_process()
+    do_process()
     with open("models/model_ner.pkl", "rb") as model_file:
         model_ner = pickle.load(model_file)
-    # for month in range(1, 7):
-    for month in [8]:
+    for month in range(1, 9):
+    # for month in [8]:
         print(month)
         start_time = time.time()
         input_file = "data/chatlog_fb/processed_chatlog/all_chat_fb_{month}.csv"
         output_file = "data/chatlog_fb/result/all_chat_fb_{month}.csv"
 
         chatlog_df = pd.read_csv(input_file.format(month=str(month)))
-        conversation_turn_pair_without_img, conversation_turn_pair_with_img = get_conversation_turn_without_and_with_image(
-            chatlog_df)
-
+        conversation_turn_pair_without_img, conversation_turn_pair_with_img = get_conversation_turn_without_and_with_image(chatlog_df)
 
         chatlog_df = specify_uc4(chatlog_df, conversation_turn_pair_without_img, model_ner)
         chatlog_df = specify_uc5(chatlog_df, conversation_turn_pair_without_img, model_ner)

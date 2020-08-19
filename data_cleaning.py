@@ -7,9 +7,9 @@ import time
 
 def remove_col_str(df: pd.DataFrame, col_name: str) -> pd.DataFrame:
     # remove a portion of string in a dataframe column - col_1
-    df[col_name].replace('\n', '', regex=True, inplace=True)
+    df[col_name].replace('\n', ' ', regex=True, inplace=True)
     # remove all the characters after &# (including &#) for column - col_1
-    df[col_name].replace(' &#.*', '', regex=True, inplace=True)
+    df[col_name].replace(' &#.*', ' ', regex=True, inplace=True)
     return df
 
 

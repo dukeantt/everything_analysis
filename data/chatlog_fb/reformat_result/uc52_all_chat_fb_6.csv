@@ -1,0 +1,164 @@
+conversation_id,uc5,outcome,uc4,sender_id,user_message,bot_message,created_time
+3,,silence,,2584625094931834,Get Started,"Chào Thùy Dương, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-02T05:51:58+0000
+3,uc_s5.2,,,2584625094931834,shop cho e hỏi gia xe vovo gấp gọn 1 chiều nha,Sản phẩm bạn đang tìm có phải là?,2020-06-02T05:52:13+0000
+3,,silence,,2584625094931834,Xe Đẩy,"Sản phẩm  Xe Đẩy hãng sản xuất Vovo  có giá bán thấp nhất từ: *2,200,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-02T05:52:36+0000
+3,,,,1454523434857990,,,
+9,,other,,1734523043236410,Get Started,,2020-06-02T07:35:26+0000
+9,,,,1734523043236410,E ơi,"Chào Thu Thủy, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-02T07:35:28+0000
+9,,,,1454523434857990,,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",
+9,uc_s5.2,,,1734523043236410,Tư vấn c xe đẩy cho bé giá dưới 1tr với,"Sản phẩm  Xe Đẩy giá 1tr  có giá bán thấp nhất từ: *850,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-02T07:35:45+0000
+9,,other,,1454523434857990,,Hiện tại sản phẩm Xe Đẩy giá 1tr  shop đang có những *hãng sản xuất* sau ạ:,
+9,,,,1734523043236410,Joovy,"Sản phẩm  Xe đẩy đảo chiều gấp gọn Joovy Qatta S113 hãng sản xuất Joovy, giá 1tr  có giá bán thấp nhất từ: *1,040,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-02T07:36:10+0000
+9,,,,1454523434857990,,,
+9,,,,1734523043236410,Xe nằm cho bé sơ sinh ấy shop,,2020-06-02T07:37:01+0000
+9,,,,1734523043236410,K phải xe đẩy kiểu này,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,2020-06-02T07:37:07+0000
+9,,,,1734523043236410,Chat với nhân viên,xe nằm cho bé sơ sinh k có loại duwosi 1 triệu đâu ạ,2020-06-02T07:37:28+0000
+22,uc_s5.2,,,1476585065791295,Cái bảng hola thì bn b,,2020-06-03T02:04:19+0000
+22,,,,1476585065791295,Có nam châm dính ko hay chỉ viết thôi,,2020-06-03T02:04:33+0000
+23,uc_s5.2,,,2869775669730192,Xe đẩy gấp gọn Vinng mẫu mới nhất là của năm bnhieu ạ,,2020-06-02T12:04:27+0000
+23,,,,2869775669730192,Xe đẩy kèm theo những j ạ,mình ko còn VINNG ạ,2020-06-02T12:04:42+0000
+23,,,,2869775669730192,,,2020-06-03T02:16:19+0000
+23,,,,2869775669730192,Dạ,,2020-06-03T02:16:19+0000
+51,,,,4006833302724537,,,2020-06-04T02:39:56+0000
+51,,,,4006833302724537,Giá bn b oie,"Dạ, có phải bạn muốn hỏi một trong các sản phẩm dưới đây không ạ?
+ (Vui lòng ấn chọn 1 sản phẩm)",2020-06-04T02:39:59+0000
+51,,,,1454523434857990,,,
+51,,,,1454523434857990,,...,
+51,,,,4006833302724537,cái này,"Sản phẩm Đàn piano cổ điển kèm Mic Winfun 2045  hiện shop đang có mức giá: *950,000 VND (giá gốc 1,500,000 VND)*.",2020-06-04T02:42:49+0000
+51,,,,1454523434857990,,,
+51,,,,4006833302724537,Shopee giá 880.000 thì mình mua bên nào b ơi,à vâng bên mk mới gaimr giá,2020-06-04T02:43:26+0000
+51,,silence,,1454523434857990,,bạn mua fb hoặc shopee đều dk ạ,
+51,,,,4006833302724537,Oke vậy m mua luôn ở đây nha b,,2020-06-04T03:24:10+0000
+51,,,,4006833302724537,"Phạm ánh tuyết 
+152 trần đình xu, phường Nguyễn cư trinh quận 1 tp hcm 
+0935335669",,2020-06-04T03:24:21+0000
+51,,,,4006833302724537,Ship qua đây nữa thì tổng là bn,khoảng hơn 100k ạ,2020-06-04T03:24:29+0000
+51,,,,4006833302724537,Oke b,,2020-06-04T03:27:47+0000
+51,,,,4006833302724537,Vậy chốt cho m nha,,2020-06-04T03:27:53+0000
+51,uc_s5.2,,,4006833302724537,Giá đàn 880.000 + phí ship trên 100.000 đúng ko b,bạn ck mình gửi nhe,2020-06-04T03:28:21+0000
+51,,,,4006833302724537,Giờ m Ck 880.000 pk b,,2020-06-04T03:28:57+0000
+51,,,,4006833302724537,Cho m stk,ok bạn nhe,2020-06-04T03:29:02+0000
+51,,,,1454523434857990,,"❌ 0611001928974 - VietcomBank chi nhánh Ba Đình. Nguyễn Lê Thuỷ
+
+❌ 19034987361010 - Nguyễn Lê Thuỷ
+Ngân hàng Techcombank
+
+
+Nội dung chuyển khoản Snow Pham  ghi rõ Tên Facebook + số điện thoại và nhắn lại bên mình sau khi CK nhé.",
+51,,,,4006833302724537,Khoảng bao lâu m nhận được hàng ah,dạ khaonrg 5-7 ngày ạ,2020-06-04T03:29:21+0000
+83,,,,1454523434857990,,,
+83,,,,1454523434857990,,,
+83,,,,1454523434857990,,e còn mẫu này,
+83,,,,1454523434857990,,vâng,
+83,uc_s5.2,,,4506969552662036,"Mẫu này cũng giá 3,350,000 VND",vâng ạ e còn mẫu này thôi,2020-06-05T08:05:14+0000
+83,,,,1454523434857990,,vâng ạ e còn mẫu này thôi,
+83,,,,4506969552662036,,,2020-06-05T08:05:53+0000
+83,,,,4506969552662036,Mẫu này còn đúng không ạ?,,2020-06-05T08:06:03+0000
+83,,thank,,4506969552662036,Mẫu có cả bóng rổ ý ạ,ko ạ mẫu e vừa gửi thôi ạ,2020-06-05T08:06:14+0000
+83,,,,1454523434857990,,mẫu bóng rổ e hết r,
+83,,,,1454523434857990,,mẫu e gửi có phát nhạc ở xishc đu,
+83,,,,4506969552662036,,,2020-06-05T08:07:26+0000
+83,,,,4506969552662036,Còn 2 mẫu này,,2020-06-05T08:07:29+0000
+83,,,,4506969552662036,"3,350k",,2020-06-05T08:07:36+0000
+83,,,,4506969552662036,Đúng ko bạn,vâng,2020-06-05T08:07:39+0000
+83,,,,4506969552662036,Bạn cho mình xin kích thước với,,2020-06-05T08:13:37+0000
+83,,,,4506969552662036,,1m8x2m c a,2020-06-05T08:13:49+0000
+83,,,,4506969552662036,,,2020-06-05T08:20:46+0000
+83,,,,4506969552662036,Cảm ơn shop,,2020-06-05T08:20:52+0000
+83,,,,4506969552662036,Mình sẽ nt khi đặt hàng nhé,vâng ạ,2020-06-05T08:21:03+0000
+161,,,,1454523434857990,,"Sản phẩm  Ghế Ô Tô hãng sản xuất Graco, giá 5m - 10m, độ tuổi sử dụng 2 Tuổi  có giá bán thấp nhất từ: *7,560,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",
+161,,,,1454523434857990,,,
+161,uc_s5.2,,,2971528689595051,Ghế ô tô giá dưới 5tr,"Sản phẩm  Ghế Ô Tô giá dưới 5tr  có giá bán thấp nhất từ: *4,320,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:33:04+0000
+161,,,,1454523434857990,,,
+161,uc_s5.3,,,2971528689595051,Ghế ô tô Graco giá dưới 5tr,"Dạ, sản phẩm Ghế Ô Tô hãng sản xuất Graco, giá dưới 5tr hiện tại bên shop đang tạm hết hàng ạ. Bạn tham khảo các sản phẩm khác dành cho bé nhé!",2020-06-09T02:33:53+0000
+161,uc_s5.2,,,2971528689595051,Ghế ô tô cho trẻ em giá dưới 7tr,Hiện tại sản phẩm Ghế Ô Tô giá 7tr  shop đang có những *hãng sản xuất* sau ạ:,2020-06-09T02:34:54+0000
+161,,other,,2971528689595051,Sao cũng được!,Hiện tại sản phẩm Ghế Ô Tô giá 7tr  shop đang có những *màu* sau ạ:,2020-06-09T02:35:20+0000
+161,,,,2971528689595051,Sao cũng được!,Hiện tại sản phẩm Ghế Ô Tô giá 7tr  shop đang có những *nơi sản xuất* sau ạ:,2020-06-09T02:35:26+0000
+161,,,,2971528689595051,Sao cũng được!,Dạ mời bạn tham khảo sản phẩm Ghế Ô Tô giá 7tr hiện có tại shop nhé!,2020-06-09T02:35:33+0000
+161,,,,1454523434857990,,,
+161,,,,2971528689595051,Bỉm cho trẻ 16 tháng,"Dạ mời bạn tham khảo sản phẩm Ghế Ô Tô giá 7tr, độ tuổi sử dụng Trẻ 16 Tháng hiện có tại shop nhé!",2020-06-09T02:36:43+0000
+161,,,,1454523434857990,,,
+161,,,,1454523434857990,,sr a bên e ko có bỉm,
+161,,,,1454523434857990,,e xin lỗi bên e đang test phân mềm trả lời tự động,
+161,,,,1454523434857990,,a muốn mua ghế ô tô klhoangr bn tiền ạ,
+161,,silence,,2971528689595051,"Ok, mình thấy bot hay dùng thử thôi bạn nhé. Tks.",vâng,2020-06-09T02:38:22+0000
+161,,,,2971528689595051,Ghế xe ô tô cho trẻ dưới 10 tuổi,,2020-06-09T02:40:03+0000
+163,,silence,,3362618307091539,Get Started,"Chào Tieu Cong Thang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-09T02:47:32+0000
+163,uc_s5.2,,,3362618307091539,ghế xe ô tô giá dưới 5 tr,Sản phẩm bạn đang tìm có phải là?,2020-06-09T02:48:37+0000
+163,,,,3362618307091539,Ghế Ô Tô,"Sản phẩm  Ghế Ô Tô giá dưới 5 tr  có giá bán thấp nhất từ: *4,320,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:49:13+0000
+163,,,,1454523434857990,,,
+163,uc_s5.2,,,3362618307091539,Ghế xe ô tô giá dưới 7 tr,"Sản phẩm  Ghế Ô Tô giá dưới 7 tr  có giá bán thấp nhất từ: *6,342,300 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-09T02:50:21+0000
+163,,silence,,1454523434857990,,Hiện tại sản phẩm Ghế Ô Tô giá dưới 7 tr  shop đang có những *hãng sản xuất* sau ạ:,
+163,,,,3362618307091539,sao cũng được,,2020-06-09T02:51:23+0000
+163,,,,3362618307091539,ghế ngồi ăn trên xe ô tô,bé nhà a bn tháng r ạ,2020-06-09T02:52:16+0000
+181,uc_s5.2,shipping_order,,1955625604563999,Xe lắc chòi chân holla giá bn vậy shop,dạ 779k ạ,2020-06-09T15:56:33+0000
+196,,,,2925795474207970,Get Started,,2020-06-10T07:00:02+0000
+196,,silence,,2925795474207970,Hi shop,"Chào Do Thu Trang, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-10T07:00:06+0000
+196,uc_s5.2,,,2925795474207970,Cho m xin báo giá xe lắc holla,"Chào bạn, mình là trợ lý ảo của Shop Gấu & Bí Ngô, mình giúp gì được bạn ạ?",2020-06-10T07:00:19+0000
+196,,silence,,1454523434857990,,"Sản phẩm  Xe Chòi Chân hãng sản xuất Holla  có giá bán thấp nhất từ: *510,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",
+196,,,,1454523434857990,,,
+229,uc_s5.2,,,3124583800887634,Add cho em hỏi giá ghế umoo,dạ 570k ạ,2020-06-12T01:57:11+0000
+229,,,,3124583800887634,Hanbei thì sao add,450k ạ,2020-06-12T01:58:15+0000
+229,,,,3124583800887634,Ship tây ninh nhiêu add,khoảng trên dưới 100k ạk,2020-06-12T02:00:20+0000
+246,uc_s5.2,,,2262293830555829,Xe day beleco bn vay shop,mình không còn ạ,2020-06-13T00:36:57+0000
+258,uc_s5.2,silence,,2423278687772141,B ơi bập bênh holla giá bnhieu,cầu trượt bập bênh 3 in 1 đang có giá 490k ạ,2020-06-13T09:26:16+0000
+292,uc_s5.2,,,2500067176780569,báo giá giúp mình ẦU TRƯỢT BẬP BÊNH HOLLA 3IN1,Sản phẩm bạn đang tìm có phải là?,2020-06-15T07:55:13+0000
+292,,,,2500067176780569,Cầu Trượt,"Sản phẩm  Cầu Trượt hãng sản xuất Holla  có giá bán thấp nhất từ: *1,982,500 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-15T07:56:01+0000
+292,,,,1454523434857990,,,
+292,,,,2500067176780569,không phải bạn ơi,Bạn vui lòng mô tả rõ mong muốn của bạn hoặc chat với nhân viên tư vấn nhé!,2020-06-15T07:57:27+0000
+292,,,,2500067176780569,HOLLA 3IN1 b ơi,"Sản phẩm  Cầu Trượt hãng sản xuất Holla  có giá bán thấp nhất từ: *1,982,500 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-15T07:57:41+0000
+292,,,,1454523434857990,,,
+311,,,,3378698615474077,Get Started,"Chào Đào Nguyễn, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-16T02:29:12+0000
+311,uc_s5.2,,,3378698615474077,Shop cho mình hỏi xe đẩy vinng bn?,"Sản phẩm  Xe Đẩy hãng sản xuất Vinng  có giá bán thấp nhất từ: *1,390,000 VND*, bạn vui lòng bấm vào sản phẩm để xem giá bán và thông tin chi tiết!",2020-06-16T02:29:30+0000
+311,,silence,,1454523434857990,,,
+311,,,,3378698615474077,Mình hỏi xe đẩy đảo chiều gấp gọn,,2020-06-16T02:31:27+0000
+311,,silence,,3378698615474077,,mình còn mẫu khác thôi ạ,2020-06-16T02:31:32+0000
+311,,,,1454523434857990,,"Sản phẩm Xe đẩy đảo chiều gấp gọn VINNG  hiện shop đang có mức giá: *1,390,000 VND (giá gốc 2,500,000 VND)*.",
+311,,silence,,1454523434857990,,,
+311,,,,3378698615474077,Có màu đỏ ko shop?,https://facebook.com/1454523434857990_2490314381278885,2020-06-16T02:32:13+0000
+311,,,,1454523434857990,,mk còn mẫu này thôi ạ,
+361,uc_s5.2,,,3103396669686392,Xin giá xe đấy đảo chiều Tomorow?,dạ 1300k ạ,2020-06-17T10:49:00+0000
+441,uc_s5.2,,,2515501468512576,Xe đẩy tomorrow giá bn shop?,mih ko còn ạ,2020-06-20T16:19:20+0000
+449,uc_s5.2,,,3305083622855631,shop cho mình hỏi xe đẩy đảo chiều - TOMORROW giá tn ạ,1060k b ạ,2020-06-20T01:53:25+0000
+449,,,,3305083622855631,Vâng ạ,,2020-06-20T01:57:11+0000
+449,,,,3305083622855631,Xe này so với dòng V5 đảo chiều thì có ưu điểm gì hơn k shop,,2020-06-20T01:57:29+0000
+449,,,,3305083622855631,Mình đang phân vân khi lựa 1 trong 2 dòng này,v5 bên mnhf lại ko có,2020-06-20T01:57:57+0000
+449,,,,1454523434857990,,nhưng loại này thì ngả dk ạ,
+449,,,,3305083622855631,Vâng ạ,,2020-06-20T02:00:44+0000
+449,,,,3305083622855631,địa chỉ cửa hàng nhà mình ở đâu ạ,"Địa chỉ kho hàng Shop Gấu & Bí Ngô - 0912749696
+Số nhà 16 ngõ Đê Quai ÂU Cơ 
+(đi hết ngõ 124 Âu Cơ, rẽ trái số nhà 16). Nhà 4 tầng màu vàng bạn nhé
+Địa chỉ Hà Nội Nơi Ấy Bình Yên ạ
+
+Giờ làm việc từ 8h30- 12h  và 1h30 -  5h30 chiều hàng ngày. Nghỉ chủ nhật ạ",2020-06-20T02:00:54+0000
+449,,,,3305083622855631,,,2020-06-20T02:09:36+0000
+449,,,,3305083622855631,Vâng ạ,,2020-06-20T02:12:57+0000
+449,,,,3305083622855631,Bạn ơi giá xe 1060k đã đầy đủ phụ kiện chưa ạ,dạ chưa b ạ,2020-06-20T11:20:33+0000
+449,,,,1454523434857990,,https://shopee.vn/search?keyword=xe%20t%E1%BA%ADp%20%C4%91i&shop=36371562,
+449,,,,1454523434857990,,bạn xem dùm mk,
+449,,,,3305083622855631,Bạn ới,,2020-06-22T02:46:51+0000
+449,,other,,3305083622855631,Thêm phụ kiện là thêm những gì đó ạ?,,2020-06-22T02:47:05+0000
+449,,,,3305083622855631,Để hnay mình oder ship với,,2020-06-22T02:47:16+0000
+449,,,,3305083622855631,chủ nhật tính qua mà bên bạn k làm việc nên giờ mới hỏi lại dc,dạ hijen bên mình hết hàng r ạ,2020-06-22T02:47:39+0000
+449,,silence,,3305083622855631,"ui, thế bao giờ hàng về nữa ạ",nếu hàng evef mk báo trên fb nha b,2020-06-22T02:51:22+0000
+449,,,,3305083622855631,ok b ạ,,2020-06-22T03:06:06+0000
+537,,,,3544922048855754,Bạn ơu,,2020-06-25T12:40:16+0000
+537,uc_s5.2,silence,,3544922048855754,Xe đẩy hellobaby 2 chiều giá bn thế,mình khoog có ạ,2020-06-25T12:40:25+0000
+557,,,,1996852403701669,Bạn ơi,,2020-06-26T07:32:21+0000
+557,uc_s5.2,silence,,1996852403701669,Xe motion bên bạn giá bn vậy,dạ 335k ạ,2020-06-26T07:32:29+0000
+582,uc_s5.2,,,1522890191132335,cho em hỏi máy mini doux bên mình bao nhiu ạ MÁY GIẶT TỰ ĐỘNG MINI DOUX,dạ 2990k ạ,2020-06-29T01:31:06+0000
+629,uc_s5.2,silence,,2041079315911220,Xe đẩy tomorro giá bn ạ,mình ko còn ạ,2020-06-30T01:55:37+0000
+764,,,,2985746458187877,Get Started,"Chào Thanh Hải Đặng, mình là trợ lý ảo của Shop Gấu & Bí Ngô!
+Để hỗ trợ bạn nhanh nhất có thể, vui lòng mô tả ngắn gọn và rõ ràng sản phẩm muốn tìm kiếm nhé!",2020-06-08T05:45:13+0000
+764,uc_s5.2,,,2985746458187877,"Mình muốn mua Set phụ kiện máy vắt sữa  medela. Nhờ shop báo giá, tư vấn",Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T05:46:25+0000
+764,,,,2985746458187877,Không đúng!,"Sản phẩm Máy hút sữa điện đôi Avent Snow (Chính hãng - Cty Vạn An)  hiện shop đang có mức giá: *4,990,000 VND (giá gốc 6,950,000 VND)*.",2020-06-08T05:46:54+0000
+764,,,,1454523434857990,,,
+764,,,,2985746458187877,Phụ kiện máy hút sữa medela,Có phải bạn muốn hỏi hãng sản xuất sau không ạ?,2020-06-08T05:47:22+0000
+764,,,,2985746458187877,Không đúng!,"Sản phẩm Máy hút sữa điện đôi Avent Snow (Chính hãng - Cty Vạn An)  hiện shop đang có mức giá: *4,990,000 VND (giá gốc 6,950,000 VND)*.",2020-06-08T05:47:42+0000
+764,,,,1454523434857990,,,
+764,,silence,,1454523434857990,,mình không bán ạ,
