@@ -18,6 +18,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+db_name = "rasa_chatlog_test_daily_crawl"
+
 
 def get_timestamp(timestamp: int, format: str):
     """
@@ -28,6 +30,25 @@ def get_timestamp(timestamp: int, format: str):
     """
     readable_timestamp = datetime.datetime.fromtimestamp(timestamp).strftime(format)
     return readable_timestamp
+
+
+def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
+    chatlog_rasa = chalog_all
+    date_list = [datetime.datetime.strptime(x, "%Y-%m-%d %H:%M:%S") for x in list(chatlog_rasa["created_time"])]
+    time_list = [datetime.datetime.strptime(x[11:], "%H:%M:%S") for x in list(chatlog_rasa["created_time"])]
+    week_day = [datetime.datetime.strptime(x[:10], "%Y-%m-%d").weekday() for x in list(chatlog_rasa["created_time"])]
+    chatlog_rasa.insert(9, "date", date_list)
+    chatlog_rasa.insert(10, "conversation_time", time_list)
+    chatlog_rasa.insert(11, "week_day", week_day)
+
+    # Connect to MongoDB
+    client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
+    db = client['chatlog_db']
+    collection = db[db_name]
+    data_dict = chatlog_rasa.to_dict("records")
+
+    # Insert collection
+    collection.insert_many(data_dict)
 
 
 def process_raw_rasa_chatlog(input_month, rasa_chatlog_daily: pd.DataFrame):
@@ -158,9 +179,12 @@ def clean_rasa_chatlog(rasa_chatlog):
 def get_last_document_from_db():
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
-    collection = db['rasa_chatlog_all_18_8']
-    last_document = [document for document in collection.find().limit(1).sort([('$natural', -1)])][0]
-    last_conversation_id = last_document["conversation_id"]
+    collection = db[db_name]
+    last_document = [document for document in collection.find().limit(1).sort([('$natural', -1)])]
+    last_conversation_id = 0
+    if len(last_document) > 0:
+        last_conversation_id = last_document[0]["conversation_id"]
+
     return last_conversation_id
 
 
@@ -171,8 +195,12 @@ def crawl_daily():
     all_conversation_detail = export_conversation_detail(all_conversations)
     rasa_chatlog_processed = process_raw_rasa_chatlog("08", all_conversation_detail)
     rasa_chatlog_clean = clean_rasa_chatlog(rasa_chatlog_processed)
-    a = 0
+
+    last_conversation_id = get_last_document_from_db()
+    processor = RasaChalogProcessor()
+    rasa_chatlog = processor.process_rasa_chatlog(rasa_chatlog_clean, last_conversation_id)
+
+    upload_all_rasa_chatlog_to_atlas_mongodb(rasa_chatlog)
 
 
-# crawl_daily()
-get_last_document_from_db()
+crawl_daily()

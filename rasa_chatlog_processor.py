@@ -113,7 +113,7 @@ class RasaChalogProcessor():
         rasa_chatlog_df.to_csv(output_file_path, index=False)
         return rasa_chatlog_df
 
-    def split_chatlog_to_conversations(self, rasa_chatlog_df: pd.DataFrame):
+    def split_chatlog_to_conversations(self, rasa_chatlog_df: pd.DataFrame, begin_conversation_id=0):
         """
        Split chatlog to conversation
        :param fb_conversations:
@@ -128,7 +128,7 @@ class RasaChalogProcessor():
         fmt = '%Y-%m-%d %H:%M:%S'
         sender_ids = list(rasa_chatlog_df["sender_id"].dropna())
         sender_ids = sorted(set(sender_ids), key=sender_ids.index)
-        conversation_id = 0
+        conversation_id = begin_conversation_id
         last_conversation_id = None
         conversation_begin_date = None
         conversation_begin_time = None
@@ -249,12 +249,12 @@ class RasaChalogProcessor():
                                     co_x_khong_form = True
                         if conversation_has_images and (
                                 con_x_khong_form or "còn không" in user_message_correction or all(
-                                x in user_message_correction for x in ["còn", "không"])):
+                            x in user_message_correction for x in ["còn", "không"])):
                             rasa_chatlog_df.at[item_index, "use_case"] = "uc_s1"
                             break
                         elif not conversation_has_images and (
                                 co_x_khong_form or "có không" in user_message_correction or all(
-                                x in user_message_correction for x in ["có", "không"])):
+                            x in user_message_correction for x in ["có", "không"])):
                             if str(chatlog_sub_df_first_turn.loc[item_index, "entities"]) != "nan":
                                 entities_list = chatlog_sub_df_first_turn.loc[item_index, "entities"].split(",")
                                 entities_list = [x for x in entities_list if x != '']
@@ -268,7 +268,7 @@ class RasaChalogProcessor():
         print("Specify usecases: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
-    def  specify_conversation_outcome(self, rasa_chatlog_df: pd.DataFrame):
+    def specify_conversation_outcome(self, rasa_chatlog_df: pd.DataFrame):
         logger.info("Specify outcome for conversations")
         start_time = time.time()
         rasa_chatlog_df.insert(3, "outcome", "")
@@ -301,7 +301,9 @@ class RasaChalogProcessor():
 
                 bot_message = item["bot_message"]
                 user_intent = item["intent"]
-                if str(user_intent) != "nan" and (user_intent == "thank" or any(x in user_message_correction for x in ["thanks", "thank", "tks", "cảm ơn", "thankyou", "cám ơn"])):
+                if str(user_intent) != "nan" and (user_intent == "thank" or any(x in user_message_correction for x in
+                                                                                ["thanks", "thank", "tks", "cảm ơn",
+                                                                                 "thankyou", "cám ơn"])):
                     rasa_chatlog_df.at[index, "outcome"] = "thank"
                     break
                 elif user_message_correction and any(x in user_message_correction for x in key_words) and all(
@@ -326,8 +328,7 @@ class RasaChalogProcessor():
         print("Specify outcomes: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
-
-    def process_rasa_chatlog(self, input_month: str, raw_chatlog: str, df: pd.DataFrame):
+    def process_rasa_chatlog(self, df: pd.DataFrame, begin_converastion_id=0):
         """
         Processor
         :param input_month:
@@ -339,7 +340,7 @@ class RasaChalogProcessor():
         rasa_chatlog_by_month_df = df.dropna(subset=["bot_message", "user_message", "intent"], how="all")
 
         # rasa_chatlog_by_month_df = self.get_chatlog_by_month(input_month, raw_chatlog)
-        rasa_chatlog_by_month_df = self.split_chatlog_to_conversations(rasa_chatlog_by_month_df)
+        rasa_chatlog_by_month_df = self.split_chatlog_to_conversations(rasa_chatlog_by_month_df, begin_converastion_id)
         rasa_chatlog_by_month_df = self.split_chatlog_conversations_to_turns(rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.set_uc1_and_uc2_for_conversations(rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.specify_conversation_outcome(rasa_chatlog_by_month_df)

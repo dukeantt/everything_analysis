@@ -281,7 +281,7 @@ def main():
     chatlog_all = pd.concat(chatlog_list)
     chatlog_all = chatlog_all.reset_index(drop=True)
     processor = RasaChalogProcessor()
-    chatlog_all = processor.process_rasa_chatlog("06", "abc", chatlog_all)
+    chatlog_all = processor.process_rasa_chatlog(chatlog_all)
 
     conversation_ids = chatlog_all["conversation_id"].drop_duplicates(keep="first").to_list()
     trash_conversation_ids = []
