@@ -1,152 +1,104 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from gensim.models import Word2Vec
+from sklearn.manifold import TSNE
+# from MulticoreTSNE import MulticoreTSNE as TSNE
+
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from sklearn.mixture import GaussianMixture
+from sklearn.cluster import AgglomerativeClustering
 import pandas as pd
-from spelling_correction.heuristic_correction import *
-import pickle
 import re
-import logging
-import time
-import re
-
-logging.root.setLevel(logging.NOTSET)
-logging.basicConfig(
-    level=logging.NOTSET,
-    format='%(asctime)s %(module)s - %(funcName)s: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-logger = logging.getLogger(__name__)
+import string
+import unicodedata
+import process_user_message
+import numpy as np
 
 
-def remove_col_str(customer_messages):
-    start_time = time.time()
-    logger.info("Remove col string")
+def calculate_silhouette_score(tsne_input_path=None):
+    if tsne_input_path:
+        tsne_vectors = np.loadtxt(tsne_input_path, dtype=float)
+    else:
+        tsne_vectors = np.loadtxt('tsne_vectors.txt', dtype=float)
+    scores = []
+    for k in range(2, 20):
+        kmeans = KMeans(n_clusters=k, random_state=0)
+        kmeans = kmeans.fit(tsne_vectors)
+        labels = kmeans.labels_
+        score = silhouette_score(tsne_vectors, labels)
+        inertia = kmeans.inertia_
+        scores.append((k, score, inertia))
 
-    # remove a portion of string in a dataframe column - col_1
-    customer_messages = [str(x).replace('\n', ' ') for x in customer_messages]
-    # remove all the characters after &# (including &#) for column - col_1
-    customer_messages = [str(x).replace(' &#.*', ' ') for x in customer_messages]
-
-    logger.info(str(time.time() - start_time))
-    return customer_messages
-
-
-def remove_col_white_space(customer_messages):
-    start_time = time.time()
-    logger.info("Remove col white space")
-
-    # remove white space at the beginning of string
-    customer_messages = [str(x).strip() for x in customer_messages]
-
-    logger.info(str(time.time() - start_time))
-    return customer_messages
+    scores_df = pd.DataFrame(scores, columns=['k', 'silhouette_score', 'inertia'])
+    scores_df.to_csv("data/elbow_n_silhouette_scores.csv", index=False)
 
 
-def correction_message(customer_messages):
-    start_time = time.time()
-    logger.info("Correction message")
+def sentence_embedding(customer_message_path, tsne_output_path):
+    if customer_message_path:
+        customer_message_df = pd.read_csv(customer_message_path)
+        customer_message = customer_message_df["sentence"].drop_duplicates().to_list()
+    else:
+        customer_message = process_user_message.get_processed_customer_message()
 
-    filter_text = ["facebook", "started"]
-    correct_messages = []
-    for message in customer_messages:
-        if all(x not in message for x in filter_text):
-            message = do_correction(str(message))
-        correct_messages.append(message)
+    sentences = [x.split() for x in customer_message]
+    model = Word2Vec(sentences, size=20, window=5, min_count=1, workers=4)
 
-    logger.info(str(time.time() - start_time))
-    return correct_messages
+    vectors_list = []
+    for sent_index, sent_value in enumerate(sentences):
+        sentence_length = len(sent_value)
+        vector = 0
+        for word_index, word_value in enumerate(sent_value):
+            vector += model.wv[word_value]
+        vector = vector / sentence_length
+        vector = vector.tolist()
+        vectors_list.append(vector)
 
+    tsne = TSNE(n_components=2, verbose=2)
+    tsne_vectors = tsne.fit_transform(vectors_list)
+    if tsne_output_path:
+        np.savetxt(tsne_output_path, tsne_vectors, fmt='%f')
+    else:
+        np.savetxt('tsne_vectors.txt', tsne_vectors, fmt='%f')
 
-def remove_special_characters(customer_messages):
-    start_time = time.time()
-    logger.info("Remove special character")
-
-    customer_messages = [re.sub('\}|\{|\]|\[|\;|\.|\,|\.|\:|\!|\@|\#|\$|\^|\&|\(|\)|\<|\>|\?|\"|\'', ' ', str(x)) for x
-                         in customer_messages]
-    customer_messages = [x for x in customer_messages if x != ' ']
-
-    logger.info(str(time.time() - start_time))
-    return customer_messages
-
-
-def deEmojify(customer_messages):
-    start_time = time.time()
-    logger.info("de-emojify")
-
-    regrex_pattern = re.compile(pattern="["
-                                        u"\U0001F600-\U0001F64F"  # emoticons
-                                        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
-                                        u"\U0001F680-\U0001F6FF"  # transport & map symbols
-                                        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
-                                        "]+", flags=re.UNICODE)
-    customer_messages = [regrex_pattern.sub(r'', x) for x in customer_messages]
-
-    logger.info(str(time.time() - start_time))
-    return customer_messages
+    return tsne_vectors
 
 
-def get_customer_message():
-    start_time = time.time()
-    logger.info("Get customer message")
+def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input_path=None):
+    if tsne_input_path:
+        tsne_vectors = np.loadtxt(tsne_input_path, dtype=float)
+    else:
+        tsne_vectors = np.loadtxt('tsne_vectors.txt', dtype=float)
+    vectors_df = pd.DataFrame(data=tsne_vectors, columns=["x", "y"])
 
-    chatlog_df_list = []
-    for month in range(1, 8):
-        file_path = "data/chatlog_fb/all_chat_fb_{selected_month}.csv"
-        file_path = file_path.format(selected_month=str(month))
-        chatlog_df = pd.read_csv(file_path)
-        chatlog_df_list.append(chatlog_df)
+    if customer_message_path:
+        customer_message_df = pd.read_csv(customer_message_path)
+        customer_message = customer_message_df["sentence"].drop_duplicates().to_list()
+    else:
+        customer_message = process_user_message.get_processed_customer_message()
 
-    all_chatlog = pd.concat(chatlog_df_list)
-    customer_messages = [x for x in all_chatlog["user_message"] if str(x) not in ["nan", "user"]]
+    kmeans = KMeans(n_clusters=number_of_clusters, random_state=0).fit(tsne_vectors)
 
-    logger.info(str(time.time() - start_time))
-    return customer_messages
-
-
-def export_clean_customer_messages():
-    start_time = time.time()
-    logger.info("Export clean customer message")
-
-    customer_messages = get_customer_message()
-    customer_messages = remove_col_str(customer_messages)
-    customer_messages = deEmojify(customer_messages)
-    customer_messages = remove_special_characters(customer_messages)
-    customer_messages = correction_message(customer_messages)
-    customer_messages = remove_col_white_space(customer_messages)
-    with open('data/customer_message/customer_messages.pkl', 'wb') as file:
-        # store the data as binary data stream
-        pickle.dump(customer_messages, file)
-
-    logger.info(str(time.time() - start_time))
-    return customer_messages
+    data_tuples = list(zip(customer_message, kmeans.labels_))
+    clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'kmeans_cluster'])
+    clustering_df = pd.merge(clustering_df, vectors_df, right_index=True, left_index=True)
+    clustering_df.to_csv("data/all_cluster.csv", index=False)
+    return clustering_df
 
 
-def remove_stop_word(customer_messages=None):
-    start_time = time.time()
-    logger.info("Remove stop words")
+def gaussian_mixture_clustering():
+    tsne_vectors = np.loadtxt('tsne_vectors.txt', dtype=float)
+    vectors_df = pd.DataFrame(data=tsne_vectors, columns=["x", "y"])
 
-    file_name = "stop_words.txt"
-    with open(file_name) as f:
-        line_list = f.readlines()
-    stop_words = [x.replace("\n", "") for x in line_list]
+    customer_message = process_user_message.get_processed_customer_message()
+    gm = GaussianMixture(n_components=6, n_init=10, covariance_type="spherical").fit(tsne_vectors)
 
-    new_customer_messages = []
+    data_tuples = list(zip(customer_message, gm.predict(tsne_vectors)))
+    clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'gm_cluster'])
+    clustering_df = pd.merge(clustering_df, vectors_df, right_index=True, left_index=True)
 
-    for message in customer_messages:
-        message = message.split(" ")
-        message = [x for x in message if x not in stop_words]
-        message = " ".join(message)
-        if message != '':
-            new_customer_messages.append(message)
+    return clustering_df
 
-
-
-    logger.info(str(time.time() - start_time))
-    return new_customer_messages
-
-
-def main():
-    with open('data/customer_message/customer_messages.pkl', 'rb') as file:
-        # store the data as binary data stream
-        customer_messages = pickle.load(file)
-    customer_messages = remove_stop_word(customer_messages)
-    customer_messages = deEmojify(customer_messages)
-
-main()
+# sentence_embedding("data/cluster_8.csv", "data/cluster_8/tsne_vectors.txt")
+# k_mean_clustering("data/cluster_8.csv", "data/cluster_8/tsne_vectors.txt")
+k_mean_clustering(6)
+# calculate_silhouette_score("tsne_vectors.txt")
