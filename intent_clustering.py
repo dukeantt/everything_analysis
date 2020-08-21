@@ -15,7 +15,7 @@ import process_user_message
 import numpy as np
 
 
-def calculate_silhouette_score(tsne_input_path=None):
+def calculate_silhouette_score(tsne_input_path=None, output=None):
     if tsne_input_path:
         tsne_vectors = np.loadtxt(tsne_input_path, dtype=float)
     else:
@@ -30,17 +30,22 @@ def calculate_silhouette_score(tsne_input_path=None):
         scores.append((k, score, inertia))
 
     scores_df = pd.DataFrame(scores, columns=['k', 'silhouette_score', 'inertia'])
-    scores_df.to_csv("data/elbow_n_silhouette_scores.csv", index=False)
+    if output:
+        scores_df.to_csv(output, index=False)
+    else:
+        scores_df.to_csv("data/elbow_n_silhouette_scores.csv", index=False)
 
 
-def sentence_embedding(customer_message_path, tsne_output_path):
+def sentence_embedding(no_cluster, customer_message_path, tsne_output_path, customer_message_output_path):
     if customer_message_path:
         customer_message_df = pd.read_csv(customer_message_path)
-        customer_message = customer_message_df["sentence"].drop_duplicates().to_list()
+        customer_message_df = customer_message_df[customer_message_df["kmeans_cluster"] == no_cluster]
+        customer_message_df.to_csv(customer_message_output_path, index=False)
+        customer_message = customer_message_df["sentence"].to_list()
     else:
         customer_message = process_user_message.get_processed_customer_message()
 
-    sentences = [x.split() for x in customer_message]
+    sentences = [str(x).split() for x in customer_message]
     model = Word2Vec(sentences, size=20, window=5, min_count=1, workers=4)
 
     vectors_list = []
@@ -63,7 +68,7 @@ def sentence_embedding(customer_message_path, tsne_output_path):
     return tsne_vectors
 
 
-def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input_path=None):
+def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input_path=None, cluster_output_path=None):
     if tsne_input_path:
         tsne_vectors = np.loadtxt(tsne_input_path, dtype=float)
     else:
@@ -72,7 +77,7 @@ def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input
 
     if customer_message_path:
         customer_message_df = pd.read_csv(customer_message_path)
-        customer_message = customer_message_df["sentence"].drop_duplicates().to_list()
+        customer_message = customer_message_df["sentence"].to_list()
     else:
         customer_message = process_user_message.get_processed_customer_message()
 
@@ -81,7 +86,7 @@ def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input
     data_tuples = list(zip(customer_message, kmeans.labels_))
     clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'kmeans_cluster'])
     clustering_df = pd.merge(clustering_df, vectors_df, right_index=True, left_index=True)
-    clustering_df.to_csv("data/all_cluster.csv", index=False)
+    clustering_df.to_csv(cluster_output_path, index=False)
     return clustering_df
 
 
@@ -98,7 +103,29 @@ def gaussian_mixture_clustering():
 
     return clustering_df
 
-# sentence_embedding("data/cluster_8.csv", "data/cluster_8/tsne_vectors.txt")
-# k_mean_clustering("data/cluster_8.csv", "data/cluster_8/tsne_vectors.txt")
-k_mean_clustering(6)
-# calculate_silhouette_score("tsne_vectors.txt")
+
+# for i in range(0, 11):
+#     print(i)
+#     tsne_vectors_output = "data/cluster_{no_cluster}/tsne_vectors.txt"
+#     tsne_vectors_output = tsne_vectors_output.format(no_cluster=str(i + 1))
+#
+#     customer_message_cluster_output = "data/cluster_{no_cluster}/cluster_{no_cluster}.txt"
+#     customer_message_cluster_output = customer_message_cluster_output.format(no_cluster=str(i+1))
+#
+#     sentence_embedding(i, "data/all_cluster.csv", tsne_vectors_output, customer_message_cluster_output)
+
+# sentence_embedding(1, "data/all_cluster.csv", "data/cluster_2/tsne_vectors.txt", "data/cluster_2/cluster_2.txt")
+
+# for i in range(0,11):
+#     tsne_vectors_input = "data/cluster_{no_cluster}/tsne_vectors.txt"
+#     tsne_vectors_input = tsne_vectors_input.format(no_cluster=str(i + 1))
+#
+#     silhouette_score_output = "data/cluster_{no_cluster}/elbow_n_silhouette_scores.csv"
+#     silhouette_score_output = silhouette_score_output.format(no_cluster=str(i+1))
+#     calculate_silhouette_score(tsne_vectors_input, silhouette_score_output)
+
+# calculate_silhouette_score("data/cluster_2/tsne_vectors.txt", "data/cluster_2/elbow_n_silhouette_scores.csv")
+
+k_mean_clustering(5,"data/cluster_4/cluster_4.txt", "data/cluster_4/tsne_vectors.txt",
+                  cluster_output_path="data/cluster_4/cluster_4_all_cluster.csv")
+# k_mean_clustering(11, None, None, "data/all_cluster.csv")
