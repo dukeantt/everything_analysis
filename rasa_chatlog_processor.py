@@ -6,6 +6,12 @@ import logging
 from underthesea import pos_tag
 import pandas as pd
 import numpy as np
+import unicodedata
+from denver.datasets.ic_dataset import ICDataset
+from denver.trainers.language_model_trainer import LanguageModelTrainer
+from denver.models.ic import ULMFITClassifier
+from denver.trainers.trainer import ModelTrainer
+from denver.models.ner import FlairSequenceTagger
 
 logging.basicConfig(filename="logging_data/rasa_chatlog_processor_log",
                     format='%(asctime)s %(message)s',
@@ -328,6 +334,106 @@ class RasaChalogProcessor():
         print("Specify outcomes: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
+    def specify_uc4(self, chatlog_df, conversation_turn_pair_without_img, model_ner):
+        chatlog_df.insert(2, "uc4", "")
+        attributes = ["age_of_use", "guarantee", "color", "material", "origin", "promotion", "size", "weight", "brand",
+                      "price"]
+        CON = ['còn', ' con ', ' conf ']
+        KHONG = ['không', ' k ', ' ko ', ' hem ', ' hok ', ' khg ', 'khoong']
+
+        uc4_base_require_entities = ["object_type", "mention"]
+
+        filter_word = ["ship", "shopee", "shoppee", "freeship", "shope"]
+        for pair in conversation_turn_pair_without_img:
+            conversation_id = pair[0]
+            turn = pair[1]
+            sub_df = chatlog_df[(chatlog_df["conversation_id"] == conversation_id) & (chatlog_df["turn"] == turn) & (
+                ~chatlog_df["user_message"].isin(["nan", "user"]))].reset_index()
+            if len(sub_df) > 0:
+                for item_index in range(0, len(sub_df)):
+                    user_message = sub_df.at[item_index, "user_message_clean"]
+                    user_message = unicodedata.normalize("NFC", str(user_message))
+                    user_message = user_message.lower()
+                    message_index = sub_df.at[item_index, "index"]
+                    con = [word for word in CON if (word in user_message)]
+                    khong = [word for word in KHONG if (word in user_message)]
+
+                    if str(user_message) == "nan" or str(user_message) == "user":
+                        continue
+                    ner_output = model_ner.process(sample=user_message)
+                    entities = [x["entity"] for x in ner_output]
+                    prod_attribute = [x["entity"] for x in ner_output if x["entity"] in attributes]
+
+                    if con and khong and entities:
+                        # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
+                        if any(x in entities for x in uc4_base_require_entities):
+                            if len(prod_attribute) == 0:
+                                chatlog_df.at[message_index, "uc4"] = "uc_s4.1"
+                            elif len(prod_attribute) == 1:
+                                chatlog_df.at[message_index, "uc4"] = "uc_s4.2"
+                            else:
+                                chatlog_df.at[message_index, "uc4"] = "uc_s4.3"
+        return chatlog_df
+
+    def specify_uc5(self, chatlog_df, conversation_turn_pair_without_img, model_ner):
+        chatlog_df.insert(2, "uc5", "")
+        attributes = ["age_of_use", "guarantee", "color", "material", "origin", "promotion", "size", "weight", "brand",
+                      "price"]
+        filter_word = ["ship", "shopee", "shoppee", "freeship", "shope"]
+        uc5_base_require_entities = ["object_type", "mention"]
+
+        PRICE = ['giá ', 'gia ', 'gía ', 'tiền', 'tieen', 'tieenf', 'tien', 'bao nhiều', ' bn ', 'nhiu', 'bnh', 'nhieu',
+                 'bao nhiu', 'nhiêu']
+        for pair in conversation_turn_pair_without_img:
+            conversation_id = pair[0]
+            turn = pair[1]
+            sub_df = chatlog_df[(chatlog_df["conversation_id"] == conversation_id) & (chatlog_df["turn"] == turn) & (
+                ~chatlog_df["user_message"].isin(["nan", "user"]))].reset_index()
+            for item_index in range(0, len(sub_df)):
+                user_message = sub_df.at[item_index, "user_message_clean"]
+                user_message = unicodedata.normalize("NFC", str(user_message))
+                user_message = user_message.lower()
+                message_index = sub_df.at[item_index, "index"]
+
+                price = [key_price for key_price in PRICE if (key_price in user_message)]
+
+                if str(user_message) == "nan" or str(user_message) == "user":
+                    continue
+                ner_output = model_ner.process(sample=user_message)
+                entities = [x["entity"] for x in ner_output]
+                prod_attribute = [x["entity"] for x in ner_output if x["entity"] in attributes]
+                attribute_value = [x["value"] for x in ner_output if x["entity"] == "attribute"]
+
+                if len(price) > 0 or "price" in attribute_value:
+                    # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
+                    if any(x in entities for x in uc5_base_require_entities):
+                        if len(prod_attribute) == 0:
+                            chatlog_df.at[message_index, "uc5"] = "uc_s5.1"
+                        elif len(prod_attribute) == 1:
+                            chatlog_df.at[message_index, "uc5"] = "uc_s5.2"
+                        else:
+                            chatlog_df.at[message_index, "uc5"] = "uc_s5.3"
+
+        return chatlog_df
+
+    def get_conversation_turn_without_and_with_image(self, chatlog_df: pd.DataFrame):
+        start_time = time.time()
+
+        conversation_turn_list_without_image = []
+        conversation_turn_list_with_image = []
+        conversation_ids = chatlog_df["conversation_id"].drop_duplicates(keep="first").to_list()
+        for id in conversation_ids:
+            sub_df = chatlog_df[chatlog_df["conversation_id"] == id]
+            turns = sub_df["turn"].drop_duplicates(keep="first").to_list()
+            for turn in turns:
+                attachments = sub_df.loc[sub_df["turn"] == turn, "attachments"].dropna().to_list()
+                if len(attachments) == 0:
+                    conversation_turn_list_without_image.append((id, turn))
+                else:
+                    conversation_turn_list_with_image.append((id, turn))
+        logger.info("Get conversation turn without image: " + str(time.time() - start_time))
+        return conversation_turn_list_without_image, conversation_turn_list_with_image
+
     def process_rasa_chatlog(self, df: pd.DataFrame, begin_converastion_id=0):
         """
         Processor
@@ -338,11 +444,18 @@ class RasaChalogProcessor():
         start_time = time.time()
         logger.info("Start process chatlog")
         rasa_chatlog_by_month_df = df.dropna(subset=["bot_message", "user_message", "intent"], how="all")
+        conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
+            rasa_chatlog_by_month_df)
+
+        model_path = "/home/ducanh/crawl_rasa/models/vi_nerr.pt"
+        model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
 
         # rasa_chatlog_by_month_df = self.get_chatlog_by_month(input_month, raw_chatlog)
         rasa_chatlog_by_month_df = self.split_chatlog_to_conversations(rasa_chatlog_by_month_df, begin_converastion_id)
         rasa_chatlog_by_month_df = self.split_chatlog_conversations_to_turns(rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.set_uc1_and_uc2_for_conversations(rasa_chatlog_by_month_df)
+        rasa_chatlog_by_month_df = self.specify_uc4(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
+        rasa_chatlog_by_month_df = self.specify_uc5(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
         rasa_chatlog_by_month_df = self.specify_conversation_outcome(rasa_chatlog_by_month_df)
 
         print("Process rasa chatlog: --- %s seconds ---" % (time.time() - start_time))
