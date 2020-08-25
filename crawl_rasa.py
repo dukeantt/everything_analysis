@@ -253,6 +253,35 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     collection.insert_many(data_dict)
 
 
+def get_chatlog_from_db(from_date, to_date):
+    client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
+    db = client['chatlog_db']
+    collection = db['rasa_chatlog_all_18_8']
+    start = datetime.datetime.strptime(from_date, "%Y-%m-%d")
+    end = datetime.datetime.strptime(to_date, "%Y-%m-%d")
+
+    time_start_morning = datetime.datetime.strptime("09:00:00", "%H:%M:%S")
+    time_end_morning = datetime.datetime.strptime("12:05:00", "%H:%M:%S")
+
+    time_start_afternoon = datetime.datetime.strptime("14:00:00", "%H:%M:%S")
+    time_end_afternoon = datetime.datetime.strptime("17:05:00", "%H:%M:%S")
+
+    # chatlog_df = pd.DataFrame([document for document in collection.find({'conversation_begin_date': {'$gte': start, '$lte': end, }})])
+    chatlog_df = pd.DataFrame([document for document in collection.find({
+        '$and': [
+            {'conversation_begin_date': {'$gte': start, '$lte': end}},
+            {'$or': [
+                {'conversation_begin_time': {'$gte': time_start_morning, '$lte': time_end_morning}},
+                {'conversation_begin_time': {'$gte': time_start_afternoon, '$lte': time_end_afternoon}},
+            ]},
+            {'week_day': {'$gte': 0, '$lte': 4}},
+        ]
+    })])
+
+    chatlog_df = chatlog_df.drop(columns=["_id", "conversation_time", "conversation_begin_date", "week_day"])
+    return chatlog_df
+
+
 def main():
     month_list = ["01", "02", "03", "04", "05", "06", "07", "08"]
 
@@ -267,19 +296,21 @@ def main():
     #         if month != "01":
     #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
 
-    chatlog_list = []
-    for index, month in enumerate(month_list):
-        if month != "01":
-            print(month)
-            chat_log = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
-            chat_log["user_message_correction"] = chat_log["user_message"]
-            chat_log = remove_col_str(df=chat_log, col_name="user_message_correction")
-            chat_log = deEmojify(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
-            chat_log = correction_message(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
-            chat_log = remove_col_white_space(df=chat_log, col_name="user_message_correction")
-            chatlog_list.append(chat_log)
-    chatlog_all = pd.concat(chatlog_list)
-    chatlog_all = chatlog_all.reset_index(drop=True)
+    # chatlog_list = []
+    # for index, month in enumerate(month_list):
+    #     if month != "01":
+    #         print(month)
+    #         chat_log = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
+    #         chat_log["user_message_correction"] = chat_log["user_message"]
+    #         chat_log = remove_col_str(df=chat_log, col_name="user_message_correction")
+    #         chat_log = deEmojify(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
+    #         chat_log = correction_message(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
+    #         chat_log = remove_col_white_space(df=chat_log, col_name="user_message_correction")
+    #         chatlog_list.append(chat_log)
+    # chatlog_all = pd.concat(chatlog_list)
+    # chatlog_all = chatlog_all.reset_index(drop=True)
+
+    chatlog_all = get_chatlog_from_db("2020-08-01", "2020-08-14")
     processor = RasaChalogProcessor()
     chatlog_all = processor.process_rasa_chatlog(chatlog_all)
 
@@ -295,5 +326,6 @@ def main():
 
     chatlog_all = chatlog_all[~chatlog_all["conversation_id"].isin(trash_conversation_ids)]
     upload_all_rasa_chatlog_to_atlas_mongodb(chatlog_all)
+
 
 main()

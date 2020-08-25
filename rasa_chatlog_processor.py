@@ -9,7 +9,7 @@ import numpy as np
 import unicodedata
 from denver.datasets.ic_dataset import ICDataset
 from denver.trainers.language_model_trainer import LanguageModelTrainer
-from denver.models.ic import ULMFITClassifier
+# from denver.models.ic import ULMFITClassifier
 from denver.trainers.trainer import ModelTrainer
 from denver.models.ner import FlairSequenceTagger
 
@@ -447,7 +447,7 @@ class RasaChalogProcessor():
         conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
             rasa_chatlog_by_month_df)
 
-        model_path = "/home/ducanh/crawl_rasa/models/vi_nerr.pt"
+        model_path = "/home/ducanh/pycharm_prj/crawl-rasa/models/vi_nerr.pt"
         model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
 
         # rasa_chatlog_by_month_df = self.get_chatlog_by_month(input_month, raw_chatlog)
