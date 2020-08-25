@@ -285,33 +285,35 @@ def get_chatlog_from_db(from_date, to_date):
 def main():
     month_list = ["01", "02", "03", "04", "05", "06", "07", "08"]
 
-    # rasa_chatlog_in_month = crawl_rasa_chatlog()
-    # field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
-    #               'events',
-    #               'latest_input_channel', 'active_form', 'latest_action_name']
-    # file_name = "chatlog_data/all_conv_detail_.csv"
-    # rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
-    # if rasa_chatlog_in_month is not None:
-    #     for index, month in enumerate(month_list):
-    #         if month != "01":
-    #             process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
+    rasa_chatlog_in_month = crawl_rasa_chatlog()
+    field_name = ['sender_id', 'slots', 'latest_message', 'latest_event_time', 'followup_action', 'paused',
+                  'events',
+                  'latest_input_channel', 'active_form', 'latest_action_name']
 
-    # chatlog_list = []
-    # for index, month in enumerate(month_list):
-    #     if month != "01":
-    #         print(month)
-    #         chat_log = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
-    #         chat_log["user_message_correction"] = chat_log["user_message"]
-    #         chat_log = remove_col_str(df=chat_log, col_name="user_message_correction")
-    #         chat_log = deEmojify(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
-    #         chat_log = correction_message(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
-    #         chat_log = remove_col_white_space(df=chat_log, col_name="user_message_correction")
-    #         chatlog_list.append(chat_log)
-    # chatlog_all = pd.concat(chatlog_list)
-    # chatlog_all = chatlog_all.reset_index(drop=True)
+    file_name = "chatlog_data/all_conv_detail_.csv"
+    rasa_chatlog_in_month = pd.read_csv(file_name, names=field_name, header=None)
 
-    chatlog_all = get_chatlog_from_db("2020-08-01", "2020-08-14")
-    chatlog_all = chatlog_all.drop(columns=["conversation_id", "turn", "use_case", "outcome", "conversation_begin_time"])
+    if rasa_chatlog_in_month is not None:
+        for index, month in enumerate(month_list):
+            if month != "01":
+                process_raw_rasa_chatlog(input_month=month, rasa_chatlog_in_month=rasa_chatlog_in_month)
+
+    chatlog_list = []
+    for index, month in enumerate(month_list):
+        if month != "01":
+            print(month)
+            chat_log = pd.read_csv("chatlog_data/rasa/rasa_chatlog_" + month + ".csv")
+            chat_log["user_message_correction"] = chat_log["user_message"]
+            chat_log = remove_col_str(df=chat_log, col_name="user_message_correction")
+            chat_log = deEmojify(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
+            chat_log = correction_message(df=chat_log, col_name="user_message_correction", og_col_name="user_message_correction")
+            chat_log = remove_col_white_space(df=chat_log, col_name="user_message_correction")
+            chatlog_list.append(chat_log)
+    chatlog_all = pd.concat(chatlog_list)
+    chatlog_all = chatlog_all.reset_index(drop=True)
+
+    # chatlog_all = get_chatlog_from_db("2020-08-01", "2020-08-14")
+    # chatlog_all = chatlog_all.drop(columns=["conversation_id", "turn", "use_case", "outcome", "conversation_begin_time"])
 
     processor = RasaChalogProcessor()
     chatlog_all = processor.process_rasa_chatlog(chatlog_all)
@@ -319,14 +321,14 @@ def main():
     conversation_ids = chatlog_all["conversation_id"].drop_duplicates(keep="first").to_list()
     trash_conversation_ids = []
 
-    for id in conversation_ids:
-        sub_df = chatlog_all[chatlog_all["conversation_id"] == id]
-        number_of_turns = len(sub_df["turn"].drop_duplicates(keep="first").to_list())
-        outcome = list(filter(lambda x: x != "", list(sub_df["outcome"])))[0]
-        if outcome == "thank" and len(sub_df["turn"].drop_duplicates()) == 1:
-            trash_conversation_ids.append(id)
-
-    chatlog_all = chatlog_all[~chatlog_all["conversation_id"].isin(trash_conversation_ids)]
+    # for id in conversation_ids:
+    #     sub_df = chatlog_all[chatlog_all["conversation_id"] == id]
+    #     number_of_turns = len(sub_df["turn"].drop_duplicates(keep="first").to_list())
+    #     outcome = list(filter(lambda x: x != "", list(sub_df["outcome"])))[0]
+    #     if outcome == "thank" and len(sub_df["turn"].drop_duplicates()) == 1:
+    #         trash_conversation_ids.append(id)
+    #
+    # chatlog_all = chatlog_all[~chatlog_all["conversation_id"].isin(trash_conversation_ids)]
     upload_all_rasa_chatlog_to_atlas_mongodb(chatlog_all)
 
 

@@ -191,9 +191,10 @@ def get_last_document_from_db():
 def crawl_daily():
     today = date.today()
     yesterday = today - timedelta(1)
+    month = str(today)[5:7]
     all_conversations = export_conversations(today, yesterday)
     all_conversation_detail = export_conversation_detail(all_conversations)
-    rasa_chatlog_processed = process_raw_rasa_chatlog("08", all_conversation_detail)
+    rasa_chatlog_processed = process_raw_rasa_chatlog(month, all_conversation_detail)
     rasa_chatlog_clean = clean_rasa_chatlog(rasa_chatlog_processed)
 
     last_conversation_id = get_last_document_from_db()

@@ -14,9 +14,9 @@ import pickle
 # from tqdm import tqdm
 from collections import deque
 
-vnmese_alphabet_dict = json.load(open("/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/vnmese_alphabet_json.json", encoding='utf-8-sig'))
+vnmese_alphabet_dict = json.load(open("/home/ducanh/crawl_rasa/spelling_correction/data/vnmese_alphabet_json.json", encoding='utf-8-sig'))
 
-hard_code_word_map_og = json.load(open("/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/hard_code_word_map_json.json", encoding='utf-8-sig'))
+hard_code_word_map_og = json.load(open("/home/ducanh/crawl_rasa/spelling_correction/data/hard_code_word_map_json.json", encoding='utf-8-sig'))
 hard_code_word_map = {}
 for k, v in hard_code_word_map_og.items():
     if isinstance(v, list):
@@ -25,11 +25,11 @@ for k, v in hard_code_word_map_og.items():
     else:
         hard_code_word_map.update({v: k})
 
-with open('/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/begin.pkl', 'rb') as word:
+with open('/home/ducanh/crawl_rasa/spelling_correction/data/begin.pkl', 'rb') as word:
     begin_prob = pickle.load(word)
 begin_prob = dict(begin_prob)
 
-with open('/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/word_prob.pkl', 'rb') as word:
+with open('/home/ducanh/crawl_rasa/spelling_correction/data/word_prob.pkl', 'rb') as word:
     word_data = pickle.load(word)
 
 
@@ -366,7 +366,7 @@ def dict_generate(abbreviation, telex):
         else:
             telex_dict.update({v: k})
 
-    with open("/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/ignore_words.txt", "r", encoding='utf-8-sig') as ignore:
+    with open("/home/ducanh/crawl_rasa/spelling_correction/data/ignore_words.txt", "r", encoding='utf-8-sig') as ignore:
         ignore_keywords = [line.strip("\n").lower() for line in ignore.readlines()]
 
     return abb_dict, telex_dict, ignore_keywords
@@ -630,8 +630,8 @@ def correct_sentence_with_word_dict(output_text, abb_dict, ignore, step1_fixed):
 def do_correction(input_sentence):
     # Todo Main
     """main"""
-    abbreviation_file = "/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/abbreviation_json.json"
-    telex_file = "/home/ducanh/pycharm_prj/crawl-rasa/spelling_correction/data/telex_typing_json.json"
+    abbreviation_file = "/home/ducanh/crawl_rasa/spelling_correction/data/abbreviation_json.json"
+    telex_file = "/home/ducanh/crawl_rasa/spelling_correction/data/telex_typing_json.json"
     abb_dict, telex_dict, ignore = dict_generate(abbreviation_file, telex_file)
 
     correct_sentence, step1_fixed = correction(input_sentence, abb_dict, telex_dict, ignore)

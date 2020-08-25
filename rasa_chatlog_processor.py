@@ -1,14 +1,11 @@
 from datetime import datetime
 from utils.helper import *
 import datetime
-from spelling_correction.heuristic_correction import *
 import logging
-from underthesea import pos_tag
 import pandas as pd
-import numpy as np
 import unicodedata
 from pyvi import ViTokenizer, ViPosTagger
-
+from denver.models.ner import FlairSequenceTagger
 
 logging.basicConfig(filename="logging_data/rasa_chatlog_processor_log",
                     format='%(asctime)s %(message)s',
@@ -163,7 +160,7 @@ class RasaChalogProcessor():
                     time_diff = (next_time - current_time).total_seconds()
                     if time_diff > 86400:
                         conversation_id += 1
-        print("Split to conversations: --- %s seconds ---" % (time.time() - start_time))
+        logger.info("Split to conversations: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
     def split_chatlog_conversations_to_turns(self, rasa_chatlog_df: pd.DataFrame):
@@ -194,7 +191,7 @@ class RasaChalogProcessor():
                 first_item_in_sub_df = False
                 previous_index = index
                 rasa_chatlog_df.at[index, "turn"] = turn
-        print("Split conversations to turns: --- %s seconds ---" % (time.time() - start_time))
+        logger.info("Split conversations to turns: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
     def set_uc1_and_uc2_for_conversations(self, rasa_chatlog_df: pd.DataFrame):
@@ -204,8 +201,9 @@ class RasaChalogProcessor():
         rasa_chatlog_df.insert(2, "use_case", "")
         for id in conversation_ids:
             chatlog_sub_df = rasa_chatlog_df[rasa_chatlog_df["conversation_id"] == id]
-            conversation_attachments = chatlog_sub_df['attachments'].to_list()
             chatlog_sub_df_first_turn = chatlog_sub_df[chatlog_sub_df["turn"].isin([0, 1])]
+            # conversation_attachments = chatlog_sub_df['attachments'].to_list()
+            conversation_attachments = chatlog_sub_df_first_turn['attachments'].to_list()
             index_list = chatlog_sub_df_first_turn.index.tolist()
             conversation_has_images = False
             if any("scontent" in str(x) for x in conversation_attachments):
@@ -220,13 +218,9 @@ class RasaChalogProcessor():
                             rasa_chatlog_df.at[item_index, "use_case"] = "uc_s2"
                             break
                         else:
-                            # rasa_chatlog_df.at[index, "use_case"] = "uc_s4"
                             break
                     if str(user_message) != "nan":
                         user_message_correction = chatlog_sub_df_first_turn.loc[item_index, "user_message_correction"]
-                        # message_pos_tag = pos_tag(user_message_correction)
-                        # words = [x[0] for x in message_pos_tag]
-                        # pos = [x[1] for x in message_pos_tag]
 
                         message_pos_tag = ViPosTagger.postagging(ViTokenizer.tokenize(user_message_correction))
                         words = [x for x in message_pos_tag[0]]
@@ -255,14 +249,15 @@ class RasaChalogProcessor():
                                 in_between_word_pos = pos[co_index:khong_index]
                                 if any(x in in_between_word_pos for x in ["N", "Nc", "Ny", "Np", "Nu"]):
                                     co_x_khong_form = True
-                        if conversation_has_images and (
-                                con_x_khong_form or "còn không" in user_message_correction or all(
-                            x in user_message_correction for x in ["còn", "không"])):
+
+                        # if conversation_has_images and (con_x_khong_form or "còn không" in user_message_correction or all(x in user_message_correction for x in ["còn", "không"])):
+                        if conversation_has_images and ("còn không" in user_message_correction or all(
+                                x in user_message_correction for x in ["còn", "không"])):
                             rasa_chatlog_df.at[item_index, "use_case"] = "uc_s1"
                             break
-                        elif not conversation_has_images and (
-                                co_x_khong_form or "có không" in user_message_correction or all(
-                            x in user_message_correction for x in ["có", "không"])):
+                        # elif not conversation_has_images and (co_x_khong_form or "có không" in user_message_correction or all(x in user_message_correction for x in ["có", "không"])):
+                        elif not conversation_has_images and ("có không" in user_message_correction or all(
+                                x in user_message_correction for x in ["có", "không"])):
                             if str(chatlog_sub_df_first_turn.loc[item_index, "entities"]) != "nan":
                                 entities_list = chatlog_sub_df_first_turn.loc[item_index, "entities"].split(",")
                                 entities_list = [x for x in entities_list if x != '']
@@ -273,7 +268,7 @@ class RasaChalogProcessor():
                                     else:
                                         rasa_chatlog_df.at[item_index, "use_case"] = "uc_s32"
                                         break
-        print("Specify usecases: --- %s seconds ---" % (time.time() - start_time))
+        logger.info("Specify usecases: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
     def specify_conversation_outcome(self, rasa_chatlog_df: pd.DataFrame):
@@ -333,10 +328,11 @@ class RasaChalogProcessor():
                     rasa_chatlog_df.at[index, "outcome"] = "other"
                     break
                 message_counter += 1
-        print("Specify outcomes: --- %s seconds ---" % (time.time() - start_time))
+        logger.info("Specify outcomes: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_df
 
     def specify_uc4(self, chatlog_df, conversation_turn_pair_without_img, model_ner):
+        start_time = time.time()
         chatlog_df.insert(2, "uc4", "")
         attributes = ["age_of_use", "guarantee", "color", "material", "origin", "promotion", "size", "weight", "brand",
                       "price"]
@@ -349,35 +345,40 @@ class RasaChalogProcessor():
         for pair in conversation_turn_pair_without_img:
             conversation_id = pair[0]
             turn = pair[1]
-            sub_df = chatlog_df[(chatlog_df["conversation_id"] == conversation_id) & (chatlog_df["turn"] == turn) & (
-                ~chatlog_df["user_message"].isin(["nan", "user"]))].reset_index()
-            if len(sub_df) > 0:
-                for item_index in range(0, len(sub_df)):
-                    user_message = sub_df.at[item_index, "user_message_clean"]
-                    user_message = unicodedata.normalize("NFC", str(user_message))
-                    user_message = user_message.lower()
-                    message_index = sub_df.at[item_index, "index"]
-                    con = [word for word in CON if (word in user_message)]
-                    khong = [word for word in KHONG if (word in user_message)]
+            sub_df_full_conversation = chatlog_df[chatlog_df["conversation_id"] == conversation_id]
+            list_uc = [x for x in sub_df_full_conversation['use_case'].to_list() if str(x) not in ['', 'nan']]
+            if all(x not in list_uc for x in ["uc_s1", "uc_s2"]):
+                sub_df = chatlog_df[(chatlog_df["conversation_id"] == conversation_id) & (chatlog_df["turn"] == turn) & (
+                    ~chatlog_df["user_message"].isin(["nan", "user"]))].reset_index()
+                if len(sub_df) > 0:
+                    for item_index in range(0, len(sub_df)):
+                        user_message = sub_df.at[item_index, "user_message_correction"]
+                        user_message = unicodedata.normalize("NFC", str(user_message))
+                        user_message = user_message.lower()
+                        message_index = sub_df.at[item_index, "index"]
+                        con = [word for word in CON if (word in user_message)]
+                        khong = [word for word in KHONG if (word in user_message)]
 
-                    if str(user_message) == "nan" or str(user_message) == "user":
-                        continue
-                    ner_output = model_ner.process(sample=user_message)
-                    entities = [x["entity"] for x in ner_output]
-                    prod_attribute = [x["entity"] for x in ner_output if x["entity"] in attributes]
+                        if str(user_message) == "nan" or str(user_message) == "user":
+                            continue
+                        ner_output = model_ner.process(sample=user_message)
+                        entities = [x["entity"] for x in ner_output]
+                        prod_attribute = [x["entity"] for x in ner_output if x["entity"] in attributes]
 
-                    if con and khong and entities:
-                        # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
-                        if any(x in entities for x in uc4_base_require_entities):
-                            if len(prod_attribute) == 0:
-                                chatlog_df.at[message_index, "uc4"] = "uc_s4.1"
-                            elif len(prod_attribute) == 1:
-                                chatlog_df.at[message_index, "uc4"] = "uc_s4.2"
-                            else:
-                                chatlog_df.at[message_index, "uc4"] = "uc_s4.3"
+                        if con and khong and entities:
+                            # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
+                            if any(x in entities for x in uc4_base_require_entities):
+                                if len(prod_attribute) == 0:
+                                    chatlog_df.at[message_index, "uc4"] = "uc_s4.1"
+                                elif len(prod_attribute) == 1:
+                                    chatlog_df.at[message_index, "uc4"] = "uc_s4.2"
+                                else:
+                                    chatlog_df.at[message_index, "uc4"] = "uc_s4.3"
+        logger.info("Specify UC4: " + str(time.time() - start_time))
         return chatlog_df
 
     def specify_uc5(self, chatlog_df, conversation_turn_pair_without_img, model_ner):
+        start_time = time.time()
         chatlog_df.insert(2, "uc5", "")
         attributes = ["age_of_use", "guarantee", "color", "material", "origin", "promotion", "size", "weight", "brand",
                       "price"]
@@ -389,33 +390,36 @@ class RasaChalogProcessor():
         for pair in conversation_turn_pair_without_img:
             conversation_id = pair[0]
             turn = pair[1]
-            sub_df = chatlog_df[(chatlog_df["conversation_id"] == conversation_id) & (chatlog_df["turn"] == turn) & (
-                ~chatlog_df["user_message"].isin(["nan", "user"]))].reset_index()
-            for item_index in range(0, len(sub_df)):
-                user_message = sub_df.at[item_index, "user_message_clean"]
-                user_message = unicodedata.normalize("NFC", str(user_message))
-                user_message = user_message.lower()
-                message_index = sub_df.at[item_index, "index"]
+            sub_df_full_conversation = chatlog_df[chatlog_df["conversation_id"] == conversation_id]
+            list_uc = [x for x in sub_df_full_conversation['use_case'].to_list() if str(x) not in ['', 'nan']]
+            if all(x not in list_uc for x in ["uc_s1", "uc_s2"]):
+                sub_df = chatlog_df[(chatlog_df["conversation_id"] == conversation_id) & (chatlog_df["turn"] == turn) & (
+                    ~chatlog_df["user_message"].isin(["nan", "user"]))].reset_index()
+                for item_index in range(0, len(sub_df)):
+                    user_message = sub_df.at[item_index, "user_message_correction"]
+                    user_message = unicodedata.normalize("NFC", str(user_message))
+                    user_message = user_message.lower()
+                    message_index = sub_df.at[item_index, "index"]
 
-                price = [key_price for key_price in PRICE if (key_price in user_message)]
+                    price = [key_price for key_price in PRICE if (key_price in user_message)]
 
-                if str(user_message) == "nan" or str(user_message) == "user":
-                    continue
-                ner_output = model_ner.process(sample=user_message)
-                entities = [x["entity"] for x in ner_output]
-                prod_attribute = [x["entity"] for x in ner_output if x["entity"] in attributes]
-                attribute_value = [x["value"] for x in ner_output if x["entity"] == "attribute"]
+                    if str(user_message) == "nan" or str(user_message) == "user":
+                        continue
+                    ner_output = model_ner.process(sample=user_message)
+                    entities = [x["entity"] for x in ner_output]
+                    prod_attribute = [x["entity"] for x in ner_output if x["entity"] in attributes]
+                    attribute_value = [x["value"] for x in ner_output if x["entity"] == "attribute"]
 
-                if len(price) > 0 or "price" in attribute_value:
-                    # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
-                    if any(x in entities for x in uc5_base_require_entities):
-                        if len(prod_attribute) == 0:
-                            chatlog_df.at[message_index, "uc5"] = "uc_s5.1"
-                        elif len(prod_attribute) == 1:
-                            chatlog_df.at[message_index, "uc5"] = "uc_s5.2"
-                        else:
-                            chatlog_df.at[message_index, "uc5"] = "uc_s5.3"
-
+                    if len(price) > 0 or "price" in attribute_value:
+                        # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
+                        if any(x in entities for x in uc5_base_require_entities):
+                            if len(prod_attribute) == 0:
+                                chatlog_df.at[message_index, "uc5"] = "uc_s5.1"
+                            elif len(prod_attribute) == 1:
+                                chatlog_df.at[message_index, "uc5"] = "uc_s5.2"
+                            else:
+                                chatlog_df.at[message_index, "uc5"] = "uc_s5.3"
+        logger.info("Specify UC5: " + str(time.time() - start_time))
         return chatlog_df
 
     def get_conversation_turn_without_and_with_image(self, chatlog_df: pd.DataFrame):
@@ -446,19 +450,20 @@ class RasaChalogProcessor():
         start_time = time.time()
         logger.info("Start process chatlog")
         rasa_chatlog_by_month_df = df.dropna(subset=["bot_message", "user_message", "intent"], how="all")
-        # conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
-        #     rasa_chatlog_by_month_df)
+        rasa_chatlog_by_month_df = rasa_chatlog_by_month_df.sort_values(by=["sender_id", "created_time"])
 
-        # model_path = "/home/ducanh/pycharm_prj/crawl-rasa/models/vi_nerr.pt"
-        # model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
+        model_path = "/home/ducanh/crawl_rasa/models/vi_nerr.pt"
+        model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
 
         # rasa_chatlog_by_month_df = self.get_chatlog_by_month(input_month, raw_chatlog)
         rasa_chatlog_by_month_df = self.split_chatlog_to_conversations(rasa_chatlog_by_month_df, begin_converastion_id)
         rasa_chatlog_by_month_df = self.split_chatlog_conversations_to_turns(rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.set_uc1_and_uc2_for_conversations(rasa_chatlog_by_month_df)
-        # rasa_chatlog_by_month_df = self.specify_uc4(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
-        # rasa_chatlog_by_month_df = self.specify_uc5(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
+        conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
+            rasa_chatlog_by_month_df)
+        rasa_chatlog_by_month_df = self.specify_uc4(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
+        rasa_chatlog_by_month_df = self.specify_uc5(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
         rasa_chatlog_by_month_df = self.specify_conversation_outcome(rasa_chatlog_by_month_df)
 
-        print("Process rasa chatlog: --- %s seconds ---" % (time.time() - start_time))
+        logger.info("Process rasa chatlog: --- %s seconds ---" % (time.time() - start_time))
         return rasa_chatlog_by_month_df
