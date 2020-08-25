@@ -7,11 +7,8 @@ from underthesea import pos_tag
 import pandas as pd
 import numpy as np
 import unicodedata
-from denver.datasets.ic_dataset import ICDataset
-from denver.trainers.language_model_trainer import LanguageModelTrainer
-# from denver.models.ic import ULMFITClassifier
-from denver.trainers.trainer import ModelTrainer
-from denver.models.ner import FlairSequenceTagger
+from pyvi import ViTokenizer, ViPosTagger
+
 
 logging.basicConfig(filename="logging_data/rasa_chatlog_processor_log",
                     format='%(asctime)s %(message)s',
@@ -227,9 +224,14 @@ class RasaChalogProcessor():
                             break
                     if str(user_message) != "nan":
                         user_message_correction = chatlog_sub_df_first_turn.loc[item_index, "user_message_correction"]
-                        message_pos_tag = pos_tag(user_message_correction)
-                        words = [x[0] for x in message_pos_tag]
-                        pos = [x[1] for x in message_pos_tag]
+                        # message_pos_tag = pos_tag(user_message_correction)
+                        # words = [x[0] for x in message_pos_tag]
+                        # pos = [x[1] for x in message_pos_tag]
+
+                        message_pos_tag = ViPosTagger.postagging(ViTokenizer.tokenize(user_message_correction))
+                        words = [x for x in message_pos_tag[0]]
+                        pos = [x for x in message_pos_tag[1]]
+
                         con_x_khong_form = False
                         co_x_khong_form = False
                         if "còn" in words and "không" in words:
@@ -444,18 +446,18 @@ class RasaChalogProcessor():
         start_time = time.time()
         logger.info("Start process chatlog")
         rasa_chatlog_by_month_df = df.dropna(subset=["bot_message", "user_message", "intent"], how="all")
-        conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
-            rasa_chatlog_by_month_df)
+        # conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
+        #     rasa_chatlog_by_month_df)
 
-        model_path = "/home/ducanh/pycharm_prj/crawl-rasa/models/vi_nerr.pt"
-        model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
+        # model_path = "/home/ducanh/pycharm_prj/crawl-rasa/models/vi_nerr.pt"
+        # model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
 
         # rasa_chatlog_by_month_df = self.get_chatlog_by_month(input_month, raw_chatlog)
         rasa_chatlog_by_month_df = self.split_chatlog_to_conversations(rasa_chatlog_by_month_df, begin_converastion_id)
         rasa_chatlog_by_month_df = self.split_chatlog_conversations_to_turns(rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.set_uc1_and_uc2_for_conversations(rasa_chatlog_by_month_df)
-        rasa_chatlog_by_month_df = self.specify_uc4(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
-        rasa_chatlog_by_month_df = self.specify_uc5(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
+        # rasa_chatlog_by_month_df = self.specify_uc4(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
+        # rasa_chatlog_by_month_df = self.specify_uc5(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
         rasa_chatlog_by_month_df = self.specify_conversation_outcome(rasa_chatlog_by_month_df)
 
         print("Process rasa chatlog: --- %s seconds ---" % (time.time() - start_time))

@@ -311,6 +311,8 @@ def main():
     # chatlog_all = chatlog_all.reset_index(drop=True)
 
     chatlog_all = get_chatlog_from_db("2020-08-01", "2020-08-14")
+    chatlog_all = chatlog_all.drop(columns=["conversation_id", "turn", "use_case", "outcome", "conversation_begin_time"])
+
     processor = RasaChalogProcessor()
     chatlog_all = processor.process_rasa_chatlog(chatlog_all)
 
