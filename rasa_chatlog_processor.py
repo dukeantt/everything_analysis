@@ -422,7 +422,7 @@ class RasaChalogProcessor():
         logger.info("Specify UC5: " + str(time.time() - start_time))
         return chatlog_df
 
-    def get_conversation_turn_without_and_with_image(self, chatlog_df: pd.DataFrame):
+    def get_conversation_first_turn_without_and_with_image(self, chatlog_df: pd.DataFrame):
         start_time = time.time()
 
         conversation_turn_list_without_image = []
@@ -430,7 +430,8 @@ class RasaChalogProcessor():
         conversation_ids = chatlog_df["conversation_id"].drop_duplicates(keep="first").to_list()
         for id in conversation_ids:
             sub_df = chatlog_df[chatlog_df["conversation_id"] == id]
-            turns = sub_df["turn"].drop_duplicates(keep="first").to_list()
+            # turns = sub_df["turn"].drop_duplicates(keep="first").to_list()
+            turns = [0, 1]
             for turn in turns:
                 attachments = sub_df.loc[sub_df["turn"] == turn, "attachments"].dropna().to_list()
                 if len(attachments) == 0:
@@ -459,7 +460,7 @@ class RasaChalogProcessor():
         rasa_chatlog_by_month_df = self.split_chatlog_to_conversations(rasa_chatlog_by_month_df, begin_converastion_id)
         rasa_chatlog_by_month_df = self.split_chatlog_conversations_to_turns(rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.set_uc1_and_uc2_for_conversations(rasa_chatlog_by_month_df)
-        conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_turn_without_and_with_image(
+        conversation_turn_pair_without_img, conversation_turn_pair_with_img = self.get_conversation_first_turn_without_and_with_image(
             rasa_chatlog_by_month_df)
         rasa_chatlog_by_month_df = self.specify_uc4(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
         rasa_chatlog_by_month_df = self.specify_uc5(rasa_chatlog_by_month_df, conversation_turn_pair_without_img, model_ner)
