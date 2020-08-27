@@ -359,7 +359,7 @@ class RasaChalogProcessor():
                         con = [word for word in CON if (word in user_message)]
                         khong = [word for word in KHONG if (word in user_message)]
 
-                        if str(user_message) == "nan" or str(user_message) == "user":
+                        if str(user_message) in ["nan", "user", "", " "]:
                             continue
                         ner_output = model_ner.process(sample=user_message)
                         entities = [x["entity"] for x in ner_output]
@@ -453,7 +453,7 @@ class RasaChalogProcessor():
         rasa_chatlog_by_month_df = df.dropna(subset=["bot_message", "user_message", "intent"], how="all")
         rasa_chatlog_by_month_df = rasa_chatlog_by_month_df.sort_values(by=["sender_id", "created_time"])
 
-        model_path = "/home/ducanh/crawl_rasa/models/vi_nerr.pt"
+        model_path = "/home/ducanh/pycharm_prj/test_ner/models/vi_nerr.pt"
         model_ner = FlairSequenceTagger(mode="inference", model_path=model_path)
 
         # rasa_chatlog_by_month_df = self.get_chatlog_by_month(input_month, raw_chatlog)
