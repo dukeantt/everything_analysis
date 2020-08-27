@@ -5,7 +5,8 @@ import logging
 import pandas as pd
 import unicodedata
 from pyvi import ViTokenizer, ViPosTagger
-from denver.models.ner import FlairSequenceTagger
+#from denver.models.ner import FlairSequenceTagger
+from denver.models.flair_seq_tagger import FlairSequenceTagger
 
 logging.basicConfig(filename="logging_data/rasa_chatlog_processor_log",
                     format='%(asctime)s %(message)s',
