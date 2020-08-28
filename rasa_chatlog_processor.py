@@ -333,7 +333,7 @@ class RasaChalogProcessor():
 
     def specify_uc4(self, chatlog_df, conversation_turn_pair_without_img, model_ner):
         start_time = time.time()
-        chatlog_df.insert(2, "uc4", "")
+        # chatlog_df.insert(2, "uc4", "")
         attributes = ["age_of_use", "guarantee", "color", "material", "origin", "promotion", "size", "weight", "brand",
                       "price"]
         CON = ['còn', ' con ', ' conf ']
@@ -369,17 +369,17 @@ class RasaChalogProcessor():
                             # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
                             if any(x in entities for x in uc4_base_require_entities):
                                 if len(prod_attribute) == 0:
-                                    chatlog_df.at[message_index, "uc4"] = "uc_s4.1"
+                                    chatlog_df.at[message_index, "use_case"] = "uc_s4.1"
                                 elif len(prod_attribute) == 1:
-                                    chatlog_df.at[message_index, "uc4"] = "uc_s4.2"
+                                    chatlog_df.at[message_index, "use_case"] = "uc_s4.2"
                                 else:
-                                    chatlog_df.at[message_index, "uc4"] = "uc_s4.3"
+                                    chatlog_df.at[message_index, "use_case"] = "uc_s4.3"
         logger.info("Specify UC4: " + str(time.time() - start_time))
         return chatlog_df
 
     def specify_uc5(self, chatlog_df, conversation_turn_pair_without_img, model_ner):
         start_time = time.time()
-        chatlog_df.insert(2, "uc5", "")
+        # chatlog_df.insert(2, "uc5", "")
         attributes = ["age_of_use", "guarantee", "color", "material", "origin", "promotion", "size", "weight", "brand",
                       "price"]
         filter_word = ["ship", "shopee", "shoppee", "freeship", "shope"]
@@ -414,11 +414,11 @@ class RasaChalogProcessor():
                         # if any(x in entities for x in uc4_base_require_entities) and all(x not in user_message for x in filter_word):
                         if any(x in entities for x in uc5_base_require_entities):
                             if len(prod_attribute) == 0:
-                                chatlog_df.at[message_index, "uc5"] = "uc_s5.1"
+                                chatlog_df.at[message_index, "use_case"] = "uc_s5.1"
                             elif len(prod_attribute) == 1:
-                                chatlog_df.at[message_index, "uc5"] = "uc_s5.2"
+                                chatlog_df.at[message_index, "use_case"] = "uc_s5.2"
                             else:
-                                chatlog_df.at[message_index, "uc5"] = "uc_s5.3"
+                                chatlog_df.at[message_index, "use_case"] = "uc_s5.3"
         logger.info("Specify UC5: " + str(time.time() - start_time))
         return chatlog_df
 
