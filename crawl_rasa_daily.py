@@ -18,7 +18,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-db_name = "rasa_chatlog_test_daily_crawl"
+# db_name = "rasa_chatlog_test_daily_crawl"
+db_name = "rasa_chatlog_all_28_8"
 
 
 def get_timestamp(timestamp: int, format: str):
@@ -180,11 +181,13 @@ def get_last_document_from_db():
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
     collection = db[db_name]
-    last_document = [document for document in collection.find().limit(1).sort([('$natural', -1)])]
-    last_conversation_id = 0
-    if len(last_document) > 0:
-        last_conversation_id = last_document[0]["conversation_id"]
+    # last_document = [document for document in collection.find().limit(1).sort([('$natural', -1)])]
+    # last_conversation_id = 0
+    # if len(last_document) > 0:
+    #     last_conversation_id = last_document[0]["conversation_id"]
 
+    last_conversation_document = [document for document in collection.find({}, {'conversation_id': 1, '_id':0}).sort([('conversation_id',-1)]).limit(1)][0]
+    last_conversation_id = last_conversation_document["conversation_id"]
     return last_conversation_id
 
 
