@@ -18,7 +18,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# db_name = "rasa_chatlog_test_daily_crawl"
 db_name = "rasa_chatlog_all_28_8"
 
 
@@ -45,14 +44,15 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
-    collection = db[db_name]
+    # collection = db[db_name]
+    collection = db["test_crawl_daily"]
     data_dict = chatlog_rasa.to_dict("records")
 
     # Insert collection
     collection.insert_many(data_dict)
 
 
-def process_raw_rasa_chatlog(input_month, rasa_chatlog_daily: pd.DataFrame):
+def process_raw_rasa_chatlog(input_date, rasa_chatlog_daily: pd.DataFrame):
     logger.info("Get chatlog by month")
     rasa_conversation = rasa_chatlog_daily
     df_data = {
@@ -81,9 +81,11 @@ def process_raw_rasa_chatlog(input_month, rasa_chatlog_daily: pd.DataFrame):
         for event_index, event in enumerate(user_bot_events):
             timestamp = get_timestamp(int(event["timestamp"]), fmt)
             timestamp_month = get_timestamp(int(event["timestamp"]), "%m")
+            timestamp_date = get_timestamp(int(event["timestamp"]), "%Y-%m-%d")
             message_id = ""
             user_intent = ""
-            if timestamp_month == input_month:
+            # if timestamp_month == input_month:
+            if timestamp_date == input_date:
                 entity_list = ""
                 if "parse_data" in event:
                     if "entities" in event["parse_data"]:
@@ -192,18 +194,17 @@ def get_last_document_from_db():
 
 
 def crawl_daily():
-    today = date.today()
+    today = date.today() - timedelta(2)
     yesterday = today - timedelta(1)
     month = str(today)[5:7]
     all_conversations = export_conversations(today, yesterday)
     all_conversation_detail = export_conversation_detail(all_conversations)
-    rasa_chatlog_processed = process_raw_rasa_chatlog(month, all_conversation_detail)
+    rasa_chatlog_processed = process_raw_rasa_chatlog(str(today), all_conversation_detail)
     rasa_chatlog_clean = clean_rasa_chatlog(rasa_chatlog_processed)
 
     last_conversation_id = get_last_document_from_db()
     processor = RasaChalogProcessor()
     rasa_chatlog = processor.process_rasa_chatlog(rasa_chatlog_clean, last_conversation_id)
-
     upload_all_rasa_chatlog_to_atlas_mongodb(rasa_chatlog)
 
 
