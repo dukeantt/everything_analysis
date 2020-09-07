@@ -208,4 +208,22 @@ def crawl_daily():
     upload_all_rasa_chatlog_to_atlas_mongodb(rasa_chatlog)
 
 
-crawl_daily()
+def crawl_daily_2():
+    last_conversation_id = 1537
+    for x in list(reversed(range(7, 15))):
+        today = date.today() - timedelta(x)
+        yesterday = today - timedelta(1)
+        month = str(today)[5:7]
+        all_conversations = export_conversations(today, yesterday)
+        all_conversation_detail = export_conversation_detail(all_conversations)
+        rasa_chatlog_processed = process_raw_rasa_chatlog(str(today), all_conversation_detail)
+        rasa_chatlog_clean = clean_rasa_chatlog(rasa_chatlog_processed)
+
+        processor = RasaChalogProcessor()
+        rasa_chatlog = processor.process_rasa_chatlog(rasa_chatlog_clean, last_conversation_id)
+        if len(rasa_chatlog) > 0:
+             last_conversation_id = int(rasa_chatlog.iloc[-1]["conversation_id"])
+        rasa_chatlog.to_csv(str(today)+"_full.csv", index=False)
+
+
+crawl_daily_2()
