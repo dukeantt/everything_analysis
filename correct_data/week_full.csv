@@ -1,0 +1,1 @@
+conversation_id,turn,use_case,outcome,message_id,sender_id,sender,user_message,bot_message,intent,entities,created_time,conversation_begin_date,conversation_begin_time,attachments,user_message_correction
