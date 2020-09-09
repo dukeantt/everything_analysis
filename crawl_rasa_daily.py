@@ -18,8 +18,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-db_name = "rasa_chatlog_all_28_8"
-
+#db_name = "rasa_chatlog_all_9_9"
+db_name = "test_daily"
 
 def get_timestamp(timestamp: int, format: str):
     """
@@ -44,8 +44,7 @@ def upload_all_rasa_chatlog_to_atlas_mongodb(chalog_all):
     # Connect to MongoDB
     client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
     db = client['chatlog_db']
-    # collection = db[db_name]
-    collection = db["test_crawl_daily"]
+    collection = db[db_name]
     data_dict = chatlog_rasa.to_dict("records")
 
     # Insert collection
@@ -194,7 +193,7 @@ def get_last_document_from_db():
 
 
 def crawl_daily():
-    today = date.today() - timedelta(2)
+    today = date.today()
     yesterday = today - timedelta(1)
     month = str(today)[5:7]
     all_conversations = export_conversations(today, yesterday)
@@ -209,9 +208,11 @@ def crawl_daily():
 
 
 def crawl_daily_2():
-    last_conversation_id = 1537
-    for x in list(reversed(range(7, 15))):
+    last_conversation_id = 1670
+    #for x in list(reversed(range(7, 15))):
+    for x in list(reversed(range(1, 9))):
         today = date.today() - timedelta(x)
+        print(str(today))
         yesterday = today - timedelta(1)
         month = str(today)[5:7]
         all_conversations = export_conversations(today, yesterday)
@@ -223,7 +224,7 @@ def crawl_daily_2():
         rasa_chatlog = processor.process_rasa_chatlog(rasa_chatlog_clean, last_conversation_id)
         if len(rasa_chatlog) > 0:
              last_conversation_id = int(rasa_chatlog.iloc[-1]["conversation_id"])
-        rasa_chatlog.to_csv(str(today)+"_full.csv", index=False)
+        rasa_chatlog.to_csv("/home/ducanh/crawl_rasa_2/correct_data/"+str(today)+"_full.csv", index=False)
 
 
-crawl_daily_2()
+crawl_daily()
