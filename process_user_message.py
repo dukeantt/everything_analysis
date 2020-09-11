@@ -148,7 +148,7 @@ def export_clean_customer_messages():
     clean_customer_messages = remove_col_white_space(clean_customer_messages)
 
     df = pd.DataFrame({"customer_message": customer_messages, "clean_customer_message": clean_customer_messages})
-    df.to_csv("./data/customer_message/customer_messages.csv", index=False)
+    df.to_csv("data/customer_message/customer_messages.csv", index=False)
     # with open('data/customer_message/customer_messages.pkl', 'wb') as file:
     #     # store the data as binary data stream
     #     pickle.dump(customer_messages, file)
@@ -162,7 +162,7 @@ def get_processed_customer_message():
         # store the data as binary data stream
         customer_messages = pickle.load(file)
     # customer_messages = remove_stop_word(customer_messages)
-    customer_messages = pd.read_csv("./data/customer_message/customer_messages.csv")
+    customer_messages = pd.read_csv("data/customer_message/customer_messages.csv")
     customer_messages["clean_customer_message"] = deEmojify(customer_messages["clean_customer_message"].to_list())
     # customer_messages = remove_one_char_sentences(customer_messages)
     customer_messages = customer_messages[customer_messages['clean_customer_message'].str.len() > 1]
