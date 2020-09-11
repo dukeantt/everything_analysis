@@ -86,10 +86,16 @@ def deEmojify(customer_messages):
                                         u"\U0001F680-\U0001F6FF"  # transport & map symbols
                                         u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
                                         "]+", flags=re.UNICODE)
-    customer_messages = [regrex_pattern.sub(r'', x) for x in customer_messages]
+    new_customer_message = []
+    for message in customer_messages:
+        try:
+            deemojy_message = regrex_pattern.sub(r'', message)
+            new_customer_message.append(deemojy_message)
+        except:
+            new_customer_message.append(message)
 
     logger.info(str(time.time() - start_time))
-    return customer_messages
+    return new_customer_message
 
 
 def get_customer_message():
@@ -159,16 +165,16 @@ def export_clean_customer_messages():
 
 
 def get_processed_customer_message():
-    with open('data/customer_message/customer_messages_old.pkl', 'rb') as file:
-        # store the data as binary data stream
-        customer_messages = pickle.load(file)
+    # with open('data/customer_message/customer_messages_old.pkl', 'rb') as file:
+    #     # store the data as binary data stream
+    #     customer_messages = pickle.load(file)
     # customer_messages = remove_stop_word(customer_messages)
     customer_messages = pd.read_csv("data/customer_message/customer_messages.csv")
     customer_messages["clean_customer_message"] = deEmojify(customer_messages["clean_customer_message"].to_list())
     # customer_messages = remove_one_char_sentences(customer_messages)
     customer_messages = customer_messages[customer_messages['clean_customer_message'].str.len() > 1]
-    customer_messages["clean_customer_message"] = [unicodedata.normalize('NFC', x.lower()) for x in
-                                                   customer_messages["clean_customer_message"].to_list()]
+    customer_messages = customer_messages[customer_messages['clean_customer_message'].str != "nan"]
+    customer_messages["clean_customer_message"] = [unicodedata.normalize('NFC', x.lower()) for x in customer_messages["clean_customer_message"].to_list()]
     message_group = []
     for item in customer_messages.itertuples():
         clean_message = item.clean_message
