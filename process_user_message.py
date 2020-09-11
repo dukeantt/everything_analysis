@@ -150,7 +150,7 @@ def get_processed_customer_message():
     with open('data/customer_message/customer_messages.pkl', 'rb') as file:
         # store the data as binary data stream
         customer_messages = pickle.load(file)
-    customer_messages = remove_stop_word(customer_messages)
+    # customer_messages = remove_stop_word(customer_messages)
     customer_messages = deEmojify(customer_messages)
     customer_messages = remove_one_char_sentences(customer_messages)
     customer_messages = [unicodedata.normalize('NFC', x.lower()) for x in customer_messages]
