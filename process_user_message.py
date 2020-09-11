@@ -6,6 +6,7 @@ import logging
 import time
 import re
 import unicodedata
+import unidecode
 
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
@@ -15,6 +16,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+with open("obj_type", "r", encoding="utf-8") as obj_type_file:
+    lines = obj_type_file.readlines()
+    objtype_list = [x.strip().replace("_", " ") for x in lines]
+
+with open("brand", "r", encoding="utf-8") as obj_type_file:
+    lines = obj_type_file.readlines()
+    brand_list = [x.strip() for x in lines]
 
 def remove_col_str(customer_messages):
     start_time = time.time()
@@ -150,15 +158,39 @@ def export_clean_customer_messages():
 
 
 def get_processed_customer_message():
-    # with open('data/customer_message/customer_messages.pkl', 'rb') as file:
-    #     # store the data as binary data stream
-    #     customer_messages = pickle.load(file)
+    with open('data/customer_message/customer_messages_old.pkl', 'rb') as file:
+        # store the data as binary data stream
+        customer_messages = pickle.load(file)
     # customer_messages = remove_stop_word(customer_messages)
     customer_messages = pd.read_csv("./data/customer_message/customer_messages.csv")
     customer_messages["clean_customer_message"] = deEmojify(customer_messages["clean_customer_message"].to_list())
     # customer_messages = remove_one_char_sentences(customer_messages)
     customer_messages = customer_messages[customer_messages['clean_customer_message'].str.len() > 1]
-    customer_messages["clean_customer_message"] = [unicodedata.normalize('NFC', x.lower()) for x in customer_messages["clean_customer_message"].to_list()]
+    customer_messages["clean_customer_message"] = [unicodedata.normalize('NFC', x.lower()) for x in
+                                                   customer_messages["clean_customer_message"].to_list()]
+    message_group = []
+    for item in customer_messages.itertuples():
+        clean_message = item.clean_message
+        if any(x in clean_message for x in ["ship", "sip"]):
+            message_group.append("shipping")
+        elif any(x in clean_message for x in ["giá", "bao nhiêu"]):
+            message_group.append("price")
+        elif any(x in clean_message for x in objtype_list):
+            message_group.append("object type related")
+        elif any(x in clean_message for x in objtype_list):
+            message_group.append("brand related")
+        elif any(x in clean_message for x in ["thanks", "tks", "cảm ơn", "cám ơn", "thank"]):
+            message_group.append("thank")
+        elif any(x in clean_message for x in ["ok", "uk"]):
+            message_group.append("agree")
+        elif any(x in clean_message for x in ["điện thoại", "đt", "dt"]):
+            message_group.append("telephone")
+        elif "shopee" in clean_message:
+            message_group.append("shopee related")
+        elif any(x in clean_message for x in ["địa chỉ", "đc", "dc"]):
+            message_group.append("address")
+        else:
+            message_group.append(clean_message)
     return customer_messages
 
 
