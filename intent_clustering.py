@@ -126,6 +126,14 @@ def gaussian_mixture_clustering():
 
 # calculate_silhouette_score("data/cluster_2/tsne_vectors.txt", "data/cluster_2/elbow_n_silhouette_scores.csv")
 
-k_mean_clustering(5,"data/cluster_4/cluster_4.txt", "data/cluster_4/tsne_vectors.txt",
-                  cluster_output_path="data/cluster_4/cluster_4_all_cluster.csv")
+# k_mean_clustering(5, "data/old_cluster/cluster_4/cluster_4.txt", "data/old_cluster/cluster_4/tsne_vectors.txt",
+#                   cluster_output_path="data/old_cluster/cluster_4/cluster_4_all_cluster.csv")
 # k_mean_clustering(11, None, None, "data/all_cluster.csv")
+
+def main():
+    sentence_embedding(1, None, None, None)
+    k_mean_clustering(11, None, None, "data/all_cluster.csv")
+
+
+if __name__ == '__main__':
+    main()
