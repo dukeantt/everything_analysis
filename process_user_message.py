@@ -133,29 +133,38 @@ def export_clean_customer_messages():
     logger.info("Export clean customer message")
 
     customer_messages = get_customer_message()
-    customer_messages = remove_col_str(customer_messages)
-    customer_messages = deEmojify(customer_messages)
-    customer_messages = remove_special_characters(customer_messages)
-    customer_messages = correction_message(customer_messages)
-    customer_messages = remove_col_white_space(customer_messages)
-    with open('data/customer_message/customer_messages.pkl', 'wb') as file:
-        # store the data as binary data stream
-        pickle.dump(customer_messages, file)
+    clean_customer_messages = remove_col_str(customer_messages)
+    clean_customer_messages = deEmojify(clean_customer_messages)
+    clean_customer_messages = remove_special_characters(clean_customer_messages)
+    clean_customer_messages = correction_message(clean_customer_messages)
+    clean_customer_messages = remove_col_white_space(clean_customer_messages)
+
+    df = pd.DataFrame({"customer_message": customer_messages, "clean_customer_message": clean_customer_messages})
+    df.to_csv("./data/customer_message/customer_messages.csv", index=False)
+    # with open('data/customer_message/customer_messages.pkl', 'wb') as file:
+    #     # store the data as binary data stream
+    #     pickle.dump(customer_messages, file)
 
     logger.info(str(time.time() - start_time))
-    return customer_messages
+    return df
 
 
 def get_processed_customer_message():
-    with open('data/customer_message/customer_messages.pkl', 'rb') as file:
-        # store the data as binary data stream
-        customer_messages = pickle.load(file)
+    # with open('data/customer_message/customer_messages.pkl', 'rb') as file:
+    #     # store the data as binary data stream
+    #     customer_messages = pickle.load(file)
     # customer_messages = remove_stop_word(customer_messages)
-    customer_messages = deEmojify(customer_messages)
-    customer_messages = remove_one_char_sentences(customer_messages)
-    customer_messages = [unicodedata.normalize('NFC', x.lower()) for x in customer_messages]
+    customer_messages = pd.read_csv("./data/customer_message/customer_messages.csv")
+    customer_messages["clean_customer_message"] = deEmojify(customer_messages["clean_customer_message"].to_list())
+    # customer_messages = remove_one_char_sentences(customer_messages)
+    customer_messages = customer_messages[customer_messages['clean_customer_message'].str.len() > 1]
+    customer_messages["clean_customer_message"] = [unicodedata.normalize('NFC', x.lower()) for x in customer_messages["clean_customer_message"].to_list()]
     return customer_messages
 
 
 def main():
     export_clean_customer_messages()
+
+
+if __name__ == '__main__':
+    main()
