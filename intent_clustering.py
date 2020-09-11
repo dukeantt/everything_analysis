@@ -45,7 +45,7 @@ def sentence_embedding(no_cluster, customer_message_path, tsne_output_path, cust
     else:
         customer_message = process_user_message.get_processed_customer_message()
 
-    sentences = [str(x).split() for x in customer_message["clean_customer_message"].to_list()]
+    sentences = [str(x).split() for x in customer_message["message_group"].to_list()]
     model = Word2Vec(sentences, size=20, window=5, min_count=1, workers=4)
 
     vectors_list = []
@@ -83,7 +83,7 @@ def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input
 
     kmeans = KMeans(n_clusters=number_of_clusters, random_state=0).fit(tsne_vectors)
 
-    data_tuples = list(zip(customer_message["clean_customer_message"], kmeans.labels_))
+    data_tuples = list(zip(customer_message["message_group"], kmeans.labels_))
     clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'kmeans_cluster'])
     clustering_df = pd.merge(clustering_df, vectors_df, right_index=True, left_index=True)
     clustering_df["og_sentence"] = customer_message["customer_message"]

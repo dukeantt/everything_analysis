@@ -191,6 +191,8 @@ def get_processed_customer_message():
             message_group.append("address")
         else:
             message_group.append(clean_message)
+    customer_messages["message_group"] = message_group
+
     return customer_messages
 
 
