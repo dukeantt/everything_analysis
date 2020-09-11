@@ -24,6 +24,7 @@ with open("brand", "r", encoding="utf-8") as obj_type_file:
     lines = obj_type_file.readlines()
     brand_list = [x.strip() for x in lines]
 
+
 def remove_col_str(customer_messages):
     start_time = time.time()
     logger.info("Remove col string")
@@ -69,7 +70,7 @@ def remove_special_characters(customer_messages):
 
     customer_messages = [re.sub('\}|\{|\]|\[|\;|\.|\,|\.|\:|\!|\@|\#|\$|\^|\&|\(|\)|\<|\>|\?|\"|\'', ' ', str(x)) for x
                          in customer_messages]
-    customer_messages = [x for x in customer_messages if x != ' ']
+    # customer_messages = [x for x in customer_messages if x != ' ']
 
     logger.info(str(time.time() - start_time))
     return customer_messages
@@ -192,7 +193,7 @@ def get_processed_customer_message():
         else:
             message_group.append(clean_message)
     customer_messages["message_group"] = message_group
-
+    customer_messages = customer_messages[customer_messages["clean_customer_message"] != " "]
     return customer_messages
 
 
