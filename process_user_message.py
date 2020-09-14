@@ -165,27 +165,24 @@ def export_clean_customer_messages():
 
 
 def get_processed_customer_message():
-    # with open('data/customer_message/customer_messages_old.pkl', 'rb') as file:
-    #     # store the data as binary data stream
-    #     customer_messages = pickle.load(file)
     # customer_messages = remove_stop_word(customer_messages)
     customer_messages = pd.read_csv("data/customer_message/customer_messages.csv")
     customer_messages["clean_customer_message"] = deEmojify(customer_messages["clean_customer_message"].to_list())
     # customer_messages = remove_one_char_sentences(customer_messages)
     customer_messages = customer_messages[customer_messages['clean_customer_message'].str.len() > 1]
-    customer_messages = customer_messages[customer_messages['clean_customer_message'].str != "nan"]
+    # customer_messages = customer_messages[customer_messages['clean_customer_message'].str != "nan"]
     customer_messages["clean_customer_message"] = [unicodedata.normalize('NFC', x.lower()) for x in customer_messages["clean_customer_message"].to_list()]
     message_group = []
     for item in customer_messages.itertuples():
-        clean_message = item.clean_message
+        clean_message = item.clean_customer_message
         if any(x in clean_message for x in ["ship", "sip"]):
             message_group.append("shipping")
         elif any(x in clean_message for x in ["giá", "bao nhiêu"]):
             message_group.append("price")
         elif any(x in clean_message for x in objtype_list):
-            message_group.append("object type related")
+            message_group.append("object_type_related")
         elif any(x in clean_message for x in objtype_list):
-            message_group.append("brand related")
+            message_group.append("brand_related")
         elif any(x in clean_message for x in ["thanks", "tks", "cảm ơn", "cám ơn", "thank"]):
             message_group.append("thank")
         elif any(x in clean_message for x in ["ok", "uk"]):
@@ -193,9 +190,11 @@ def get_processed_customer_message():
         elif any(x in clean_message for x in ["điện thoại", "đt", "dt"]):
             message_group.append("telephone")
         elif "shopee" in clean_message:
-            message_group.append("shopee related")
+            message_group.append("shopee_related")
         elif any(x in clean_message for x in ["địa chỉ", "đc", "dc"]):
             message_group.append("address")
+        elif any(x in clean_message for x in ["alo", "chào", "ơi"]):
+            message_group.append("greet")
         else:
             message_group.append(clean_message)
     customer_messages["message_group"] = message_group
@@ -207,5 +206,6 @@ def main():
     export_clean_customer_messages()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+    # main()
+    # get_processed_customer_message()
