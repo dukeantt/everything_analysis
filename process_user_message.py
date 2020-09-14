@@ -184,7 +184,7 @@ def get_processed_customer_message():
             message_group.append("price")
         elif any(x in clean_message for x in objtype_list):
             message_group.append("object_type_related")
-        elif any(x in clean_message for x in objtype_list):
+        elif any(x in clean_message for x in brand_list):
             message_group.append("brand_related")
         elif any(x in clean_message for x in ["thanks", "tks", "cảm ơn", "cám ơn", "thank"]):
             message_group.append("thank")
@@ -198,10 +198,14 @@ def get_processed_customer_message():
             message_group.append("address")
         elif any(x in clean_message for x in ["alo", "chào", "ơi"]):
             message_group.append("greet")
+        elif any(x in clean_message for x in ["bảo hành"]):
+            message_group.append("guarantee")
         else:
             message_group.append(clean_message)
     customer_messages["message_group"] = message_group
+    all_group = ["shipping", "price", "object_type_related", "brand_related", "thank", "agree", "telephone", "shopee_related", "address", "greet", "guarantee"]
     customer_messages = customer_messages[customer_messages["clean_customer_message"] != " "]
+    customer_messages = customer_messages[~customer_messages["message_group"].isin(all_group)]
     return customer_messages
 
 

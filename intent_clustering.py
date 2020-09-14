@@ -46,7 +46,7 @@ def sentence_embedding(no_cluster, customer_message_path, tsne_output_path, cust
         customer_message = process_user_message.get_processed_customer_message()
 
     sentences = [str(x).split() for x in customer_message["message_group"].to_list()]
-    model = Word2Vec(sentences, size=20, window=5, min_count=3, workers=4)
+    model = Word2Vec(sentences, size=20, window=5, min_count=1, workers=4)
 
     vectors_list = []
     for sent_index, sent_value in enumerate(sentences):
