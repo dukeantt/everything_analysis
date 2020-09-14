@@ -200,6 +200,8 @@ def get_processed_customer_message():
             message_group.append("greet")
         elif any(x in clean_message for x in ["bảo hành"]):
             message_group.append("guarantee")
+        elif any(x in clean_message for x in ["màu", "mầu"]):
+            message_group.append("color")
         else:
             message_group.append(clean_message)
     customer_messages["message_group"] = message_group
