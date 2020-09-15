@@ -180,7 +180,7 @@ def get_processed_customer_message():
         clean_message = item.clean_customer_message
         if any(x in clean_message for x in ["ship", "sip"]):
             message_group.append("shipping")
-        elif any(x in clean_message for x in ["giá", "bao nhiêu"]):
+        elif any(x in clean_message for x in ["giá", "bao nhiêu", "bao tiền"]):
             message_group.append("price")
         elif any(x in clean_message for x in objtype_list):
             message_group.append("object_type_related")
@@ -190,13 +190,15 @@ def get_processed_customer_message():
             message_group.append("thank")
         elif any(x in clean_message for x in ["ok", "uk", "dạ", "chuẩn", "vâng", "vâng ạ", "sao cũng được"]) or (len(clean_message) <=4 and "được" in clean_message):
             message_group.append("agree")
+        elif any(x in clean_message for x in ["không đúng"]) or (len(clean_message) <=3 and "không" in clean_message):
+            message_group.append("disagree")
         elif any(x in clean_message for x in ["điện thoại", "đt", "dt"]):
             message_group.append("telephone")
         elif "shopee" in clean_message:
             message_group.append("shopee_related")
         elif any(x in clean_message for x in ["địa chỉ", "đc", "dc"]):
             message_group.append("address")
-        elif any(x in clean_message for x in ["alo", "chào", "ơi", "hi", "hello", "bắt đầu"]):
+        elif any(x in clean_message for x in ["alo", "chào","chao", "ơi", "hi", "hello", "bắt đầu", "get started"]):
             message_group.append("greet")
         elif any(x in clean_message for x in ["bảo hành"]):
             message_group.append("guarantee")
@@ -206,12 +208,16 @@ def get_processed_customer_message():
             message_group.append("banking_transaction")
         elif all(x in clean_message for x in ["còn", "không"]) or all(x in clean_message for x in ["có", "không"]) or "có sẵn" in clean_message:
             message_group.append("usecase")
+        elif clean_message == "chat với nhân viên":
+            message_group.append("connect_employee")
         else:
             message_group.append(clean_message)
     customer_messages["message_group"] = message_group
-    all_group = ["shipping", "price", "object_type_related", "brand_related", "thank", "agree", "telephone", "shopee_related", "address", "greet", "guarantee", "banking_transaction", "usecase", "color"]
+    all_group = ["shipping", "price", "object_type_related", "brand_related", "thank", "agree", "telephone",
+                 "shopee_related", "address", "greet", "guarantee", "banking_transaction", "usecase", "color", "connect_employee", "disagree"]
     customer_messages = customer_messages[customer_messages["clean_customer_message"] != " "]
     customer_messages = customer_messages[customer_messages["clean_customer_message"] != "cái này"]
+    customer_messages = customer_messages[customer_messages["clean_customer_message"].map(len) > 1]
     customer_messages = customer_messages[~customer_messages["message_group"].isin(all_group)]
     return customer_messages
 
@@ -220,6 +226,5 @@ def main():
     export_clean_customer_messages()
 
 
-# if __name__ == '__main__':
-    # main()
-    # get_processed_customer_message()
+if __name__ == '__main__':
+    main()
