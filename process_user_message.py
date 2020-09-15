@@ -10,7 +10,7 @@ import unidecode
 
 import os
 script_dir = os.path.dirname(__file__)
-
+print(script_dir)
 logging.root.setLevel(logging.NOTSET)
 logging.basicConfig(
     level=logging.NOTSET,
@@ -19,11 +19,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-with open(script_dir + "/obj_type", "r", encoding="utf-8") as obj_type_file:
+with open("obj_type", "r", encoding="utf-8") as obj_type_file:
     lines = obj_type_file.readlines()
     objtype_list = [x.strip().replace("_", " ") for x in lines]
 
-with open(script_dir + "/brand", "r", encoding="utf-8") as obj_type_file:
+with open("brand", "r", encoding="utf-8") as obj_type_file:
     lines = obj_type_file.readlines()
     brand_list = [x.strip() for x in lines]
 
@@ -158,7 +158,7 @@ def export_clean_customer_messages():
     clean_customer_messages = remove_col_white_space(clean_customer_messages)
 
     df = pd.DataFrame({"customer_message": customer_messages, "clean_customer_message": clean_customer_messages})
-    df.to_csv(script_dir + "/data/customer_message/customer_messages.csv", index=False)
+    df.to_csv("data/customer_message/customer_messages.csv", index=False)
     # with open('data/customer_message/customer_messages.pkl', 'wb') as file:
     #     # store the data as binary data stream
     #     pickle.dump(customer_messages, file)
@@ -169,7 +169,7 @@ def export_clean_customer_messages():
 
 def get_processed_customer_message():
     # customer_messages = remove_stop_word(customer_messages)
-    customer_messages = pd.read_csv(script_dir + "/data/customer_message/customer_messages.csv")
+    customer_messages = pd.read_csv("data/customer_message/customer_messages.csv")
     customer_messages["clean_customer_message"] = deEmojify(customer_messages["clean_customer_message"].to_list())
     # customer_messages = remove_one_char_sentences(customer_messages)
     customer_messages = customer_messages[customer_messages['clean_customer_message'].str.len() > 1]

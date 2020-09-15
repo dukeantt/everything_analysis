@@ -134,7 +134,7 @@ def gaussian_mixture_clustering():
 def main():
     sentence_embedding(1, None, None, None)
     calculate_silhouette_score()
-    # k_mean_clustering(11, None, None, "data/all_cluster.csv")
+    #k_mean_clustering(15, None, None, "data/all_cluster.csv")
 
 
 if __name__ == '__main__':
