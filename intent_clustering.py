@@ -83,10 +83,10 @@ def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input
 
     kmeans = KMeans(n_clusters=number_of_clusters, random_state=0).fit(tsne_vectors)
 
-    data_tuples = list(zip(customer_message["message_group"], kmeans.labels_))
-    clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'kmeans_cluster'])
+    data_tuples = list(zip(customer_message["message_group"], customer_message["customer_message"], kmeans.labels_))
+    clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'og_sentence', 'kmeans_cluster'])
     clustering_df = pd.merge(clustering_df, vectors_df, right_index=True, left_index=True)
-    clustering_df["og_sentence"] = customer_message["customer_message"]
+    # clustering_df["og_sentence"] = customer_message["customer_message"]
     clustering_df.to_csv(cluster_output_path, index=False)
     return clustering_df
 

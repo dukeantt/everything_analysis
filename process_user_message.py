@@ -59,7 +59,7 @@ def correction_message(customer_messages):
     filter_text = ["facebook", "started"]
     correct_messages = []
     for message in customer_messages:
-        if all(x not in message for x in filter_text):
+        if all(x not in message for x in filter_text) and message != "Get Started":
             message = do_correction(str(message))
         correct_messages.append(message)
 
@@ -188,7 +188,7 @@ def get_processed_customer_message():
             message_group.append("brand_related")
         elif any(x in clean_message for x in ["thanks", "tks", "cảm ơn", "cám ơn", "thank"]):
             message_group.append("thank")
-        elif any(x in clean_message for x in ["ok", "uk"]):
+        elif any(x in clean_message for x in ["ok", "uk", "dạ", "chuẩn", "vâng", "vâng ạ", "được", "sao cũng được"]):
             message_group.append("agree")
         elif any(x in clean_message for x in ["điện thoại", "đt", "dt"]):
             message_group.append("telephone")
@@ -196,16 +196,20 @@ def get_processed_customer_message():
             message_group.append("shopee_related")
         elif any(x in clean_message for x in ["địa chỉ", "đc", "dc"]):
             message_group.append("address")
-        elif any(x in clean_message for x in ["alo", "chào", "ơi"]):
+        elif any(x in clean_message for x in ["alo", "chào", "ơi", "hi", "hello"]):
             message_group.append("greet")
         elif any(x in clean_message for x in ["bảo hành"]):
             message_group.append("guarantee")
         elif any(x in clean_message for x in ["màu", "mầu"]):
             message_group.append("color")
+        elif any(x in clean_message for x in ["tài khoản", "chuyển khoản"]):
+            message_group.append("banking_transaction")
+        elif all(x in clean_message for x in ["còn", "không"]) or all(x in clean_message for x in ["có", "không"]) or "có sẵn" in clean_message:
+            message_group.append("usecase")
         else:
             message_group.append(clean_message)
     customer_messages["message_group"] = message_group
-    all_group = ["shipping", "price", "object_type_related", "brand_related", "thank", "agree", "telephone", "shopee_related", "address", "greet", "guarantee"]
+    all_group = ["shipping", "price", "object_type_related", "brand_related", "thank", "agree", "telephone", "shopee_related", "address", "greet", "guarantee", "banking_transaction", "usecase", "color"]
     customer_messages = customer_messages[customer_messages["clean_customer_message"] != " "]
     customer_messages = customer_messages[~customer_messages["message_group"].isin(all_group)]
     return customer_messages
