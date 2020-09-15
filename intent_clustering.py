@@ -36,6 +36,14 @@ def calculate_silhouette_score(tsne_input_path=None, output=None):
         scores_df.to_csv("data/elbow_n_silhouette_scores.csv", index=False)
 
 
+def split_to_bigram(word_list):
+    bigram_wordlist = []
+    for index, word in enumerate(word_list):
+        if index < len(word_list) - 1:
+            bigram_word = word + "_" + word_list[index + 1]
+            bigram_wordlist.append(bigram_word)
+    return bigram_wordlist
+
 def sentence_embedding(no_cluster, customer_message_path, tsne_output_path, customer_message_output_path):
     if customer_message_path:
         customer_message_df = pd.read_csv(customer_message_path)
@@ -46,6 +54,11 @@ def sentence_embedding(no_cluster, customer_message_path, tsne_output_path, cust
         customer_message = process_user_message.get_processed_customer_message()
 
     sentences = [str(x).split() for x in customer_message["message_group"].to_list()]
+    bigrams = []
+    for item in sentences:
+        bigrams.append(split_to_bigram(item))
+
+    sentences = bigrams
     model = Word2Vec(sentences, size=20, window=5, min_count=1, workers=4)
 
     vectors_list = []
@@ -86,6 +99,8 @@ def k_mean_clustering(number_of_clusters, customer_message_path=None, tsne_input
     data_tuples = list(zip(customer_message["message_group"], customer_message["customer_message"], kmeans.labels_))
     clustering_df = pd.DataFrame(data_tuples, columns=['sentence', 'og_sentence', 'kmeans_cluster'])
     clustering_df = pd.merge(clustering_df, vectors_df, right_index=True, left_index=True)
+
+    clustering_df = clustering_df[clustering_df["sentence"].map(len) > 1]
     # clustering_df["og_sentence"] = customer_message["customer_message"]
     clustering_df.to_csv(cluster_output_path, index=False)
     return clustering_df
@@ -133,8 +148,8 @@ def gaussian_mixture_clustering():
 
 def main():
     sentence_embedding(1, None, None, None)
-    calculate_silhouette_score()
-    # k_mean_clustering(11, None, None, "data/all_cluster.csv")
+    # calculate_silhouette_score()
+    k_mean_clustering(6, None, None, "data/all_cluster.csv")
 
 
 if __name__ == '__main__':
