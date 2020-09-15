@@ -42,6 +42,8 @@ def split_to_bigram(word_list):
         if index < len(word_list) - 1:
             bigram_word = word + "_" + word_list[index + 1]
             bigram_wordlist.append(bigram_word)
+        if len(word_list) == 1:
+            bigram_wordlist.append(word)
     return bigram_wordlist
 
 def sentence_embedding(no_cluster, customer_message_path, tsne_output_path, customer_message_output_path):
@@ -148,8 +150,8 @@ def gaussian_mixture_clustering():
 
 def main():
     sentence_embedding(1, None, None, None)
-    # calculate_silhouette_score()
-    k_mean_clustering(6, None, None, "data/all_cluster.csv")
+    calculate_silhouette_score()
+    # k_mean_clustering(6, None, None, "data/all_cluster.csv")
 
 
 if __name__ == '__main__':
