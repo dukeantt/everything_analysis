@@ -58,10 +58,11 @@ def correction_message(customer_messages):
     start_time = time.time()
     logger.info("Correction message")
 
-    filter_text = ["facebook", "started"]
+    filter_text = ["facebook", "started", "/confirm_attribute_value", '/confirm_object_type', '/connect_employee', '/deny_object_type', '/disagree', '/find_product_by_category',
+                   '/greet', '/query_knowledge_base', '/restart', '/show_shop_address', '/show_shop_contact', '/start_conversation']
     correct_messages = []
     for message in customer_messages:
-        if all(x not in message for x in filter_text) and message != "Get Started":
+        if all(x not in message for x in filter_text) and message not in ["/buy_product","Get Started"]:
             message = do_correction(str(message))
         correct_messages.append(message)
 
@@ -194,23 +195,23 @@ def get_processed_customer_message():
             message_group.append("shipping")
         elif any(x in clean_message for x in ["giá", "bao nhiêu", "bao tiền"]):
             message_group.append("price")
-        elif any(x in clean_message for x in objtype_list):
+        elif any(x in clean_message for x in objtype_list + ['/find_product_by_category', '/query_knowledge_base']):
             message_group.append("object_type_related")
         elif any(x in clean_message for x in brand_list):
             message_group.append("brand_related")
         elif any(x in clean_message for x in ["thanks", "tks", "cảm ơn", "cám ơn", "thank"]):
             message_group.append("thank")
-        elif any(x in clean_message for x in ["ok", "uk", "dạ", "chuẩn", "vâng", "vâng ạ", "sao cũng được"]) or (len(clean_message) <=4 and "được" in clean_message):
+        elif any(x in clean_message for x in ["ok", "uk", "dạ", "chuẩn", "vâng", "vâng ạ", "sao cũng được", "/agree", "/confirm_attribute_value", '/confirm_object_type']) or (len(clean_message) <=4 and "được" in clean_message):
             message_group.append("agree")
-        elif any(x in clean_message for x in ["không đúng"]) or (len(clean_message) <=3 and "không" in clean_message):
+        elif any(x in clean_message for x in ["không đúng", '/deny_object_type', '/disagree']) or (len(clean_message) <=3 and "không" in clean_message):
             message_group.append("disagree")
-        elif any(x in clean_message for x in ["điện thoại", "đt", "dt"]):
+        elif any(x in clean_message for x in ["điện thoại", "đt", "dt", '/show_shop_contact']):
             message_group.append("telephone")
         elif "shopee" in clean_message:
             message_group.append("shopee_related")
-        elif any(x in clean_message for x in ["địa chỉ", "đc", "dc"]):
+        elif any(x in clean_message for x in ["địa chỉ", "đc", "dc", '/show_shop_address']):
             message_group.append("address")
-        elif any(x in clean_message for x in ["alo", "chào","chao", "ơi", "hi", "hello", "bắt đầu", "get started"]):
+        elif any(x in clean_message for x in ["alo", "chào","chao", "ơi", "hi", "hello", "bắt đầu", "get started", '/greet', '/start_conversation', '/restart']):
             message_group.append("greet")
         elif any(x in clean_message for x in ["bảo hành"]):
             message_group.append("guarantee")
@@ -220,7 +221,7 @@ def get_processed_customer_message():
             message_group.append("banking_transaction")
         elif all(x in clean_message for x in ["còn", "không"]) or all(x in clean_message for x in ["có", "không"]) or "có sẵn" in clean_message:
             message_group.append("usecase")
-        elif clean_message == "chat với nhân viên":
+        elif clean_message in ["chat với nhân viên", '/connect_employee']:
             message_group.append("connect_employee")
         else:
             message_group.append(clean_message)
