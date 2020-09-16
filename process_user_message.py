@@ -7,7 +7,8 @@ import time
 import re
 import unicodedata
 import unidecode
-
+from pymongo import MongoClient
+import datetime
 import os
 script_dir = os.path.dirname(__file__)
 print(script_dir)
@@ -18,6 +19,7 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+db_name = "test_crawl_weekly_14_9"
 
 with open("obj_type", "r", encoding="utf-8") as obj_type_file:
     lines = obj_type_file.readlines()
@@ -119,6 +121,15 @@ def get_customer_message():
     return customer_messages
 
 
+def first_turn_message_from_db():
+    client = MongoClient("mongodb+srv://ducanh:1234@ducanh.sa1mn.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority")
+    db = client['chatlog_db']
+    collection = db[db_name]
+    chatlog_df = pd.DataFrame([document for document in collection.find({})])
+    first_turn_message = chatlog_df[chatlog_df["turn"].isin([0,1,2])]['user_message'].to_list()
+    first_turn_message = [x for x in first_turn_message if str(x) not in ['', 'nan']]
+    return first_turn_message
+
 def remove_stop_word(customer_messages=None):
     start_time = time.time()
     logger.info("Remove stop words")
@@ -150,7 +161,8 @@ def export_clean_customer_messages():
     start_time = time.time()
     logger.info("Export clean customer message")
 
-    customer_messages = get_customer_message()
+    # customer_messages = get_customer_message()
+    customer_messages = first_turn_message_from_db()
     clean_customer_messages = remove_col_str(customer_messages)
     clean_customer_messages = deEmojify(clean_customer_messages)
     clean_customer_messages = remove_special_characters(clean_customer_messages)
